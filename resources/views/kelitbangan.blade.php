@@ -2,15 +2,12 @@
 @section('content')
 <div class="content-wrap">
     <div class="container clearfix">
-{{--        <div class="container clearfix">--}}
-
-            <div class="heading-block center mb-0">
-                <h3>Hasil Kelitbangan</h3>
-                <span>Tabel Daftar Hasil Kelitbangan</span>
-            </div>
-
-{{--        </div>--}}
-
+        <div class="heading-block center mb-0">
+            <h3>Hasil Kelitbangan</h3>
+            {{--                <span>Tabel Daftar Hasil Kelitbangan</span>--}}
+        </div>
+    </div>
+    <div class="container clearfix">
         <div class="table-responsive">
             <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>

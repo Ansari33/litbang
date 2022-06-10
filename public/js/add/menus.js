@@ -11,11 +11,11 @@ var menus = [
         'subs' : [
             {
                 'nama' : 'Definisi',
-                'link' : '/profile/definisi'
+                'link' : '/profile-definisi'
             },
             {
                 'nama' : 'Selayang Pandang',
-                'link' : '/profile/selayang-pandang'
+                'link' : '/profile-selayang-pandang'
             },
             {
                 'nama' : 'Struktur Organisasi',
@@ -31,7 +31,7 @@ var menus = [
         'subs' : [
             {
                 'nama' : 'Regulasi',
-                'link' : '/informasi/regulasi'
+                'link' : '/informasi-regulasi'
             },
             {
                 'nama' : 'SOP Kelitbangan',
@@ -43,11 +43,11 @@ var menus = [
             },
             {
                 'nama' : 'Agenda Kegiatan',
-                'link' : '/informasi/agenda-kegiatan'
+                'link' : '/informasi-agenda-kegiatan'
             },
             {
                 'nama' : 'Berita & Artikel',
-                'link' : '/informasi/berita-artikel'
+                'link' : '/informasi-berita-artikel'
             },
 
         ]
@@ -61,37 +61,35 @@ var menus = [
     },
     {
         'nama' : 'Inovasi',
-        'link' : '',
+        'link' : '/inovasi',
         'subs' : []
     },
     {
         'nama' : 'Galeri',
-        'link' : '',
+        'link' : '#',
         'subs' : [
             {
                 'nama' : 'Foto',
-                'link' : '#'
+                'link' : '/galeri-foto'
             },
             {
                 'nama' : 'Video',
-                'link' : '#'
+                'link' : '/galeri-video'
             },
-
         ]
     },
     {
         'nama' : 'Forum Komunikasi',
-        'link' : '',
+        'link' : '#',
         'subs' : [
             {
                 'nama' : 'Penelitian',
-                'link' : '#'
+                'link' : 'forum-penelitian'
             },
             {
                 'nama' : 'Inovasi',
-                'link' : '#'
+                'link' : 'forum-inovasi'
             },
-
         ]
     }
 ];

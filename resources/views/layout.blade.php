@@ -78,8 +78,8 @@
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
-                        <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="{{asset('images/logo.png')}}" alt="Canvas Logo"></a>
-                        <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="{{asset('images/logo@2x.png')}}" alt="Canvas Logo"></a>
+                        <a href="index.html" class="standard-logo" data-dark-logo="{{ asset('images/litbang-min.png') }}"><img src="{{asset('images/litbang-min.png')}}" alt="Canvas Logo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo=" {{ asset('images/litbang-min.png') }}"><img src="{{asset('images/litbang-min.png')}}" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
 
                     <div class="header-misc">
@@ -93,7 +93,7 @@
                         <!-- Top Cart
                         ============================================= -->
                         <div id="top-cart" class="header-misc-icon d-none d-sm-block">
-                            <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span class="top-cart-number">5</span></a>
+                            <a href="#" id="top-cart-trigger"><i class="icon-line-lock"></i></a>
                             <div class="top-cart-content">
                                 <div class="top-cart-title">
                                     <h4>Shopping Cart</h4>
@@ -522,9 +522,9 @@
 
                                 <div class="widget clearfix">
 
-                                    <img src="{{asset('images/footer-widget-logo.png')}}" alt="Image" class="footer-logo">
+                                    <img src="{{asset('images/litbang-min.png')}}" alt="Image" class="footer-logo" style="width: 120px;">
 
-                                    <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
+{{--                                    <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>--}}
 
                                     <div style="background: url({{asset('images/world-map.png')}}) no-repeat center center; background-size: 100%;">
                                         <address>
