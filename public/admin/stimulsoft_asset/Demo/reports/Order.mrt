@@ -1,0 +1,1669 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CalculationMode>Interpretation</CalculationMode>
+  <Culture>en-US</Culture>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="2">
+      <Teradata Ref="2" type="Stimulsoft.Report.Dictionary.StiTeradataDatabase" isKey="true">
+        <Alias>Teradata</Alias>
+        <ConnectionStringEncrypted />
+        <Name>Teradata</Name>
+      </Teradata>
+      <MySQL Ref="3" type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true">
+        <Alias>MySQL</Alias>
+        <ConnectionStringEncrypted>41xlCURKWt1tTI1Yc0z2H9U29cvGS9nNbRWhgGoA4GffyNFo11lr3WlJufzhEKiCyXj3y1VcE21pWujMYSzsY4vE28t5VfsF4Ur9vWNMd2c=</ConnectionStringEncrypted>
+        <Name>MySQL</Name>
+      </MySQL>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <tessDataSource1 Ref="4" type="Stimulsoft.Report.Dictionary.StiVirtualSource" isKey="true">
+        <Alias>tessDataSource1</Alias>
+        <Columns isList="true" count="0" />
+        <Dictionary isRef="1" />
+        <Filters isList="true" count="0" />
+        <GroupColumns isList="true" count="0" />
+        <Key>e4aae45f2f654459be48e9377648c3e0</Key>
+        <Name>tessDataSource1</Name>
+        <NameInSource />
+        <Results isList="true" count="0" />
+        <Sort isList="true" count="0" />
+      </tessDataSource1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="3">
+    <Item4 Ref="5" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
+      <CultureName>en</CultureName>
+      <Items isList="true" count="0" />
+    </Item4>
+    <Item5 Ref="6" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
+      <CultureName>ru</CultureName>
+      <Items isList="true" count="26">
+        <value>ReportAlias,Заказ</value>
+        <value>ReportDescription,Этот_x0020_пример_x0020_демонстрирует_x002C__x0020_как_x0020_создать_x0020_Заказ</value>
+        <value>Text02.Text,ЗАКАЗ</value>
+        <value>Text101.Text,Номер_x0020_счета:_x0020_</value>
+        <value>Text102.Text,Банк:_x0020_</value>
+        <value>Text103.Text,Адрес_x0020_банка:_x0020_</value>
+        <value>Text104.Text,Город:_x0020_</value>
+        <value>Text106.Text,Страна:_x0020_</value>
+        <value>Text107.Text,SWIFT_x0020_Банка:_x0020_</value>
+        <value>Text14.Text,Код_x0020_НДС:_x0020__x007B_VAT_ID_x007D_</value>
+        <value>Text18.Text,Сумма:_x0020_</value>
+        <value>Text19.Text,К_x0020_оплате</value>
+        <value>Text20.Text,ПОЛУЧАТЕЛЬ</value>
+        <value>Text21.Text,АДРЕС_x0020_ДОСТАВКИ</value>
+        <value>Text22.Text,ЭЛЕМЕНТ_x0020__x2116_</value>
+        <value>Text23.Text,ОПИСАНИЕ</value>
+        <value>Text24.Text,КОЛ-ВО</value>
+        <value>Text25.Text,ЦЕНА</value>
+        <value>Text26.Text,ВСЕГО</value>
+        <value>Text32.Text,Номер_x0020_НДС:_x0020__x007B_BillToVatNumber_x007D_</value>
+        <value>Text33.Text,Телефон_x0020__x007B_BillToPhone_x007D_</value>
+        <value>Text60.Text,Дата</value>
+        <value>Text61.Text,Заказ_x0020__x2116_</value>
+        <value>Text63.Text,Всего_x0020_НДС</value>
+        <value>Text64.Text,Банковский_x0020_перевод_x0020__x002F__x0020_Информация_x0020_по_x0020_оплаты</value>
+        <value>Text70.Text,ИТОГО:</value>
+      </Items>
+    </Item5>
+    <Item6 Ref="7" type="Stimulsoft.Report.StiGlobalizationContainer" isKey="true">
+      <CultureName>de</CultureName>
+      <Items isList="true" count="40">
+        <value>ReportAlias,Bestellung</value>
+        <value>ReportDescription,Das_x0020_Beispiel_x0020_zeigt_x002C__x0020_wie_x0020_man_x0020_die_x0020_Bestellung_x0020_erstellen_x0020_kann_x000D__x000A_</value>
+        <value>Text02.Text,BESTELLUNG</value>
+        <value>Text101.Text,Bankkontonummer:_x0020_</value>
+        <value>Text102.Text,Bankname:_x0020_</value>
+        <value>Text103.Text,Bankanschrift:_x0020_</value>
+        <value>Text104.Text,Banksstadt:_x0020_</value>
+        <value>Text106.Text,Bankland:_x0020_</value>
+        <value>Text119.Tag,GESAMTBETRAG</value>
+        <value>Text14.Text,MwSt._x0020_ID:_x0020__x007B_VAT_ID_x007D_</value>
+        <value>Text18.Text,Betrag:_x0020_</value>
+        <value>Text19.Text,Zahlbar_x0020_an</value>
+        <value>Text20.Text,RECHNUNGSEMPFÄNGER</value>
+        <value>Text21.Text,WARENEMPFÄNGER</value>
+        <value>Text22.Tag,KOPFZEILE</value>
+        <value>Text22.Text,ELEMENT_x0023_</value>
+        <value>Text23.Tag,KOPFZEILE</value>
+        <value>Text23.Text,BESCHREIBUNG</value>
+        <value>Text24.Tag,KOPFZEILE</value>
+        <value>Text24.Text,Quantität</value>
+        <value>Text25.Tag,KOPFZEILE</value>
+        <value>Text25.Text,STÜCKPREIS</value>
+        <value>Text26.Tag,KOPFZEILE</value>
+        <value>Text26.Text,GESAMTBETRAG</value>
+        <value>Text32.Text,MwSt-Nummer:_x0020__x007B_BillToVatNumber_x007D_</value>
+        <value>Text33.Text,Telefonnummer_x0020__x007B_BillToPhone_x007D_</value>
+        <value>Text50.Tag,DATEN</value>
+        <value>Text51.Tag,DATEN</value>
+        <value>Text52.Tag,DATEN</value>
+        <value>Text53.Tag,DATEN</value>
+        <value>Text54.Tag,DATEN</value>
+        <value>Text60.Text,Datum</value>
+        <value>Text61.Text,Bestellung_x0020__x0023_</value>
+        <value>Text63.Text,Gesamte_x0020_MwST</value>
+        <value>Text64.Text,Banküberweisung_x002F_Zahlungsdaten</value>
+        <value>Text70.Text,Gesamtpreis:</value>
+        <value>Text71.Tag,GESAMTBETRAG</value>
+        <value>Variable.BillToAddress,_x0038_7_x0020_Polk_x0020_Str.</value>
+        <value>Variable.CompanyName,Firmenname</value>
+        <value>Variable.Notes,Verwenden_x0020_Sie_x0020_obige_x0020_Information_x002C__x0020_um_x0020_die_x0020_Bestellung_x0020_per_x0020_Banküberweisung_x0020_zu_x0020_bezahlen._x0020_Achten_x0020_Sie_x0020_darauf_x002C__x0020_Ihre_x0020_Rechnungsnummer_x0020_anzugeben._x000D__x000A_Ihre_x0020_Bank_x0020_könnte_x0020_zusätzliche_x0020_Gebühren_x002C__x0020_die_x0020_Sie_x0020_akzeptieren_x0020_müssen_x002C__x0020_erfordern._x0020__x000D__x000A_</value>
+      </Items>
+    </Item6>
+  </GlobalizationStrings>
+  <Key>0b29b72cf86d4ad588b9e1dd15f5c9a1</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="8" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="8">
+        <PageHeaderBand1 Ref="9" type="PageHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,20,749,170</ClientRectangle>
+          <ComponentPlacement>ph.Page1</ComponentPlacement>
+          <Components isList="true" count="12">
+            <Text01 Ref="10" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,360,50</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,18,Bold,Point,False,0</Font>
+              <Guid>4cbecc7fdc9943698db2928b1481ef94</Guid>
+              <Margins>2,0,0,0</Margins>
+              <Name>Text01</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{CompanyName}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text01>
+            <Text10 Ref="11" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,50,290,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>2362a25abedb4a51a0b84b87570374fe</Guid>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{CompanyAddress}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 Ref="12" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,70,290,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>05b2c80db9e34ec9ba4d40c9d1cb25af</Guid>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{CompanyCity}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 Ref="13" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,90,290,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>4b761829b461461792c9f5dc918ec5fc</Guid>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{CompanyZipCode}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 Ref="14" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,110,290,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>1d5030fe024b40599b56eecb9904b7d9</Guid>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{CompanyCountry}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 Ref="15" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,130,290,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>f824838fd1364e328683f2539a8c1b72</Guid>
+              <Hyperlink>https://stimulsoft.com</Hyperlink>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>VAT ID: {VAT_ID}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text60 Ref="16" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>470,60,100,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>Date</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text60>
+            <Text15 Ref="17" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>480,80,90,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>467637e123f8429caecabc5146c2fded</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,3,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{Today}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextFormat Ref="18" type="DateFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text62 Ref="19" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>660,60,89,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>c72d837a54974d3d9f9548bd0315b4f6</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>PO #</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text62>
+            <Text17 Ref="20" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>670,80,79,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>ac28faa2344b411cadda635396d03a47</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,3,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{PONumber}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextFormat Ref="21" type="NumberFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <State>DecimalDigits</State>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text61 Ref="22" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>570,60,90,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>d9305e27ae7f4d0fa255800d80a2d455</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>Order #</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text61>
+            <Text16 Ref="23" type="Text" isKey="true">
+              <Border>None;White;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>580,80,80,20</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>12aa8ade53004547b9539c296ef7478a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,3,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="8" />
+              <Parent isRef="9" />
+              <Text>{Number}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextFormat Ref="24" type="NumberFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <State>DecimalDigits</State>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+          <PrintOn>OnlyFirstPage</PrintOn>
+        </PageHeaderBand1>
+        <PageFooterBand1 Ref="25" type="PageFooterBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1289.2,749,20</ClientRectangle>
+          <ComponentPlacement>pf.Page1</ComponentPlacement>
+          <Components isList="true" count="1">
+            <Text108 Ref="26" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,748,20</ClientRectangle>
+              <ComponentPlacement>pf.PageFooterBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text108</Name>
+              <Page isRef="8" />
+              <Parent isRef="25" />
+              <Text>{PageNofMThrough}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text108>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageFooterBand1</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+        </PageFooterBand1>
+        <PageFooterBand2 Ref="27" type="PageFooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1219.2,749,30</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text02 Ref="28" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>260,-10,389,50</ClientRectangle>
+              <ComponentPlacement>ph.PageHeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Title</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,18,Bold,Point,False,204</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text02</Name>
+              <Page isRef="8" />
+              <Parent isRef="27" />
+              <Text>ORDER</Text>
+              <TextBrush>[232:76:61]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text02>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>PageFooterBand2</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+        </PageFooterBand2>
+        <HeaderBand1 Ref="29" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,230,749,130</ClientRectangle>
+          <ComponentPlacement>h.ap.Page1</ComponentPlacement>
+          <Components isList="true" count="9">
+            <Text21 Ref="30" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>380,0,369,30</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Guid>8e43a18d3ac14fbba4bb150a12b361a0</Guid>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>SHIP TO</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text34 Ref="31" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>380,30,369,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <Guid>c8747d99b37f4b6faabeebf44bd8063e</Guid>
+              <Margins>5,0,5,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>{ShipToCompanyName}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text34>
+            <Text36 Ref="32" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>380,80,369,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>1560489d1cda4e85ac5ea11cfb9998cf</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>{ShipToEmail}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text36>
+            <Text35 Ref="33" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>380,60,369,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <Guid>c03d6935705542e6bfaa4d500f3feb18</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>{ShipToContactName}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text35>
+            <Text20 Ref="34" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>0,0,330,30</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Margins>3,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>BILL TO</Text>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text30 Ref="35" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,30,330,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <Margins>5,0,5,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>{BillToCompanyName}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text30>
+            <Text31 Ref="36" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,60,330,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <Guid>73b158c0cc4249a5bf12749c4790b4d9</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>{BillToAddress}, {BillToCity}, {BillToState} {BillToZipCode}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text31>
+            <Text32 Ref="37" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,80,330,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <Guid>29009b453e6b4f35b43780ba06e38b8c</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>VAT Number: {BillToVatNumber}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text32>
+            <Text33 Ref="38" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <CanShrink>True</CanShrink>
+              <ClientRectangle>0,100,330,20</ClientRectangle>
+              <ComponentPlacement>h.ap.HeaderBand1</ComponentPlacement>
+              <ComponentStyle>Red Bill To Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b41e7c2854b24c0c842da1a09d7d1910</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="8" />
+              <Parent isRef="29" />
+              <Text>Telephone {BillToPhone}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text33>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+          <PrintOn>OnlyFirstPage</PrintOn>
+        </HeaderBand1>
+        <HeaderBand2 Ref="39" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,400,749,30</ClientRectangle>
+          <ComponentPlacement>h.Page1</ComponentPlacement>
+          <Components isList="true" count="5">
+            <Text22 Ref="40" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>0,0,120,30</ClientRectangle>
+              <ComponentPlacement>h.HeaderBand2</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Guid>2a6641b4f92948d288a628386907cd0a</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="8" />
+              <Parent isRef="39" />
+              <Tag>HEADER</Tag>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text23 Ref="41" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>120,0,300,30</ClientRectangle>
+              <ComponentPlacement>h.HeaderBand2</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Guid>779cbb7df0c24d4781d7629cb2f0879f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="8" />
+              <Parent isRef="39" />
+              <Tag>HEADER</Tag>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Text25 Ref="42" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>510,0,130,30</ClientRectangle>
+              <ComponentPlacement>h.HeaderBand2</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Guid>3a8c8235f8444e22af29779e9d012d1e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="8" />
+              <Parent isRef="39" />
+              <Tag>HEADER</Tag>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+            <Text26 Ref="43" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>640,0,109,30</ClientRectangle>
+              <ComponentPlacement>h.HeaderBand2</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Guid>d91d45a793e84ab7809c55f9ac1027ff</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="8" />
+              <Parent isRef="39" />
+              <Tag>HEADER</Tag>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text26>
+            <Text24 Ref="44" type="Text" isKey="true">
+              <Border>Left;White;1;Solid;False;4;Black</Border>
+              <Brush>[238:121:108]</Brush>
+              <ClientRectangle>420,0,90,30</ClientRectangle>
+              <ComponentPlacement>h.HeaderBand2</ComponentPlacement>
+              <ComponentStyle>Red Bill To</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Editable>True</Editable>
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+              <Guid>94360fab8d3f42e2a04b169149c939da</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="8" />
+              <Parent isRef="39" />
+              <Tag>HEADER</Tag>
+              <TextBrush>White</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Guid>bbd7a4fce26c40ffbc6db941d057c94f</Guid>
+          <Name>HeaderBand2</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+          <PrintOnAllPages>False</PrintOnAllPages>
+        </HeaderBand2>
+        <DataBand1 Ref="45" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,470,749,30</ClientRectangle>
+          <ComponentPlacement>d.Page1</ComponentPlacement>
+          <Components isList="true" count="5">
+            <Text50 Ref="46" type="Text" isKey="true">
+              <Border>None;[232:76:61];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,120,30</ClientRectangle>
+              <ComponentPlacement>d.DataBand1</ComponentPlacement>
+              <ComponentStyle>Red Data</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>af7dce9ec23846ecbfeae3c93596c46d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,5,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="8" />
+              <Parent isRef="45" />
+              <Tag>DATA</Tag>
+              <TextBrush>[120:120:120]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text50>
+            <Text51 Ref="47" type="Text" isKey="true">
+              <Border>None;[232:76:61];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>120,0,300,30</ClientRectangle>
+              <ComponentPlacement>d.DataBand1</ComponentPlacement>
+              <ComponentStyle>Red Data</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>9222f135c2ed4947968929a40520f9a9</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="8" />
+              <Parent isRef="45" />
+              <Tag>DATA</Tag>
+              <TextBrush>[120:120:120]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text51>
+            <Text52 Ref="48" type="Text" isKey="true">
+              <Border>None;[232:76:61];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>420,0,90,30</ClientRectangle>
+              <ComponentPlacement>d.DataBand1</ComponentPlacement>
+              <ComponentStyle>Red Data</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>7cc66c2bc6eb4d67adadb464460e725d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,5,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="8" />
+              <Parent isRef="45" />
+              <Tag>DATA</Tag>
+              <TextBrush>[120:120:120]</TextBrush>
+              <TextFormat Ref="49" type="NumberFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+                <State>DecimalDigits</State>
+              </TextFormat>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text52>
+            <Text53 Ref="50" type="Text" isKey="true">
+              <Border>None;[232:76:61];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>510,0,130,30</ClientRectangle>
+              <ComponentPlacement>d.DataBand1</ComponentPlacement>
+              <ComponentStyle>Red Data</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>2b2f58260c1546e78ff855d86e4480df</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,5,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="8" />
+              <Parent isRef="45" />
+              <Tag>DATA</Tag>
+              <TextBrush>[120:120:120]</TextBrush>
+              <TextFormat Ref="51" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>0</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+                <State>DecimalDigits</State>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text53>
+            <Text54 Ref="52" type="Text" isKey="true">
+              <Border>None;[232:76:61];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>640,0,108,30</ClientRectangle>
+              <ComponentPlacement>d.DataBand1</ComponentPlacement>
+              <ComponentStyle>Red Data</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>30c9fff0f1d24a6f9bea356c9966308a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,5,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="8" />
+              <Parent isRef="45" />
+              <Tag>DATA</Tag>
+              <TextBrush>[120:120:120]</TextBrush>
+              <TextFormat Ref="53" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>0</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+                <State>DecimalDigits</State>
+              </TextFormat>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text54>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>tessDataSource1</DataSourceName>
+          <EvenStyle>Red Data Even</EvenStyle>
+          <Expressions isList="true" count="0" />
+          <Filters isList="true" count="0" />
+          <Guid>a713895547434379a5e5d7315c8dff9c</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+        <FooterBand1 Ref="54" type="FooterBand" isKey="true">
+          <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+          <Brush>Transparent</Brush>
+          <CanGrow>False</CanGrow>
+          <ClientRectangle>0,540,749,80</ClientRectangle>
+          <ComponentPlacement>f.Page1</ComponentPlacement>
+          <Components isList="true" count="5">
+            <Text109 Ref="55" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,20,490,60</ClientRectangle>
+              <ComponentPlacement>f.FooterBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Margins>5,0,5,0</Margins>
+              <Name>Text109</Name>
+              <Page isRef="8" />
+              <Parent isRef="54" />
+              <Text>{Notes}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+            </Text109>
+            <Text63 Ref="56" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>510,20,110,30</ClientRectangle>
+              <ComponentPlacement>f.FooterBand1</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>374fe05f93cf4b98b1d7e1987dcd2b7d</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="8" />
+              <Parent isRef="54" />
+              <Text>Total VAT:</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text63>
+            <Text71 Ref="57" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>[232:76:61]</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>620,50,129,30</ClientRectangle>
+              <ComponentPlacement>f.FooterBand1</ComponentPlacement>
+              <ComponentStyle>Red Totals</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,12,Bold,Point,False,204</Font>
+              <Guid>2c26211ce34942ddb0563c816a4a9a91</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="8" />
+              <Parent isRef="54" />
+              <Tag>TOTAL</Tag>
+              <Text>{Sum(Products.UnitPrice * Products.UnitsInStock) - 0}</Text>
+              <TextBrush>White</TextBrush>
+              <TextFormat Ref="58" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>0</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+                <UseLocalSetting>False</UseLocalSetting>
+              </TextFormat>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text71>
+            <Text119 Ref="59" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>620,20,129,30</ClientRectangle>
+              <ComponentPlacement>f.FooterBand1</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>97a74ce66a9447648d8bb3af34fcafa0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text119</Name>
+              <Page isRef="8" />
+              <Parent isRef="54" />
+              <Tag>TOTAL</Tag>
+              <Text>{BankTotalVat}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <TextFormat Ref="60" type="CurrencyFormat" isKey="true">
+                <DecimalDigits>0</DecimalDigits>
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>0</NegativePattern>
+                <PositivePattern>0</PositivePattern>
+                <State>DecimalDigits</State>
+              </TextFormat>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text119>
+            <Text70 Ref="61" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>[232:76:61]</Brush>
+              <ClientRectangle>510,50,110,30</ClientRectangle>
+              <ComponentPlacement>f.FooterBand1</ComponentPlacement>
+              <ComponentStyle>Red Totals</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,12,Bold,Point,False,204</Font>
+              <Guid>dcb6a597ca484318ab1f7e13ffceb563</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text70</Name>
+              <Page isRef="8" />
+              <Parent isRef="54" />
+              <Text>Total Price:</Text>
+              <TextBrush>White</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text70>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Guid>40014b960b3848dd8766f338bdb85c7f</Guid>
+          <Name>FooterBand1</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+        </FooterBand1>
+        <FooterBand2 Ref="62" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,660,749,110</ClientRectangle>
+          <ComponentPlacement>f.Page1</ComponentPlacement>
+          <Components isList="true" count="17">
+            <Text64 Ref="63" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,748,30</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank Wire Transfer/Payment Details</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text64>
+            <Text18 Ref="64" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,30,150,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>0f77ca0f451e4cb78ad46b6b269d58a8</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Amount: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 Ref="65" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,50,150,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>5ce8bca27cad4feeaf022d7ddc823407</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Payable to </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text101 Ref="66" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,70,150,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>0d3f216a5c234c3e91584508868da9bd</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text101</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank Account Number: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text101>
+            <Text102 Ref="67" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,90,150,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>320c746805f04f5980152395fb3b0e81</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text102</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank Name: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text102>
+            <Text65 Ref="68" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>150,30,210,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>71ff7b4259fc45c2b75cd80defe89926</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{Sum(Products.UnitPrice * Products.UnitsOnOrder) - 0}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text65>
+            <Text67 Ref="69" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>150,70,210,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>155220ad21bc43d4991b8ff8a2c66007</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{BankAccountNumber}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text67>
+            <Text68 Ref="70" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>150,90,210,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>dd591fed9b924c699adb8e04282617ea</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{BankName}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text68>
+            <Text103 Ref="71" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>520,30,100,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>26297d70a7184118b12beb81a1f03e2a</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text103</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank Address: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text103>
+            <Text104 Ref="72" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>520,50,100,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>627dfe2b4421485cb26e49a06839231a</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text104</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank City: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text104>
+            <Text106 Ref="73" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>520,70,100,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>fcebb01c93c1471483f7585f19d8f954</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text106</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank Country: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text106>
+            <Text107 Ref="74" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>520,90,100,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Company Info</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+              <Guid>4fb4b6e6b0984f6aac6226029a2f59a6</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text107</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>Bank SWIFT: </Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text107>
+            <Text69 Ref="75" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>620,30,129,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>a6d8b465a0eb45a5bb03e26d60524750</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{BankAddress}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text69>
+            <Text601 Ref="76" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>620,50,129,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>e2973122e2b1441c9eab007405d6b42a</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text601</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{BankCity}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text601>
+            <Text602 Ref="77" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>620,70,129,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>514ce9308280484abf2cfb914249d2c9</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text602</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{BankCountry}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text602>
+            <Text603 Ref="78" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>620,90,129,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>a5d2437a42df48cebf3c003566abf038</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text603</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{BankSWIFT}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text603>
+            <Text66 Ref="79" type="Text" isKey="true">
+              <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>150,50,210,20</ClientRectangle>
+              <ComponentPlacement>f.FooterBand2</ComponentPlacement>
+              <ComponentStyle>Red Contacts Name</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Expressions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+              <Guid>47ab3f66c5144bb1800fcb5da5a0031c</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="8" />
+              <Parent isRef="62" />
+              <Text>{CompanyName}</Text>
+              <TextBrush>[60:63:70]</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text66>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Name>FooterBand2</Name>
+          <Page isRef="8" />
+          <Parent isRef="8" />
+          <PrintAtBottom>True</PrintAtBottom>
+        </FooterBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Expressions isList="true" count="0" />
+      <Guid>8f656f441095463eae730f959911dad0</Guid>
+      <Margins>39,39,39,39</Margins>
+      <Name>Page1</Name>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <PreviewSettings>25108991</PreviewSettings>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Order</ReportAlias>
+  <ReportAuthor>Stimulsoft</ReportAuthor>
+  <ReportChanged>11/18/2020 2:53:59 PM</ReportChanged>
+  <ReportCreated>11/12/2017 10:11:55 PM</ReportCreated>
+  <ReportDescription>The sample demonstrates how to create Order</ReportDescription>
+  <ReportFile>C:\Users\D E L L\Documents\Order.mrt</ReportFile>
+  <ReportGuid>0d4b8968cdbd4c2095ac30e68eaddc50</ReportGuid>
+  <ReportName>Order</ReportName>
+  <ReportUnit>HundredthsOfInch</ReportUnit>
+  <ReportVersion>2020.5.1.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Order : Stimulsoft.Report.StiReport
+    {
+        public Order()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="14">
+    <Red_x0020_Company_x0020_Name Ref="80" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item72 Ref="81" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text01</ComponentName>
+          <Type>ComponentName</Type>
+        </Item72>
+      </Conditions>
+      <Font>Microsoft Sans Serif,18,Bold,Point,False,0</Font>
+      <Name>Red Company Name</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[60:63:70]</TextBrush>
+    </Red_x0020_Company_x0020_Name>
+    <Red_x0020_Company_x0020_Info Ref="82" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <AllowUseBorderFormatting>False</AllowUseBorderFormatting>
+      <AllowUseBorderSides>False</AllowUseBorderSides>
+      <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item74 Ref="83" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text1</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item74>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+      <Name>Red Company Info</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[60:63:70]</TextBrush>
+    </Red_x0020_Company_x0020_Info>
+    <Red_x0020_Bill_x0020_To Ref="84" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>Left;White;1;Solid;False;4;Black</Border>
+      <Brush>[238:121:108]</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item76 Ref="85" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text2</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item76>
+      </Conditions>
+      <Font>Microsoft Sans Serif,14.25,Bold,Point,False,0</Font>
+      <Name>Red Bill To</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>White</TextBrush>
+    </Red_x0020_Bill_x0020_To>
+    <Red_x0020_Bill_x0020_To_x0020_Info Ref="86" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item78 Ref="87" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text3</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item78>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Regular,Point,False,204</Font>
+      <Name>Red Bill To Info</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[60:63:70]</TextBrush>
+    </Red_x0020_Bill_x0020_To_x0020_Info>
+    <Red_x0020_Requisites Ref="88" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+      <Brush>[238:121:108]</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item80 Ref="89" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>ReportTitleBand1</ComponentName>
+          <Type>ComponentName</Type>
+        </Item80>
+      </Conditions>
+      <Font>Microsoft Sans Serif,12,Regular,Point,False,0</Font>
+      <Name>Red Requisites</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>White</TextBrush>
+    </Red_x0020_Requisites>
+    <Red_x0020_Data_x0020_Even Ref="90" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[43:43:43];1;Solid;False;4;Black</Border>
+      <Brush>[236:240:241]</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item82 Ref="91" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Data</ComponentName>
+          <Placement>DataEvenStyle</Placement>
+        </Item82>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+      <Name>Red Data Even</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[43:43:43]</TextBrush>
+    </Red_x0020_Data_x0020_Even>
+    <Red_x0020_Title Ref="92" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item84 Ref="93" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text02</ComponentName>
+          <Type>ComponentName</Type>
+        </Item84>
+      </Conditions>
+      <Font>Microsoft Sans Serif,18,Bold,Point,False,204</Font>
+      <Name>Red Title</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[232:76:61]</TextBrush>
+    </Red_x0020_Title>
+    <Red_x0020_Headers Ref="94" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>Left;White;1;Solid;False;4;Black</Border>
+      <Brush>[208:213:216]</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item86 Ref="95" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text4</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item86>
+      </Conditions>
+      <Font>Microsoft Sans Serif,12,Bold,Point,False,0</Font>
+      <Name>Red Headers</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>White</TextBrush>
+    </Red_x0020_Headers>
+    <Red_x0020_Data Ref="96" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[232:76:61];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item88 Ref="97" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text5</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item88>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+      <Name>Red Data</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[120:120:120]</TextBrush>
+    </Red_x0020_Data>
+    <Red_x0020_Contacts_x0020_Name Ref="98" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item90 Ref="99" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text6</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item90>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Bold,Point,False,0</Font>
+      <Name>Red Contacts Name</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[60:63:70]</TextBrush>
+    </Red_x0020_Contacts_x0020_Name>
+    <Red_x0020_Discount Ref="100" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[145:145:145];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item92 Ref="101" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text05</ComponentName>
+          <Type>ComponentName</Type>
+        </Item92>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+      <Name>Red Discount</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[232:76:61]</TextBrush>
+    </Red_x0020_Discount>
+    <Red_x0020_Totals Ref="102" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+      <Brush>[232:76:61]</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item94 Ref="103" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text7</ComponentName>
+          <OperationComponentName>BeginningWith</OperationComponentName>
+          <Type>ComponentName</Type>
+        </Item94>
+      </Conditions>
+      <Font>Microsoft Sans Serif,12,Bold,Point,False,204</Font>
+      <Name>Red Totals</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>White</TextBrush>
+    </Red_x0020_Totals>
+    <Red_x0020_Thanks Ref="104" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>Bottom;[60:63:70];1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item96 Ref="105" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text03</ComponentName>
+          <Type>ComponentName</Type>
+        </Item96>
+      </Conditions>
+      <Font>Microsoft Sans Serif,12,Regular,Point,False,0</Font>
+      <Name>Red Thanks</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[232:76:61]</TextBrush>
+    </Red_x0020_Thanks>
+    <Red_x0020_Notes Ref="106" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>None;[155:155:155];1;Solid;False;4;Black;True</Border>
+      <Brush>Transparent</Brush>
+      <CollectionName>Red</CollectionName>
+      <Conditions isList="true" count="1">
+        <Item98 Ref="107" type="Stimulsoft.Report.StiStyleCondition" isKey="true">
+          <ComponentName>Text04</ComponentName>
+          <Type>ComponentName</Type>
+        </Item98>
+      </Conditions>
+      <Font>Microsoft Sans Serif,9.75,Regular,Point,False,0</Font>
+      <Name>Red Notes</Name>
+      <NegativeTextBrush>Red</NegativeTextBrush>
+      <TextBrush>[60:63:70]</TextBrush>
+    </Red_x0020_Notes>
+  </Styles>
+</StiSerializer>

@@ -94,36 +94,6 @@ var menus = [
     }
 ];
 
-function loadMenu() {
-    let listMenus = '';
-    $.each(menus, function (id, value) {
-
-            if(value.subs.length > 0){
-                listMenus += `<li class="menu-item sub-menu">
-                <a class="menu-link" href="${value.link}">
-                    <div>${value.nama}</div>
-                </a>`;
-                listMenus += `<ul class="sub-menu-container"> `;
-                $.each(value.subs, function (id2, subs) {
-                    listMenus += `<li class="menu-item">
-                    <a class="menu-link" href="${subs.link}">
-                        <div>${subs.nama}</div>
-                    </a>
-                </li>`
-                });
-                listMenus += `</ul>`;
-            }else{
-                listMenus += `<li class="menu-item">
-                <a class="menu-link" href="${value.link}">
-                    <div>${value.nama}</div>
-                </a>`;
-            }
-           listMenus += `</li>`;
-    });
-
-    $(`.menu-container`).append(listMenus);
-}
-
 var agenda = [
     {
         'judul' : 'Artikel 1',
@@ -151,42 +121,6 @@ var agenda = [
     },
 ];
 
-function loadAgenda() {
-    let listAgenda = '';
-    $.each(agenda, function (id, value) {
-        listAgenda += `
-        <div class="entry col-lg-6 col-12">
-            <div class="entry-timeline">
-                <div class="timeline-divider"></div>
-            </div>
-            <div class="grid-inner">
-                <div class="entry-image">
-                    <a href="${value.gambar}" data-lightbox="image">
-                    <img src="${value.gambar}"alt="${value.judul}">
-                    </a>
-                </div>
-                <div class="entry-title">
-                    <h2><a href="blog-single.html">${value.judul}</a></h2>
-                </div>
-                <div class="entry-meta">
-                    <ul>
-                        <li><i class="icon-calendar3"></i> ${value.tanggal}</li>
-                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> -</a></li>
-                        <li><a href="#"><i class="icon-camera-retro"></i></a></li>
-                    </ul>
-                </div>
-                <div class="entry-content">
-                    <p>${value.deskripsi}.</p>
-                    <a href="#" class="more-link">Read More</a>
-                </div>
-            </div>
-        </div>`
-    });
-
-    $('#posts_agenda').append(listAgenda);
-
-}
-
 var berita = [
     {
         'judul' : 'Judul Artikel 1',
@@ -206,6 +140,156 @@ var berita = [
     },
 
 ];
+
+var kajian = [
+    {
+        'judul'     : 'KAJIAN STRATEGIS SOSIAL ( PEMETAAN POPULASI KUNCI AIDS )',
+        'deskripsi' : 'Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa',
+        'link'      : '#',
+    },
+    {
+        'judul'     : 'WHY CHOOSE US',
+        'deskripsi' : 'Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa',
+        'link'      : '#',
+    },
+    {
+        'judul'     : 'PENGEMBANGAN PUSAT DATA TERINTEGRASI DI KOTA BANDUNG',
+        'deskripsi' : 'Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa',
+        'link'      : '#',
+    },
+    {
+        'judul'     : 'STRATEGI PENANGANAN STUNTING KOTA BANDUNG (PENELITIAN MANDIRI)',
+        'deskripsi' : 'Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa',
+        'link'      : '#',
+    },
+
+];
+
+var dok    = [
+    {
+        'tipe'    : 'foto',
+        'judul'   : 'Open Imagination',
+        'kategori': '',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'foto',
+        'judul'   : 'Locked Steel Gate',
+        'kategori': '',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'video',
+        'judul'   : 'Mac Sun Glasses',
+        'kategori': 'Grapichs,UI Elements',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'foto',
+        'judul'   : 'Morning Dew',
+        'kategori': 'Icons,Illustration',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'foto',
+        'judul'   : '',
+        'kategori': '',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'foto',
+        'judul'   : '',
+        'kategori': '',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'foto',
+        'judul'   : '',
+        'kategori': '',
+        'detail'  : [],
+
+    },
+    {
+        'tipe'    : 'foto',
+        'judul'   : '',
+        'kategori': '',
+        'detail'  : [],
+
+    }
+
+];
+
+function loadMenu() {
+    let listMenus = '';
+    $.each(menus, function (id, value) {
+
+        if(value.subs.length > 0){
+            listMenus += `<li class="menu-item sub-menu">
+                <a class="menu-link" href="${value.link}">
+                    <div>${value.nama}</div>
+                </a>`;
+            listMenus += `<ul class="sub-menu-container"> `;
+            $.each(value.subs, function (id2, subs) {
+                listMenus += `<li class="menu-item">
+                    <a class="menu-link" href="${subs.link}">
+                        <div>${subs.nama}</div>
+                    </a>
+                </li>`
+            });
+            listMenus += `</ul>`;
+        }else{
+            listMenus += `<li class="menu-item">
+                <a class="menu-link" href="${value.link}">
+                    <div>${value.nama}</div>
+                </a>`;
+        }
+        listMenus += `</li>`;
+    });
+
+    $(`.menu-container`).append(listMenus);
+}
+
+function loadAgenda() {
+    let listAgenda = '';
+    $.each(agenda, function (id, value) {
+        listAgenda += `
+        <div class="entry col-lg-6 col-12">
+            <div class="entry-timeline">
+                <div class="timeline-divider"></div>
+            </div>
+            <div class="grid-inner">
+                <div class="entry-image">
+                    <a href="${value.gambar}" data-lightbox="image">
+                    <img src="images/blog/small/17.jpg"alt="${value.judul}">
+                    </a>
+                </div>
+                <div class="entry-title">
+                    <h2><a href="#">${value.judul}</a></h2>
+                </div>
+                <div class="entry-meta">
+                    <ul>
+                        <li><i class="icon-calendar3"></i> ${value.tanggal}</li>
+                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> -</a></li>
+                        <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+                    </ul>
+                </div>
+                <div class="entry-content">
+                    <p>${value.deskripsi}.</p>
+                    <a href="#" class="more-link">Read More</a>
+                </div>
+            </div>
+        </div>`;
+    });
+
+    $('#posts_agenda').append(listAgenda);
+
+}
 
 function loadBerita() {
     let listAgenda = '';
@@ -241,5 +325,59 @@ function loadBerita() {
     $('#posts_berita').append(listAgenda);
 
 }
+
+function loadKajian() {
+    console.log('load Kajian')
+    let listKajian = '';
+    let delai = 0;
+    $.each(kajian, function (id, value) {
+    listKajian += `<div class="col-sm-6 col-lg-3 text-center" data-delay="${delai}" >
+        <div>
+            <h5 class="text-uppercase" style="font-weight: 200;">${value.judul}</h5>
+            <p style="line-height: 1.8; text-align: left;">${value.deskripsi}</p>
+            <a href="${value.link}" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+        </div>
+    </div>`;
+    delai += 200;
+    });
+
+    $('#post_kajian').append(listKajian);
+}
+
+function loadGallery(){
+    let listGallery = ``;
+    let cats = [];
+    let clCat = '';
+    $.each(dok, function (id, value) {
+        cats = value.kategori.split(',');
+        $.each(cats, function (k, c) {
+            clCat += 'pf-'+c+' ';
+        })
+        listGallery +=`<article class="portfolio-item col-6 col-md-4 col-lg-3 ${clCat}">
+            <div class="grid-inner">
+                <div class="portfolio-image">
+                    <a href="${value.link}">
+                        <img src="{{ asset('images/portfolio/${value.id}/') }}4/4.jpg" alt="Open Imagination">
+                    </a>
+                    <div class="bg-overlay" data-lightbox="gallery">
+                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
+                            <a href="images/portfolio/full/4.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                            <a href="images/portfolio/full/4-1.jpg" class="d-none" data-lightbox="gallery-item"></a>
+                            <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
+                    </div>
+                </div>
+                <div class="portfolio-desc">
+                    <h3><a href="portfolio-single-gallery.html">Morning Dew</a></h3>
+                    <span><a href="#">Icons</a>, <a href="#">Illustrations</a></span>
+                </div>
+            </div>
+        </article>`;
+    });
+
+}
+
+
 
 

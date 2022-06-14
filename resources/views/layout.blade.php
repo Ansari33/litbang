@@ -23,9 +23,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/layers.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/navigation.css')}}">
 
+    <link rel="icon" href="{{ url('images/litbang-min.png') }}">
+
     <!-- Document Title
     ============================================= -->
-    <title>Home - Corporate Layout | Canvas</title>
+    <title>@yield('title')</title>
 
     <style>
 

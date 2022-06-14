@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Kelitbangan
+@endsection
 @section('content')
 <div class="content-wrap">
     <div class="container clearfix">

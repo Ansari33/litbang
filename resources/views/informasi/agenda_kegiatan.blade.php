@@ -314,9 +314,9 @@
     </div>
 
 @endsection
-@push('custom-script')
+@push('custom-scripts')
     <script>
-            $(function () {
+        $(function () {
             loadAgenda();
         })
     </script>

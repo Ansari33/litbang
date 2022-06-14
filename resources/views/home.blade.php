@@ -1,5 +1,34 @@
 @extends('layout')
+@section('title')
+    Beranda
+@endsection
 @section('content')
+@php
+ $arrayKajian = [
+    '                <div class="col-sm-6 col-lg-3 text-center">
+                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>
+                    <div class="">2022</div>
+                    <h6>Injabar Unversitas Padjadjaran</h6>
+                    <div>
+                        <h5 class="text-uppercase" style="font-weight: 200;">Strategi Penanganan Stunting Kota Bandung (Penelitian Mandiri)</h5>
+                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
+                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+
+                    </div>
+                </div>',
+                '                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="200">
+                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>
+                    <div class="">2022</div>
+                    <h6>Injabar Unversitas Padjadjaran</h6>
+                    <div>
+                        <h5 class="text-uppercase" style="font-weight: 200;">Strategi Penanganan Stunting Kota Bandung (Penelitian Mandiri)</h5>
+                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
+                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+
+                    </div>
+                </div>',
+];
+@endphp
 <div class="content-wrap">
   <div class="container clearfix">
 
@@ -156,56 +185,49 @@
 
             </div>
 {{--        //</div>--}}
-        <div class="container clearfix">
+        <div class="container clearfix" >
 
-            <div class="row col-mb-50">
-                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn">
+            <div class="row col-mb-50" id="post_kajian">
+{{--                @foreach($arrayKajian as $k => $j)--}}
+{{--                    {!! $j !!}--}}
+{{--                @endforeach--}}
+{{--                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn">--}}
 {{--                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>--}}
 {{--                    <div class="">2022</div>--}}
 {{--                    <h6>Injabar Unversitas Padjadjaran</h6>--}}
-                    <div>
-                        <h5 class="text-uppercase" style="font-weight: 200;">Wkajian Strategis Sosial ( Pemetaan Populasi Kunci AIDS )</h5>
-                        <p style="line-height: 1.8; text-align: left;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+{{--                    <div>--}}
+{{--                        <h5 class="text-uppercase" style="font-weight: 200;">Wkajian Strategis Sosial ( Pemetaan Populasi Kunci AIDS )</h5>--}}
+{{--                        <p style="line-height: 1.8; text-align: left;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>--}}
+{{--                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="200">
+
+
+{{--                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="400">--}}
 {{--                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>--}}
 {{--                    <div class="">2022</div>--}}
 {{--                    <h6>Injabar Unversitas Padjadjaran</h6>--}}
-                    <div>
-                        <h5 class="text-uppercase" style="font-weight: 200;">Strategi Penanganan Stunting Kota Bandung (Penelitian Mandiri)</h5>
-                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+{{--                    <div>--}}
+{{--                        <h5 class="text-uppercase" style="font-weight: 200;">Pengembangan Pusat Data Terintegrasi di Kota Bandung</h5>--}}
+{{--                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>--}}
+{{--                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="400">
+{{--                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="600">--}}
 {{--                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>--}}
 {{--                    <div class="">2022</div>--}}
 {{--                    <h6>Injabar Unversitas Padjadjaran</h6>--}}
-                    <div>
-                        <h5 class="text-uppercase" style="font-weight: 200;">Pengembangan Pusat Data Terintegrasi di Kota Bandung</h5>
-                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+{{--                    <div>--}}
+{{--                        <h5 class="text-uppercase" style="font-weight: 200;">Why choose Us</h5>--}}
+{{--                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>--}}
+{{--                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>--}}
 
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="600">
-{{--                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>--}}
-{{--                    <div class="">2022</div>--}}
-{{--                    <h6>Injabar Unversitas Padjadjaran</h6>--}}
-                    <div>
-                        <h5 class="text-uppercase" style="font-weight: 200;">Why choose Us</h5>
-                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
-
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
 
         </div>
@@ -659,3 +681,10 @@
 
 </div>
 @endsection
+@push('custom-scripts')
+    <script>
+        $(function() {
+            loadKajian();
+        });
+    </script>
+@endpush

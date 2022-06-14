@@ -1,0 +1,20 @@
+const JADWAL_TERTAMBAH = 'Jadwal Pengiriman Di Tambahkan';
+const JADWAL_TIDAK_ADA = 'Data Jadwal Pengiriman Belum Ada';
+const JADWAL_TIDAK_TERPILIH = 'Data Jadwal Pengiriman Belum Dipilih';
+const PEMASOK_PELANGGAN_TIDAK_TERPILIH = 'Pemasok / Pelanggan Belum Dipilih!';
+const BARANG_JASA_TERTAMBAH = 'Data Barang/Jasa Ditambahkan!';
+const BARANG_JASA_TIDAK_TERPILIH = 'Data Barang/Jasa Belum Terpilih!';
+const FAKTUR_PEMBELIAN_TERTAMBAH = 'Data Faktur Pembelian Ditambahkan!';
+const FAKTUR_TERTAMBAH = 'Data Faktur Ditambahkan!';
+const FAKTUR_TIDAK_ADA = 'Data Faktur Tidak Ada!';
+const PENGIRIMAN_PEMBELIAN_TERTAMBAH = 'Data Pengiriman Pembelian Ditambahkan!';
+const FAKTUR_PEMBELIAN_TIDAK_TERPILIH = 'Data Faktur Pembelian Belum Dipilih!';
+const UANG_MUKA_LEBIH = 'Nominal Uang Muka Melebihi Total Harga!';
+const UANG_MUKA_TERTAMBAH = 'Uang Muka Telah Ditambahkan!';
+const SYARAT_TERTAMBAH = 'Syarat Pengiriman Di Tambahkan';
+const SYARAT_TIDAK_ADA = 'Data Syarat Pengiriman Belum Ada';
+const PERMINTAAN_PEMBELIAN_TIDAK_ADA = 'Detail Permintaan Pembelian belum ada!';
+const TANGGAL_TIDAK_LENGKAP = 'Paramater Tanggal Belum Lengkap!';
+const TIPE_PENGIRIMAN_TIDAK_ADA = 'Tipe Pengiriman Tidak Ada!';
+const PENGIRIMAN_PESANAN_TERTAMBAH = 'Data Pengiriman Pesanan Ditambahkan!';
+

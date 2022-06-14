@@ -1,0 +1,291 @@
+.infinteTabs {
+	border-radius: 2px 2px 0 0;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	box-sizing: content-box;
+}
+
+.infinteTabs .nav-pills {
+	border-radius: 2px 2px 0 0;
+	display: table;
+	margin: 0;
+	white-space: nowrap;
+}
+
+table.dataTable tbody tr.selected {
+    color: white;
+    background-color: red;
+}
+
+.infinteTabs .nav-pills > li {
+	display: table-cell;
+	float: none;
+}
+
+.infinteTabs .infinteTabs-nav {
+	position: absolute;
+	height: 100%;
+	margin: 0;
+	width: 50px;
+	z-index: 1000;
+	display: none;
+	border: none;
+}
+
+.infinteTabs .infinteTabs-nav.active {
+	display: block;
+}
+
+.infinteTabs .infinteTabs-nav.prev {
+	left: 0;
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 69%, rgba(255,255,255,0) 100%);
+}
+
+.infinteTabs .infinteTabs-nav.next {
+	/*border-radius: 0 4px 0 0;*/
+	right: 0;
+	background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 29%);
+}
+
+.tab-close {
+	margin-right: -10px;
+	color: white;
+}
+
+ul.typeahead{
+	padding: 20px;
+}
+
+ul.typeahead li{
+	padding: 10px;
+}
+
+ul.typeahead li.active {
+	color: white !important;
+	background-color: whitesmoke;
+}
+
+ul.typeahead li:hover {
+	color: white !important;
+	background-color: whitesmoke;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+.selectpicker.is-invalid ~ .dropdown-toggle {
+	border-color: #F64E60 !important;
+	color: #F64E60 !important;
+	outline: none !important;
+}
+
+.selectpicker.is-invalid ~ .dropdown-toggle:focus {
+	border-color: #1BC5BD !important;
+}
+
+.selectpicker.is-valid ~ .dropdown-toggle {
+	border-color: #1BC5BD !important;
+	/*color: #28a745 !important;*/
+	outline: none !important;
+}
+
+.selectpicker.is-valid ~ .dropdown-toggle:focus {
+	border-color: #1BC5BD !important;
+}
+
+.selectpicker i.fv-plugins-icon {
+	right: -38px !important;
+}
+
+td.details-control {
+    background: url('/media/datatable/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+
+tr.shown td.details-control {
+    background: url('/media/datatable/details_close.png') no-repeat center center;
+}
+
+#body_struk{
+	background: #F3F3F3;
+}
+
+.box{
+	margin-top: 50px;
+	width: 647px;
+	background: #FFFFFF;
+}
+
+.img_mail{
+	width: 110px;
+	height: 58px;
+	margin-top: 50px;
+	margin-left: 30px;
+}
+
+.kop_text_address{
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 12px;
+	width: 130px;
+	height: absolute;
+	margin-left: 350px;
+	margin-top: 50px;
+}
+
+
+.text_mail{
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-size: 10px;
+	line-height: 12px;
+	color: #000000;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.grid_header{
+	margin-top: 33px;
+	text-align: center;
+}
+
+.grid_sub_header{
+	position: relative;
+	bottom: 8px;
+	text-align: center;
+}
+
+.grid_perihal{
+	margin-left: 35px;
+}
+
+.pic_position{
+	position: relative;
+	bottom: 8px;
+}
+
+.tgl_position{
+	position: relative;
+	bottom: 15px;
+}
+
+.hr_mail{
+	width: 541px;
+	height: 2px;
+	background: #656565;
+	margin-left: 35px;
+}
+
+.grid_text_note{
+	margin-left: 35px;
+	margin-top: 14px;
+	width: 543px;
+}
+
+.harga_jasa_list_print{
+	list-style: none;
+	margin-left: 10px;
+}
+
+.syarat_pengiriman_print{
+	list-style-type: square;
+	margin-left: 20px;
+	font-weight: bold;
+}
+
+.grid_syarat_pengiriman{
+	margin-top: 30px;
+	margin-left: 35px;
+	margin-bottom: 6px;
+}
+
+.grid_li_sp{
+	margin-left: 20px;
+}
+
+.grid_name_sales{
+	margin-left: 35px;
+	margin-top: 35px;
+}
+
+.grid_name_userlogin{
+	margin-left: 35px;
+	margin-top: 35px;
+}
+
+.grid_sales{
+	margin-left: 35px;
+	margin-top: 5px;
+}
+
+.pelanggan_footer_print{
+	margin-left: 500px;
+	position: relative;
+	bottom: 110px;
+}
+
+#dengan_pajak_element{
+	position: relative;
+	right: 20px;
+	top: 8px;
+}
+
+#label_kena_pajak_penawaran{
+	position: relative;
+	top: 5px;
+}
+
+/* LOADER */
+#loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color:rgba(252, 252, 252, 0.5);
+}
+
+/*-- css spin --*/
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*-- css loader --*/
+.no-js #loader { display: none; }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+
+.loader {
+
+    /* width: 100px;
+    height: 100px; */
+    left: 53%;
+    top: 60%;
+}
+
+.textLoader{
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    color: #34495e;
+}

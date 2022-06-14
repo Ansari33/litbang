@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Profile - Selayang Pandang
+@endsection
 @section('content')
 <div class="content-wrap">
 
