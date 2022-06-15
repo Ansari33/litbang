@@ -65,111 +65,6 @@
 		</span>
 	</div>
 
-
-
-	<div class="modal fade" id="modalhargaJasaList" tabindex="-1" data-backdrop="static" role="dialog"
-		aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl" role="document"></div>
-	</div>
-
-	<div class="modal fade" id="loginModal" tabindex="-1" data-backdrop="static" role="dialog"
-		aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-md" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Pengiriman Pesanan Detail</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i aria-hidden="true" class="ki ki-close"></i>
-					</button>
-				</div>
-				<div class="modal-body">
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	  <div class="modal fade" id="modalBarang" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable" role="document"></div>
-	  </div>
-
-	  <div class="modal fade" id="ModalSN" tabindex="-1" role="dialog" aria-labelledby="ModalSN" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document"></div>
-	</div>
-
-	<div class="modal fade" id="ModalSyaratPengiriman" tabindex="-1" role="dialog" aria-labelledby="ModalSN" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document"></div>
-	</div>
-
-	  <div class="modal fade" id="previousTransaksi" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl" role="document"></div>
-	  </div>
-
-	  <div class="modal fade" id="JadwalPengirimanModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl" role="document"></div>
-	  </div>
-
-	  <div class="modal fade" id="JadwalPengirimanList" style="position:absolute;z-index: 10040;" tabindex="1" data-backdrop="static" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl" role="document"></div>
-	  </div>
-
-	<div class="modal fade" id="modal_lokasi" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document"></div>
-	</div>
-
-	<div class="modal fade" id="modal_uang_muka" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl" role="document"></div>
-	</div>
-
-	<div class="modal fade" id="jurnal_modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-  		<div class="modal-dialog modal-dialog-centered modal-xl" role="document"></div>
-	</div>
-
-	<div class="modal fade" id="modal_login" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-md" role="document">
-			<div class="modal-content">
-				{{--<div class="modal-header">
-					<h5 class="modal-title">History </h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i aria-hidden="true" class="ki ki-close"></i>
-					</button>
-				</div>--}}
-				<div class="modal-body">
-						<div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
-							<div class="d-flex flex-column-fluid flex-center">
-								<div class="login-form login-signin">
-									<form class="form" novalidate="novalidate" id="relogin_form">
-										<div class="pb-13 pt-lg-0 pt-5 text-center">
-											<h3 class="font-weight-bolder text-dark ">Sesi Telah Habis, Login Untuk Melanjutkan</h3>
-										</div>
-										<div class="form-group">
-											<label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-											<input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="text" name="email" autocomplete="off" value=""/ id="email">
-										</div>
-										<div class="form-group">
-											<div class="d-flex justify-content-between mt-n5">
-												<label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
-
-											</div>
-											<input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" type="password" name="password" autocomplete="off" value="" id="password" />
-										</div>
-										<div class="pb-lg-0 pb-5">
-											<button type="submit" id="kt_login_signin_submit" class="btn btn-primary btn-block font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Login</button>
-										</div>
-				            {{--<a href="javascript:" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5" id="kt_login_forgot">Lupa Password ?</a>--}}
-									</form>
-								</div>
-							</div>
-						</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Tutup</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- JurnalOtomatis -->
-
 	<script>
     var KTAppSettings = {
       "breakpoints": {
@@ -233,17 +128,17 @@
 	<script src="{{ asset('admin/plugins/global/plugins.bundle.js') }}"></script>
 	<script src="{{ asset('admin/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
 	<script src="{{ asset('admin/js/scripts.bundle.js') }}"></script>
-	<script src="{{ asset('admin/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-	<script src="{{ asset('admin/plugins/custom/gmaps/gmaps.js') }}"></script>
+{{--	<script src="{{ asset('admin/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>--}}
+{{--	<script src="{{ asset('admin/plugins/custom/gmaps/gmaps.js') }}"></script>--}}
 	<script src="{{ asset('admin/plugins/custom/datatables/datatables.bundle.js') }}"></script>
-	<script src="{{ asset('admin/plugins/custom/dataTables-treeGrid/dataTables.treeGrid.js') }}"></script>
+{{--	<script src="{{ asset('admin/plugins/custom/dataTables-treeGrid/dataTables.treeGrid.js') }}"></script>--}}
 
 	<!-- Report Button Datatable -->
-	<script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-	<script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+{{--	<script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>--}}
+{{--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>--}}
+{{--	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>--}}
+{{--	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>--}}
+{{--	<script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>--}}
 	<!-- https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js
 https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js
 https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js
@@ -251,7 +146,7 @@ https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js
 https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js -->
 	<!-- End -->
 
-	<script src="{{ asset('admin/plugins/custom/price-format/jquery.priceformat.min.js') }}"></script>
+{{--	<script src="{{ asset('admin/plugins/custom/price-format/jquery.priceformat.min.js') }}"></script>--}}
 	<script src="{{ asset('admin/plugins/custom/datatables/api/sum().js') }}"></script>
 	<script src="{{ asset('admin/plugins/custom/jquery-bootstrap-scrolling-tabs/dist/jquery.scrolling-tabs.js') }}"></script>
 	<script src="{{ asset('admin/js/pages/widgets.js') }}"></script>
@@ -262,10 +157,11 @@ https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js -->
 	<script src="{{ asset('admin/plugins/custom/datatables/sorting/any-number.js') }}"></script>
 	<script src="{{ asset('admin/plugins/custom/datatables/sorting/num-html.js') }}"></script>
 	<script src="{{ asset('admin/plugins/custom/datatables/sorting/formatted-numbers.js') }}"></script>
-	<script src="{{ asset('admin/plugins/custom/printPage/js/jQuery.print.js') }}"></script>
+{{--	<script src="{{ asset('admin/plugins/custom/printPage/js/jQuery.print.js') }}"></script>--}}
 	<script src="{{ asset('admin/js/pages/features/custom/spinners.js') }}"></script>
 	<script src="{{ asset('admin/js/pages/crud/forms/widgets/select2.js') }}"></script>
 	<script src="{{ asset('admin/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ asset('admin/js/pages/crud/forms/widgets/bootstrap-timepicker.js') }}"></script>
 	<script src="{{ asset('admin/js/app.js') }}"></script>
 	<script src="{{ asset('admin/js/barang_jasa.js') }}"></script>
 	<script src="{{ asset('admin/js/penjualan.js') }}"></script>

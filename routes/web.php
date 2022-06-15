@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\KelitbanganController;
 use App\Http\Controllers\admin\InovasiController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\admin\AgendaController;
+use App\Http\Controllers\admin\BeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,13 +63,13 @@ Route::get('/login', function () {
 });
 Route::post('/login', function () { return view('auth.login'); });
 Route::post('login', [AuthController::class, 'authenticate'])->name('login');
-Route::get('refresh-token', ['as'=>'refresh','uses'=>'Auth\AuthController@refreshToken']);
-Route::get('auth/check', ['as'=>'check','uses'=>'Auth\AuthController@authCheck']);
+Route::get('refresh-token', [AuthController::class, 'refreshToken']);
+#['as'=>'refresh','uses'=>'Auth\AuthController@refreshToken']);
+Route::get('auth/check', [AuthController::class, 'authCheck']);
+#['as'=>'check','uses'=>'Auth\AuthController@authCheck']);
 Route::group(['middleware' => 'checkauth'], function () {
-    Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
-    Route::get('/litbang-admin', function () {
-        return view('admin.home');
-    });
+    Route::get('logout', [AuthController::class, 'logout']);
+
     ## Kelitbangan
     Route::get('/admin-kelitbangan', [KelitbanganController::class, 'index']);
     Route::get('/kelitbangan-list', [KelitbanganController::class, 'list']);
@@ -77,7 +79,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/kelitbangan-update', [KelitbanganController::class, 'update']);
     Route::get('/kelitbangan-delete/{id}', [KelitbanganController::class, 'delete']);
 
-    ## Inovasii
+    ## Inovasi
     Route::get('/admin-inovasi', [InovasiController::class, 'index']);
     Route::get('/inovasi-list', [InovasiController::class, 'list']);
     Route::get('/inovasi-tambah', [InovasiController::class, 'create']);
@@ -85,6 +87,29 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/inovasi-edit/{id}', [InovasiController::class, 'edit']);
     Route::post('/inovasi-update', [InovasiController::class, 'update']);
     Route::get('/inovasi-delete/{id}', [InovasiController::class, 'delete']);
+
+    ## Agenda
+    Route::get('/admin-agenda', [AgendaController::class, 'index']);
+    Route::get('/agenda-list', [AgendaController::class, 'list']);
+    Route::get('/agenda-tambah', [AgendaController::class, 'create']);
+    Route::post('/agenda-store', [AgendaController::class, 'store']);
+    Route::get('/agenda-edit/{id}', [AgendaController::class, 'edit']);
+    Route::post('/agenda-update', [AgendaController::class, 'update']);
+    Route::get('/agenda-delete/{id}', [AgendaController::class, 'delete']);
+
+    ## Agenda
+    Route::get('/admin-berita', [BeritaController::class, 'index']);
+    Route::get('/berita-list', [BeritaController::class, 'list']);
+    Route::get('/berita-tambah', [BeritaController::class, 'create']);
+    Route::post('/berita-store', [BeritaController::class, 'store']);
+    Route::get('/berita-edit/{id}', [BeritaController::class, 'edit']);
+    Route::post('/berita-update', [BeritaController::class, 'update']);
+    Route::get('/berita-delete/{id}', [BeritaController::class, 'delete']);
+
+
+    #['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
+    Route::get('/litbang-admin', function () { return view('admin.home'); });
+
 });
 
 

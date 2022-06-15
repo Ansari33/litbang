@@ -80,7 +80,7 @@
                                                 @foreach($data['pelaksana'] as $item => $p)
                                                     <tr>
                                                         <td>{{ $item + 1 }}</td>
-                                                        <td>{{ $p['nama'] }}</td>
+                                                        <td> <input class="form-control" value="{{ $p['nama'] }}"> </td>
                                                         <td><a href="javascript:;" id="delete"><i class="fa fa-trash"></i></a></td>
                                                     </tr>
                                                 @endforeach
@@ -152,11 +152,15 @@
                         console.log(res)
                         console.log(res)
                         if (res.status === true){
-                            Swal.fire('Berhasil!', res.message, 'success');
-                            setTimeout(function () {
-                                window.close();
-                            },1000)
-                            
+                            Swal.fire('Berhasil!', res.message, 'success').then(
+                                function (e) {
+                                    window.close();
+                                }
+                            );
+                            // setTimeout(function () {
+                            //     window.close();
+                            // },1000)
+
                         }else{
                             Swal.fire('Gagal!', res.message, 'danger');
                         }

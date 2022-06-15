@@ -14,6 +14,34 @@ $menu = [
       'link'    => '/admin-inovasi',
       'children' => [],
     ],
+    [
+      'name_id' => 3,
+      'icon'    => 'fa fa-calendar',
+      'label'   => 'Agenda',
+      'link'    => '/admin-agenda',
+      'children' => [],
+    ],
+    [
+      'name_id' => 4,
+      'icon'    => 'fa fa-info',
+      'label'   => 'Berita',
+      'link'    => '/admin-berita',
+      'children' => [],
+    ],
+    [
+      'name_id' => 5,
+      'icon'    => 'fa fa-search-plus',
+      'label'   => 'Usulan Penelitian',
+      'link'    => '/admin-usulan-penelitian',
+      'children' => [],
+    ],
+    [
+      'name_id' => 6,
+      'icon'    => 'fa fa-lightbulb',
+      'label'   => 'Usulan Inovasi',
+      'link'    => '/admin-usulan-inovasi',
+      'children' => [],
+    ],
 ];
 @endphp
 <div class="aside aside-left  aside-fixed  d-flex flex-column flex-row-auto"  id="kt_aside">

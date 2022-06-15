@@ -269,5 +269,64 @@ class HttpHelper {
         return $response;
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | Agenda
+    |--------------------------------------------------------------------------
+    */
+    public static function agenda_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'agenda/list');
+        return $response;
+    }
+    public static function agenda_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'agenda/list/datatable', $request);
+        return $response;
+    }
+    public static function agenda_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'agenda/create', $request);
+        return $response;
+    }
+    public static function agenda_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'agenda/get/id', $request);
+        return $response;
+    }
+    public static function agenda_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'agenda/update', $request);
+        return $response;
+    }
+    public static function agenda_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'agenda/delete', $request);
+        return $response;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Berita
+    |--------------------------------------------------------------------------
+    */
+    public static function berita_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'berita/list');
+        return $response;
+    }
+    public static function berita_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'berita/list/datatable', $request);
+        return $response;
+    }
+    public static function berita_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'berita/create', $request);
+        return $response;
+    }
+    public static function berita_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'berita/get/id', $request);
+        return $response;
+    }
+    public static function berita_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'berita/update', $request);
+        return $response;
+    }
+    public static function berita_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'berita/delete', $request);
+        return $response;
+    }
 
 }
