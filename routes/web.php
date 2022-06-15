@@ -2,11 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Helpers\HttpHelper;
+
 use App\Http\Controllers\admin\KelitbanganController;
 use App\Http\Controllers\admin\InovasiController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\admin\AgendaController;
 use App\Http\Controllers\admin\BeritaController;
+use App\Http\Controllers\admin\UsulanPenelitianController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,8 +56,18 @@ Route::get('/galeri-video', function () {
 });
 
 Route::get('/forum-penelitian', function () {
-    return view('forum.usulan_penelitian');
+    $data = HttpHelper::usulan_penelitian_list()['data'];
+    return view('forum.usulan_penelitian',compact('data'));
 });
+
+Route::get('/usul-penelitian', function () {
+    $data =(HttpHelper::instansi_list())['data'];
+    $instansi = collect($data)->pluck('nama','id')->toArray();
+    return view('forum.buat_penelitian',compact('instansi'));
+});
+
+Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
+
 Route::get('/forum-inovasi', function () {
     return view('galeri.g_video');
 });
@@ -105,6 +120,15 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/berita-edit/{id}', [BeritaController::class, 'edit']);
     Route::post('/berita-update', [BeritaController::class, 'update']);
     Route::get('/berita-delete/{id}', [BeritaController::class, 'delete']);
+
+    ## Usulan Penelitian
+    Route::get('/admin-usulan-penelitian', [UsulanPenelitianController::class, 'index']);
+    Route::get('/usulan-penelitian-list', [UsulanPenelitianController::class, 'list']);
+    Route::get('/usulan-penelitian-tambah', [UsulanPenelitianController::class, 'create']);
+//    Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
+    Route::get('/usulan-penelitian-edit/{id}', [UsulanPenelitianController::class, 'edit']);
+    Route::post('/usulan-penelitian-update', [UsulanPenelitianController::class, 'update']);
+    Route::get('/usulan-penelitian-delete/{id}', [UsulanPenelitianController::class, 'delete']);
 
 
     #['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);

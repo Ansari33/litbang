@@ -3,15 +3,25 @@
     <div class="content-wrap">
         <div class="container clearfix">
 
-            <div class="heading-block center border-bottom-0 bottommargin-lg">
-                <h1>Daftar Usulan Penelitian</h1>
+{{--            <div class="heading-block center border-bottom-0 bottommargin-lg">--}}
+{{--                <h1>Daftar Usulan Penelitian</h1>--}}
 {{--                <span>Daftar Usulan Penelitian</span>--}}
+{{--            </div>--}}
+            <div class="row align-items-center">
+                <div class="col-12 col-lg">
+                    <h3>Daftar  <span>Usulan Penelitian</span> yang Telah Kami Terima!</h3>
+                    <span>Ajukan <em>Usulan Penelitan </em> Anda, Ayo Sama - sama Meneliti!</span>
+                </div>
+                <div class="col-12 col-lg-auto mt-4 mt-lg-0">
+                    <a href="/usul-penelitian" target="_blank" class="button button-large button-circle m-0">Usulkan Penelitian</a>
+                </div>
             </div>
 
         </div>
 
         <div class="section mb-0">
             <div class="container">
+
                 <div class="table-responsive">
                     <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
@@ -24,104 +34,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2012/03/29</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-                            <td>2008/11/28</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td>61</td>
-                            <td>2012/12/02</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Sales Assistant</td>
-                            <td>San Francisco</td>
-                            <td>59</td>
-                            <td>2012/08/06</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Integration Specialist</td>
-                            <td>Tokyo</td>
-                            <td>55</td>
-                            <td>2010/10/14</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Javascript Developer</td>
-                            <td>San Francisco</td>
-                            <td>39</td>
-                            <td>2009/09/15</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Software Engineer</td>
-                            <td>Edinburgh</td>
-                            <td>23</td>
-                            <td>2008/12/13</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Office Manager</td>
-                            <td>London</td>
-                            <td>30</td>
-                            <td>2008/12/19</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Support Lead</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2013/03/03</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Regional Director</td>
-                            <td>San Francisco</td>
-                            <td>36</td>
-                            <td>2008/10/16</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Senior Marketing Designer</td>
-                            <td>London</td>
-                            <td>43</td>
-                            <td>2012/12/18</td>
-                        </tr>
 
                         </tbody>
                     </table>
@@ -469,3 +381,26 @@
 
     </div>
 @endsection
+@push('custom-scripts')
+    <script src="{{asset('admin/plugins/custom/datatables/datatables.bundle.js')}}"></script>
+
+    <script>
+        var tabel;
+        var data = {!! json_encode($data) !!};
+        $(function() {
+           tabel = $('#datatable1').DataTable({});
+            tabel.clear()
+            .draw();
+
+            $.each(data, function (key, value) {
+                tabel.row.add([
+                    key +1,
+                    value['usulan'],
+                    value['pengusul'],
+                    value['tanggal'],
+                    value['status'],
+                ]).draw(true);
+            });
+        });
+    </script>
+@endpush

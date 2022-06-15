@@ -329,4 +329,34 @@ class HttpHelper {
         return $response;
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | Usulan Penelitian
+    |--------------------------------------------------------------------------
+    */
+    public static function usulan_penelitian_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/list');
+        return $response;
+    }
+    public static function usulan_penelitian_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/list/datatable', $request);
+        return $response;
+    }
+    public static function usulan_penelitian_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/create', $request);
+        return $response;
+    }
+    public static function usulan_penelitian_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/get/id', $request);
+        return $response;
+    }
+    public static function usulan_penelitian_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/update', $request);
+        return $response;
+    }
+    public static function usulan_penelitian_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/delete', $request);
+        return $response;
+    }
+
 }
