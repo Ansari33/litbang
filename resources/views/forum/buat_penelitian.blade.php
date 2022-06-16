@@ -97,6 +97,7 @@
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-end align-items-center">
+                                <div id="alert-info" ></div>
 {{--                                <button type="button" id="calories-trigger" class="btn btn-secondary">Calculate</button>--}}
                                 <button type="button" id="btn_submit_usulan" class="btn btn-success ms-2">Submit Usulan</button>
                             </div>
@@ -114,7 +115,9 @@
 
     <script>
         $('#btn_submit_usulan').click(function(){
+            $('#alert-info').html('Memproses...  '+'<div class="class="spinner-grow"></div>');
             let data = $('#form_usulan_penelitian').serializeArray();
+
 
             console.log(data);
             $.ajaxSetup({
@@ -133,10 +136,11 @@
                 success: function (res) {
                     console.log(res)
                     if (res.status === true){
-                        Swal.fire('Berhasil!', res.message, 'success');
+                        //Swal.fire('Berhasil!', res.message, 'success');
+
                         $('#form_usulan_penelitian').trigger('reset')
                     }else{
-                        Swal.fire('Gagal!', res.message, 'danger');
+                        $('#alert-info').html('<div class="alert alert-success"><p>'+res.message+'</p></div>');
                     }
                     //res.status === true ? Swal.fire('Berhasil!', res.message, 'success');  : Swal.fire('Gagal!', res.message, 'danger');
                 },
