@@ -326,16 +326,16 @@ function loadBerita() {
 
 }
 
-function loadKajian() {
+function loadKajian(list) {
     console.log('load Kajian')
     let listKajian = '';
     let delai = 0;
-    $.each(kajian, function (id, value) {
+    $.each(list, function (id, value) {
     listKajian += `<div class="col-sm-6 col-lg-3 text-center" data-delay="${delai}" >
         <div>
             <h5 class="text-uppercase" style="font-weight: 200;">${value.judul}</h5>
-            <p style="line-height: 1.8; text-align: left;">${value.deskripsi}</p>
-            <a href="${value.link}" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
+            <p style="line-height: 1.8; text-align: left;">${value.abstrak.toString().substr(0,150)} ...</p>
+            <a href="/view-kelitbangan/${value.id}" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
         </div>
     </div>`;
     delai += 200;
@@ -375,6 +375,38 @@ function loadGallery(){
             </div>
         </article>`;
     });
+
+}
+
+function loadInovasi(data){
+    let listGallery = ``;
+    let cats = [];
+    let clCat = '';
+    $.each(data, function (id, value) {
+        console.log(value)
+        listGallery +=`<div class="entry col-md-4">
+                        <div class="grid-inner">
+                            <div class="entry-image">
+                                <a href="#"><img src="images/magazine/thumb/11.jpg" alt="Image"></a>
+                            </div>
+                            <div class="entry-title title-sm nott">
+                                <h3><a href="/view-inovasi/${value.id}">${value.nama}</a></h3>
+                            </div>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li><i class="icon-building2"></i> ${value.instansi_data['nama']}</li>
+                                    <li><a href="blog-single.html#comments"><i class="icon-calendar"></i> ${value.tanggal}</a></li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>${value.deskripsi.toString().substr(0,100)}</p>
+                            </div>
+                        </div>
+                    </div>`;
+    });
+    $('#post_inovasi').html('');
+    $('#post_inovasi').append(listGallery);
+
 
 }
 

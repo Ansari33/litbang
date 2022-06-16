@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\admin\AgendaController;
 use App\Http\Controllers\admin\BeritaController;
 use App\Http\Controllers\admin\UsulanPenelitianController;
+use App\Http\Controllers\admin\ClientController;
 
 
 
@@ -24,9 +25,10 @@ use App\Http\Controllers\admin\UsulanPenelitianController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [ClientController::class, 'index']);
+Route::get('/view-kelitbangan/{id}', [ClientController::class, 'viewKelitbangan']);
+Route::get('/view-inovasi/{id}', [ClientController::class, 'viewInovasi']);
+
 Route::get('/profile-definisi', function () {
     return view('profile.definisi');
 });

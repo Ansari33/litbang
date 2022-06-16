@@ -212,6 +212,10 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/delete', $request);
         return $response;
     }
+    public static function kelitbangan_terkini() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/terkini');
+        return $response;
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -236,6 +240,10 @@ class HttpHelper {
     }
     public static function inovasi_delete($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'inovasi/delete', $request);
+        return $response;
+    }
+    public static function inovasi_terkini() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'inovasi/terkini');
         return $response;
     }
 

@@ -97,7 +97,7 @@
                         <!-- Top Cart
                         ============================================= -->
                         <div id="top-cart" class="header-misc-icon d-none d-sm-block">
-                            <a href="#" id="top-cart-trigger"><i class="icon-line-lock"></i></a>
+                            <a href="/litbang-admin" id="top-cart-trigger"><i class="icon-line-lock"></i></a>
                             <div class="top-cart-content">
                                 <div class="top-cart-title">
                                     <h4>Shopping Cart</h4>

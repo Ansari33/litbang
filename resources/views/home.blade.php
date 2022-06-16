@@ -531,46 +531,46 @@
                     <h4>Inovasi Terkini</h4>
                 </div>
 
-                <div class="row posts-md col-mb-30">
-                    <div class="entry col-md-6">
-                        <div class="grid-inner">
-                            <div class="entry-image">
-                                <a href="#"><img src="images/magazine/thumb/11.jpg" alt="Image"></a>
-                            </div>
-                            <div class="entry-title title-sm nott">
-                                <h3><a href="blog-single.html">Angkot Distancing Saredona BDG</a></h3>
-                            </div>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li><i class="icon-calendar3"></i> Dinas Pendidikan</li>
-                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Medecins du Monde eradicate sustainability free expression contribution assessment expert humanitarian relief.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row posts-md col-mb-30" id="post_inovasi">
+{{--                    <div class="entry col-md-4">--}}
+{{--                        <div class="grid-inner">--}}
+{{--                            <div class="entry-image">--}}
+{{--                                <a href="#"><img src="images/magazine/thumb/11.jpg" alt="Image"></a>--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-title title-sm nott">--}}
+{{--                                <h3><a href="blog-single.html">Angkot Distancing Saredona BDG</a></h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-meta">--}}
+{{--                                <ul>--}}
+{{--                                    <li><i class="icon-calendar3"></i> Dinas Pendidikan</li>--}}
+{{--                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-content">--}}
+{{--                                <p>Medecins du Monde eradicate sustainability free expression contribution assessment expert humanitarian relief.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="entry col-md-6">
-                        <div class="grid-inner">
-                            <div class="entry-image">
-                                <a href="#"><img src="images/magazine/thumb/14.jpg" alt="Image"></a>
-                            </div>
-                            <div class="entry-title title-sm nott">
-                                <h3><a href="blog-single.html">Smart Card</a></h3>
-                            </div>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li><i class="icon-calendar3"></i> Badan Perencanaan Pembangunan, Penelitian dan Pengembangan</li>
-                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Urban public institutions life-saving women and children Rockefeller combat malaria honesty. Sustainability foster immunize treatment.</p>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="entry col-md-4">--}}
+{{--                        <div class="grid-inner">--}}
+{{--                            <div class="entry-image">--}}
+{{--                                <a href="#"><img src="images/magazine/thumb/14.jpg" alt="Image"></a>--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-title title-sm nott">--}}
+{{--                                <h3><a href="blog-single.html">Smart Card</a></h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-meta">--}}
+{{--                                <ul>--}}
+{{--                                    <li><i class="icon-calendar3"></i> Badan Perencanaan Pembangunan, Penelitian dan Pengembangan</li>--}}
+{{--                                    <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <div class="entry-content">--}}
+{{--                                <p>Urban public institutions life-saving women and children Rockefeller combat malaria honesty. Sustainability foster immunize treatment.</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 
@@ -683,8 +683,11 @@
 @endsection
 @push('custom-scripts')
     <script>
+        var list = {!! json_encode( $kelitbangan ) !!};
+        var inovasi = {!! json_encode( $inovasi ) !!};
         $(function() {
-            loadKajian();
+            loadKajian(list);
+            loadInovasi(inovasi);
         });
     </script>
 @endpush
