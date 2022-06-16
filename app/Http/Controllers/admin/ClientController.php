@@ -9,12 +9,25 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-  public function index()
-  {
-      $kelitbangan = HttpHelper::kelitbangan_terkini()['data'];
-      $inovasi = HttpHelper::inovasi_terkini()['data'];
-      return view('home',compact('kelitbangan','inovasi'));
-  }
+    public function index()
+    {
+        $kelitbangan = HttpHelper::kelitbangan_terkini()['data'];
+        $inovasi = HttpHelper::inovasi_terkini()['data'];
+        return view('home',compact('kelitbangan','inovasi'));
+    }
+
+    public function kelitbangan()
+    {
+        $data = HttpHelper::kelitbangan_list()['data'];
+        return view('kelitbangan',compact('data'));
+    }
+
+    public function inovasi()
+    {
+        $data = HttpHelper::inovasi_list()['data'];
+
+        return view('inovasi',compact('data'));
+    }
 
     public function viewKelitbangan($id)
     {

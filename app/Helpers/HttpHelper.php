@@ -192,6 +192,10 @@ class HttpHelper {
     | kelitbangan
     |--------------------------------------------------------------------------
     */
+    public static function kelitbangan_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/list/');
+        return $response;
+    }
     public static function kelitbangan_datatable($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/list/datatable', $request);
         return $response;
@@ -222,6 +226,10 @@ class HttpHelper {
     | inovasi
     |--------------------------------------------------------------------------
     */
+    public static function inovasi_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'inovasi/list/');
+        return $response;
+    }
     public static function inovasi_datatable($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'inovasi/list/datatable', $request);
         return $response;

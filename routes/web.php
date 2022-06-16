@@ -44,12 +44,8 @@ Route::get('/informasi-agenda-kegiatan', function () {
 Route::get('/informasi-berita-artikel', function () {
     return view('informasi.berita_artikel');
 });
-Route::get('/kelitbangan', function () {
-    return view('kelitbangan');
-});
-Route::get('/inovasi', function () {
-    return view('inovasi');
-});
+Route::get('/kelitbangan', [ClientController::class, 'kelitbangan']);
+Route::get('/inovasi', [ClientController::class, 'inovasi']);
 Route::get('/galeri-foto', function () {
     return view('galeri.foto');
 });
