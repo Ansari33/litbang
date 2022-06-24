@@ -5,7 +5,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
                     {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text">Kelitbangan - Tambah Data</span>
+                    <span class="nav-text bold ml-5">Kelitbangan - Tambah Data</span>
                 </div>
             </div>
         </div>
@@ -83,6 +83,59 @@
                                             </table>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Manual Upload Without External Sources &amp; File Limitations</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_1">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
+                                    </div>
+                                    {{--                                    <div class="col-lg-6">--}}
+                                    {{--                                        <div class="dropzone dropzone-default dropzone-primary dz-clickable" id="kt_dropzone_2">--}}
+                                    {{--                                            <div class="dropzone-msg dz-message needsclick">--}}
+                                    {{--                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>--}}
+                                    {{--                                                <span class="dropzone-msg-desc">Upload up to 10 files</span>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
 

@@ -32,6 +32,22 @@ class UsulanPenelitianController extends Controller
         }
 //        $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['tanggal'] = date('Y-m-d');
+        $listFoto = json_decode($request->filex);
+        $body['attachment'] = [];
+        foreach ($listFoto as $lt => $ur){
+
+            $loc = url('/')."\images\upload\d-";
+            $lama_ft = $loc.$ur['nama'];
+            if(file_exists($loc.$ur['nama'])){
+                //File::delete($image_path);
+                File::delete( $lama_ft );
+            }
+            copy($ur['url'],$loc.$ur['nama']);
+            $body['attachment'][] = [
+                'nama' => $ur['nama'],
+                'url'  => $lama_ft
+            ];
+        }
 
         return json_decode(HttpHelper::usulan_penelitian_add($body));
 

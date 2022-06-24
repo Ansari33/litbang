@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\ClientController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,12 +39,8 @@ Route::get('/profile-selayang-pandang', function () {
 Route::get('/informasi-regulasi', function () {
     return view('informasi.regulasi');
 });
-Route::get('/informasi-agenda-kegiatan', function () {
-    return view('informasi.agenda_kegiatan');
-});
-Route::get('/informasi-berita-artikel', function () {
-    return view('informasi.berita_artikel');
-});
+Route::get('/informasi-agenda-kegiatan',[ClientController::class, 'agenda']);
+Route::get('/informasi-berita-artikel/{p}', [ClientController::class, 'berita']);
 Route::get('/kelitbangan', [ClientController::class, 'kelitbangan']);
 Route::get('/inovasi', [ClientController::class, 'inovasi']);
 Route::get('/galeri-foto', function () {
@@ -71,17 +68,26 @@ Route::get('/forum-inovasi', function () {
 });
 
 
+//Route::get('/login', function () {
+//    return view('auth.login');
+//});
 Route::get('/login', function () {
+    if(Session::get('authenticated')){
+        $cek = HttpHelper::check_token();
+
+        if ($cek['status_code'] != 500){
+            return redirect('/litbang-admin');
+        }
+    }
     return view('auth.login');
 });
-Route::post('/login', function () { return view('auth.login'); });
 Route::post('login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('refresh-token', [AuthController::class, 'refreshToken']);
 #['as'=>'refresh','uses'=>'Auth\AuthController@refreshToken']);
 Route::get('auth/check', [AuthController::class, 'authCheck']);
 #['as'=>'check','uses'=>'Auth\AuthController@authCheck']);
 Route::group(['middleware' => 'checkauth'], function () {
-    Route::get('logout', [AuthController::class, 'logout']);
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
     ## Kelitbangan
     Route::get('/admin-kelitbangan', [KelitbanganController::class, 'index']);

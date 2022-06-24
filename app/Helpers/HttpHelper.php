@@ -320,8 +320,8 @@ class HttpHelper {
     | Berita
     |--------------------------------------------------------------------------
     */
-    public static function berita_list() {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'berita/list');
+    public static function berita_list($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'berita/list',$request);
         return $response;
     }
     public static function berita_datatable($request) {
@@ -372,6 +372,11 @@ class HttpHelper {
     }
     public static function usulan_penelitian_delete($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/delete', $request);
+        return $response;
+    }
+
+    public static function attachment_terkini() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'attachment/terkini');
         return $response;
     }
 

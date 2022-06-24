@@ -6,6 +6,7 @@ use App\Helpers\HttpHelper;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use File;
 
 class InovasiController extends Controller
 {
@@ -24,7 +25,7 @@ class InovasiController extends Controller
     }
     public function store(Request $request)
     {
-
+        $listFoto = json_decode($request->filex,true);
         $data = json_decode($request->datas,true);
         $pelaksana = json_decode($request->pelaksana,true);
         $body = [];
@@ -33,6 +34,21 @@ class InovasiController extends Controller
         }
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['pelaksana'] = $pelaksana;
+        $body['attachment'] = [];
+        foreach ($listFoto as $lt => $ur){
+
+            $loc = public_path('/')."/images/upload/";
+            $lama_ft = $loc.$ur['nama'];
+            if(file_exists($loc.$ur['nama'])){
+                //File::delete($image_path);
+                File::delete( $lama_ft );
+            }
+            copy($ur['url'],$loc.$ur['nama']);
+            $body['attachment'][] = [
+                'nama' => $ur['nama'],
+                'url'  => $lama_ft
+            ];
+        }
 
         return json_decode(HttpHelper::inovasi_add($body));
     }
@@ -44,6 +60,7 @@ class InovasiController extends Controller
     }
     public function update(Request $request)
     {
+        $listFoto = json_decode($request->filex,true);
         $data = json_decode($request->datas,true);
         $pelaksana = json_decode($request->pelaksana,true);
         $body = [];
@@ -53,6 +70,23 @@ class InovasiController extends Controller
 
         $body['pelaksana'] = $pelaksana;
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
+        $body['attachment'] = [];
+        //return $listFoto;
+        foreach ($listFoto as $lt => $ur){
+            //return $ur['nama'];
+            $loc = public_path('/')."/images/upload/";
+            $lama_ft = $loc.$ur['nama'];
+            if(file_exists($loc.$ur['nama'])){
+                //File::delete($image_path);
+                File::delete( $lama_ft );
+            }
+            File::copy($ur['url'],$loc.$ur['nama']);
+            $body['attachment'][] = [
+                'nama' => $ur['nama'],
+                'url'  => $lama_ft
+            ];
+        }
+
         return json_decode(HttpHelper::inovasi_update($body));
     }
     public function delete($id)

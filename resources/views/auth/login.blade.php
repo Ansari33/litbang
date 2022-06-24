@@ -91,7 +91,7 @@
       data: $form.serialize(),
       success: function (res) {
           console.log(res);
-        window.location.replace("{{ url('/')  }}");
+        window.location.replace("{{ url('/litbang-admin')  }}");
       },
       error: function (res, textstatus) {
         KTUtil.btnRelease(btn_login);

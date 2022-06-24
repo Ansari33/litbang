@@ -13,7 +13,8 @@ class ClientController extends Controller
     {
         $kelitbangan = HttpHelper::kelitbangan_terkini()['data'];
         $inovasi = HttpHelper::inovasi_terkini()['data'];
-        return view('home',compact('kelitbangan','inovasi'));
+        $attachment = HttpHelper::attachment_terkini()['data'];
+        return view('home',compact('kelitbangan','inovasi','attachment'));
     }
 
     public function kelitbangan()
@@ -27,6 +28,20 @@ class ClientController extends Controller
         $data = HttpHelper::inovasi_list()['data'];
 
         return view('inovasi',compact('data'));
+    }
+
+    public function agenda()
+    {
+        $data = HttpHelper::agenda_list()['data'];
+        //return $data;
+        return view('informasi.agenda_kegiatan',compact('data'));
+    }
+
+    public function berita($page)
+    {
+        $data = HttpHelper::berita_list(['page' => $page])['data'];
+        //return $data;
+        return view('informasi.berita_artikel',compact('data','page'));
     }
 
     public function viewKelitbangan($id)

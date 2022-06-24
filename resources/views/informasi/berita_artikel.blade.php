@@ -23,30 +23,36 @@
                 <!-- Posts
                 ============================================= -->
                 <div id="posts_berita" class="row grid-container gutter-40">
-
-
-
-{{--                    <div class="entry col-12">--}}
-{{--                        <div class="grid-inner row g-0">--}}
-{{--                            <div class="col-12">--}}
-{{--                                <div class="entry-image">--}}
-{{--                                    <a href="https://themeforest.net" class="entry-link" target="_blank">--}}
-{{--                                        Themeforest.net--}}
-{{--                                        <span>- https://themeforest.net</span>--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                                <div class="entry-meta">--}}
-{{--                                    <ul>--}}
-{{--                                        <li><i class="icon-calendar3"></i> 17th Mar 2021</li>--}}
-{{--                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>--}}
-{{--                                        <li><i class="icon-folder-open"></i> <a href="#">Links</a>, <a href="#">Suggestions</a></li>--}}
-{{--                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>--}}
-{{--                                        <li><a href="#"><i class="icon-link"></i></a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                  @foreach($data as $brt => $b)
+                    <div class="entry col-6">
+                        <div class="grid-inner row g-0">
+                            <div class="col-12">
+                                <div class="entry-image">
+                                    <a href="https://themeforest.net" class="entry-link" target="_blank" >
+                                        <img src="{{ asset('/images/blog/grid/3.jpg') }} " style="width: 100%; ">
+{{--                                        {{ $b['judul'] }}--}}
+                                    </a>
+                                </div>
+                                <div class="entry-title title-sm">
+                                    <h2><a href="blog-single.html">{{ $b['judul'] }}</a></h2>
+                                </div>
+                                <div class="entry-meta">
+                                    <ul>
+                                        <li><i class="icon-calendar3"></i> {{$b['tanggal']}}</li>
+                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>
+                                        <li><i class="icon-folder-open"></i> <a href="#">Links</a>, <a href="#">Suggestions</a></li>
+                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>
+                                        <li><a href="#"><i class="icon-link"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="entry-content">
+                                    <p>{{ $b['deskripsi'] }}</p>
+                                    <a href="blog-single.html" class="more-link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  @endforeach
 
 {{--                    <div class="entry col-12">--}}
 {{--                        <div class="grid-inner row g-0">--}}
@@ -104,8 +110,10 @@
                 <!-- Pager
                 ============================================= -->
                 <div class="d-flex justify-content-between mt-5">
-                    <a href="#" class="btn btn-outline-secondary">&larr; Older</a>
-                    <a href="#" class="btn btn-outline-dark">Newer &rarr;</a>
+                    @if($page != 0)
+                    <a href="/informasi-berita-artikel/{{ $page }}" class="btn btn-outline-secondary">&larr; Older</a>
+                    @endif
+                    <a href="/informasi-berita-artikel/{{ $page + 1 }}" class="btn btn-outline-dark">Newer &rarr;</a>
                 </div>
                 <!-- .pager end -->
 
@@ -118,9 +126,9 @@
 @endsection
 @push('custom-scripts')
     <script>
-        $(function () {
-            loadBerita();
-        })
+        // $(function () {
+        //     loadBerita();
+        // })
     </script>
 @endpush
 

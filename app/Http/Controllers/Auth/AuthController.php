@@ -101,6 +101,7 @@ class AuthController extends Controller {
 	 * @return type
 	 */
 	public function logout() {
+
 		HttpHelper::logout();
 		Session::forget('authenticated');
 		Session::forget('token');

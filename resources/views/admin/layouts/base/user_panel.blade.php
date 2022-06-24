@@ -125,9 +125,9 @@
     $.ajax({
       type: "GET",
       timeout: 50000,
-      {{--url: '{{ route('logout') }}',--}}
+      url: '{{ route('logout') }}',
       success: function (res) {
-        {{--window.location.replace("{{ url('login')  }}");--}}
+        window.location.replace("{{ url('login')  }}");
         console.log(res);
       },
       error: function (res, textstatus) {

@@ -32,6 +32,22 @@ class BeritaController extends Controller
             $body[$value['name']] = $value['value'];
         }
         $body['tanggal'] = Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
+        $listFoto = json_decode($request->filex);
+        $body['attachment'] = [];
+        foreach ($listFoto as $lt => $ur){
+
+            $loc = url('/')."\images\upload\d-";
+            $lama_ft = $loc.$ur['nama'];
+            if(file_exists($loc.$ur['nama'])){
+                //File::delete($image_path);
+                File::delete( $lama_ft );
+            }
+            copy($ur['url'],$loc.$ur['nama']);
+            $body['attachment'][] = [
+                'nama' => $ur['nama'],
+                'url'  => $lama_ft
+            ];
+        }
         //$body['waktu'] = Carbon::parse($body['waktu'])->format('h:i:s');
         //$body['pelaksana'] = $pelaksana;
 
@@ -56,6 +72,22 @@ class BeritaController extends Controller
         }
         $body['tanggal'] = Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
 //        $body['waktu'] = Carbon::parse($body['waktu'])->format('h:i:s');
+        $listFoto = json_decode($request->filex);
+        $body['attachment'] = [];
+        foreach ($listFoto as $lt => $ur){
+
+            $loc = url('/')."\images\upload\d-";
+            $lama_ft = $loc.$ur['nama'];
+            if(file_exists($loc.$ur['nama'])){
+                //File::delete($image_path);
+                File::delete( $lama_ft );
+            }
+            copy($ur['url'],$loc.$ur['nama']);
+            $body['attachment'][] = [
+                'nama' => $ur['nama'],
+                'url'  => $lama_ft
+            ];
+        }
 
         return json_decode(HttpHelper::berita_update($body));
         return view('admin.berita.index');

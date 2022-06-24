@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Helpers\HttpHelper;
 use Closure;
 
 class CheckAuth
@@ -16,6 +17,10 @@ class CheckAuth
     public function handle($request, Closure $next) {
         // if the session does not have 'authenticated' forget the user and redirect to login
         if ($request->session()->get('authenticated',false) === true) {
+            $cek = HttpHelper::check_token();
+            if ($cek['status_code'] == 500){
+                return redirect()->to("login")->with('error', 'Sesi anda telah habis.');
+            }
             return $next($request);
         } else {
             if ($request->ajax())

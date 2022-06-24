@@ -47,7 +47,7 @@ var menus = [
             },
             {
                 'nama' : 'Berita & Artikel',
-                'link' : '/informasi-berita-artikel'
+                'link' : '/informasi-berita-artikel/0'
             },
 
         ]
@@ -327,7 +327,6 @@ function loadBerita() {
 }
 
 function loadKajian(list) {
-    console.log('load Kajian')
     let listKajian = '';
     let delai = 0;
     $.each(list, function (id, value) {
@@ -383,11 +382,19 @@ function loadInovasi(data){
     let cats = [];
     let clCat = '';
     $.each(data, function (id, value) {
-        console.log(value)
+        let src_img = '';
+        if (value['attachment'].length > 0){
+            src_img = `/images/upload/${value['attachment'][0]['nama']}`;
+        }else{
+            src_img = "images/magazine/thumb/11.jpg";
+        }
         listGallery +=`<div class="entry col-md-4">
                         <div class="grid-inner">
                             <div class="entry-image">
-                                <a href="#"><img src="images/magazine/thumb/11.jpg" alt="Image"></a>
+                                <a href="javascript:;">
+
+                                <img src="${src_img}" alt="Image" style="width:100%; height: 200px;">
+                                </a>
                             </div>
                             <div class="entry-title title-sm nott">
                                 <h3><a href="/view-inovasi/${value.id}">${value.nama}</a></h3>
