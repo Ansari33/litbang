@@ -47,7 +47,7 @@ var menus = [
             },
             {
                 'nama' : 'Berita & Artikel',
-                'link' : '/informasi-berita-artikel/0'
+                'link' : '/informasi-berita-artikel'
             },
 
         ]

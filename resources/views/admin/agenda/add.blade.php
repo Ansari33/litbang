@@ -253,7 +253,7 @@
                 url: '/agenda-store',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
+                    datas : JSON.stringify(data), filex : JSON.stringify(file_list)
                 },
                 success: function (res) {
                     console.log(res)
