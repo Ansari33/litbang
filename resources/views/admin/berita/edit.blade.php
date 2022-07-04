@@ -57,7 +57,7 @@
                                         <div class="card card-custom card-stretch">
                                             <div class="card-header">
                                                 <div class="card-title">
-                                                    <h3 class="card-label">Manual Upload Without External Sources &amp; File Limitations</h3>
+                                                    <h3 class="card-label">Upload File Attachment</h3>
                                                 </div>
                                             </div>
                                             <div class="card-body">
@@ -312,7 +312,7 @@
                 url: '/berita-update',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
+                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana), filex : JSON.stringify(file_list)
                 },
                 success: function (res) {
                     console.log(res)
