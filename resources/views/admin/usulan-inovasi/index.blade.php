@@ -1,14 +1,11 @@
 @extends('admin.layouts.app')
-@section('title')
-    List Agenda
-@endsection
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
 {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Agenda - Index</span>
+                    <span class="nav-text bold ml-5">Usulan Inovasi - Index</span>
                 </div>
             </div>
         </div>
@@ -64,7 +61,7 @@
                                             </div>
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
-                                                    <div class="ml-2"><a href="/agenda-tambah" class="btn btn-light-primary btn-sm"
+                                                    <div class="ml-2"><a href="/kelitbangan-tambah" class="btn btn-light-primary btn-sm"
                                                                          onclick="" target="_blank"><i
                                                                 class="flaticon2-plus mr-n1"></i></a></div>
                                                     <div class="ml-2"><a href="javascript:;" class="btn btn-light-success btn-sm"
@@ -117,10 +114,10 @@
                                             <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Nama</th>
+                                                <th>Usulan</th>
+                                                <th>Pengusul</th>
                                                 <th>Tanggal</th>
-                                                <th>Waktu</th>
-                                                <th>Tempat</th>
+                                                <th>Status</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -159,10 +156,10 @@
                 dom: "Btplir",
                 columns : [
                     {data : 'id'},
-                    {data : 'nama'},
+                    {data : 'usulan'},
+                    {data : 'pengusul'},
                     {data : 'tanggal'},
-                    {data : 'waktu'},
-                    {data : 'tempat'},
+                    {data : 'status'},
                     {data : 'action'},
                 ],
                 // buttons: [
@@ -205,7 +202,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '/agenda-list',
+                    url: '/usulan-inovasi-list',
                     async: true,
                     error: function (res) {
                         $('.dataTables_processing').hide();
@@ -257,7 +254,7 @@
                 ],
             });
         })
-        function deleteAgenda(id) {
+        function deleteKelitbangan(id) {
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -266,10 +263,11 @@
             $.ajax({
                 //type: "POST",
                 timeout: 50000,
-                url: '/agenda-delete/'+id,
+                url: '/kelitbangan-delete/'+id,
                 async: true,
                 success: function (res) {
                     console.log(res)
+
                     res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
                     indexKelitbangan.ajax.reload();
                 },

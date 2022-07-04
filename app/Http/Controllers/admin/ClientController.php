@@ -6,6 +6,12 @@ use App\Helpers\HttpHelper;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\Factory;
+
+use Illuminate\Support\Collection;
+
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ClientController extends Controller
 {
@@ -26,8 +32,33 @@ class ClientController extends Controller
     public function inovasi()
     {
         $data = HttpHelper::inovasi_list()['data'];
-
         return view('inovasi',compact('data'));
+    }
+
+    public function forumPenelitian()
+    {
+        $data = HttpHelper::usulan_penelitian_list()['data'];
+        return view('forum.usulan_penelitian',compact('data'));
+    }
+
+    public function buatPenelitian()
+    {
+        $data =(HttpHelper::instansi_list())['data'];
+        $instansi = collect($data)->pluck('nama','id')->toArray();
+        return view('forum.buat_penelitian',compact('instansi'));
+    }
+
+    public function forumInovasi()
+    {
+        $data = HttpHelper::usulan_inovasi_list()['data'];
+        return view('forum.usulan_inovasi',compact('data'));
+    }
+
+    public function buatInovasi()
+    {
+        $data =(HttpHelper::instansi_list())['data'];
+        $instansi = collect($data)->pluck('nama','id')->toArray();
+        return view('forum.buat_inovasi',compact('instansi'));
     }
 
     public function agenda()
@@ -37,10 +68,11 @@ class ClientController extends Controller
         return view('informasi.agenda_kegiatan',compact('data'));
     }
 
-    public function berita($page)
+    public function berita(Request $page)
     {
-        $data = HttpHelper::berita_list(['page' => $page])['data'];
-        //return $data;
+        $coll_data = HttpHelper::berita_list(['page' => $page])['data'];
+        $data = $this->paginate($coll_data);
+        $data->withPath('/informasi-berita-artikel');
         return view('informasi.berita_artikel',compact('data','page'));
     }
 
@@ -57,5 +89,31 @@ class ClientController extends Controller
         $data =  HttpHelper::inovasi_get(['id' => $id])['data'];
         $inovasi = HttpHelper::inovasi_terkini()['data'];
         return view('view-data.inovasi',compact('data','inovasi'));
+    }
+
+    public function viewUsulanPenelitian($id)
+    {
+        $data =  HttpHelper::usulan_penelitian_get(['id' => $id])['data'];
+        $inovasi_lain = HttpHelper::usulan_penelitian_terkini();
+        return view('view-data.usulan_penelitian',compact('data'));
+    }
+
+    public function viewUsulanInovasi($id)
+    {
+        $data =  HttpHelper::usulan_inovasi_get(['id' => $id])['data'];
+        $usulan_lain = HttpHelper::usulan_inovasi_terkini()['data'];
+        return view('view-data.usulan_inovasi',compact('data','usulan_lain'));
+    }
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    public function paginate($items, $perPage = 15, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
     }
 }

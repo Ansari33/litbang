@@ -25,7 +25,7 @@ class InovasiController extends Controller
     }
     public function store(Request $request)
     {
-        $listFoto = json_decode($request->filex,true);
+        $listFoto =  $request->filex !== null ? json_decode($request->filex,true) : [];
         $data = json_decode($request->datas,true);
         $pelaksana = json_decode($request->pelaksana,true);
         $body = [];
@@ -33,7 +33,6 @@ class InovasiController extends Controller
             $body[$value['name']] = $value['value'];
         }
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
-        $body['pelaksana'] = $pelaksana;
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 

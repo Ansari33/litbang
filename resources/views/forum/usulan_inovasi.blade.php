@@ -9,11 +9,11 @@
 {{--            </div>--}}
             <div class="row align-items-center">
                 <div class="col-12 col-lg">
-                    <h3>Daftar  <span>Usulan Penelitian</span> yang Telah Kami Terima!</h3>
-                    <span>Ajukan <em>Usulan Penelitan </em> Anda,  Ayo Sama - sama Meneliti!</span>
+                    <h3>Daftar  <span>Usulan Inovasi</span> yang Telah Kami Terima!</h3>
+                    <span>Berikan <em>Usulan Inovasi </em> Anda, Ayo Kembangkan Kota Dengan Inovasi Anda!</span>
                 </div>
                 <div class="col-12 col-lg-auto mt-4 mt-lg-0">
-                    <a href="/usul-penelitian" target="_blank" class="button button-large button-circle m-0">Usulkan Penelitian</a>
+                    <a href="/usul-inovasi" target="_blank" class="button button-large button-circle m-0">Usulkan Inovasi</a>
                 </div>
             </div>
 
@@ -26,22 +26,27 @@
                     <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th style="width: 5%">No.</th>
-                            <th style="width: 40%">Usulan</th>
-                            <th style="width: 25%">Pengusul</th>
-                            <th style="width: 15%; text-align: center ">Tanggal</th>
-                            <th style="width: 15%; text-align: center;">Status</th>
+                            <th style="width: 5%;">No.</th>
+                            <th style="width: 45%;">Usulan</th>
+                            <th style="width: 20%;">Pengusul</th>
+                            <th style="width: 15%; text-align: center">Tanggal</th>
+                            <th style="width: 55%; text-align: center">Status</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <style>
+                            .link-detail hover {
+                                cursor: pointer;
+                            }
+                        </style>
                         @foreach($data as $dt => $d)
-                            <tr>
-                                <td>{{ $dt+1 }}</td>
-                                <td>{{ $d['usulan'] }}</td>
-                                <td>{{ $d['pengusul']}}</td>
-                                <td style="text-align: center">{{ $d['tanggal'] }}</td>
-                                <td class="alert alert-{{$d['status']}}" style="text-align: center" >{{ $d['status'] }}</td>
-                            </tr>
+                        <tr class="link-detail" ondblclick="viewUsulanInovasi({{ $d['id'] }})" >
+                            <td>{{$dt+1}}</td>
+                            <td>{{ $d['usulan'] }}</td>
+                            <td>{{ $d['pengusul'] }}</td>
+                            <td style="text-align: center">{{ $d['tanggal'] }}</td>
+                            <td style="text-align: center">{{ $d['status'] }}</td>
+                        </tr>
                         @endforeach
                         </tbody>
                     </table>
@@ -393,13 +398,16 @@
     <script src="{{asset('admin/plugins/custom/datatables/datatables.bundle.js')}}"></script>
 
     <script>
+        function viewUsulanInovasi(id) {
+            window.location.replace('/view-usulan-inovasi/'+id);
+        }
         var tabel;
-        var data = {!! json_encode($data) !!};
+        {{--var data = {!! json_encode($data) !!};--}}
         $(function() {
-           tabel = $('#datatable1').DataTable({});
-            // tabel.clear()
-            // .draw();
-            //
+           tabel = $('#datatable1').removeAttr('width').DataTable({
+
+           });
+
             // $.each(data, function (key, value) {
             //     tabel.row.add([
             //         key +1,

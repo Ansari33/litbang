@@ -7,15 +7,15 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class UsulanPenelitianController extends Controller
+class UsulanInovasiController extends Controller
 {
   public function index()
   {
-      return view('admin.usulan-penelitian.index');
+      return view('admin.usulan-inovasi.index');
   }
   public function list(Request $request)
   {
-    return HttpHelper::usulan_penelitian_datatable($request->all());
+    return HttpHelper::usulan_inovasi_datatable($request->all());
     return view('admin.usulan-penelitian.index');
   }
     public function create()
@@ -27,49 +27,53 @@ class UsulanPenelitianController extends Controller
     {
         $data = json_decode($request->datas,true);
         $body = [];
+        //return $listFoto;
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
 //        $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['tanggal'] = date('Y-m-d');
-        $listFoto = json_decode($request->filex);
         $body['attachment'] = [];
-        foreach ($listFoto as $lt => $ur){
 
-            $loc = url('/')."\images\upload\d-";
+        $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
+        foreach ($listFoto as $lt => $ur){
+            $loc = public_path('/')."/images/upload/";
             $lama_ft = $loc.$ur['nama'];
             if(file_exists($loc.$ur['nama'])){
                 //File::delete($image_path);
                 File::delete( $lama_ft );
             }
-            copy($ur['url'],$loc.$ur['nama']);
+            File::copy($ur['url'],$loc.$ur['nama']);
             $body['attachment'][] = [
                 'nama' => $ur['nama'],
                 'url'  => $lama_ft
             ];
         }
 
-        return json_decode(HttpHelper::usulan_penelitian_add($body));
+        return json_decode(HttpHelper::usulan_inovasi_add($body));
 
         return view('admin.usulan-penelitian.index');
     }
     public function edit($id)
     {
-        $data = HttpHelper::usulan_penelitian_get(['id' => $id])['data'];
+        $data = HttpHelper::usulan_inovasi_get(['id' => $id])['data'];
         $instansi = $this->getInstansi();
-        return view('admin.usulan-penelitian.edit',compact('data','instansi'));
+        //return $instansi;
+        return view('admin.usulan-inovasi.edit',compact('data','instansi'));
     }
     public function update(Request $request)
     {
         $data = json_decode($request->datas,true);
+        $pelaksana = json_decode($request->pelaksana,true);
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
-        $body['attachment'] = [];
+        $body['pelaksana'] = $pelaksana;
 
         return json_decode(HttpHelper::usulan_penelitian_update($body));
+        return view('admin.usulan-penelitian.index');
     }
     public function delete($id)
     {

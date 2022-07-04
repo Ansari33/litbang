@@ -24,7 +24,7 @@
                 ============================================= -->
                 <div id="posts_berita" class="row grid-container gutter-40">
                   @foreach($data as $brt => $b)
-                    <div class="entry col-6">
+                    <div class="entry col-4">
                         <div class="grid-inner row g-0">
                             <div class="col-12">
                                 <div class="entry-image">
@@ -53,72 +53,15 @@
                         </div>
                     </div>
                   @endforeach
-
-{{--                    <div class="entry col-12">--}}
-{{--                        <div class="grid-inner row g-0">--}}
-{{--                            <div class="col-12">--}}
-{{--                                <div class="entry-image">--}}
-{{--                                    <div class="card">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, fuga optio voluptatibus saepe tenetur aliquam debitis eos accusantium! Vitae, hic, atque aliquid repellendus accusantium laudantium minus eaque quibusdam ratione sapiente.--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="entry-meta">--}}
-{{--                                    <ul>--}}
-{{--                                        <li><i class="icon-calendar3"></i> 21st Mar 2021</li>--}}
-{{--                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>--}}
-{{--                                        <li><i class="icon-folder-open"></i> <a href="#">Status</a>, <a href="#">News</a></li>--}}
-{{--                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 11</a></li>--}}
-{{--                                        <li><a href="#"><i class="icon-align-justify2"></i></a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="entry col-12">--}}
-{{--                        <div class="grid-inner row g-0">--}}
-{{--                            <div class="col-md-4">--}}
-{{--                                <div class="entry-image">--}}
-{{--                                    <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301161123&amp;auto_play=false&amp;hide_related=true&amp;visual=true"></iframe>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-8 ps-md-4">--}}
-{{--                                <div class="entry-title title-sm">--}}
-{{--                                    <h2><a href="blog-single.html">This is an Embedded Audio Post</a></h2>--}}
-{{--                                </div>--}}
-{{--                                <div class="entry-meta">--}}
-{{--                                    <ul>--}}
-{{--                                        <li><i class="icon-calendar3"></i> 28th Apr 2021</li>--}}
-{{--                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>--}}
-{{--                                        <li><i class="icon-folder-open"></i> <a href="#">Audio</a>, <a href="#">General</a></li>--}}
-{{--                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 16</a></li>--}}
-{{--                                        <li><a href="#"><i class="icon-music2"></i></a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                                <div class="entry-content">--}}
-{{--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur voluptate rerum molestiae eaque possimus exercitationem eligendi fuga.</p>--}}
-{{--                                    <a href="blog-single.html" class="more-link">Read More</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
                 </div><!-- #posts end -->
 
                 <!-- Pager
                 ============================================= -->
                 <div class="d-flex justify-content-between mt-5">
-                    @if($page != 0)
-                    <a href="/informasi-berita-artikel/{{ $page }}" class="btn btn-outline-secondary">&larr; Older</a>
-                    @endif
-                    <a href="/informasi-berita-artikel/{{ $page + 1 }}" class="btn btn-outline-dark">Newer &rarr;</a>
+                    {{ $data->links() }}
                 </div>
                 <!-- .pager end -->
-
             </div><!-- .postcontent end -->
-
         </div>
 
     </div>

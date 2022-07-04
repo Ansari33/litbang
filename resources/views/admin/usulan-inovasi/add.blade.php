@@ -1,36 +1,32 @@
 @extends('admin.layouts.app')
-@section('title')
-    Edit Agenda {{ $data['nama'] }}
-@endsection
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
                     {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Agenda - Edit Data</span>
+                    <span class="nav-text bold ml-5">Kelitbangan - Tambah Data</span>
                 </div>
             </div>
         </div>
         <div class="d-flex flex-column-fluid">
             <div class="container-fluid">
                 <div class="tab-content" id="page_content">
-                    <form id="form_edit_agenda">
+                    <form id="form_add_kelitbangan">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row mb-5">
                                 </div>
                                 <div class="form-group row">
-                                    <input type="hidden" value="{{ $data['id'] }}" name="id">
                                     <div class="col-lg-6">
-                                        <label>Nama:</label>
-                                        <textarea name="nama" class="form-control" cols="30" rows="2"> {{ $data['nama'] }}</textarea>
+                                        <label>Nomor:</label>
+                                        <input name="nomor" type="text" class="form-control" placeholder="Nomor" value="" />
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
-                                        <div class="input-group date" id="tanggal_agenda_edit" data-target-input="nearest">
-                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_agenda_edit" value="{{ \Carbon\Carbon::parse($data['tanggal'])->format('d/m/Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_agenda_edit" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="kelitbangan_add_div" data-target-input="nearest">
+                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_kelitbangan_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
+                                            <div class="input-group-append" data-target="#tanggal_kelitbangan_add" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -38,20 +34,54 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label class="">Waktu:</label>
-                                        <div class="input-group timepicker">
-                                            <input class="form-control" name="waktu" id="kt_timepicker_2" readonly placeholder="Select time" type="text" value="{{ $data['waktu'] }}"/>
-                                            <div class="input-group-append">
-                                               <span class="input-group-text">
-                                                <i class="la la-clock-o"></i>
-                                               </span>
-                                            </div>
-                                        </div>
-
+                                        <label>Lingkup:</label>
+                                        {{ Form::select('lingkup',$instansi,null, ['title' => 'Pilih Pelanggan','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Tempat:</label>
-                                        <textarea name="tempat" class="form-control" cols="30" rows="3">{{ $data['tempat'] }}</textarea>
+                                        <label>Judul:</label>
+                                        <textarea name="judul" class="form-control" cols="30" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Abstrak:</label>
+                                        <textarea name="abstrak" class="form-control" cols="30" rows="4"></textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Tindak Lanjut:</label>
+                                        <textarea name="tindak_lanjut" class="form-control" cols="30" rows="4"></textarea>
+                                    </div>
+                                </div>
+
+{{--                                <div class="form-group row">--}}
+{{--                                    <label class="col-lg-3 col-form-label text-lg-right">Upload Files:</label>--}}
+{{--                                    <div id="drag-drop-area"></div>--}}
+{{--                                </div>--}}
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-7">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 my-2 my-md-0 mr-0">
+                                                    <label>Pelaksana:</label>
+                                                </div>
+                                                <div class="col-md-8 my-2 my-md-0">
+                                                    <div class="d-flex flex-row-reverse">
+                                                        <div class="ml-2"><a href="javascript:;" id="btn_add_pelaksana" class="btn btn-light-primary btn-sm"><i class="flaticon2-plus mr-n1"></i></a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="tbl_pelaksana_kelitbangan_add">
+                                                <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nama</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -109,10 +139,11 @@
                                 </div>
                             </div>
 
+
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <button type="button" id="btn_agenda_edit_data" class="btn btn-primary mr-2">Save</button>
+                                        <button type="button" id="btn_kelitbangan_add_data" class="btn btn-primary mr-2">Save</button>
                                         <button type="button" class="btn btn-secondary" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
                                     </div>
                                 </div>
@@ -127,166 +158,19 @@
 @push('js')
     <script src="{{ asset('admin/plugins/custom/uppy/uppy.bundle.js') }}"></script>
     <script>
-        "use strict";
-        var file_list = [];
-        var attch = {};
-        // Class definition
-        var KTUppy = function () {
-            const Tus = Uppy.Tus;
-            const ProgressBar = Uppy.ProgressBar;
-            const StatusBar = Uppy.StatusBar;
-            const FileInput = Uppy.FileInput;
-            const Informer = Uppy.Informer;
-
-            // to get uppy companions working, please refer to the official documentation here: https://uppy.io/docs/companion/
-            const Dashboard = Uppy.Dashboard;
-            const Dropbox = Uppy.Dropbox;
-            const GoogleDrive = Uppy.GoogleDrive;
-            const Instagram = Uppy.Instagram;
-            const Webcam = Uppy.Webcam;
-
-
-            // Private functions
-            var initUppy1 = function(){
-                var id = '#kt_uppy_1';
-
-                var options = {
-                    proudlyDisplayPoweredByUppy: false,
-                    target: id,
-                    inline: true,
-                    replaceTargetContent: true,
-                    showProgressDetails: true,
-                    note: 'No filetype restrictions.',
-                    height: 470,
-                    remove : true,
-                    metaFields: [
-                        { id: 'name', name: 'Name', placeholder: 'file name' },
-                        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
-                    ],
-                    browserBackButtonClose: true
-                }
-
-                var uppyDashboard = Uppy.Core({
-                    //autoProceed: true,
-                    restrictions: {
-                        maxFileSize: 1000000, // 1mb
-                        maxNumberOfFiles: 5,
-                        minNumberOfFiles: 1
-                    }
-                });
-
-                uppyDashboard.use(Dashboard, options);
-                uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
-                uppyDashboard.on('complete',function (f) {
-                    console.log(f);
-                    file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.meta.name}  }));
-                    console.log(file_list)
-
-                });
-                uppyDashboard.on('file-added', (file) => {
-                    console.log('Added file', file)
-                })
-                attch = {!! json_encode($data['attachment']) !!};
-                $.each(attch, function (idx, val) {
-                    console.log(val)
-                    var file_img = "{!! asset('images/upload/') !!}/" + val.nama;
-                    //var file_blob = file_img.blob();
-                    var tag_img = `<img src="${file_img}" style="display: none;" id="${val.nama}">`;
-                    $('#form_edit_kelitbangan').append(tag_img);
-
-                    var file_blob ;
-                    fetch(file_img)
-                        .then(res => res.blob())
-                        .then(blob => {
-                            const file = new File([blob], val.nama, blob)
-                            console.log(file)
-                            file_blob = file;
-                            console.log('satu')
-                        })
-                        .then(
-                            function () {
-                                console.log('dua')
-                                uppyDashboard.addFile({
-                                    name: val.nama, // file name
-                                    type: 'image/jpeg', // file type
-                                    data: file_blob, // file blob
-                                    meta: {
-                                        // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
-                                        relativePath: "",
-                                    },
-                                    source: val.url, // optional, determines the source of the file, for example, Instagram.
-                                    isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
-                                    // when using companion in combination with Instagram.
-                                })
-                            }
-
-                        )
-
-                    // console.log(file_blob)
-
-
-                });
-
-                // uppyDashboard.use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
-                // uppyDashboard.use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
-                // uppyDashboard.use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
-                // uppyDashboard.use(Webcam, { target: Dashboard });
-            }
-
-            return {
-                // public functions
-                init: function() {
-                    initUppy1();
-                    // initUppy2();
-                    // initUppy3();
-                    // initUppy4();
-                    // initUppy5();
-                    // initUppy6();
-
-                    // setTimeout(function() {
-                    //     swal.fire({
-                    //         "title": "Notice",
-                    //         "html": "Uppy demos uses <b>https://master.tus.io/files/</b> URL for resumable upload examples and your uploaded files will be temporarely stored in <b>tus.io</b> servers.",
-                    //         "type": "info",
-                    //         "buttonsStyling": false,
-                    //         "confirmButtonClass": "btn btn-primary",
-                    //         "confirmButtonText": "Ok, I understand",
-                    //         "onClose": function(e) {
-                    //             console.log('on close event fired!');
-                    //         }
-                    //
-                    //     });
-                    // }, 2000);
-                }
-            };
-        }();
-
-        KTUtil.ready(function() {
-            KTUppy.init();
-        });
-
-        // uppy.on('upload-success', (file, response) => {
-        //     console.log(file)
-        //     console.log(response)
-        // })
-
-
+        var uppy = new Uppy.Core()
+        uppy.use(Uppy.DragDrop, { target: '#drag-drop-area' })
+        uppy.use(Uppy.Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
     </script>
 
     <script>
         $(function () {
-
-            $('#kt_timepicker_2, #kt_timepicker_2_modal').timepicker({
-                minuteStep: 1,
-                defaultTime: '',
-                showSeconds: true,
-                showMeridian: false,
-                snapToStep: true
-            });
-
-            $('#tanggal_agenda_edit').datetimepicker({
-                format: 'L',
-                //     s
+            tablePelaksana = $(`#tbl_pelaksana_kelitbangan_add`).DataTable({
+                columnDefs :[
+                    { 'width' : '5%', 'target' : 0 },
+                    { 'width' : '85%', 'target' : 1 },
+                    { 'width' : '10%', 'target' : 2 },
+                ]
             });
 
             $('#menu_tab').scrollingTabs({
@@ -300,9 +184,13 @@
             });
             $('.selectpicker').selectpicker();
         })
-        $('#btn_agenda_edit_data').click(function(){
-            let data = $('#form_edit_agenda').serializeArray();let pelaksana = [];
-
+        $('#btn_kelitbangan_add_data').click(function(){
+            let data = $('#form_add_kelitbangan').serializeArray();let pelaksana = [];
+            let detail = tablePelaksana.rows().data().toArray();
+            for (let index = 0; index < detail.length; index++) {
+                console.log(tablePelaksana.cell(index, 1).nodes().to$().find('input').val());
+                pelaksana[index] = tablePelaksana.cell(index, 1).nodes().to$().find('input').val();
+            }
             console.log(data);
             $.ajaxSetup({
                 headers: {
@@ -312,7 +200,7 @@
             $.ajax({
                 type: "POST",
                 timeout: 50000,
-                url: '/agenda-update',
+                url: '/kelitbangan-store',
                 async: true,
                 data: {
                     datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
@@ -321,7 +209,7 @@
                     console.log(res)
                     if (res.status === true){
                         Swal.fire('Berhasil!', res.message, 'success');
-                        $('#form_edit_agenda').trigger('reset')
+                        $('#form_add_kelitbangan').trigger('reset')
                     }else{
                         Swal.fire('Gagal!', res.message, 'danger');
                     }
@@ -336,6 +224,15 @@
                 }
             });
         });
-
+        $('#btn_add_pelaksana').click(function(){
+            tablePelaksana.row.add([
+                tablePelaksana.rows().count() + 1,
+                '<input type="text" class="form-control">',
+                '<a href="javascript:;" id="delete"> <i class="fa fa-trash"></i></a>'
+            ]).draw(true);
+        });
+        $(`#tbl_pelaksana_kelitbangan_add`).on("click", "#delete", function () {
+            $(`#tbl_pelaksana_kelitbangan_add`).DataTable().row($(this).parents('tr')).remove().draw(false);
+        });
     </script>
 @endpush

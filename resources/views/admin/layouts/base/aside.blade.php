@@ -47,7 +47,9 @@ $menu = [
 <div class="aside aside-left  aside-fixed  d-flex flex-column flex-row-auto"  id="kt_aside">
 	<div class="brand flex-column-auto " id="kt_brand">
 		<div class="brand-logo">
-			<img alt="Logo" src="{{ asset('images/litbang-min.ico') }}"/>
+            <a href="/"><img alt="Logo" src="{{ asset('images/litbang-min.ico') }}"/></a>
+
+{{--            <h3 class="ml-2 mt-1" > E-litbang </h3>--}}
 		</div>
 		<button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
 {{--			<i class="menu-icon fa fas fa-laptop"></i>--}}

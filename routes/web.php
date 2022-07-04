@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\admin\AgendaController;
 use App\Http\Controllers\admin\BeritaController;
 use App\Http\Controllers\admin\UsulanPenelitianController;
+use App\Http\Controllers\admin\UsulanInovasiController;
 use App\Http\Controllers\admin\ClientController;
 
 
@@ -29,6 +30,8 @@ use App\Http\Controllers\admin\ClientController;
 Route::get('/', [ClientController::class, 'index']);
 Route::get('/view-kelitbangan/{id}', [ClientController::class, 'viewKelitbangan']);
 Route::get('/view-inovasi/{id}', [ClientController::class, 'viewInovasi']);
+Route::get('/view-usulan-penelitian/{id}', [ClientController::class, 'viewUsulanPenelitian']);
+Route::get('/view-usulan-inovasi/{id}', [ClientController::class, 'viewUsulanInovasi']);
 
 Route::get('/profile-definisi', function () {
     return view('profile.definisi');
@@ -40,7 +43,7 @@ Route::get('/informasi-regulasi', function () {
     return view('informasi.regulasi');
 });
 Route::get('/informasi-agenda-kegiatan',[ClientController::class, 'agenda']);
-Route::get('/informasi-berita-artikel/{p}', [ClientController::class, 'berita']);
+Route::get('/informasi-berita-artikel', [ClientController::class, 'berita']);
 Route::get('/kelitbangan', [ClientController::class, 'kelitbangan']);
 Route::get('/inovasi', [ClientController::class, 'inovasi']);
 Route::get('/galeri-foto', function () {
@@ -50,27 +53,14 @@ Route::get('/galeri-video', function () {
     return view('galeri.g_video');
 });
 
-Route::get('/forum-penelitian', function () {
-    $data = HttpHelper::usulan_penelitian_list()['data'];
-    return view('forum.usulan_penelitian',compact('data'));
-});
-
-Route::get('/usul-penelitian', function () {
-    $data =(HttpHelper::instansi_list())['data'];
-    $instansi = collect($data)->pluck('nama','id')->toArray();
-    return view('forum.buat_penelitian',compact('instansi'));
-});
-
+Route::get('/forum-penelitian', [ClientController::class, 'forumPenelitian']);
+Route::get('/usul-penelitian',  [ClientController::class, 'buatPenelitian']);
 Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
 
-Route::get('/forum-inovasi', function () {
-    return view('galeri.g_video');
-});
+Route::get('/forum-inovasi', [ClientController::class, 'forumInovasi']);
+Route::get('/usul-inovasi',  [ClientController::class, 'buatInovasi']);
+Route::post('/usulan-inovasi-store', [UsulanInovasiController::class, 'store']);
 
-
-//Route::get('/login', function () {
-//    return view('auth.login');
-//});
 Route::get('/login', function () {
     if(Session::get('authenticated')){
         $cek = HttpHelper::check_token();
@@ -81,11 +71,10 @@ Route::get('/login', function () {
     }
     return view('auth.login');
 });
+
 Route::post('login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('refresh-token', [AuthController::class, 'refreshToken']);
-#['as'=>'refresh','uses'=>'Auth\AuthController@refreshToken']);
 Route::get('auth/check', [AuthController::class, 'authCheck']);
-#['as'=>'check','uses'=>'Auth\AuthController@authCheck']);
 Route::group(['middleware' => 'checkauth'], function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -116,7 +105,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/agenda-update', [AgendaController::class, 'update']);
     Route::get('/agenda-delete/{id}', [AgendaController::class, 'delete']);
 
-    ## Agenda
+    ## Berita
     Route::get('/admin-berita', [BeritaController::class, 'index']);
     Route::get('/berita-list', [BeritaController::class, 'list']);
     Route::get('/berita-tambah', [BeritaController::class, 'create']);
@@ -133,6 +122,17 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/usulan-penelitian-edit/{id}', [UsulanPenelitianController::class, 'edit']);
     Route::post('/usulan-penelitian-update', [UsulanPenelitianController::class, 'update']);
     Route::get('/usulan-penelitian-delete/{id}', [UsulanPenelitianController::class, 'delete']);
+
+    ## Usulan Inovasi
+    Route::get('/admin-usulan-inovasi', [UsulanInovasiController::class, 'index']);
+    Route::get('/usulan-inovasi-list', [UsulanInovasiController::class, 'list']);
+    Route::get('/usulan-inovasi-tambah', [UsulanInovasiController::class, 'create']);
+//    Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
+    Route::get('/usulan-inovasi-edit/{id}', [UsulanInovasiController::class, 'edit']);
+    Route::post('/usulan-inovasi-update', [UsulanInovasiController::class, 'update']);
+    Route::get('/usulan-inovasi-delete/{id}', [UsulanInovasiController::class, 'delete']);
+
+
 
 
     #['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
