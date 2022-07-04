@@ -99,7 +99,7 @@
                             <div class="col-12 d-flex justify-content-end align-items-center">
                                 <div id="alert-info" ></div>
 {{--                                <button type="button" id="calories-trigger" class="btn btn-secondary">Calculate</button>--}}
-                                <button type="button" id="btn_submit_usulan" class="btn btn-success ms-2">Submit Usulan</button>
+                                <button type="button" id="btn_submit_usulan" class="btn btn-success ms-2 ml-5">Submit Usulan</button>
                             </div>
                         </form>
                     </div>
@@ -118,8 +118,6 @@
             $('#alert-info').html('Memproses...  '+'<div class="class="spinner-grow"></div>');
             let data = $('#form_usulan_penelitian').serializeArray();
 
-
-            console.log(data);
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -134,9 +132,8 @@
                     datas : JSON.stringify(data),
                 },
                 success: function (res) {
-                    console.log(res)
                     if (res.status === true){
-                        //Swal.fire('Berhasil!', res.message, 'success');
+                        $('#alert-info').html('<div class="alert alert-success"><p>'+res.message+'</p></div>');
 
                         $('#form_usulan_penelitian').trigger('reset')
                     }else{
@@ -146,9 +143,11 @@
                 },
                 error: function (res, textstatus) {
                     if (textstatus === "timeout") {
-                        notice('Response Time Out', 'error');
+                        $('#alert-info').html('<div class="alert alert-danger"><p>'+res.message+'</p></div>');
+                        // notice('Response Time Out', 'error');
                     } else {
-                        notice(res.responseJSON.message, 'error');
+                        $('#alert-info').html('<div class="alert alert-danger"><p>'+res.message+'</p></div>');
+                       // notice(res.responseJSON.message, 'error');
                     }
                 }
             });

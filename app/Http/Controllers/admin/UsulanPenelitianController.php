@@ -32,7 +32,7 @@ class UsulanPenelitianController extends Controller
         }
 //        $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['tanggal'] = date('Y-m-d');
-        $listFoto = json_decode($request->filex);
+        $listFoto = isset($request->filex) ? json_decode($request->filex,true): [];
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
