@@ -105,6 +105,13 @@ class ClientController extends Controller
         return view('view-data.usulan_inovasi',compact('data','usulan_lain'));
     }
 
+    public function viewBerita($id)
+    {
+        $data =  HttpHelper::berita_get(['id' => $id])['data'];
+        $usulan_lain = HttpHelper::usulan_inovasi_terkini()['data'];
+        return view('view-data.berita',compact('data','usulan_lain'));
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -32,6 +32,7 @@ Route::get('/view-kelitbangan/{id}', [ClientController::class, 'viewKelitbangan'
 Route::get('/view-inovasi/{id}', [ClientController::class, 'viewInovasi']);
 Route::get('/view-usulan-penelitian/{id}', [ClientController::class, 'viewUsulanPenelitian']);
 Route::get('/view-usulan-inovasi/{id}', [ClientController::class, 'viewUsulanInovasi']);
+Route::get('/view-berita/{id}', [ClientController::class, 'viewBerita']);
 
 Route::get('/profile-definisi', function () {
     return view('profile.definisi');

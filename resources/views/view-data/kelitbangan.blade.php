@@ -3,32 +3,7 @@
     Detail Kelitbangan
 @endsection
 @section('content')
-@php
- $arrayKajian = [
-    '                <div class="col-sm-6 col-lg-3 text-center">
-                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>
-                    <div class="">2022</div>
-                    <h6>Injabar Unversitas Padjadjaran</h6>
-                    <div>
-                        <h5 class="text-uppercase" style="font-weight: 200;">Strategi Penanganan Stunting Kota Bandung (Penelitian Mandiri)</h5>
-                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
 
-                    </div>
-                </div>',
-                '                <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="200">
-                    <h6>Kelitbangan Lingkup Inovasi dan Teknologi</h6>
-                    <div class="">2022</div>
-                    <h6>Injabar Unversitas Padjadjaran</h6>
-                    <div>
-                        <h5 class="text-uppercase" style="font-weight: 200;">Strategi Penanganan Stunting Kota Bandung (Penelitian Mandiri)</h5>
-                        <p style="line-height: 1.8;">Transform, agency working families thinkers who make change happen communities. Developing nations legal aid public sector our ambitions future aid The Elders economic security Rosa.</p>
-                        <a href="#" class="button button-border button-black button-rounded text-uppercase m-0">Read More</a>
-
-                    </div>
-                </div>',
-];
-@endphp
 <div class="content-wrap">
     <div class="container clearfix">
 
@@ -94,105 +69,32 @@
                                 <div class="tab-content clearfix" id="tab-connections">
 
                                     <div class="row topmargin-sm">
+                                        @foreach($data['attachment'] as $att => $at)
                                         <div class="col-lg-3 col-md-6 bottommargin">
 
                                             <div class="team">
                                                 <div class="team-image">
-                                                    <img src="images/team/3.jpg" alt="John Doe">
+                                                    <img src="{{asset('images/upload/'.$at['nama'])}}" alt="John Doe">
                                                 </div>
-                                                <div class="team-desc">
-                                                    <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                                                        <i class="icon-facebook"></i>
-                                                        <i class="icon-facebook"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                                                        <i class="icon-twitter"></i>
-                                                        <i class="icon-twitter"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                                                        <i class="icon-gplus"></i>
-                                                        <i class="icon-gplus"></i>
-                                                    </a>
-                                                </div>
+{{--                                                <div class="team-desc">--}}
+{{--                                                    <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>--}}
+{{--                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">--}}
+{{--                                                        <i class="icon-facebook"></i>--}}
+{{--                                                        <i class="icon-facebook"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">--}}
+{{--                                                        <i class="icon-twitter"></i>--}}
+{{--                                                        <i class="icon-twitter"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">--}}
+{{--                                                        <i class="icon-gplus"></i>--}}
+{{--                                                        <i class="icon-gplus"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                </div>--}}
                                             </div>
 
                                         </div>
-
-                                        <div class="col-lg-3 col-md-6 bottommargin">
-
-                                            <div class="team">
-                                                <div class="team-image">
-                                                    <img src="images/team/2.jpg" alt="Josh Clark">
-                                                </div>
-                                                <div class="team-desc">
-                                                    <div class="team-title"><h4>Josh Clark</h4><span>Co-Founder</span></div>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                                                        <i class="icon-facebook"></i>
-                                                        <i class="icon-facebook"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                                                        <i class="icon-twitter"></i>
-                                                        <i class="icon-twitter"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                                                        <i class="icon-gplus"></i>
-                                                        <i class="icon-gplus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-6 bottommargin">
-
-                                            <div class="team">
-                                                <div class="team-image">
-                                                    <img src="images/team/8.jpg" alt="Mary Jane">
-                                                </div>
-                                                <div class="team-desc">
-                                                    <div class="team-title"><h4>Mary Jane</h4><span>Sales</span></div>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                                                        <i class="icon-facebook"></i>
-                                                        <i class="icon-facebook"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                                                        <i class="icon-twitter"></i>
-                                                        <i class="icon-twitter"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                                                        <i class="icon-gplus"></i>
-                                                        <i class="icon-gplus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-lg-3 col-md-6">
-
-                                            <div class="team">
-                                                <div class="team-image">
-                                                    <img src="images/team/4.jpg" alt="Nix Maxwell">
-                                                </div>
-                                                <div class="team-desc">
-                                                    <div class="team-title"><h4>Nix Maxwell</h4><span>Support</span></div>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                                                        <i class="icon-facebook"></i>
-                                                        <i class="icon-facebook"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                                                        <i class="icon-twitter"></i>
-                                                        <i class="icon-twitter"></i>
-                                                    </a>
-                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                                                        <i class="icon-gplus"></i>
-                                                        <i class="icon-gplus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
+                                        @endforeach
                                     </div>
 
                                 </div>

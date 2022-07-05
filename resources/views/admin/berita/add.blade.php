@@ -33,76 +33,53 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <label>Detail Berita:</label>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <textarea class="summernote" id="kt_summernote_1" name="deskripsi"></textarea>
+                                        </div>
+                                    </div>
 {{--                                    <div class="col-lg-6">--}}
-{{--                                        <label class="">Waktu:</label>--}}
-{{--                                        <div class="input-group timepicker">--}}
-{{--                                            <input class="form-control" name="waktu" id="kt_timepicker_2" readonly placeholder="Select time" type="text"/>--}}
-{{--                                            <div class="input-group-append">--}}
-{{--                                               <span class="input-group-text">--}}
-{{--                                                <i class="la la-clock-o"></i>--}}
-{{--                                               </span>--}}
+{{--                                        <label>Attachment:</label>--}}
+{{--                                        <div class="uppy" id="kt_uppy_1">--}}
+{{--                                            <div class="uppy-Root" dir="ltr">--}}
+{{--                                                <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">--}}
+{{--                                                    <div class="uppy-Dashboard-overlay" tabindex="-1"></div>--}}
+{{--                                                    <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">--}}
+{{--                                                        <div class="uppy-Dashboard-innerWrap">--}}
+{{--                                                            <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>--}}
+{{--                                                            <div class="uppy-Dashboard-AddFiles">--}}
+{{--                                                                <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">--}}
+{{--                                                                <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">--}}
+{{--                                                                <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="uppy-Dashboard-AddFiles-info">--}}
+{{--                                                                    <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="uppy-Dashboard-progressindicators">--}}
+{{--                                                                <div class="uppy-StatusBar is-waiting" aria-hidden="true">--}}
+{{--                                                                    <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">--}}
+
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="uppy-StatusBar-actions"></div>--}}
+{{--                                                                </div>--}}
+{{--                                                                <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
+{{--                                    </div>--}}
+                                </div>
+{{--                                <div class="form-group row">--}}
+{{--                                    <div class="col-lg-12">--}}
+{{--                                        <label>Deskripsi Simple:</label>--}}
+{{--                                        <textarea name="deskripsi" class="form-control" cols="30" rows="5"></textarea>--}}
 
 {{--                                    </div>--}}
-                                    <div class="col-lg-6">
-                                        <label>Deskripsi:</label>
-                                        <textarea name="deskripsi" class="form-control" cols="30" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-6">
-                                        <!--begin::Card-->
-                                        <div class="card card-custom card-stretch">
-                                            <div class="card-header">
-                                                <div class="card-title">
-                                                    <h3 class="card-label">Upload File Attachment</h3>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="uppy" id="kt_uppy_1">
-                                                    <div class="uppy-Root" dir="ltr">
-                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
-                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
-                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">
-                                                                <div class="uppy-Dashboard-innerWrap">
-                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
-                                                                    <div class="uppy-Dashboard-AddFiles">
-                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
-                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
-                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
-                                                                        </div>
-                                                                        <div class="uppy-Dashboard-AddFiles-info">
-                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="uppy-Dashboard-progressindicators">
-                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
-                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
-
-                                                                            </div>
-                                                                            <div class="uppy-StatusBar-actions"></div>
-                                                                        </div>
-                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end::Card-->
-                                    </div>
-                                    {{--                                    <div class="col-lg-6">--}}
-                                    {{--                                        <div class="dropzone dropzone-default dropzone-primary dz-clickable" id="kt_dropzone_2">--}}
-                                    {{--                                            <div class="dropzone-msg dz-message needsclick">--}}
-                                    {{--                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>--}}
-                                    {{--                                                <span class="dropzone-msg-desc">Upload up to 10 files</span>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </div>--}}
-                                    {{--                                    </div>--}}
-                                </div>
+{{--                                </div>--}}
                             </div>
 
                             <div class="card-footer">
@@ -122,6 +99,31 @@
 @endsection
 @push('js')
     <script src="{{ asset('admin/plugins/custom/uppy/uppy.bundle.js') }}"></script>
+    <script src="{{ asset('admin/js/pages/crud/forms/editors/summernote.js') }}"></script>
+    <script>
+        // Class definition
+
+        var KTSummernoteDemo = function () {
+            // Private functions
+            var demos = function () {
+                $('.summernote').summernote({
+                    height: 390
+                });
+            }
+
+            return {
+                // public functions
+                init: function() {
+                    demos();
+                }
+            };
+        }();
+
+        // Initialization
+        jQuery(document).ready(function() {
+            KTSummernoteDemo.init();
+        });
+    </script>
     <script>
         "use strict";
         var file_list = [];
@@ -173,13 +175,11 @@
                 uppyDashboard.use(Dashboard, options);
                 uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
                 uppyDashboard.on('complete',function (f) {
-                    console.log(f);
                     file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.name}  }));
 
 
                 });
                 uppyDashboard.on('file-added', (file) => {
-                    console.log('Added file', file)
                 })
 
                 // uppyDashboard.use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
@@ -199,12 +199,6 @@
         KTUtil.ready(function() {
             KTUppy.init();
         });
-
-        // uppy.on('upload-success', (file, response) => {
-        //     console.log(file)
-        //     console.log(response)
-        // })
-
 
     </script>
 
@@ -237,6 +231,11 @@
         })
         $('#btn_berita_add_data').click(function(){
             let data = $('#form_add_berita').serializeArray();let pelaksana = [];
+            // data.push({name : 'detail', value : $(`kt_summernote_1`).summernote('code')});
+            // let htmlx = $('#summernote').summernote('code');
+            // $('#ntmm').html(htmlx)
+            // console.log(htmlx);
+            // console.log($('#kt_summernote_1').text());
 
             console.log(data);
             $.ajaxSetup({

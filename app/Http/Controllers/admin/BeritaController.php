@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use File;
+use DOMDocument as doc;
+
 
 class BeritaController extends Controller
 {
@@ -25,12 +27,14 @@ class BeritaController extends Controller
     }
     public function store(Request $request)
     {
+
         $data = json_decode($request->datas,true);
         //$pelaksana = json_decode($request->pelaksana,true);
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
+
         $body['tanggal'] = Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         $body['attachment'] = [];

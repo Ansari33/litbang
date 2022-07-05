@@ -18,14 +18,14 @@
         <div class="row gutter-40 col-mb-80">
             <!-- Post Content
             ============================================= -->
-            <div class="postcontent col-lg-10">
+            <div class="postcontent col-lg-12">
 
                 <!-- Posts
                 ============================================= -->
                 <div id="posts_berita" class="row grid-container gutter-40">
                   @foreach($data as $brt => $b)
-                    <div class="entry col-4">
-                        <div class="grid-inner row g-0">
+                    <div class="entry col-3">
+                        <div class=" row g-0">
                             <div class="col-12">
                                 <div class="entry-image">
                                     <a href="https://themeforest.net" class="entry-link" target="_blank" >
@@ -34,21 +34,21 @@
                                     </a>
                                 </div>
                                 <div class="entry-title title-sm">
-                                    <h2><a href="blog-single.html">{{ $b['judul'] }}</a></h2>
+                                    <h3><a href="/view-berita/{{ $b['id'] }}">{{ $b['judul'] }}</a></h3>
                                 </div>
                                 <div class="entry-meta">
                                     <ul>
                                         <li><i class="icon-calendar3"></i> {{$b['tanggal']}}</li>
-                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>
+{{--                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>--}}
                                         <li><i class="icon-folder-open"></i> <a href="#">Links</a>, <a href="#">Suggestions</a></li>
-                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>
-                                        <li><a href="#"><i class="icon-link"></i></a></li>
+{{--                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>--}}
+{{--                                        <li><a href="#"><i class="icon-link"></i></a></li>--}}
                                     </ul>
                                 </div>
-                                <div class="entry-content">
-                                    <p>{{ $b['deskripsi'] }}</p>
-                                    <a href="blog-single.html" class="more-link">Read More</a>
-                                </div>
+{{--                                <div class="entry-content">--}}
+{{--                                    <p>{{ substr($b['deskripsi'],0,60)  }} ...</p>--}}
+{{--                                    <a href="/view-berita/{{ $b['id'] }}" class="more-link">Read More</a>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                 <!-- Pager
                 ============================================= -->
                 <div class="d-flex justify-content-between mt-5">
-                    {{ $data->links() }}
+{{--                    {{ $data->links() }}--}}
                 </div>
                 <!-- .pager end -->
             </div><!-- .postcontent end -->
