@@ -108,7 +108,7 @@ class ClientController extends Controller
     public function viewBerita($id)
     {
         $data =  HttpHelper::berita_get(['id' => $id])['data'];
-        $usulan_lain = HttpHelper::usulan_inovasi_terkini()['data'];
+        $usulan_lain = HttpHelper::berita_terkini()['data'];
         return view('view-data.berita',compact('data','usulan_lain'));
     }
 

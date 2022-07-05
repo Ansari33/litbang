@@ -345,6 +345,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function berita_terkini() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'berita/terkini');
+        return $response;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Usulan Penelitian

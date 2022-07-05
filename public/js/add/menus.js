@@ -84,11 +84,11 @@ var menus = [
         'subs' : [
             {
                 'nama' : 'Penelitian',
-                'link' : 'forum-penelitian'
+                'link' : '/forum-penelitian'
             },
             {
                 'nama' : 'Inovasi',
-                'link' : 'forum-inovasi'
+                'link' : '/forum-inovasi'
             },
         ]
     }
