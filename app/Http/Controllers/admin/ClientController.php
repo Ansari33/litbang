@@ -94,7 +94,7 @@ class ClientController extends Controller
     public function viewUsulanPenelitian($id)
     {
         $data =  HttpHelper::usulan_penelitian_get(['id' => $id])['data'];
-        $inovasi_lain = HttpHelper::usulan_penelitian_terkini();
+        $inovasi_lain = HttpHelper::usulan_inovasi_terkini();
         return view('view-data.usulan_penelitian',compact('data'));
     }
 
