@@ -7,6 +7,7 @@
         <div class="container clearfix">
 
             <div class="row gutter-40 col-mb-80">
+
                 <!-- Post Content
                 ============================================= -->
                 <div class="postcontent col-lg-9">
@@ -56,7 +57,7 @@
                             @endif
                         </div><!-- .post-navigation end -->
 
-                        <div class="line"></div>
+{{--                        <div class="line"></div>--}}
 
                         <!-- Post Author Info
                         ============================================= -->
@@ -71,97 +72,97 @@
 {{--                        </div>--}}
                         <!-- Post Single - Author End -->
 
-                        <div class="line"></div>
+{{--                        <div class="line"></div>--}}
 
-                        <h4>Related Posts:</h4>
+{{--                        <h4>Related Posts:</h4>--}}
 
-                        <div class="related-posts row posts-md col-mb-30">
+{{--                        <div class="related-posts row posts-md col-mb-30">--}}
 
-                            <div class="entry col-12 col-md-6">
-                                <div class="grid-inner row align-items-center gutter-20">
-                                    <div class="col-4">
-                                        <div class="entry-image">
-                                            <a href="#"><img src="images/blog/small/10.jpg" alt="Blog Single"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="entry-title title-xs">
-                                            <h3><a href="#">This is an Image Post</a></h3>
-                                        </div>
-                                        <div class="entry-meta">
-                                            <ul>
-                                                <li><i class="icon-calendar3"></i> 10th July 2021</li>
-                                                <li><a href="#"><i class="icon-comments"></i> 12</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="entry col-12 col-md-6">--}}
+{{--                                <div class="grid-inner row align-items-center gutter-20">--}}
+{{--                                    <div class="col-4">--}}
+{{--                                        <div class="entry-image">--}}
+{{--                                            <a href="#"><img src="images/blog/small/10.jpg" alt="Blog Single"></a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-8">--}}
+{{--                                        <div class="entry-title title-xs">--}}
+{{--                                            <h3><a href="#">This is an Image Post</a></h3>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="entry-meta">--}}
+{{--                                            <ul>--}}
+{{--                                                <li><i class="icon-calendar3"></i> 10th July 2021</li>--}}
+{{--                                                <li><a href="#"><i class="icon-comments"></i> 12</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="entry col-12 col-md-6">
-                                <div class="grid-inner row align-items-center gutter-20">
-                                    <div class="col-4">
-                                        <div class="entry-image">
-                                            <a href="#"><img src="images/blog/small/20.jpg" alt="Blog Single"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="entry-title title-xs">
-                                            <h3><a href="#">This is a Video Post</a></h3>
-                                        </div>
-                                        <div class="entry-meta">
-                                            <ul>
-                                                <li><i class="icon-calendar3"></i> 24th July 2021</li>
-                                                <li><a href="#"><i class="icon-comments"></i> 16</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="entry col-12 col-md-6">--}}
+{{--                                <div class="grid-inner row align-items-center gutter-20">--}}
+{{--                                    <div class="col-4">--}}
+{{--                                        <div class="entry-image">--}}
+{{--                                            <a href="#"><img src="images/blog/small/20.jpg" alt="Blog Single"></a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-8">--}}
+{{--                                        <div class="entry-title title-xs">--}}
+{{--                                            <h3><a href="#">This is a Video Post</a></h3>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="entry-meta">--}}
+{{--                                            <ul>--}}
+{{--                                                <li><i class="icon-calendar3"></i> 24th July 2021</li>--}}
+{{--                                                <li><a href="#"><i class="icon-comments"></i> 16</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="entry col-12 col-md-6">
-                                <div class="grid-inner row align-items-center gutter-20">
-                                    <div class="col-4">
-                                        <div class="entry-image">
-                                            <a href="#"><img src="images/blog/small/21.jpg" alt="Blog Single"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="entry-title title-xs">
-                                            <h3><a href="#">This is a Gallery Post</a></h3>
-                                        </div>
-                                        <div class="entry-meta">
-                                            <ul>
-                                                <li><i class="icon-calendar3"></i> 8th Aug 2021</li>
-                                                <li><a href="#"><i class="icon-comments"></i> 8</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="entry col-12 col-md-6">--}}
+{{--                                <div class="grid-inner row align-items-center gutter-20">--}}
+{{--                                    <div class="col-4">--}}
+{{--                                        <div class="entry-image">--}}
+{{--                                            <a href="#"><img src="images/blog/small/21.jpg" alt="Blog Single"></a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-8">--}}
+{{--                                        <div class="entry-title title-xs">--}}
+{{--                                            <h3><a href="#">This is a Gallery Post</a></h3>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="entry-meta">--}}
+{{--                                            <ul>--}}
+{{--                                                <li><i class="icon-calendar3"></i> 8th Aug 2021</li>--}}
+{{--                                                <li><a href="#"><i class="icon-comments"></i> 8</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="entry col-12 col-md-6">
-                                <div class="grid-inner row align-items-center gutter-20">
-                                    <div class="col-4">
-                                        <div class="entry-image">
-                                            <a href="#"><img src="images/blog/small/22.jpg" alt="Blog Single"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="entry-title title-xs">
-                                            <h3><a href="#">This is an Audio Post</a></h3>
-                                        </div>
-                                        <div class="entry-meta">
-                                            <ul>
-                                                <li><i class="icon-calendar3"></i> 22nd Aug 2021</li>
-                                                <li><a href="#"><i class="icon-comments"></i> 21</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="entry col-12 col-md-6">--}}
+{{--                                <div class="grid-inner row align-items-center gutter-20">--}}
+{{--                                    <div class="col-4">--}}
+{{--                                        <div class="entry-image">--}}
+{{--                                            <a href="#"><img src="images/blog/small/22.jpg" alt="Blog Single"></a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-8">--}}
+{{--                                        <div class="entry-title title-xs">--}}
+{{--                                            <h3><a href="#">This is an Audio Post</a></h3>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="entry-meta">--}}
+{{--                                            <ul>--}}
+{{--                                                <li><i class="icon-calendar3"></i> 22nd Aug 2021</li>--}}
+{{--                                                <li><a href="#"><i class="icon-comments"></i> 21</a></li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                        </div>
+{{--                        </div>--}}
 
                         <!-- Comments
                         ============================================= -->

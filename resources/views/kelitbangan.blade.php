@@ -35,10 +35,10 @@
 {{--                </tfoot>--}}
                 <tbody>
                 @foreach($data as $its => $k)
-                <tr ondblclick="bukaKelitbangan({{ $k['id'] }})">
+                <tr >
                     <td>{{ $its + 1 }}</td>
                     <td>{{ $k['lingkup_data']['nama'] }}</td>
-                    <td>{{ $k['judul'] }}</td>
+                    <td><a href="/view-kelitbangan/{{ $k['id'] }}" style="color: black;">{{ $k['judul'] }}</a></td>
                     <td>
                         @foreach($k['pelaksana'] as $pl => $p)
                             {{ $p['nama'] }},

@@ -16,6 +16,28 @@
         </div>
 
         <div class="row gutter-40 col-mb-80">
+            <div class="grid-filter-wrap">
+                <!-- Grid Filter
+                ============================================= -->
+{{--                <ul class="grid-filter" data-container="#portfolio">--}}
+
+{{--                    <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>--}}
+{{--                    <li><a href="#" data-filter=".pf-icons">Icons</a></li>--}}
+{{--                    <li><a href="#" data-filter=".pf-illustrations">Illustrations</a></li>--}}
+{{--                    <li><a href="#" data-filter=".pf-uielements">UI Elements</a></li>--}}
+{{--                    <li><a href="#" data-filter=".pf-media">Media</a></li>--}}
+{{--                    <li><a href="#" data-filter=".pf-graphics">Graphics</a></li>--}}
+
+{{--                </ul>--}}
+                <!-- .grid-filter end -->
+
+                <div class="grid-shuffle flex-row-reverse" data-container="#portfolio" id="data-kotak">
+                    <i class="icon-list"></i>
+                </div>
+                <div class="grid-shuffle flex-row-reverse" data-container="#portfolio" id="data-tabel">
+                    <i class="icon-table"></i>
+                </div>
+            </div>
             <!-- Post Content
             ============================================= -->
             <div class="postcontent col-lg-12">
@@ -23,55 +45,63 @@
                 <!-- Posts
                 ============================================= -->
                 <div id="posts_berita" class="row grid-container gutter-40">
-                  @foreach($data as $brt => $b)
-                    <div class="entry col-3">
-                        <div class=" row g-0">
-                            <div class="col-12">
-                                <div class="entry-image">
-                                    <a href="https://themeforest.net" class="entry-link" target="_blank" >
-                                        <img src="{{ asset('/images/blog/grid/3.jpg') }} " style="width: 100%; ">
-{{--                                        {{ $b['judul'] }}--}}
-                                    </a>
+                    @foreach($data as $brt => $b)
+                        <div class="entry col-4">
+                            <div class=" row g-0">
+                                <div class="col-12">
+                                    <div class="entry-image">
+                                        <a href="javascript:;" class="entry-link" target="_blank" >
+                                            @if($b['attachment'] != null)
+                                                <img src="{{ asset('/images/upload/').'/'.$b['attachment'][0]['nama'] }} " style="width: 100%; height: 100%; ">
+                                            @else
+                                                <img src="{{ asset('/images/services/ipad.png') }} " style="width: 100%; ">
+                                            @endif
+                                            {{--                                        {{ $b['judul'] }}--}}
+                                        </a>
+                                    </div>
+                                    <div class="entry-title title-sm">
+                                        <h3><a href="/view-berita/{{ $b['id'] }}">{{ $b['judul'] }}</a></h3>
+                                    </div>
+                                    <div class="entry-meta">
+                                        <ul>
+                                            <li><i class="icon-calendar3"></i> {{$b['tanggal']}}</li>
+                                            {{--                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>--}}
+                                            <li><i class="icon-folder-open"></i> <a href="#">Links</a>, <a href="#">Suggestions</a></li>
+                                            {{--                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>--}}
+                                            {{--                                        <li><a href="#"><i class="icon-link"></i></a></li>--}}
+                                        </ul>
+                                    </div>
+                                    {{--                                <div class="entry-content">--}}
+                                    {{--                                    <p>{{ substr($b['deskripsi'],0,60)  }} ...</p>--}}
+                                    {{--                                    <a href="/view-berita/{{ $b['id'] }}" class="more-link">Read More</a>--}}
+                                    {{--                                </div>--}}
                                 </div>
-                                <div class="entry-title title-sm">
-                                    <h3><a href="/view-berita/{{ $b['id'] }}">{{ $b['judul'] }}</a></h3>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> {{$b['tanggal']}}</li>
-{{--                                        <li><a href="#"><i class="icon-user"></i> admin</a></li>--}}
-                                        <li><i class="icon-folder-open"></i> <a href="#">Links</a>, <a href="#">Suggestions</a></li>
-{{--                                        <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>--}}
-{{--                                        <li><a href="#"><i class="icon-link"></i></a></li>--}}
-                                    </ul>
-                                </div>
-{{--                                <div class="entry-content">--}}
-{{--                                    <p>{{ substr($b['deskripsi'],0,60)  }} ...</p>--}}
-{{--                                    <a href="/view-berita/{{ $b['id'] }}" class="more-link">Read More</a>--}}
-{{--                                </div>--}}
                             </div>
                         </div>
-                    </div>
-                  @endforeach
+                    @endforeach
                 </div><!-- #posts end -->
 
                 <!-- Pager
                 ============================================= -->
                 <div class="d-flex justify-content-between mt-5">
-{{--                    {{ $data->links() }}--}}
+                    {{ $data->links() }}
                 </div>
                 <!-- .pager end -->
             </div><!-- .postcontent end -->
         </div>
-
     </div>
 </div>
+
 @endsection
 @push('custom-scripts')
     <script>
-        // $(function () {
-        //     loadBerita();
-        // })
+
+        $(function () {
+            $('#posts_berita').html($('#berita-kotak').html());
+            $('.w-5').css('display','none')
+            $('.z-0').css('display','none')
+        })
+
     </script>
 @endpush
 

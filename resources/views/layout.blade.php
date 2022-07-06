@@ -698,7 +698,7 @@
                 <div class="row col-mb-30">
 
                     <div class="col-md-6 text-center text-md-start">
-                        Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
+                        Copyrights &copy; {{ date("Y") }} All Rights Reserved by Litbang Makassar.<br>
                         <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
                     </div>
 

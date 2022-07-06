@@ -116,7 +116,7 @@
                                                 <th>ID</th>
                                                 <th>Judul</th>
                                                 <th>Tanggal</th>
-                                                <th>Deskripsi</th>
+{{--                                                <th>Deskripsi</th>--}}
 {{--                                                <th>Tempat</th>--}}
                                                 <th>Actions</th>
                                             </tr>
@@ -158,7 +158,7 @@
                     {data : 'id'},
                     {data : 'judul'},
                     {data : 'tanggal'},
-                    {data : 'deskripsi'},
+                    // {data : 'deskripsi'},
                     // {data : 'tempat'},
                     {data : 'action'},
                 ],
@@ -251,20 +251,22 @@
                               </label>`;
                         },
                     },
-                    {
-
-                        targets: 3,
-                        render: function (data) {
-                            console.log(data);
-                            let parser = new DOMParser();
-                            let doc = parser.parseFromString(data, 'text/html');
-                            return doc.body;
-                            return `<label class="checkbox checkbox-single">
-                                <input type="checkbox" value="" class="checkable" />
-                                <span></span>
-                              </label>`;
-                        },
-                    },
+                    // {
+                    //
+                    //     targets: 3,
+                    //     render: function (data) {
+                    //
+                    //         let parser = new DOMParser();
+                    //         let doc = parser.parseFromString(data, 'text/html');
+                    //         console.log(doc.body);
+                    //         return data;
+                    //
+                    //         return `<label class="checkbox checkbox-single">
+                    //             <input type="checkbox" value="" class="checkable" />
+                    //             <span></span>
+                    //           </label>`;
+                    //     },
+                    // },
                 ],
             });
         })

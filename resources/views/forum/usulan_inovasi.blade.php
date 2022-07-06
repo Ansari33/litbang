@@ -40,9 +40,9 @@
                             }
                         </style>
                         @foreach($data as $dt => $d)
-                        <tr class="link-detail" ondblclick="viewUsulanInovasi({{ $d['id'] }})" >
+                        <tr class="link-detail"  >
                             <td>{{$dt+1}}</td>
-                            <td>{{ $d['usulan'] }}</td>
+                            <td> <a href="/view-usulan-inovasi/{{ $d['id'] }}" style="color: black">{{ $d['usulan'] }}</a> </td>
                             <td>{{ $d['pengusul'] }}</td>
                             <td style="text-align: center">{{ $d['tanggal'] }}</td>
                             <td style="text-align: center">{{ $d['status'] }}</td>

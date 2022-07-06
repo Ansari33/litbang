@@ -36,9 +36,9 @@
                             {{--                </tfoot>--}}
                             <tbody>
                             @foreach($data as $item => $inv)
-                                <tr ondblclick="bukaInovasi({{ $inv['id'] }})">
+                                <tr >
                                     <td>{{ $item + 1 }}</td>
-                                    <td>{{ $inv['nama'] }}</td>
+                                    <td><a href="/view-inovasi/{{ $inv['id'] }}" style="color: black">{{ $inv['nama'] }}</a> </td>
                                     <td>
                                         @foreach($inv['pelaksana'] as $pl => $p)
                                             {{ $p['nama'] }},

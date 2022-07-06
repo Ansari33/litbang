@@ -38,22 +38,37 @@ class BeritaController extends Controller
         $body['tanggal'] = Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         $body['attachment'] = [];
-        foreach ($listFoto as $lt => $ur){
+//        foreach ($listFoto as $lt => $ur){
+//
+//            $loc = public_path('/')."/images/upload/";
+//            $lama_ft = $loc.$ur['nama'];
+//            if(file_exists($loc.$ur['nama'])){
+//                File::delete( $lama_ft );
+//            }
+//            File::copy($ur['url'],$loc.$ur['nama']);
+//            $body['attachment'][] = [
+//                'nama' => $ur['nama'],
+//                'url'  => $lama_ft
+//            ];
+//        }
 
-            $loc = public_path('/')."/images/upload/";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
-                File::delete( $lama_ft );
-            }
-            File::copy($ur['url'],$loc.$ur['nama']);
-            $body['attachment'][] = [
-                'nama' => $ur['nama'],
-                'url'  => $lama_ft
-            ];
+        $html = new \DOMDocument();
+        $html->loadHTML($body['deskripsi']);
+        $listFoto = $html->getElementsByTagName('img');
+
+        foreach ($listFoto as $ii => $vv){
+            $src = $vv->getAttribute('src') ;
+            $extension = explode('/', explode(':', substr($src, 0, strpos($src, ';')))[1])[1];
+            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
+            $data = substr($src, strpos($src, ',') + 1);
+            $data = base64_decode($data);
+
+
+            file_put_contents(public_path('/images/upload/').$namaFile, $data);
+            $urlFile = public_path('/images/upload').$namaFile;
+            $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile];
         }
         return json_decode(HttpHelper::berita_add($body));
-
-        return view('admin.berita.index');
     }
     public function edit($id)
     {
@@ -73,18 +88,34 @@ class BeritaController extends Controller
 //        $body['waktu'] = Carbon::parse($body['waktu'])->format('h:i:s');
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         $body['attachment'] = [];
-        foreach ($listFoto as $lt => $ur){
+//        foreach ($listFoto as $lt => $ur){
+//
+//            $loc = public_path('/')."/images/upload/";
+//            $lama_ft = $loc.$ur['nama'];
+//            if(file_exists($loc.$ur['nama'])){
+//                File::delete( $lama_ft );
+//            }
+//            File::copy($ur['url'],$loc.$ur['nama']);
+//            $body['attachment'][] = [
+//                'nama' => $ur['nama'],
+//                'url'  => $lama_ft
+//            ];
+//        }
+        $html = new \DOMDocument();
+        $html->loadHTML($body['deskripsi']);
+        $listFoto = $html->getElementsByTagName('img');
 
-            $loc = public_path('/')."/images/upload/";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
-                File::delete( $lama_ft );
-            }
-            File::copy($ur['url'],$loc.$ur['nama']);
-            $body['attachment'][] = [
-                'nama' => $ur['nama'],
-                'url'  => $lama_ft
-            ];
+        foreach ($listFoto as $ii => $vv){
+            $src = $vv->getAttribute('src') ;
+            $extension = explode('/', explode(':', substr($src, 0, strpos($src, ';')))[1])[1];
+            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
+            $data = substr($src, strpos($src, ',') + 1);
+            $data = base64_decode($data);
+
+
+            file_put_contents(public_path('/images/upload/').$namaFile, $data);
+            $urlFile = public_path('/images/upload').$namaFile;
+            $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile];
         }
 
         return json_decode(HttpHelper::berita_update($body));
