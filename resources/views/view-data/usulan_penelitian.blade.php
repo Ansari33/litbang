@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <div class="feature-box fbox-effect fbox-xl">
                         <div class="fbox-icon me-3">
-                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/tooltip.png')}}" alt="Feature Icon" class="bg-transparent rounded-0"></a>
+                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/tooltip.png')}}" alt="Feature Icon" class="bg-transparent rounded-0" style="width: 70px; height: 70px;"></a>
                         </div>
                         <div class="fbox-content">
                             <h3>Judul</h3>
@@ -23,7 +23,7 @@
                 <div class="col-12">
                     <div class="feature-box fbox-effect fbox-xl">
                         <div class="fbox-icon me-3">
-                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/clients.png')}}" alt="Feature Icon" class="bg-transparent rounded-0"></a>
+                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/clients.png')}}" alt="Feature Icon" class="bg-transparent rounded-0" style="width: 70px; height: 70px;"></a>
                         </div>
                         <div class="fbox-content">
                             <h3>Pengusul</h3>
@@ -36,7 +36,7 @@
                 <div class="col-12">
                     <div class="feature-box fbox-effect fbox-xl">
                         <div class="fbox-icon me-3">
-                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/posts.png')}}" alt="Feature Icon" class="bg-transparent rounded-0"></a>
+                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/posts.png')}}" alt="Feature Icon" class="bg-transparent rounded-0" style="width: 70px; height: 70px;"></a>
                         </div>
                         <div class="fbox-content">
                             <h3>Latar Belakang</h3>
@@ -48,7 +48,7 @@
                 <div class="col-12">
                     <div class="feature-box fbox-effect fbox-xl">
                         <div class="fbox-icon me-3">
-                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/animation.png')}}" alt="Feature Icon" class="bg-transparent rounded-0"></a>
+                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/animation.png')}}" alt="Feature Icon" class="bg-transparent rounded-0" style="width: 70px; height: 70px;"></a>
                         </div>
                         <div class="fbox-content">
                             <h3>Tujuan</h3>
@@ -60,8 +60,8 @@
                 <div class="line my-5"></div>
                 <div class="col-12">
                     <div class="feature-box fbox-effect fbox-xl">
-                        <div class="fbox-icon me-3">
-                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/progress-bars.png')}}" alt="Feature Icon" class="bg-transparent rounded-0"></a>
+                        <div class="fbox-icon me-1">
+                            <a href="#"><img src="{{asset('/images/intro/targets/shortcodes/progress-bars.png')}}" alt="Feature Icon" class="bg-transparent rounded-0" style="width: 70px; height: 70px;"></a>
                         </div>
                         <div class="fbox-content">
                             <h3>Status</h3>
