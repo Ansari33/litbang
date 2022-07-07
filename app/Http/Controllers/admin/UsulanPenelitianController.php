@@ -6,6 +6,7 @@ use App\Helpers\HttpHelper;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use File;
 
 class UsulanPenelitianController extends Controller
 {
@@ -32,20 +33,22 @@ class UsulanPenelitianController extends Controller
         }
 //        $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['tanggal'] = date('Y-m-d');
-        $listFoto = isset($request->filex) ? json_decode($request->filex,true): [];
         $body['attachment'] = [];
+        $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
-
-            $loc = url('/')."\images\upload\d-";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
-                //File::delete($image_path);
+            $locFoto = public_path('/')."/images/upload/";
+            $locVideo = public_path('/')."/videos/upload/";
+            $loc = ($ur['tipe'] == 'video') ?  $locVideo : $locFoto;
+            $strNama = str_replace(' ','-',$ur['nama']);
+            $lama_ft = $loc.$strNama;
+            if(file_exists($loc.$strNama)){
                 File::delete( $lama_ft );
             }
-            copy($ur['url'],$loc.$ur['nama']);
+            File::copy($ur['url'],$loc.$strNama);
             $body['attachment'][] = [
-                'nama' => $ur['nama'],
-                'url'  => $lama_ft
+                'nama' => $strNama,
+                'url'  => $lama_ft,
+                'type' => $ur['tipe'],
             ];
         }
 
@@ -68,6 +71,23 @@ class UsulanPenelitianController extends Controller
         }
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['attachment'] = [];
+        $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
+        foreach ($listFoto as $lt => $ur){
+            $locFoto = public_path('/')."/images/upload/";
+            $locVideo = public_path('/')."/videos/upload/";
+            $loc = ($ur['tipe'] == 'video') ?  $locVideo : $locFoto;
+            $strNama = str_replace(' ','-',$ur['nama']);
+            $lama_ft = $loc.$strNama;
+            if(file_exists($loc.$strNama)){
+                File::delete( $lama_ft );
+            }
+            File::copy($ur['url'],$loc.$strNama);
+            $body['attachment'][] = [
+                'nama' => $strNama,
+                'url'  => $lama_ft,
+                'type' => $ur['tipe'],
+            ];
+        }
 
         return json_decode(HttpHelper::usulan_penelitian_update($body));
     }

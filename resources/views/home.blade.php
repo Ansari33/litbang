@@ -248,26 +248,49 @@
     ============================================= -->
     <div id="portfolio" class="portfolio row g-0 portfolio-reveal grid-container">
         @foreach($attachment as $key => $att)
-        <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-media pf-icons">
-            <div class="grid-inner">
-                <div class="portfolio-image">
-                    <a href="portfolio-single.html">
-                        <img src="{{ asset('images/upload/').'/'.$att['nama'] }}" alt="Open Imagination" style="height: 200px; width: 100%;">
-                    </a>
-                    <div class="bg-overlay">
-                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                            <a href="{{ asset('images/upload/').'/'.$att['nama'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-plus"></i></a>
-                            <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
+            @if($att['tipe'] == 'video')
+                <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-graphics pf-uielements">
+                    <div class="grid-inner">
+                        <div class="portfolio-image">
+                            <a href="#">
+                                <img src="{{asset('images/portfolio/4/3.jpg')}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">
+                            </a>
+                            <div class="bg-overlay">
+                                <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
+                                    <a href="{{asset('videos/upload/').'/'.$att['nama']}}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
+                                </div>
+                                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
+                            </div>
                         </div>
-                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
+                            <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio-desc">
-                    <h3><a href="portfolio-single.html">Open Imagination</a></h3>
-                    <span><a href="#">Media</a>, <a href="#">Icons</a></span>
-                </div>
-            </div>
-        </article>
+                </article>
+            @else
+                <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-media pf-icons">
+                    <div class="grid-inner">
+                        <div class="portfolio-image">
+                            <a href="portfolio-single.html">
+                                <img src="{{ asset('images/upload/').'/'.$att['nama'] }}" alt="Open Imagination" style="height: 200px; width: 100%;">
+                            </a>
+                            <div class="bg-overlay">
+                                <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
+                                    <a href="{{ asset('images/upload/').'/'.$att['nama'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-plus"></i></a>
+                                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
+                                </div>
+                                <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
+                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                        </div>
+                    </div>
+                </article>
+            @endif
         @endforeach
 
 {{--        <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-illustrations">--}}

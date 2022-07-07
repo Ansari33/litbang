@@ -130,7 +130,7 @@
                 $.ajax({
                     type: "POST",
                     timeout: 50000,
-                    url: '/kelitbangan-update',
+                    url: '/usulan-inovasi-update',
                     async: true,
                     data: {
                         datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
@@ -144,15 +144,10 @@
                                     window.close();
                                 }
                             );
-                            // setTimeout(function () {
-                            //     window.close();
-                            // },1000)
 
                         }else{
                             Swal.fire('Gagal!', res.message, 'danger');
                         }
-                        //res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
-
                     },
                     error: function (res, textstatus) {
                         if (textstatus === "timeout") {

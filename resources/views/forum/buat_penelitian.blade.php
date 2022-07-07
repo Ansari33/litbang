@@ -18,7 +18,7 @@
 {{--                        </div>--}}
 {{--                        <small class="center m-0 position-absolute" style="bottom: 12px;">Metric Units</small>--}}
                     </div>
-
+                    <link href="https://releases.transloadit.com/uppy/v2.12.2/uppy.min.css" rel="stylesheet">
                     <div class="col-lg-8 p-5">
                         <form class="row mb-0" id="form_usulan_penelitian"   enctype="multipart/form-data">
                             <div class="form-process">
@@ -96,6 +96,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-12 form-group">
+                                <div class="row">
+                                    <div class="col-sm-2 col-form-label">
+                                        <label for="fitness-form-email">File:</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div id="drag-drop-area"></div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                             <div class="col-12 d-flex justify-content-end align-items-center">
                                 <div id="alert-info" ></div>
 {{--                                <button type="button" id="calories-trigger" class="btn btn-secondary">Calculate</button>--}}
@@ -112,6 +125,23 @@
     </div>
 @endsection
 @push('custom-scripts')
+    <script src="{{ asset('admin/plugins/custom/uppy/uppy.bundle.js') }}"></script>
+    <script>
+        var file_list = [];
+        var uppy = new Uppy.Core()
+            .use(Uppy.Dashboard, {
+                inline: true,
+                target: '#drag-drop-area',
+                height: 270,
+            })
+            .use(Uppy.Tus, {endpoint: 'https://tusd.tusdemo.net/files/'})
+
+        uppy.on('complete', (result) => {
+            //console.log(result);
+            file_list = (result.successful.map((e, index) => { return { url :e.response.uploadURL,nama :e.name,tipe:e.type.split('/')[0] }  }));
+            console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        })
+    </script>
 
     <script>
         $('#btn_submit_usulan').click(function(){
@@ -129,7 +159,7 @@
                 url: '/usulan-penelitian-store',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data),
+                    datas : JSON.stringify(data), filex:JSON.stringify(file_list)
                 },
                 success: function (res) {
                     if (res.status === true){

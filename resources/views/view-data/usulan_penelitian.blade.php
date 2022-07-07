@@ -7,6 +7,12 @@
         <div class="container clearfix">
 
             <div class="row align-items-center mw-sm mx-auto g-0">
+                <div class="col-lg-2">
+
+                </div>
+                <div class="col-lg-10 row">
+                    
+                </div>
                 <div class="col-12">
                     <div class="feature-box fbox-effect fbox-xl">
                         <div class="fbox-icon me-3">

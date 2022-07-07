@@ -40,7 +40,7 @@
                                 <td><a href="/view-usulan-penelitian/{{ $d['id'] }}" style="color:#000;">{{ $d['usulan'] }}</a> </td>
                                 <td>{{ $d['pengusul']}}</td>
                                 <td style="text-align: center">{{ $d['tanggal'] }}</td>
-                                <td class="alert alert-{{$d['status']}}" style="text-align: center" >{{ $d['status'] }}</td>
+                                <td class="" style="text-align: center" >{{ $d['status'] }}</td>
                             </tr>
                         @endforeach
                         </tbody>

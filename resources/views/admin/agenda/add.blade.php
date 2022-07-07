@@ -59,7 +59,7 @@
                                         <div class="card card-custom card-stretch">
                                             <div class="card-header">
                                                 <div class="card-title">
-                                                    <h3 class="card-label">Manual Upload Without External Sources &amp; File Limitations</h3>
+                                                    <h3 class="card-label">Upload File Attachment</h3>
                                                 </div>
                                             </div>
                                             <div class="card-body">
@@ -167,7 +167,7 @@
                 var uppyDashboard = Uppy.Core({
                     //autoProceed: true,
                     restrictions: {
-                        maxFileSize: 1000000, // 1mb
+                        //maxFileSize: 1000000, // 1mb
                         maxNumberOfFiles: 5,
                         minNumberOfFiles: 1
                     }
