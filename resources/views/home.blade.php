@@ -253,7 +253,10 @@
                     <div class="grid-inner">
                         <div class="portfolio-image">
                             <a href="#">
-                                <img src="{{asset('images/portfolio/4/3.jpg')}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">
+                                <video src="{{asset('videos/upload/').'/'.$att['nama']}} " style="height: 200px; width: 100%;">
+
+                                </video>
+{{--                                <img src="{{asset('videos/upload/').'/'.$att['nama']}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">--}}
                             </a>
                             <div class="bg-overlay">
                                 <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">

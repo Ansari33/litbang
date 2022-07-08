@@ -112,7 +112,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <button type="button" id="btn_agenda_add_data" class="btn btn-primary mr-2">Save</button>
-                                        <button type="button" class="btn btn-secondary" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
+                                        <button type="button" class="btn btn-secondary" onclick="window.close()">Cancel</button>
                                     </div>
                                 </div>
                             </div>
