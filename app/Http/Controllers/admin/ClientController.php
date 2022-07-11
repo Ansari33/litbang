@@ -120,7 +120,7 @@ class ClientController extends Controller
     {
         $tempData = HttpHelper::attachment_get_video()['data'];
         $data = $this->paginate($tempData,12);
-        return  $data;
+//        return  $data;
         return view('galeri.video',compact('data'));
     }
 
