@@ -102,42 +102,42 @@
                 <div id="portfolio" class="portfolio row grid-container g-0" data-layout="fitRows">
 
                     <!-- Portfolio Item: Start -->
-                    @foreach($data as $ind => $ft)
-                        <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-graphics pf-uielements">
-                            <div class="grid-inner">
-                                <div class="portfolio-image">
-                                    <a href="#">
-                                        <video src="{{asset('videos/upload/').'/'.$ft['nama']}} " style="height: 200px; width: 100%;">
+{{--                    @foreach($data as $ind => $ft)--}}
+{{--                        <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-graphics pf-uielements">--}}
+{{--                            <div class="grid-inner">--}}
+{{--                                <div class="portfolio-image">--}}
+{{--                                    <a href="#">--}}
+{{--                                        <video src="{{asset('videos/upload/').'/'.$ft['nama']}} " style="height: 200px; width: 100%;">--}}
 
-                                        </video>
-                                        {{--                                <img src="{{asset('videos/upload/').'/'.$att['nama']}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">--}}
-                                    </a>
-                                    <div class="bg-overlay">
-                                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                                            <a href="{{asset('videos/upload/').'/'.$ft['nama']}}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                            <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
-                                        </div>
-                                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-desc">
-                                    @if($ft['kelitbangan_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['kelitbangan_data']['judul'] }}</a></h3>
-                                    @elseif($ft['inovasi_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['inovasi_data']['nama'] }}</a></h3>
-                                    @elseif($ft['agenda_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['agenda_data']['nama'] }}</a></h3>
-                                    @elseif($ft['berita_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['berita_data']['judul'] }}</a></h3>
-                                    @elseif($ft['usulan_penelitian_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_penelitian_data']['usulan'] }}</a></h3>
-                                    @elseif($ft['usulan_inovasi_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_inovasi_data']['usulan'] }}</a></h3>
-                                    @endif
-                                </div>
-                            </div>
-                        </article>
-                    @endforeach
+{{--                                        </video>--}}
+{{--                                        --}}{{--                                <img src="{{asset('videos/upload/').'/'.$att['nama']}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">--}}
+{{--                                    </a>--}}
+{{--                                    <div class="bg-overlay">--}}
+{{--                                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">--}}
+{{--                                            <a href="{{asset('videos/upload/').'/'.$ft['nama']}}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="iframe"><i class="icon-line-play"></i></a>--}}
+{{--                                            <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="portfolio-desc">--}}
+{{--                                    @if($ft['kelitbangan_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['kelitbangan_data']['judul'] }}</a></h3>--}}
+{{--                                    @elseif($ft['inovasi_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['inovasi_data']['nama'] }}</a></h3>--}}
+{{--                                    @elseif($ft['agenda_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['agenda_data']['nama'] }}</a></h3>--}}
+{{--                                    @elseif($ft['berita_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['berita_data']['judul'] }}</a></h3>--}}
+{{--                                    @elseif($ft['usulan_penelitian_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_penelitian_data']['usulan'] }}</a></h3>--}}
+{{--                                    @elseif($ft['usulan_inovasi_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_inovasi_data']['usulan'] }}</a></h3>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </article>--}}
+{{--                    @endforeach--}}
                 <!-- Portfolio Item: End -->
 
                     {{--                <article class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-12 pf-illustrations">--}}
