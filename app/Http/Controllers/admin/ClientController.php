@@ -8,9 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\Factory;
-
 use Illuminate\Support\Collection;
-
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class ClientController extends Controller
@@ -64,7 +62,6 @@ class ClientController extends Controller
     public function agenda()
     {
         $data = HttpHelper::agenda_list()['data'];
-        //return $data;
         return view('informasi.agenda_kegiatan',compact('data'));
     }
 
@@ -110,6 +107,20 @@ class ClientController extends Controller
         $data =  HttpHelper::berita_get(['id' => $id])['data'];
         $usulan_lain = HttpHelper::berita_terkini()['data'];
         return view('view-data.berita',compact('data','usulan_lain'));
+    }
+
+    public function galeriFoto()
+    {
+        $tempData = HttpHelper::attachment_get_foto()['data'];
+        $data = $this->paginate($tempData,12);
+        return view('galeri.foto',compact('data'));
+    }
+
+    public function galeriVideo()
+    {
+        $tempData = HttpHelper::attachment_get_video()['data'];
+        $data = $this->paginate($tempData,12);
+        return view('galeri.video',compact('data'));
     }
 
     /**

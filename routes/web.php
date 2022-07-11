@@ -47,12 +47,9 @@ Route::get('/informasi-agenda-kegiatan',[ClientController::class, 'agenda']);
 Route::get('/informasi-berita-artikel', [ClientController::class, 'berita']);
 Route::get('/kelitbangan', [ClientController::class, 'kelitbangan']);
 Route::get('/inovasi', [ClientController::class, 'inovasi']);
-Route::get('/galeri-foto', function () {
-    return view('galeri.foto');
-});
-Route::get('/galeri-video', function () {
-    return view('galeri.g_video');
-});
+
+Route::get('/galeri-foto', [ClientController::class, 'galeriFoto']);
+Route::get('/galeri-video', [ClientController::class, 'galeriVideo']);
 
 Route::get('/forum-penelitian', [ClientController::class, 'forumPenelitian']);
 Route::get('/usul-penelitian',  [ClientController::class, 'buatPenelitian']);

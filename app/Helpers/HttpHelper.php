@@ -419,4 +419,13 @@ class HttpHelper {
         return $response;
     }
 
+    public static function attachment_get_foto() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'attachment/foto');
+        return $response;
+    }
+    public static function attachment_get_video() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'attachment/video');
+        return $response;
+    }
+
 }
