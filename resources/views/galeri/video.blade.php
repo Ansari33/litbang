@@ -107,9 +107,9 @@
                             <div class="grid-inner">
                                 <div class="portfolio-image">
                                     <a href="#">
-                                        <video src="{{asset('videos/upload/').'/'.$ft['nama']}} " style="height: 200px; width: 100%;">
+{{--                                        <video src="{{asset('videos/upload/').'/'.$ft['nama']}} " style="height: 200px; width: 100%;">--}}
 
-                                        </video>
+{{--                                        </video>--}}
 {{--                                                                        <img src="{{asset('videos/upload/').'/'.$att['nama']}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">--}}
                                     </a>
                                     <div class="bg-overlay">
