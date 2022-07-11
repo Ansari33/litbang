@@ -121,19 +121,19 @@
                                     </div>
                                 </div>
                                 <div class="portfolio-desc">
-                                    @if($ft['kelitbangan_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['kelitbangan_data']['judul'] }}</a></h3>
-                                    @elseif($ft['inovasi_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['inovasi_data']['nama'] }}</a></h3>
-                                    @elseif($ft['agenda_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['agenda_data']['nama'] }}</a></h3>
-                                    @elseif($ft['berita_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['berita_data']['judul'] }}</a></h3>
-                                    @elseif($ft['usulan_penelitian_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_penelitian_data']['usulan'] }}</a></h3>
-                                    @elseif($ft['usulan_inovasi_data'] != null)
-                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_inovasi_data']['usulan'] }}</a></h3>
-                                    @endif
+{{--                                    @if($ft['kelitbangan_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['kelitbangan_data']['judul'] }}</a></h3>--}}
+{{--                                    @elseif($ft['inovasi_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['inovasi_data']['nama'] }}</a></h3>--}}
+{{--                                    @elseif($ft['agenda_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['agenda_data']['nama'] }}</a></h3>--}}
+{{--                                    @elseif($ft['berita_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['berita_data']['judul'] }}</a></h3>--}}
+{{--                                    @elseif($ft['usulan_penelitian_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_penelitian_data']['usulan'] }}</a></h3>--}}
+{{--                                    @elseif($ft['usulan_inovasi_data'] != null)--}}
+{{--                                        <h3><a href="portfolio-single.html">{{ $ft['usulan_inovasi_data']['usulan'] }}</a></h3>--}}
+{{--                                    @endif--}}
                                 </div>
                             </div>
                         </article>
