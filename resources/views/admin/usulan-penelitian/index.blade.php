@@ -254,7 +254,7 @@
                 ],
             });
         })
-        function deleteKelitbangan(id) {
+        function deleteUsulanPenelitian(id) {
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -263,7 +263,7 @@
             $.ajax({
                 //type: "POST",
                 timeout: 50000,
-                url: '/kelitbangan-delete/'+id,
+                url: '/usulan-penelitian-delete/'+id,
                 async: true,
                 success: function (res) {
                     console.log(res)

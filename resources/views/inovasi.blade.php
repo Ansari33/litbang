@@ -24,25 +24,21 @@
                                 <th>Kelengkapan</th>
                             </tr>
                             </thead>
-                            {{--                <tfoot>--}}
-                            {{--                <tr>--}}
-                            {{--                    <th>Name</th>--}}
-                            {{--                    <th>Position</th>--}}
-                            {{--                    <th>Office</th>--}}
-                            {{--                    <th>Age</th>--}}
-                            {{--                    <th>Start date</th>--}}
-                            {{--                    <th>Salary</th>--}}
-                            {{--                </tr>--}}
-                            {{--                </tfoot>--}}
                             <tbody>
                             @foreach($data as $item => $inv)
                                 <tr >
                                     <td>{{ $item + 1 }}</td>
                                     <td><a href="/view-inovasi/{{ $inv['id'] }}" style="color: black">{{ $inv['nama'] }}</a> </td>
                                     <td>
+                                        @php
+                                        $pelaksana = [];
+                                        @endphp
                                         @foreach($inv['pelaksana'] as $pl => $p)
-                                            {{ $p['nama'] }},
+                                            @php
+                                            $pelaksana[] = $p['nama'];
+                                            @endphp
                                         @endforeach
+                                        {{ implode(', ',$pelaksana) }}
                                     </td>
 
                                     <td>{{ $inv['tanggal'] }}</td>

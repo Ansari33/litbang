@@ -40,8 +40,14 @@
                     <td>{{ $k['lingkup_data']['nama'] }}</td>
                     <td><a href="/view-kelitbangan/{{ $k['id'] }}" style="color: black;">{{ $k['judul'] }}</a></td>
                     <td>
+                        @php
+                         $pelaksana = [];
+                        @endphp
                         @foreach($k['pelaksana'] as $pl => $p)
-                            {{ $p['nama'] }},
+                            @php
+                                $pelaksana [] = $p['nama'];
+                            @endphp
+                            {{ implode(', ',$pelaksana) }}
                         @endforeach
                     </td>
                     <td>{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>

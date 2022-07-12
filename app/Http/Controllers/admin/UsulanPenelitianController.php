@@ -94,7 +94,6 @@ class UsulanPenelitianController extends Controller
     public function delete($id)
     {
         return json_decode(HttpHelper::usulan_penelitian_delete(['id' => $id]));
-        return view('admin.usulan-penelitian.index');
     }
 
     public function getInstansi()
