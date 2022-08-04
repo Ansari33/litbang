@@ -90,6 +90,10 @@ var menus = [
                 'nama' : 'Inovasi',
                 'link' : '/forum-inovasi'
             },
+            {
+                'nama' : 'Survey Kepuasan',
+                'link' : '/forum-survey'
+            },
         ]
     }
 ];

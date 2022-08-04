@@ -12,6 +12,7 @@ use App\Http\Controllers\admin\BeritaController;
 use App\Http\Controllers\admin\UsulanPenelitianController;
 use App\Http\Controllers\admin\UsulanInovasiController;
 use App\Http\Controllers\admin\ClientController;
+use App\Http\Controllers\admin\SuratController;
 
 
 
@@ -59,6 +60,8 @@ Route::get('/forum-inovasi', [ClientController::class, 'forumInovasi']);
 Route::get('/usul-inovasi',  [ClientController::class, 'buatInovasi']);
 Route::post('/usulan-inovasi-store', [UsulanInovasiController::class, 'store']);
 
+Route::get('/forum-survey', [ClientController::class, 'forumSurvey']);
+
 Route::get('/login', function () {
     if(Session::get('authenticated')){
         $cek = HttpHelper::check_token();
@@ -69,6 +72,7 @@ Route::get('/login', function () {
     }
     return view('auth.login');
 });
+
 
 Route::post('login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('refresh-token', [AuthController::class, 'refreshToken']);
@@ -130,11 +134,23 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/usulan-inovasi-update', [UsulanInovasiController::class, 'update']);
     Route::get('/usulan-inovasi-delete/{id}', [UsulanInovasiController::class, 'delete']);
 
+    ## Surat
+    Route::get('/admin-surat',[SuratController::class, 'index']);
+    Route::get('/surat-keluar-index',[SuratController::class, 'indexSuratKeluar']);
+    Route::get('/surat-keluar-list',[SuratController::class, 'listSuratKeluar']);
+    Route::get('/surat-keluar-tambah',[SuratController::class, 'createSuratKeluar']);
+    Route::post('/surat-keluar-store',[SuratController::class, 'storeSuratKeluar']);
+    Route::get('/surat-keluar-edit/{id}',[SuratController::class, 'editSuratKeluar']);
+    Route::post('/surat-keluar-update',[SuratController::class, 'updateSuratKeluar']);
+    Route::get('/open-file/{file}',[SuratController::class, 'openFile']);
 
+    Route::get('/litbang-admin', function () {
+        return view('admin.home');
+    });
 
 
     #['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
-    Route::get('/litbang-admin', function () { return view('admin.home'); });
+
 
 });
 

@@ -32,7 +32,7 @@
                                         <label for="fitness-form-name">Nomor:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="nomor" id="fitness-form-name" class="form-control required" value="" placeholder="Enter your Full Name">
+                                        <input type="text" name="nomor" id="fitness-form-name" class="form-control required" value="{{ $nomor }}" placeholder="Enter your Full Name">
                                     </div>
                                 </div>
                             </div>
@@ -89,10 +89,21 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
+                                        <label for="fitness-form-name">Lokasi:</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" name="lokasi"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 form-group">
+                                <div class="row">
+                                    <div class="col-sm-2 col-form-label">
                                         <label for="fitness-form-email">Email:</label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="email" id="fitness-form-email" class="form-control required" value="" placeholder="Email Pengusul">
+                                        <input type="hidden" name="status"  class=" required" value="usulan" >
                                     </div>
                                 </div>
                             </div>

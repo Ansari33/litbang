@@ -5,7 +5,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
                     {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Usulan Penelitian - Edit Data</span>
+                    <span class="nav-text bold ml-5">Penelitian - Edit Data</span>
                 </div>
             </div>
         </div>
@@ -35,12 +35,32 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
+                                        <label>Usulan:</label>
+                                        <textarea name="usulan" class="form-control" cols="30" rows="3">{{ $data['usulan'] }}</textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Pengusul:</label>
+                                        <input name="pengusul" type="text" class="form-control" placeholder="Pengusul" value="{{ $data['pengusul'] }}" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
                                         <label>Latar Belakang:</label>
                                         <textarea name="latar_belakang" class="form-control" cols="30" rows="4">{{ $data['latar_belakang'] }}</textarea>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tujuan:</label>
                                         <textarea name="tujuan" class="form-control" cols="30" rows="4">{{ $data['tujuan'] }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Faktor Pendukung:</label>
+                                        <textarea name="faktor_pendukung" class="form-control" cols="30" rows="4">{{ $data['faktor_pendukung'] }}</textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Faktor Penghambat:</label>
+                                        <textarea name="faktor_penghambat" class="form-control" cols="30" rows="4">{{ $data['faktor_penghambat'] }}</textarea>
                                     </div>
                                 </div>
 {{--                                <div class="form-group row">--}}
@@ -59,7 +79,7 @@
                                         {{ Form::select('instansi',$instansi,$data['instansi'], ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Email:</label>
+                                        <label>Email Pengusul:</label>
                                         <input name="email" type="text" class="form-control" placeholder="Pengusul" value="{{ $data['email'] }}" />
                                     </div>
                                 </div>
@@ -76,9 +96,9 @@
                                     <div class="col-lg-12">
                                         <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">Save</button>
                                         <button type="button" class="btn btn-secondary mr-2" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
-                                        <button type="button" id="btn_status_1" class="btn btn-info mr-2" onclick="setStatus('info')">Set Status</button>
-                                        <button type="button" id="btn_status_2" class="btn btn-success mr-2" onclick="setStatus('success')">Set Status</button>
-                                        <button type="button" id="btn_status_3" class="btn btn-warning mr-2" onclick="setStatus('warning')">Set Status</button>
+                                        <button type="button" id="btn_status_1" class="btn btn-info mr-2" onclick="setStatus('Proses')">Set Konfirmasi</button>
+                                        <button type="button" id="btn_status_2" class="btn btn-success mr-2" onclick="setStatus('Terlaksana')">Set Terlaksana</button>
+                                        <button type="button" id="btn_status_3" class="btn btn-warning mr-2" onclick="setStatus('Tidak Terkasan')">Set Tidak TerLaksana</button>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +125,7 @@
             });
             $('#btn_usulan_penelitian_edit_data').click(function(){
                 let data = $('#form_edit_usulan_penelitian').serializeArray();
-                console.log(data);
+                let pelaksana = [];
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -114,14 +134,12 @@
                 $.ajax({
                     type: "POST",
                     timeout: 50000,
-                    url: '/usulan_penelitian-update',
+                    url: '/usulan-penelitian-update',
                     async: true,
                     data: {
                         datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
                     },
                     success: function (res) {
-                        console.log(res)
-                        console.log(res)
                         if (res.status === true){
                             Swal.fire('Berhasil!', res.message, 'success').then(
                                 function (e) {

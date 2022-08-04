@@ -31,7 +31,7 @@ $menu = [
     [
       'name_id' => 5,
       'icon'    => 'fa fa-search-plus',
-      'label'   => 'Usulan Penelitian',
+      'label'   => 'Penelitian',
       'link'    => '/admin-usulan-penelitian',
       'children' => [],
     ],
@@ -40,6 +40,20 @@ $menu = [
       'icon'    => 'fa fa-lightbulb',
       'label'   => 'Usulan Inovasi',
       'link'    => '/admin-usulan-inovasi',
+      'children' => [],
+    ],
+    [
+      'name_id' => 7,
+      'icon'    => 'fa fa-newspaper',
+      'label'   => 'Survey',
+      'link'    => '/admin-usulan-inovasi',
+      'children' => [],
+    ],
+    [
+      'name_id' => 8,
+      'icon'    => 'far fa-envelope',
+      'label'   => 'Surat',
+      'link'    => '/admin-surat',
       'children' => [],
     ],
 ];

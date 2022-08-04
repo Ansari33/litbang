@@ -5,7 +5,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
 {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Penelitian - Index</span>
+                    <span class="nav-text bold ml-5">Surat - Index</span>
                 </div>
             </div>
         </div>
@@ -17,75 +17,61 @@
                             <div class="tab-content" id="content_data_pembelian_permintaan_pembelian">
                                 <div class="tab-pane fade show active" id="permintaan_pembelian_list" role="tabpanel"
                                      aria-labelledby="permintaan_pembelian_list">
-                                    <div class="container-auto ml-7 mb-7">
-                                        <div class="row">
-
-                                            <div class="col-md-8 ml-auto my-md-0">
-                                                <div class="d-flex flex-row-reverse">
-                                                    <div class="ml-2"><a href="/usulan-penelitian-tambah" class="btn btn-light-primary btn-sm"
-                                                                         onclick="" target="_blank"><i
-                                                                class="flaticon2-plus mr-n1"></i></a></div>
-                                                    <div class="ml-2"><a href="javascript:;" class="btn btn-light-success btn-sm"
-                                                                         onclick="" id="btn_reload_kelitbangan"><i
-                                                                class="flaticon2-reload mr-n1"></i></a></div>
-
-
-                                                    <!-- Filter Tanggal -->
-
-                                                    <div class="col-lg-3">
-                                                        <a href="javascript:;" class="btn btn-icon btn-light-primary btn-sm"
-                                                           id="search_permintaan_pembelian_date"><i class="flaticon-search"></i></a>&nbsp;
-                                                        <a href="javascript:;" class="btn btn-icon btn-light-primary btn-sm"
-                                                           id="reset_permintaan_pembelian_date"><i
-                                                                class="flaticon2-circular-arrow"></i></a>&nbsp;
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <a href="/surat-keluar-index" style="text-decoration: none !important;  color: inherit;">
+                                            <!--begin::Card-->
+                                            <div class="card card-custom card-stretch">
+                                                <div class="card-header ribbon ribbon-top ribbon-ver">
+                                                    <div class="ribbon-target bg-success" style="top: -2px; right: 20px;">
+                                                        <i class="fa fa-star text-white"></i>
                                                     </div>
-
-                                                    <div class="col-lg-3">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control to_date_history_permintaan_pembelian"
-                                                                   id="kt_datepicker_2" readonly="readonly" placeholder="Tanggal Akhir">
-                                                            <div class="input-group-append">
-												<span class="input-group-text">
-													<i class="la la-calendar-check-o"></i>
-												</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control from_date_history_permintaan_pembelian"
-                                                                   id="kt_datepicker_2" readonly="readonly" placeholder="Tanggal Awal">
-                                                            <div class="input-group-append">
-												<span class="input-group-text">
-													<i class="la la-calendar-check-o"></i>
-												</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Filter End -->
+                                                    <h3 class="card-title">
+                                                        Surat Keluar
+                                                    </h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    Pengelolaan Surat Keluar
                                                 </div>
                                             </div>
+                                            <!--end::Card-->
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <a href="/surat-masuk-index" style="text-decoration: none !important;  color: inherit;">
+                                                <!--begin::Card-->
+                                                <div class="card card-custom card-stretch">
+                                                    <div class="card-header ribbon ribbon-top ribbon-ver">
+                                                        <div class="ribbon-target bg-success" style="top: -2px; right: 20px;">
+                                                            <i class="fa fa-star text-white"></i>
+                                                        </div>
+                                                        <h3 class="card-title">
+                                                            Surat Masuk
+                                                        </h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        Pengelolaan Surat Masuk
+                                                    </div>
+                                                </div>
+                                                <!--end::Card-->
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <!--begin::Card-->
+                                            <div class="card card-custom card-stretch">
+                                                <div class="card-header">
+                                                    <div class="card-title">
+                                                        <h3 class="card-label">Card Title <small>same height cards</small></h3>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    ...
+                                                </div>
+                                            </div>
+                                            <!--end::Card-->
                                         </div>
                                     </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-separate table-head-custom table-checkable"
-                                               id="tbl_kelitbangan">
-                                            <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Instansi</th>
-                                                <th>Usulan</th>
-                                                <th>Pengusul</th>
-                                                <th>Tanggal</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            </thead>
 
-                                        </table>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -118,11 +104,10 @@
                 dom: "Btplir",
                 columns : [
                     {data : 'id'},
-                    {data : 'instansi'},
-                    {data : 'usulan'},
-                    {data : 'pengusul'},
+                    {data : 'judul'},
                     {data : 'tanggal'},
-                    {data : 'status'},
+                    // {data : 'deskripsi'},
+                    // {data : 'tempat'},
                     {data : 'action'},
                 ],
                 // buttons: [
@@ -165,7 +150,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '/usulan-penelitian-list',
+                    url: '/berita-list',
                     async: true,
                     error: function (res) {
                         $('.dataTables_processing').hide();
@@ -214,28 +199,26 @@
                               </label>`;
                         },
                     },
+                    // {
+                    //
+                    //     targets: 3,
+                    //     render: function (data) {
+                    //
+                    //         let parser = new DOMParser();
+                    //         let doc = parser.parseFromString(data, 'text/html');
+                    //         console.log(doc.body);
+                    //         return data;
+                    //
+                    //         return `<label class="checkbox checkbox-single">
+                    //             <input type="checkbox" value="" class="checkable" />
+                    //             <span></span>
+                    //           </label>`;
+                    //     },
+                    // },
                 ],
             });
         })
-
-        $(`#tbl_kelitbangan thead tr`).first().clone().appendTo(`#tbl_kelitbangan thead`);
-        $(`#tbl_kelitbangan thead tr:eq(1) th`).each(function (i) {
-            let title = $(this).text();
-            if (title == 'ID') {
-                $(this).html('');
-            } else {
-                $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
-            }
-            $('input', this).on('keyup', function (e) {
-
-                // if (e.which == 13) {
-                indexKelitbangan.column(i).search(this.value).draw();
-                //   console.log(this.value);
-                // }
-            });
-        });
-
-        function deleteUsulanPenelitian(id) {
+        function deleteBerita(id) {
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -244,11 +227,10 @@
             $.ajax({
                 //type: "POST",
                 timeout: 50000,
-                url: '/usulan-penelitian-delete/'+id,
+                url: '/berita-delete/'+id,
                 async: true,
                 success: function (res) {
                     console.log(res)
-
                     res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
                     indexKelitbangan.ajax.reload();
                 },

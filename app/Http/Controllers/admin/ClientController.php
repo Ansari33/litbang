@@ -10,6 +10,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\Factory;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Http;
 
 class ClientController extends Controller
 {
@@ -43,13 +44,23 @@ class ClientController extends Controller
     {
         $data =(HttpHelper::instansi_list())['data'];
         $instansi = collect($data)->pluck('nama','id')->toArray();
-        return view('forum.buat_penelitian',compact('instansi'));
+        $nomor = HttpHelper::usulan_penelitian_numbering()['data'];
+        return view('forum.buat_penelitian',compact('instansi','nomor'));
     }
 
     public function forumInovasi()
     {
         $data = HttpHelper::usulan_inovasi_list()['data'];
         return view('forum.usulan_inovasi',compact('data'));
+    }
+
+    public function forumSurvey()
+    {
+//        $response = Http::withToken(('ya29.A0AVA9y1tA_DOhYl4-2IQnlNOvjuff56chHqFBVzuPKdYCjrpPEyTD1udMOM6e1QBsPbY3mVC6qZ3s3FcekaJDkWmrFR5HMcMa81WBejTfL3nT9__JnvJY-E_WRI-ueYXQJjxLR_Qpz9y4yjasEOwJJtEzE0XVYUNnWUtBVEFTQVRBU0ZRRTY1ZHI4SnB2OS1SMy1wMUd6M01lOXF4OVVGUQ0163'))->timeout(env('API_TIMEOUT', '10000'))
+//            ->get('https://forms.googleapis.com/v1/forms/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8/responses');
+//        return $response;
+        $data = [];#HttpHelper::usulan_inovasi_list()['data'];
+        return view('forum.survey',compact('data'));
     }
 
     public function buatInovasi()
