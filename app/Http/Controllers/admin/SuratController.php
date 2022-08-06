@@ -70,13 +70,9 @@ class SuratController extends Controller
                 File::delete( $lama_ft );
             }
             File::copy($ur['url'],$loc.$strNama);
-            $body['surat_masuk'] = $ur['nama'];
+            $body['surat_masuk'] = str_replace(' ','-',$ur['nama']);
         }
-        //$data = $body['surat_keluar'];
-        //$pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
-        //$content = $pdf->download()->getOriginalContent();
-        //File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
-        //return Storage::put('/surat-keluar/'.$body['nomor_urut'].'.pdf',$content);
+
 
         return json_decode(HttpHelper::surat_masuk_add($body));
     }
@@ -107,7 +103,7 @@ class SuratController extends Controller
                 File::delete( $lama_ft );
             }
             File::copy($ur['url'],$loc.$strNama);
-            $body['surat_masuk'] = $ur['nama'];
+            $body['surat_masuk'] = str_replace(' ','-',$ur['nama']);
         }
 
         return json_decode(HttpHelper::surat_masuk_update($body));

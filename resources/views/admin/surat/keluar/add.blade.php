@@ -261,8 +261,11 @@
                     success: function (res) {
                         console.log(res)
                         if (res.status === true){
-                            Swal.fire('Berhasil!', 'Surat Berhasil!', 'success');
-                            $('#form_edit_usulan_penelitian').trigger('reset')
+                            Swal.fire('Berhasil!', 'Surat Berhasil!', 'success').then(
+                                function (e){
+                                    window.close();
+                                }
+                            );
                         }else{
                             Swal.fire('Gagal!', 'Surat Gagal', 'danger');
                         }
