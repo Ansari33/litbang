@@ -460,19 +460,52 @@ class HttpHelper {
         return $response;
     }
     public static function surat_keluar_update($request) {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/update', $request);
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-keluar/update', $request);
         return $response;
     }
     public static function surat_keluar_delete($request) {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/delete', $request);
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-keluar/delete', $request);
         return $response;
     }
     public static function surat_keluar_terkini() {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/terkini');
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
         return $response;
     }
     public static function surat_keluar_numbering() {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/terkini');
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
+        return $response;
+    }
+
+    public static function surat_masuk_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/list');
+        return $response;
+    }
+    public static function surat_masuk_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-masuk/list/datatable', $request);
+        return $response;
+    }
+    public static function surat_masuk_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-masuk/create', $request);
+        return $response;
+    }
+    public static function surat_masuk_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-masuk/get/id', $request);
+        return $response;
+    }
+    public static function surat_masuk_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-masuk/update', $request);
+        return $response;
+    }
+    public static function surat_masuk_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-masuk/delete', $request);
+        return $response;
+    }
+    public static function surat_masuk_terkini() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
+        return $response;
+    }
+    public static function surat_masuk_numbering() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
         return $response;
     }
 

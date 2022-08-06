@@ -5,7 +5,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
 {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Penelitian - Index</span>
+                    <span class="nav-text bold ml-5">Surat Masuk - Index</span>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
-                                                    <div class="ml-2"><a href="/usulan-penelitian-tambah" class="btn btn-light-primary btn-sm"
+                                                    <div class="ml-2"><a href="/surat-masuk-tambah" class="btn btn-light-primary btn-sm"
                                                                          onclick="" target="_blank"><i
                                                                 class="flaticon2-plus mr-n1"></i></a></div>
                                                     <div class="ml-2"><a href="javascript:;" class="btn btn-light-success btn-sm"
@@ -75,11 +75,13 @@
                                             <thead>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Instansi</th>
-                                                <th>Usulan</th>
-                                                <th>Pengusul</th>
-                                                <th>Tanggal</th>
-                                                <th>Status</th>
+                                                <th>Nomor</th>
+                                                <th>Klasifikasi</th>
+                                                <th>Nomor Surat</th>
+                                                <th>Tanggal Surat</th>
+                                                <th>Tanggal Penerimaan</th>
+                                                <th>Pengirim</th>
+                                                <th>File</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -118,11 +120,13 @@
                 dom: "Btplir",
                 columns : [
                     {data : 'id'},
-                    {data : 'instansi'},
-                    {data : 'usulan'},
-                    {data : 'pengusul'},
-                    {data : 'tanggal'},
-                    {data : 'status'},
+                    {data : 'nomor_urut'},
+                    {data : 'klasifikasi_surat_id'},
+                    {data : 'nomor_surat'},
+                    {data : 'tanggal_surat'},
+                    {data : 'tanggal_penerimaan'},
+                    {data : 'pengirim'},
+                    {data : 'file_surat'},
                     {data : 'action'},
                 ],
                 // buttons: [
@@ -165,7 +169,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '/usulan-penelitian-list',
+                    url: '/surat-masuk-list',
                     async: true,
                     error: function (res) {
                         $('.dataTables_processing').hide();
@@ -235,14 +239,14 @@
             });
         });
 
-        function deleteUsulanPenelitian(id) {
+        function deleteSuratMasuk(id) {
             Swal.fire({
                 title: "Hapus Data?",
                 text: "Data Akan Dihapus Jika Dilanjutkan!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonText: "lanjutkan!"
-            }).then(function(result) {
+                }).then(function(result) {
                 if (result.value) {
                     $.ajaxSetup({
                         headers: {
@@ -252,7 +256,7 @@
                     $.ajax({
                         //type: "POST",
                         timeout: 50000,
-                        url: '/usulan-penelitian-delete/'+id,
+                        url: '/surat-masuk-delete/'+id,
                         async: true,
                         success: function (res) {
                             console.log(res)
@@ -275,5 +279,30 @@
         $('#btn_reload_kelitbangan').on('click',function (e) {
             indexKelitbangan.ajax.reload();
         })
+
+        function openFile(id) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                //type: "POST",
+                timeout: 50000,
+                url: '/download-surat-masuk/'+id,
+                async: true,
+                success: function (res) {
+                    console.log(res)
+
+                },
+                error: function (res, textstatus) {
+                    if (textstatus === "timeout") {
+                        notice('Response Time Out', 'error');
+                    } else {
+                        notice(res.responseJSON.message, 'error');
+                    }
+                }
+            });
+        }
     </script>
 @endpush

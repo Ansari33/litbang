@@ -5,7 +5,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
                     {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Surat Keluar - Edit Data</span>
+                    <span class="nav-text bold ml-5">Surat Masuk - Edit Data</span>
                 </div>
             </div>
         </div>
@@ -36,6 +36,21 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
+                                        <label>Pengirim:</label>
+                                        <input name="pengirim" type="text" class="form-control" placeholder="Nomor" value="{{ $data['pengirim']}}" />
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Tanggal Penerimaan:</label>
+                                        <div class="input-group date" id="tanggal_pengiriman_pesanan_add" data-target-input="nearest">
+                                            <input name="tanggal_penerimaan" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_pengiriman_pesanan_add" value="{{ \Carbon\Carbon::parse($data['tanggal_penerimaan'])->format('d-m-Y') }}"/>
+                                            <div class="input-group-append" data-target="#tanggal_pengiriman_pesanan_add" data-toggle="datetimepicker">
+                                                <span class="input-group-text"><i class="ki ki-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
                                         <label>Nomor Surat</label>
                                         <input name="nomor_surat" type="text" class="form-control" placeholder="Nomor" value="{{ $data['nomor_surat'] }}" />
                                     </div>
@@ -56,63 +71,73 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-lg-12">
-                                        <label>Detail Berita:</label>
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <textarea class="summernote" id="kt_summernote_1" name="surat_keluar">{{ $data['surat_keluar'] }}</textarea>
-                                        </div>
+                                    <div class="col-lg-6">
+                                        <label>Isi Disposisi:</label>
+                                        <textarea name="isi_disposisi" class="form-control" cols="30" rows="4">{{ $data['isi_disposisi'] }}</textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Disposisi Kepada:</label>
+                                        <textarea name="disposisi_kepada" class="form-control" cols="30" rows="4">{{ $data['disposisi_kepada'] }}</textarea>
                                     </div>
                                 </div>
 {{--                                <div class="form-group row">--}}
-{{--                                    <input type="file" id="filesurat" style="display: none" src="'{{ asset('surat-keluar/'.$data['surat_keluar']) }}'" >--}}
-{{--                                    <div class="col-lg-6">--}}
-{{--                                        <!--begin::Card-->--}}
-{{--                                        <div class="card card-custom card-stretch">--}}
-{{--                                            <div class="card-header">--}}
-{{--                                                <div class="card-title">--}}
-{{--                                                    <h3 class="card-label">Upload File Baru</h3>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="card-body">--}}
-{{--                                                <div class="uppy" id="kt_uppy_1">--}}
-{{--                                                    <div class="uppy-Root" dir="ltr">--}}
-{{--                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">--}}
-{{--                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>--}}
-{{--                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">--}}
-{{--                                                                <div class="uppy-Dashboard-innerWrap">--}}
-{{--                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>--}}
-{{--                                                                    <div class="uppy-Dashboard-AddFiles">--}}
-{{--                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">--}}
-{{--                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">--}}
-{{--                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>--}}
-{{--                                                                        </div>--}}
-{{--                                                                        <div class="uppy-Dashboard-AddFiles-info">--}}
-{{--                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="uppy-Dashboard-progressindicators">--}}
-{{--                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">--}}
-{{--                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">--}}
-
-{{--                                                                            </div>--}}
-{{--                                                                            <div class="uppy-StatusBar-actions"></div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
+{{--                                    <div class="col-lg-12">--}}
+{{--                                        <label>Detail Berita:</label>--}}
+{{--                                        <div class="col-lg-12 col-md-12 col-sm-12">--}}
+{{--                                            <textarea class="summernote" id="kt_summernote_1" name="surat_keluar">{{ $data['surat_keluar'] }}</textarea>--}}
 {{--                                        </div>--}}
-{{--                                        <!--end::Card-->--}}
 {{--                                    </div>--}}
+{{--                                </div>--}}
+                                <div class="form-group row">
+                                    <input type="file" id="filesurat" style="display: none" src="'{{ asset('surat-keluar/'.$data['surat_masuk']) }}'" >
+                                    <div class="col-lg-6">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Upload File Baru</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_1">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
+                                    </div>
 {{--                                    <div class="col-lg-6">--}}
 {{--                                        <label>Surat Terupload:</label>--}}
 {{--                                        <a href="/open-file/{{ $data['surat_keluar'] }}"><i class="flaticon2-file"></i>{{ $data['surat_keluar'] }}</a>--}}
 {{--                                    </div>--}}
-{{--                                </div>--}}
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <div class="row">
@@ -217,7 +242,7 @@
                 })
 
 
-                var file_img = "{!! asset('surat-keluar') !!}/" + '{{ $data['surat_keluar'] }}';
+                var file_img = "{!! asset('surat-masuk') !!}/" + '{{ $data['surat_masuk'] }}';
                 //var file_blob = file_img.blob();
                 // var tag_img = `<img src="${file_img}" style="display: none;" id="${val.nama}">`;
                 // $('#form_edit_kelitbangan').append(tag_img);
@@ -226,7 +251,7 @@
                 fetch(file_img)
                     .then(res => res.blob())
                     .then(blob => {
-                        const file = new File([blob], '{{ $data['surat_keluar'] }}', blob)
+                        const file = new File([blob], '{{ $data['surat_masuk'] }}', blob)
                         console.log(file)
                         file_blob = file;
                         console.log('satu')
@@ -235,14 +260,14 @@
                         function () {
                             console.log('dua')
                             uppyDashboard.addFile({
-                                name: '{{ $data['surat_keluar'] }}', // file name
+                                name: '{{ $data['surat_masuk'] }}', // file name
                                 type: 'document.docx', // file type
                                 data: file_blob, // file blob
                                 meta: {
                                     // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
                                     relativePath: "",
                                 },
-                                source: "{!! asset('surat-keluar') !!}/" + '{{ $data['surat_keluar'] }}', // optional, determines the source of the file, for example, Instagram.
+                                source: "{!! asset('surat-masuk') !!}/" + '{{ $data['surat_masuk'] }}', // optional, determines the source of the file, for example, Instagram.
                                 isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
                                 // when using companion in combination with Instagram.
                             })
@@ -294,7 +319,6 @@
 
             $('#btn_usulan_penelitian_edit_data').click(function(){
                 let data = $('#form_edit_usulan_penelitian').serializeArray();
-                let file_list = [];
                 console.log(data);
                 $.ajaxSetup({
                     headers: {
@@ -304,7 +328,7 @@
                 $.ajax({
                     type: "POST",
                     timeout: 50000,
-                    url: '/surat-keluar-update',
+                    url: '/surat-masuk-update',
                     async: true,
                     data: {
                         datas : JSON.stringify(data), file_surat : JSON.stringify(file_list)
@@ -333,42 +357,5 @@
             });
         })
 
-        function setStatus(status){
-            $('#status').val(status);
-            let data = $('#form_edit_usulan_penelitian').serializeArray();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: "POST",
-                timeout: 50000,
-                url: '/usulan-penelitian-update',
-                async: true,
-                data: {
-                    datas : JSON.stringify(data)
-                },
-                success: function (res) {
-                    if (res.status === true){
-                        Swal.fire('Berhasil!', 'Status Berhasil Diupdate!', 'success').then(
-                            function (e) {
-                                window.close();
-                            }
-                        );
-                    }else{
-                        Swal.fire('Gagal!', res.message, 'danger');
-                    }
-                },
-                error: function (res, textstatus) {
-                    if (textstatus === "timeout") {
-                        notice('Response Time Out', 'error');
-                    } else {
-                        notice(res.responseJSON.message, 'error');
-                    }
-                }
-            });
-        }
     </script>
 @endpush

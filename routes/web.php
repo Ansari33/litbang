@@ -142,6 +142,17 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/surat-keluar-store',[SuratController::class, 'storeSuratKeluar']);
     Route::get('/surat-keluar-edit/{id}',[SuratController::class, 'editSuratKeluar']);
     Route::post('/surat-keluar-update',[SuratController::class, 'updateSuratKeluar']);
+    Route::get('/surat-keluar-delete/{id}',[SuratController::class, 'deleteSuratKeluar']);
+
+    Route::get('/surat-masuk-index',[SuratController::class, 'indexSuratMasuk']);
+    Route::get('/surat-masuk-list',[SuratController::class, 'listSuratMasuk']);
+    Route::get('/surat-masuk-tambah',[SuratController::class, 'createSuratMasuk']);
+    Route::post('/surat-masuk-store',[SuratController::class, 'storeSuratMasuk']);
+    Route::get('/surat-masuk-edit/{id}',[SuratController::class, 'editSuratMasuk']);
+    Route::post('/surat-masuk-update',[SuratController::class, 'updateSuratMasuk']);
+    Route::get('/surat-masuk-delete/{id}',[SuratController::class, 'deleteSuratMasuk']);
+    Route::get('/download-surat-masuk/{id}',[SuratController::class, 'downloadSuratMasuk']);
+
     Route::get('/open-file/{file}',[SuratController::class, 'openFile']);
 
     Route::get('/litbang-admin', function () {

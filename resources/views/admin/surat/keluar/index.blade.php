@@ -235,31 +235,43 @@
             });
         });
 
-        function deleteUsulanPenelitian(id) {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                //type: "POST",
-                timeout: 50000,
-                url: '/usulan-penelitian-delete/'+id,
-                async: true,
-                success: function (res) {
-                    console.log(res)
+        function deleteSuratKeluar(id) {
 
-                    res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
-                    indexKelitbangan.ajax.reload();
-                },
-                error: function (res, textstatus) {
-                    if (textstatus === "timeout") {
-                        notice('Response Time Out', 'error');
-                    } else {
-                        notice(res.responseJSON.message, 'error');
-                    }
+            Swal.fire({
+                title: "Hapus Data?",
+                text: "Data Akan Dihapus Jika Dilanjutkan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "lanjutkan!"
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        //type: "POST",
+                        timeout: 50000,
+                        url: '/surat-keluar-delete/'+id,
+                        async: true,
+                        success: function (res) {
+                            console.log(res)
+
+                            res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
+                            indexKelitbangan.ajax.reload();
+                        },
+                        error: function (res, textstatus) {
+                            if (textstatus === "timeout") {
+                                notice('Response Time Out', 'error');
+                            } else {
+                                notice(res.responseJSON.message, 'error');
+                            }
+                        }
+                    });
                 }
             });
+
         }
         $('#btn_reload_kelitbangan').on('click',function (e) {
             indexKelitbangan.ajax.reload();
