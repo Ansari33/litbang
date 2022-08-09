@@ -130,7 +130,16 @@
                         datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
                     },
                     success: function (res) {
-                        console.log(res)
+                        if (res.status === true){
+                            Swal.fire('Berhasil!', 'Surat Berhasil!', 'success').then(
+                                function (e){
+                                    window.close();
+                                }
+                            );
+
+                        }else{
+                            Swal.fire('Gagal!', 'Surat Gagal', 'danger');
+                        }
 
                     },
                     error: function (res, textstatus) {

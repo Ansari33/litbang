@@ -5,7 +5,7 @@ class Google
     public function client()
     {
         $client = new \Google_Client();
-        $client->setClientId(env('GOOGLE_CLIENT_ID'));
+        $client->setClientId('258170609020-5osceu8t4b0u0m72m695lsv5o0f4fjnr.apps.googleusercontent.com');
         $client->setClientSecret(env('GOOGLE_CLIENT_SECRET'));
         $client->setRedirectUri(env('GOOGLE_REDIRECT_URL'));
         $client->setScopes(explode(',', env('GOOGLE_SCOPES')));

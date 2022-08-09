@@ -13,6 +13,7 @@ use App\Http\Controllers\admin\UsulanPenelitianController;
 use App\Http\Controllers\admin\UsulanInovasiController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\SuratController;
+use App\Http\Controllers\admin\SurveyController;
 
 
 
@@ -143,6 +144,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/surat-keluar-edit/{id}',[SuratController::class, 'editSuratKeluar']);
     Route::post('/surat-keluar-update',[SuratController::class, 'updateSuratKeluar']);
     Route::get('/surat-keluar-delete/{id}',[SuratController::class, 'deleteSuratKeluar']);
+    Route::get('/open-file/{file}',[SuratController::class, 'openFile']);
 
     Route::get('/surat-masuk-index',[SuratController::class, 'indexSuratMasuk']);
     Route::get('/surat-masuk-list',[SuratController::class, 'listSuratMasuk']);
@@ -153,17 +155,20 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/surat-masuk-delete/{id}',[SuratController::class, 'deleteSuratMasuk']);
     Route::get('/download-surat-masuk/{id}',[SuratController::class, 'downloadSuratMasuk']);
 
-    Route::get('/open-file/{file}',[SuratController::class, 'openFile']);
-
     Route::get('/litbang-admin', function () {
         return view('admin.home');
     });
+    Route::get('/admin-survey', [SurveyController::class, 'index']);
+
+    Route::get('/redirect', [AuthController::class, 'redirectToProvider']);
+    Route::get('/callback', [AuthController::class, 'handleProviderCallback']);
 
 
     #['as' => 'logout', 'uses' => 'Auth\AuthController@logout']);
 
 
 });
+Route::get('/redirect', [AuthController::class, 'redirectToProvider']);
 
 
 

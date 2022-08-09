@@ -61,7 +61,7 @@
                                             <div class="card card-custom card-stretch">
                                                 <div class="card-header">
                                                     <div class="card-title">
-                                                        <h3 class="card-label">Card Title <small>same height cards</small></h3>
+                                                        <h3 class="card-label">Jenis Surat</h3>
                                                     </div>
                                                 </div>
                                                 <div class="card-body">

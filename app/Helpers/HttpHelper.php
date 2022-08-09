@@ -504,8 +504,19 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
         return $response;
     }
+
     public static function surat_masuk_numbering() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
+        return $response;
+    }
+
+    public static function form_get() {
+        $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8');
+        return $response;
+    }
+
+    public static function form_responses_get() {
+        $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8/responses');
         return $response;
     }
 

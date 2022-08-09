@@ -46,7 +46,7 @@ $menu = [
       'name_id' => 7,
       'icon'    => 'fa fa-newspaper',
       'label'   => 'Survey',
-      'link'    => '/admin-usulan-inovasi',
+      'link'    => '/redirect',
       'children' => [],
     ],
     [

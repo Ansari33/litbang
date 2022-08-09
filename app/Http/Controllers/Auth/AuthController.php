@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Exception;
+use Google\Service\Forms\Form;
 use Illuminate\Http\Request;
 use App\Helpers\HttpHelper;
 use App\Traits\Throttles;
@@ -12,6 +13,9 @@ use Session;
 use Response;
 use Log;
 use Carbon\Carbon;
+use Laravel\Socialite\Facades\Socialite;
+use Google\Client;
+use Google\Service\Drive as GDrive;
 
 class AuthController extends Controller {
 	/**
@@ -113,5 +117,68 @@ class AuthController extends Controller {
 		$check = HttpHelper::check_token();
 		return $check;
 	}
+
+    public function redirectToProvider(){
+
+        $client = new Client();
+        $client->setAuthConfig(public_path('/').'crd.json');
+        $client->addScope(
+            [
+                'https://www.googleapis.com/auth/drive',
+                'https://www.googleapis.com/auth/drive.file',
+                'https://www.googleapis.com/auth/drive.readonly',
+                'https://www.googleapis.com/auth/forms.body',
+                'https://www.googleapis.com/auth/forms.body.readonly',
+            ]);
+        $client->setRedirectUri('http://localhost:7000/callback' );
+// offline access will give you both an access and refresh token so that
+// your app can refresh the access token without user interaction.
+        $client->setAccessType('offline');
+// Using "consent" ensures that your application always receives a refresh token.
+// If you are not using offline access, you can omit this.
+        //$client->setApprovalPrompt('consent');
+        $client->setIncludeGrantedScopes(true);
+        $auth_url = $client->createAuthUrl();
+
+        //return $client->authenticate($_GET['code']);
+
+       // return $response = Http::get($auth_url);
+        return redirect()->to($auth_url)->send();
+
+//        return Socialite::driver('google')
+//            ->with(
+//                [
+//                    'redirect_uri' => 'http://localhost:7000/callback',
+//                ])
+//            ->redirect();
+    }
+
+	public function handleProviderCallback(Request $request){
+//        $client = new Google\Client();
+//        $client->setAuthConfigFile('client_secrets.json');
+//        $client->setRedirectUri('http://' . $_SERVER['HTTP_HOST'] . '/oauth2callback.php');
+//        $client->addScope(Google\Service\Drive::DRIVE_METADATA_READONLY);
+
+        $client = new Client();
+        $client->setAuthConfig(public_path('/').'crd.json');
+
+        $client->addScope(
+            [
+                'https://www.googleapis.com/auth/drive',
+                'https://www.googleapis.com/auth/drive.file',
+                'https://www.googleapis.com/auth/drive.readonly',
+                'https://www.googleapis.com/auth/forms.body',
+                'https://www.googleapis.com/auth/forms.body.readonly',
+            ]);
+        $client->setRedirectUri('http://localhost:7000/callback' );
+
+        $client->authenticate($request['code']);
+        //return $client->getAccessToken()['access_token'];
+        Session::put('GToken',$client->getAccessToken()['access_token']);
+        Session::put('GAuth',true);
+        Session::save();
+        return redirect()->to('/admin-survey');
+
+    }
 
 }
