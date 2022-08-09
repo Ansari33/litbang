@@ -130,7 +130,7 @@ class AuthController extends Controller {
                 'https://www.googleapis.com/auth/forms.body',
                 'https://www.googleapis.com/auth/forms.body.readonly',
             ]);
-        $client->setRedirectUri('http://localhost:7000/callback' );
+        $client->setRedirectUri(env('GOOGLE_CALLBACK') );
 // offline access will give you both an access and refresh token so that
 // your app can refresh the access token without user interaction.
         $client->setAccessType('offline');
@@ -170,7 +170,7 @@ class AuthController extends Controller {
                 'https://www.googleapis.com/auth/forms.body',
                 'https://www.googleapis.com/auth/forms.body.readonly',
             ]);
-        $client->setRedirectUri('http://localhost:7000/callback' );
+        $client->setRedirectUri(env('GOOGLE_CALLBACK') );
 
         $client->authenticate($request['code']);
         //return $client->getAccessToken()['access_token'];
