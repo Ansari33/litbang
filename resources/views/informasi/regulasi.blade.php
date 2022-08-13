@@ -83,92 +83,36 @@
                         </div>
                     </div>
                 </div>
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="400">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-star2"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>Powerful Performance</h3>--}}
-{{--                            <p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="600">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-video"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>HTML5 Video</h3>--}}
-{{--                            <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="800">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-params"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>Parallax Support</h3>--}}
-{{--                            <p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1000">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-fire"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>Endless Possibilities</h3>--}}
-{{--                            <p>Complete control on each &amp; every element that provides endless customization possibilities.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1200">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-bulb"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>Light &amp; Dark Color Schemes</h3>--}}
-{{--                            <p>Change your Website's Primary Scheme instantly by simply adding the dark class to the body.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1400">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-heart2"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>Boxed &amp; Wide Layouts</h3>--}}
-{{--                            <p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-sm-6 col-lg-4">--}}
-{{--                    <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn" data-delay="1600">--}}
-{{--                        <div class="fbox-icon">--}}
-{{--                            <a href="#"><i class="icon-note"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <div class="fbox-content">--}}
-{{--                            <h3>Extensive Documentation</h3>--}}
-{{--                            <p>We have covered each &amp; everything in our Documentation including Videos &amp; Screenshots.</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
 
+        </div>
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="table-responsive">
+                        <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($data as $item => $reg)
+                            <tr>
+                                <td>{{ $item + 1  }}</td>
+
+                                <td><a href="/download-regulasi/{{ $reg['file'] }}" style="color: inherit">{{ $reg['nama']  }}</a></td>
+
+                                <td>{{ $reg['tanggal']  }}</td>
+                            </tr>
+                            @endForeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

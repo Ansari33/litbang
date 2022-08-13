@@ -359,6 +359,12 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/list');
         return $response;
     }
+
+    public static function usulan_penelitian_list_external() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/list/external');
+        return $response;
+    }
+
     public static function usulan_penelitian_datatable($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/list/datatable', $request);
         return $response;
@@ -510,13 +516,63 @@ class HttpHelper {
         return $response;
     }
 
-    public static function form_get() {
-        $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8');
+    public static function form_get($request) {
+        $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/'.$request);
         return $response;
     }
 
-    public static function form_responses_get() {
-        $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8/responses');
+    public static function form_responses_get($request) {
+        $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/'.$request.'/responses');
+        return $response;
+    }
+
+    public static function regulasi_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'regulasi/list');
+        return $response;
+    }
+    public static function regulasi_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'regulasi/list/datatable', $request);
+        return $response;
+    }
+    public static function regulasi_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'regulasi/create', $request);
+        return $response;
+    }
+    public static function regulasi_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'regulasi/get/id', $request);
+        return $response;
+    }
+    public static function regulasi_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'regulasi/update', $request);
+        return $response;
+    }
+    public static function regulasi_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'regulasi/delete', $request);
+        return $response;
+    }
+
+    public static function survey_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'survey/list');
+        return $response;
+    }
+    public static function survey_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'survey/list/datatable', $request);
+        return $response;
+    }
+    public static function survey_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'survey/create', $request);
+        return $response;
+    }
+    public static function survey_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'survey/get/id', $request);
+        return $response;
+    }
+    public static function survey_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'survey/update', $request);
+        return $response;
+    }
+    public static function survey_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'survey/delete', $request);
         return $response;
     }
 

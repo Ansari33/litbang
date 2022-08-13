@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    Hasil SUrvey
+    List Agenda
 @endsection
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -8,7 +8,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
 {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Survey - Index</span>
+                    <span class="nav-text bold ml-5">Regulasi - Index</span>
                 </div>
             </div>
         </div>
@@ -22,10 +22,49 @@
                                      aria-labelledby="permintaan_pembelian_list">
                                     <div class="container-auto ml-7 mb-7">
                                         <div class="row">
+                                            <div class="row">
+                                                <div class="col-md-0 my-2 my-md-0">
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonPermintaanPembelian"
+                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Pengaturan Kolom
+                                                        </button>
+                                                        <div class="dropdown-menu" id="columnSettingPermintaanPembelian" aria-labelledby="dropdownMenuButton">
+                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
+                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Nomor" class="menuPermintaanPembelian"
+                                                                           name="CheckboxesPermintaanPembelian_1" value="Nomor">
+                                                                    <span></span> &nbsp; Nomor </label> </a>
+                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
+                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Tanggal" class="menuPermintaanPembelian"
+                                                                           name="CheckboxesPermintaanPembelian_2" value="Tanggal">
+                                                                    <span></span> &nbsp; Tanggal</label></a>
+                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
+                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Pemasok" class="menuPermintaanPembelian"
+                                                                           name="CheckboxesPermintaanPembelian_3" value="Pemasok">
+                                                                    <span></span> &nbsp; Pemasok</label></a>
+                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
+                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Keterangan" class="menuPermintaanPembelian"
+                                                                           name="CheckboxesPermintaanPembelian_4" value="Keterangan">
+                                                                    <span></span> &nbsp; Keterangan</label></a>
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-auto my-2 my-md-0">
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAksiButtonPermintaanPembelian" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            Aksi
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownAksiButtonPermintaanPembelian">
+                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Edit">Edit</a>
+                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Hapus">Hapus</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
-                                                    <div class="ml-2"><a href="/survey-tambah" class="btn btn-light-primary btn-sm"
+                                                    <div class="ml-2"><a href="/regulasi-tambah" class="btn btn-light-primary btn-sm"
                                                                          onclick="" target="_blank"><i
                                                                 class="flaticon2-plus mr-n1"></i></a></div>
                                                     <div class="ml-2"><a href="javascript:;" class="btn btn-light-success btn-sm"
@@ -79,9 +118,8 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Nama</th>
-{{--                                                <th>Form ID</th>--}}
-{{--                                                <th>Link</th>--}}
-                                                <th>Keterangan</th>
+                                                <th>Tanggal</th>
+                                                <th>File</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -92,42 +130,6 @@
                             </div>
                         </div>
                     </div>
-{{--                <div class="row">--}}
-{{--                    <div class="col-lg-6">--}}
-{{--                        <!--begin::Card-->--}}
-{{--                        <div class="card card-custom gutter-b">--}}
-{{--                            <div class="card-header">--}}
-{{--                                <div class="card-title">--}}
-{{--                                    <h3 class="card-label">Pie Chart</h3>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body" style="position: relative;">--}}
-{{--                                <div id="c_1e2r3t">--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!--end::Card-->--}}
-{{--                    </div>--}}
-{{--                    @foreach($dataForm as $form => $quis)--}}
-{{--                    <div class="col-lg-6">--}}
-{{--                        <!--begin::Card-->--}}
-{{--                        <div class="card card-custom gutter-b">--}}
-{{--                            <div class="card-header">--}}
-{{--                                <div class="card-title">--}}
-{{--                                    <h3 class="card-label">Chart {{ $quis['pertanyaan'] }}</h3>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body" style="position: relative;">--}}
-{{--                                <div id="c_{{ $quis['id'] }}">--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                         </div>--}}
-{{--                        <!--end::Card-->--}}
-{{--                    </div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
 
                 </div>
             </div>
@@ -135,10 +137,8 @@
     </div>
 @endsection
 @push('js')
-    <script src="{{ asset('admin/js/pages/features/charts/apexcharts.js') }}"></script>
     <script>
         var indexKelitbangan;
-
         $(function () {
 
             $('#menu_tab').scrollingTabs({
@@ -151,7 +151,6 @@
                 scrollToActiveTab: true
             });
             //add_page('dashboard','dashboard','Dashboard');
-            loadChart();
             indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
@@ -160,9 +159,8 @@
                 columns : [
                     {data : 'id'},
                     {data : 'nama'},
-                    // {data : 'form_id'},
-                    // {data : 'link'},
-                    {data : 'keterangan'},
+                    {data : 'tanggal'},
+                    {data : 'file'},
                     {data : 'action'},
                 ],
                 // buttons: [
@@ -205,7 +203,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: '/survey-list',
+                    url: '/regulasi-list',
                     async: true,
                     error: function (res) {
                         $('.dataTables_processing').hide();
@@ -238,8 +236,8 @@
                 },
                 columnDefs: [
                     {
-                        "defaultContent": "-",
-                        "targets": "_all"
+                    "defaultContent": "-",
+                    "targets": "_all"
                     },
                     {
                         targets: 0,
@@ -256,105 +254,46 @@
                     },
                 ],
             });
-            $(`#tbl_kelitbangan thead tr`).first().clone().appendTo(`#tbl_kelitbangan thead`);
-            $(`#tbl_kelitbangan thead tr:eq(1) th`).each(function (i) {
-                let title = $(this).text();
-                if (title == 'ID') {
-                    $(this).html('');
-                } else {
-                    $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
-                }
-                $('input', this).on('keyup', function (e) {
-
-                    // if (e.which == 13) {
-                    indexKelitbangan.column(i).search(this.value).draw();
-                    //   console.log(this.value);
-                    // }
-                });
-            });
-            $('#btn_reload_kelitbangan').on('click',function (e) {
-                indexKelitbangan.ajax.reload();
-            })
         })
+        function deleteRegulasi(id) {
 
-
-        function loadChart() {
-            let dataForm = {!! json_encode( $dataForm) !!};
-            $.each(dataForm, function (idx, val) {
-                console.log(val.id)
-
+            Swal.fire({
+                title: "Hapus Data?",
+                text: "Data Akan Dihapus Jika Dilanjutkan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "lanjutkan!"
+            }).then(function(result) {
+                if (result.value) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        //type: "POST",
+                        timeout: 50000,
+                        url: '/regulasi-delete/'+id,
+                        async: true,
+                        success: function (res) {
+                            console.log(res)
+                            res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
+                            indexKelitbangan.ajax.reload();
+                        },
+                        error: function (res, textstatus) {
+                            if (textstatus === "timeout") {
+                                notice('Response Time Out', 'error');
+                            } else {
+                                notice(res.responseJSON.message, 'error');
+                            }
+                        }
+                    });
+                }
             });
 
         }
-        var KTApexChartsDemo = function () {
-            // Private functions
-            var _demo1 = function () {
-                const apexChart = `#c_1e2r3t`;
-                var options = {
-                    series: [10, 20, 25, 30, 15],
-                    chart: {
-                        width: 380,
-                        type: 'pie',
-                    },
-                    labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-                    responsive: [{
-                        breakpoint: 480,
-                        options: {
-                            chart: {
-                                width: 200
-                            },
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }],
-                    colors: [primary, success, warning, danger, info]
-                };
-
-                var chart = new ApexCharts(document.querySelector(apexChart), options);
-                chart.render();
-            }
-
-            @foreach($dataForm as $it => $vl)
-                var _{{ $vl['id'] }} = function () {
-                    const apexChart = `#c_{{ $vl['id'] }}`;
-                    var options = {
-                        series:[],
-                        chart: {
-                            width: 380,
-                            type: 'pie',
-                        },
-                        labels: {!! json_encode($vl['opsi']) !!},
-                        responsive: [{
-                            breakpoint: 480,
-                            options: {
-                                chart: {
-                                    width: 200
-                                },
-                                legend: {
-                                    position: 'bottom'
-                                }
-                            }
-                        }],
-                        //colors: [primary, success, warning, danger, info]
-                    };
-
-                    var chart = new ApexCharts(document.querySelector(apexChart), options);
-                    chart.render();
-                }
-            @endforeach
-
-
-            return {
-                // public functions
-                init: function () {
-                    _demo1();
-                    @foreach($dataForm as $it => $vl)
-                    _{{ $vl['id'] }}();
-                    @endforeach
-                }
-            };
-        }();
+        $('#btn_reload_kelitbangan').on('click',function (e) {
+            indexKelitbangan.ajax.reload();
+        })
     </script>
-
 @endpush

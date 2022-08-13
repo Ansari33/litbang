@@ -117,7 +117,8 @@
                                                 <th>Nomor</th>
                                                 <th>Tanggal</th>
                                                 <th>Judul</th>
-                                                <th>Lingkup</th>
+                                                <th>Bidang</th>
+                                                <th>Dokumen</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -160,6 +161,7 @@
                     {data : 'tanggal'},
                     {data : 'judul'},
                     {data : 'lingkup'},
+                    {data : null},
                     {data : 'action'},
                 ],
                 // buttons: [

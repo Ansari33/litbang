@@ -8,7 +8,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
 {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Agenda - Index</span>
+                    <span class="nav-text bold ml-5">Regulasi - Index</span>
                 </div>
             </div>
         </div>
@@ -118,9 +118,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Nama</th>
-                                                <th>Tanggal</th>
-                                                <th>Waktu</th>
-                                                <th>Tempat</th>
+                                                <th>File</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -160,9 +158,7 @@
                 columns : [
                     {data : 'id'},
                     {data : 'nama'},
-                    {data : 'tanggal'},
-                    {data : 'waktu'},
-                    {data : 'tempat'},
+                    {data : 'file'},
                     {data : 'action'},
                 ],
                 // buttons: [

@@ -21,8 +21,6 @@
                     <link href="https://releases.transloadit.com/uppy/v2.12.2/uppy.min.css" rel="stylesheet">
                     <div class="col-lg-8 p-5">
                         <form class="row mb-0" id="form_usulan_penelitian"   enctype="multipart/form-data">
-                            <input type="hidden" name="external" id="fitness-form-name" class="form-control" value="1" >
-
                             <div class="form-process">
                                 <div class="css3-spinner">
                                     <div class="css3-spinner-scaler"></div>

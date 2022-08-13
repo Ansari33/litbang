@@ -36,7 +36,7 @@ class ClientController extends Controller
 
     public function forumPenelitian()
     {
-        $data = HttpHelper::usulan_penelitian_list()['data'];
+        $data = HttpHelper::usulan_penelitian_list_external()['data'];
         return view('forum.usulan_penelitian',compact('data'));
     }
 
@@ -56,11 +56,18 @@ class ClientController extends Controller
 
     public function forumSurvey()
     {
-//        $response = Http::withToken(('ya29.A0AVA9y1tA_DOhYl4-2IQnlNOvjuff56chHqFBVzuPKdYCjrpPEyTD1udMOM6e1QBsPbY3mVC6qZ3s3FcekaJDkWmrFR5HMcMa81WBejTfL3nT9__JnvJY-E_WRI-ueYXQJjxLR_Qpz9y4yjasEOwJJtEzE0XVYUNnWUtBVEFTQVRBU0ZRRTY1ZHI4SnB2OS1SMy1wMUd6M01lOXF4OVVGUQ0163'))->timeout(env('API_TIMEOUT', '10000'))
-//            ->get('https://forms.googleapis.com/v1/forms/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8/responses');
-//        return $response;
-        $data = [];#HttpHelper::usulan_inovasi_list()['data'];
+
+        $data = HttpHelper::survey_list()['data'];
+
         return view('forum.survey',compact('data'));
+    }
+
+    public function forumRekomendasi()
+    {
+        $data = HttpHelper::usulan_inovasi_list()['data'];
+        $nomor = '';
+        $instansi = [];
+        return view('forum.rekomendasi_penelitian',compact('data','nomor','instansi'));
     }
 
     public function buatInovasi()
@@ -131,8 +138,14 @@ class ClientController extends Controller
     {
         $tempData = HttpHelper::attachment_get_video()['data'];
         $data = $this->paginate($tempData,12);
-//        return  $data;
         return view('galeri.video',compact('data'));
+    }
+
+    public function regulasi()
+    {
+        $data = HttpHelper::regulasi_list()['data'];
+
+        return view('informasi.regulasi',compact('data'));
     }
 
     /**

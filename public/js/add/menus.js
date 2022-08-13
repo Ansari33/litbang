@@ -91,8 +91,12 @@ var menus = [
                 'link' : '/forum-inovasi'
             },
             {
-                'nama' : 'Survey Kepuasan',
+                'nama' : 'Survey',
                 'link' : '/forum-survey'
+            },
+            {
+                'nama' : 'Surat Rekomendasi',
+                'link' : '/forum-rekomendasi'
             },
         ]
     }

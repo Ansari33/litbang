@@ -9,50 +9,23 @@
 {{--            </div>--}}
             <div class="row align-items-center">
                 <div class="col-12 col-lg">
-                    <h3>Survey  <span>Index Kepuasan</span> Masyarakat!</h3>
-                    <span>Berikan <em>Tanggapan </em> Anda, Dengan Mengisi Survey tentang Kepuasan!</span>
+                    <h3>Survey  <span>Masyarakat!</span> </h3>
+                    <span>Berikut Daftar Survey, Berikan <em>Tanggapan </em> Anda Dengan Mengisi Survey!</span>
                 </div>
-                <div class="col-12 col-lg-auto mt-4 mt-lg-0">
-                    <a href="https://forms.gle/EUfoEjynEJ3Hx1XDA" target="_blank" class="button button-large button-circle m-0">Mulai Survey</a>
-                </div>
+
             </div>
 
         </div>
 
         <div class="section mb-0">
             <div class="container">
-
-{{--                <div class="table-responsive">--}}
-{{--                    <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">--}}
-{{--                        <thead>--}}
-{{--                        <tr>--}}
-{{--                            <th style="width: 5%;">No.</th>--}}
-{{--                            <th style="width: 45%;">Usulan</th>--}}
-{{--                            <th style="width: 20%;">Pengusul</th>--}}
-{{--                            <th style="width: 15%; text-align: center">Tanggal</th>--}}
-{{--                            <th style="width: 55%; text-align: center">Status</th>--}}
-{{--                        </tr>--}}
-{{--                        </thead>--}}
-{{--                        <tbody>--}}
-{{--                        <style>--}}
-{{--                            .link-detail hover {--}}
-{{--                                cursor: pointer;--}}
-{{--                            }--}}
-{{--                        </style>--}}
-{{--                        @foreach($data as $dt => $d)--}}
-{{--                        <tr class="link-detail"  >--}}
-{{--                            <td>{{$dt+1}}</td>--}}
-{{--                            <td> <a href="/view-usulan-inovasi/{{ $d['id'] }}" style="color: black">{{ $d['usulan'] }}</a> </td>--}}
-{{--                            <td>{{ $d['pengusul'] }}</td>--}}
-{{--                            <td style="text-align: center">{{ $d['tanggal'] }}</td>--}}
-{{--                            <td style="text-align: center">{{ $d['status'] }}</td>--}}
-{{--                        </tr>--}}
-{{--                        @endforeach--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
-
-
+                <div class="row">
+                @foreach($data as $item => $surv)
+                    <div class="col-4 col-lg-auto mt-4 mt-lg-0">
+                        <a href="{{ $surv['link'] }}" target="_blank" class="button button-large button-circle m-0">{{ $surv['nama'] }}</a>
+                    </div>
+                @endforeach
+                </div>
             </div>
         </div>
 

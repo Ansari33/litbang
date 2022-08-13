@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    Survey Baru
+    Tambah Agenda
 @endsection
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -8,7 +8,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
                     {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Survey - Tambah Data</span>
+                    <span class="nav-text bold ml-5">Regulasi - Tambah Data</span>
                 </div>
             </div>
         </div>
@@ -21,34 +21,83 @@
                                 <div class="row mb-5">
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-lg-12">
-                                        <a href="https://docs.google.com/forms/u/0/" target="_blank" class="btn btn-primary">Buka Google Form</a>
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
-                                            Cara Dapat ID dan Link Form
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Nama:</label>
-                                        <input type="text" name="nama" class="form-control">
+                                        <textarea name="nama" class="form-control" cols="30" rows="2"></textarea>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Link:</label>
-                                        <input type="text" name="link" class="form-control">
+                                        <label>Tanggal:</label>
+                                        <div class="input-group date" id="tanggal_agenda_add" data-target-input="nearest">
+                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_agenda_add" value="{{ \Carbon\Carbon::now()->format('d/m/Y') }}"/>
+                                            <div class="input-group-append" data-target="#tanggal_agenda_add" data-toggle="datetimepicker">
+                                                <span class="input-group-text"><i class="ki ki-calendar"></i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+{{--                                <div class="form-group row">--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <label class="">Waktu:</label>--}}
+{{--                                        <div class="input-group timepicker">--}}
+{{--                                            <input class="form-control" name="waktu" id="kt_timepicker_2" readonly placeholder="Select time" type="text"/>--}}
+{{--                                            <div class="input-group-append">--}}
+{{--                                               <span class="input-group-text">--}}
+{{--                                                <i class="la la-clock-o"></i>--}}
+{{--                                               </span>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-6">--}}
+{{--                                        <label>Tempat:</label>--}}
+{{--                                        <textarea name="tempat" class="form-control" cols="30" rows="3"></textarea>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>ID Form:</label>
-                                        <input type="text" name="form_id" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label>Keterangan:</label>
-                                        <textarea class="form-control" name="keterangan"></textarea>
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Upload File Regulasi</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_1">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="card-footer">
@@ -61,55 +110,6 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Button trigger modal-->
-
-    <!-- Modal-->
-    <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cara Dapat ID dan Link Google Form</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i aria-hidden="true" class="ki ki-close"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <div class="col-lg-12 mb-5">
-                                    <h5>ID Form</h5>
-                                    <p class="mb-2">Untuk Mengambil ID Dari Sebuah Google Form yaitu dengan Cara Menambil Blok ke 4 dari Sebuah URL google Form, Contoh nya Pada Url = "https://docs.google.com/forms/d/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8/edit", Anda Bisa Langsung Mengambil "1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8" yaitu ID dari Form. </p>
-                                    <img src="{{ asset('images/contoh_id.png') }}" style="width: 100%;">
-                                </div>
-
-                                <div class="col-lg-12">
-                                    <h5>Link Form</h5>
-                                    <p class="mb-2">UNtuk Mendapat Link Form Dengan Mengklik Tombol Kirim Pada Sebelah Kanan</p>
-                                    <img src="{{ asset('images/kirim.png') }}" style="width: 100%;">
-                                    <p class="mb-2 mt-3">Setelah Mengklik Tombol Kirim Maka, Akan Muncul Tampilan Baru, Selanjutya Arahkan Ke Tombol Link (Ditengah), Kemudian Tinggal Langsung Menyalin Link Dengan Menekan Tombol Salin taupun Manual.</p>
-                                    <img src="{{ asset('images/link.png') }}" style="width: 100%;">
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
-
                 </div>
             </div>
         </div>
@@ -160,7 +160,7 @@
                     //autoProceed: true,
                     restrictions: {
                         //maxFileSize: 1000000, // 1mb
-                        maxNumberOfFiles: 5,
+                        maxNumberOfFiles: 1,
                         minNumberOfFiles: 1
                     }
                 });
@@ -242,7 +242,7 @@
             $.ajax({
                 type: "POST",
                 timeout: 50000,
-                url: '/survey-store',
+                url: '/regulasi-store',
                 async: true,
                 data: {
                     datas : JSON.stringify(data), filex : JSON.stringify(file_list)
@@ -250,8 +250,9 @@
                 success: function (res) {
                     console.log(res)
                     if (res.status === true){
-                        Swal.fire('Berhasil!', res.message, 'success');
-                        $('#form_add_agenda').trigger('reset')
+                        Swal.fire('Berhasil!', res.message, 'success').then(function(){
+                            window.close();
+                        });
                     }else{
                         Swal.fire('Gagal!', res.message, 'danger');
                     }

@@ -18,7 +18,6 @@ class KelitbanganController extends Controller
   public function list(Request $request)
   {
     return HttpHelper::kelitbangan_datatable($request->all());
-    return view('admin.kelitbangan.index');
   }
     public function create()
     {
@@ -54,8 +53,6 @@ class KelitbanganController extends Controller
         }
 
         return json_decode(HttpHelper::kelitbangan_add($body));
-
-        return view('admin.kelitbangan.index');
     }
     public function edit($id)
     {
@@ -90,12 +87,10 @@ class KelitbanganController extends Controller
         }
 
         return json_decode(HttpHelper::kelitbangan_update($body));
-        return view('admin.kelitbangan.index');
     }
     public function delete($id)
     {
         return json_decode(HttpHelper::kelitbangan_delete(['id' => $id]));
-        return view('admin.kelitbangan.index');
     }
 
     public function getInstansi()

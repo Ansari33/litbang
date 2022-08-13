@@ -169,6 +169,7 @@ class AuthController extends Controller {
                 'https://www.googleapis.com/auth/drive.readonly',
                 'https://www.googleapis.com/auth/forms.body',
                 'https://www.googleapis.com/auth/forms.body.readonly',
+
             ]);
         $client->setRedirectUri(env('GOOGLE_CALLBACK') );
 

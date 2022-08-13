@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\UsulanInovasiController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\SuratController;
 use App\Http\Controllers\admin\SurveyController;
+use App\Http\Controllers\admin\RegulasiController;
 
 
 
@@ -42,9 +43,7 @@ Route::get('/profile-definisi', function () {
 Route::get('/profile-selayang-pandang', function () {
     return view('profile.selayang_pandang');
 });
-Route::get('/informasi-regulasi', function () {
-    return view('informasi.regulasi');
-});
+Route::get('/informasi-regulasi', [ClientController::class, 'regulasi']);
 Route::get('/informasi-agenda-kegiatan',[ClientController::class, 'agenda']);
 Route::get('/informasi-berita-artikel', [ClientController::class, 'berita']);
 Route::get('/kelitbangan', [ClientController::class, 'kelitbangan']);
@@ -62,6 +61,9 @@ Route::get('/usul-inovasi',  [ClientController::class, 'buatInovasi']);
 Route::post('/usulan-inovasi-store', [UsulanInovasiController::class, 'store']);
 
 Route::get('/forum-survey', [ClientController::class, 'forumSurvey']);
+Route::get('/forum-rekomendasi', [ClientController::class, 'forumRekomendasi']);
+
+Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegulasi']);
 
 Route::get('/login', function () {
     if(Session::get('authenticated')){
@@ -154,6 +156,25 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/surat-masuk-update',[SuratController::class, 'updateSuratMasuk']);
     Route::get('/surat-masuk-delete/{id}',[SuratController::class, 'deleteSuratMasuk']);
     Route::get('/download-surat-masuk/{id}',[SuratController::class, 'downloadSuratMasuk']);
+
+    ## Regulasi
+    Route::get('/admin-regulasi',[RegulasiController::class, 'index']);
+    Route::get('/regulasi-list',[RegulasiController::class, 'list']);
+    Route::get('/regulasi-tambah',[RegulasiController::class, 'create']);
+    Route::post('/regulasi-store',[RegulasiController::class, 'store']);
+    Route::get('/regulasi-edit/{id}',[RegulasiController::class, 'edit']);
+    Route::post('/regulasi-update',[RegulasiController::class, 'update']);
+    Route::get('/regulasi-delete/{id}',[RegulasiController::class, 'delete']);
+
+    ## Regulasi
+    Route::get('/admin-survey',[SurveyController::class, 'index']);
+    Route::get('/survey-list',[SurveyController::class, 'list']);
+    Route::get('/survey-tambah',[SurveyController::class, 'create']);
+    Route::post('/survey-store',[SurveyController::class, 'store']);
+    Route::get('/survey-edit/{id}',[SurveyController::class, 'edit']);
+    Route::post('/survey-update',[SurveyController::class, 'update']);
+    Route::get('/survey-delete/{id}',[SurveyController::class, 'delete']);
+    Route::get('/survey-hasil/{id}',[SurveyController::class, 'hasil']);
 
     Route::get('/litbang-admin', function () {
         return view('admin.home');
