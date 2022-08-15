@@ -16,11 +16,11 @@
                 <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Lingkup</th>
+                    <th>Bidang</th>
                     <th>Judul</th>
                     <th>Pelaksana</th>
                     <th>Tahun</th>
-{{--                    <th>Salary</th>--}}
+                    <th>Dokumen</th>
                 </tr>
                 </thead>
 {{--                <tfoot>--}}
@@ -51,6 +51,7 @@
                         @endforeach
                     </td>
                     <td>{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
+                    <td><a href="#"><i class="fa fa-file"></i> </a></td>
                 </tr>
                 @endforeach
                 </tbody>

@@ -24,7 +24,7 @@
                                             <div class="card card-custom card-stretch">
                                                 <div class="card-header ribbon ribbon-top ribbon-ver">
                                                     <div class="ribbon-target bg-success" style="top: -2px; right: 20px;">
-                                                        <i class="fa fa-star text-white"></i>
+                                                        <i class="fas fa-envelope-square text-white"></i>
                                                     </div>
                                                     <h3 class="card-title">
                                                         Surat Keluar
@@ -43,7 +43,7 @@
                                                 <div class="card card-custom card-stretch">
                                                     <div class="card-header ribbon ribbon-top ribbon-ver">
                                                         <div class="ribbon-target bg-success" style="top: -2px; right: 20px;">
-                                                            <i class="fa fa-star text-white"></i>
+                                                            <i class="fas fa-envelope-open text-white"></i>
                                                         </div>
                                                         <h3 class="card-title">
                                                             Surat Masuk

@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    Edit Agenda {{ $data['nama'] }}
+    Edit Regulasi {{ $data['nama'] }}
 @endsection
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
