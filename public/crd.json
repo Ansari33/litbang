@@ -1,7 +1,1 @@
-{"web":
-	{"client_id":"258170609020-5osceu8t4b0u0m72m695lsv5o0f4fjnr.apps.googleusercontent.com",
-	"project_id":"testing-form-358305","auth_uri":"https://accounts.google.com/o/oauth2/auth",
-    "token_uri":"https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-    "client_secret":"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",
-    "redirect_uris":["http://localhost:7000/callback"]}}
+{"web":{"client_id":"258170609020-5osceu8t4b0u0m72m695lsv5o0f4fjnr.apps.googleusercontent.com","project_id":"testing-form-358305","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","redirect_uris":["https://oauth.pstmn.io/v1/callback","http://localhost:7000/callback","https://litbang.btx.co.id:7000/callback"]}}

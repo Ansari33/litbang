@@ -15,7 +15,8 @@
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.3",
-        "pulkitjalan/google-apiclient": "^5.0"
+        "pulkitjalan/google-apiclient": "^5.0",
+        "shetabit/visitor": "^3.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
