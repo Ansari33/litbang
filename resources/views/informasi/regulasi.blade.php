@@ -12,20 +12,21 @@
             <div class="line"></div>
 
             <div class="row justify-content-center col-mb-50">
+                <ul>
                 @foreach($data as $re => $reg)
-                <div class="col-sm-6 col-lg-12">
+                <li><div class="col-sm-6 col-lg-12">
                     <div class="feature-box fbox-sm fbox-plain" data-animate="fadeIn">
-                        <div class="fbox-icon">
-                            <a href="#"><i class="icon-star"></i></a>
-                        </div>
+{{--                        <div class="fbox-icon" style="">--}}
+{{--                            <a href="#"><i class="icon-star"></i></a>--}}
+{{--                        </div>--}}
                         <div class="fbox-content">
                             <a href="/download-regulasi/{{ $reg['file'] }}"><h5>{{ $reg['nama'] }}</h5></a>
 {{--                            <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>--}}
                         </div>
                     </div>
-                </div>
+                </div></li>
                 @endforeach
-
+                </ul>
             </div>
 
         </div>

@@ -161,7 +161,7 @@
                     {data : 'tanggal'},
                     {data : 'judul'},
                     {data : 'lingkup'},
-                    {data : null},
+                    {data : 'id'},
                     {data : 'action'},
                 ],
                 // buttons: [

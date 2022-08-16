@@ -85,15 +85,15 @@
                                 <div class="col-lg-12 mb-5">
                                     <h5>ID Form</h5>
                                     <p class="mb-2">Untuk Mengambil ID Dari Sebuah Google Form yaitu dengan Cara Menambil Blok ke 4 dari Sebuah URL google Form, Contoh nya Pada Url = "https://docs.google.com/forms/d/1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8/edit", Anda Bisa Langsung Mengambil "1tR2KY_R0DQ3yDhBGCxCdzRa4JMFEUo2VTUuVbLXJJI8" yaitu ID dari Form. </p>
-                                    <img src="{{ asset('images/contoh_id.png') }}" style="width: 100%;">
+                                    <img src="{{ asset('images/contoh_id.PNG') }}" style="width: 100%;">
                                 </div>
 
                                 <div class="col-lg-12">
                                     <h5>Link Form</h5>
                                     <p class="mb-2">UNtuk Mendapat Link Form Dengan Mengklik Tombol Kirim Pada Sebelah Kanan</p>
-                                    <img src="{{ asset('images/kirim.png') }}" style="width: 100%;">
+                                    <img src="{{ asset('images/kirim.PNG') }}" style="width: 100%;">
                                     <p class="mb-2 mt-3">Setelah Mengklik Tombol Kirim Maka, Akan Muncul Tampilan Baru, Selanjutya Arahkan Ke Tombol Link (Ditengah), Kemudian Tinggal Langsung Menyalin Link Dengan Menekan Tombol Salin taupun Manual.</p>
-                                    <img src="{{ asset('images/link.png') }}" style="width: 100%;">
+                                    <img src="{{ asset('images/link.PNG') }}" style="width: 100%;">
                                 </div>
 
                             </div>
