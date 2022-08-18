@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use http\Url;
 use Illuminate\Http\Request;
 use File;
+use App\Http\Controllers\HelperController;
 
 class KelitbanganController extends Controller
 {
@@ -21,7 +22,7 @@ class KelitbanganController extends Controller
   }
     public function create()
     {
-        $instansi = $this->getInstansi();
+        $instansi = HelperController::getInstansi();
         return view('admin.kelitbangan.add',compact('instansi'));
     }
 
@@ -38,7 +39,7 @@ class KelitbanganController extends Controller
         }
         $body['tanggal']    = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['pelaksana']  = $pelaksana;
-        $body['attachment'] = $this->saveAttachment('kelitbangan',$attachment);
+        $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
         //return $body;
         return json_decode(HttpHelper::kelitbangan_add($body));
     }
@@ -71,11 +72,7 @@ class KelitbanganController extends Controller
         return json_decode(HttpHelper::kelitbangan_delete(['id' => $id]));
     }
 
-    public function getInstansi()
-    {
-        $data = HttpHelper::instansi_list()['data'];
-        return collect($data)->pluck('nama','id')->toArray();
-    }
+
 
 
 }
