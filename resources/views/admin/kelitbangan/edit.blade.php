@@ -133,14 +133,7 @@
                                         </div>
                                         <!--end::Card-->
                                     </div>
-                                    {{--                                    <div class="col-lg-6">--}}
-                                    {{--                                        <div class="dropzone dropzone-default dropzone-primary dz-clickable" id="kt_dropzone_2">--}}
-                                    {{--                                            <div class="dropzone-msg dz-message needsclick">--}}
-                                    {{--                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>--}}
-                                    {{--                                                <span class="dropzone-msg-desc">Upload up to 10 files</span>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </div>--}}
-                                    {{--                                    </div>--}}
+
                                 </div>
 
                             </div>
@@ -215,8 +208,9 @@
                 uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
                 uppyDashboard.on('complete',function (f) {
                     console.log(f);
-                    file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.meta.name}  }));
-                    console.log(file_list)
+                    $.each(f.successful,function(i,e){
+                        file_list.push({url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0]})
+                    })
 
                 });
                 uppyDashboard.on('file-added', (file) => {
@@ -273,26 +267,7 @@
                 // public functions
                 init: function() {
                     initUppy1();
-                    // initUppy2();
-                    // initUppy3();
-                    // initUppy4();
-                    // initUppy5();
-                    // initUppy6();
 
-                    // setTimeout(function() {
-                    //     swal.fire({
-                    //         "title": "Notice",
-                    //         "html": "Uppy demos uses <b>https://master.tus.io/files/</b> URL for resumable upload examples and your uploaded files will be temporarely stored in <b>tus.io</b> servers.",
-                    //         "type": "info",
-                    //         "buttonsStyling": false,
-                    //         "confirmButtonClass": "btn btn-primary",
-                    //         "confirmButtonText": "Ok, I understand",
-                    //         "onClose": function(e) {
-                    //             console.log('on close event fired!');
-                    //         }
-                    //
-                    //     });
-                    // }, 2000);
                 }
             };
         }();
@@ -300,12 +275,6 @@
         KTUtil.ready(function() {
             KTUppy.init();
         });
-
-        // uppy.on('upload-success', (file, response) => {
-        //     console.log(file)
-        //     console.log(response)
-        // })
-
 
     </script>
     <script>
@@ -355,16 +324,12 @@
                     },
                     success: function (res) {
                         console.log(res)
-                        console.log(res)
                         if (res.status === true){
                             Swal.fire('Berhasil!', res.message, 'success').then(
                                 function (e) {
                                     window.close();
                                 }
                             );
-                            // setTimeout(function () {
-                            //     window.close();
-                            // },1000)
 
                         }else{
                             Swal.fire('Gagal!', res.message, 'danger');

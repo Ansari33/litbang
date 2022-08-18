@@ -208,12 +208,17 @@
                 uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
                 uppyDashboard.on('complete',function (f) {
                     console.log(f);
-                    file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.name}  }));
-
+                    $.each(f.successful,function(i,e){
+                        file_list.push({url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0]})
+                    })
+                    //file_list.push( f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0]}  }) );
 
                 });
                 uppyDashboard.on('file-added', (file) => {
                     console.log('Added file', file)
+                });
+                uppyDashboard.on('file-removed', (file, reason) => {
+                    console.log('Removed file', file)
                 })
 
                 // uppyDashboard.use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
@@ -326,7 +331,11 @@
                 success: function (res) {
                     console.log(res)
                     if (res.status === true){
-                        Swal.fire('Berhasil!', res.message, 'success');
+                        Swal.fire('Berhasil!', res.message, 'success').then(
+                            function (e) {
+                                window.close();
+                            }
+                        );
                         //$('#form_add_kelitbangan').trigger('reset')
                     }else{
                         Swal.fire('Gagal!', res.message, 'danger');

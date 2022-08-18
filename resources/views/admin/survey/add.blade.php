@@ -95,17 +95,9 @@
                                     <p class="mb-2 mt-3">Setelah Mengklik Tombol Kirim Maka, Akan Muncul Tampilan Baru, Selanjutya Arahkan Ke Tombol Link (Ditengah), Kemudian Tinggal Langsung Menyalin Link Dengan Menekan Tombol Salin taupun Manual.</p>
                                     <img src="{{ asset('images/link.PNG') }}" style="width: 100%;">
                                 </div>
-
                             </div>
-
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
