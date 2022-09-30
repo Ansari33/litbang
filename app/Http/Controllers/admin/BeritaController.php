@@ -65,7 +65,7 @@ class BeritaController extends Controller
 
 
             file_put_contents(public_path('/images/upload/').$namaFile, $data);
-            $urlFile = public_path('/images/upload').$namaFile;
+            $urlFile = public_path('/images/upload/').$namaFile;
             $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile];
         }
         return json_decode(HttpHelper::berita_add($body));

@@ -30,6 +30,11 @@ use App\Http\Controllers\admin\RegulasiController;
 |
 */
 
+Route::get('/tesupload', function(){
+    return view('tes-upload');
+});
+Route::post('/upload-attachment', [KelitbanganController::class, 'attachment']);
+
 Route::get('/', [ClientController::class, 'index']);
 Route::get('/view-kelitbangan/{id}', [ClientController::class, 'viewKelitbangan']);
 Route::get('/view-inovasi/{id}', [ClientController::class, 'viewInovasi']);
@@ -190,6 +195,8 @@ Route::group(['middleware' => 'checkauth'], function () {
 
 });
 Route::get('/redirect', [AuthController::class, 'redirectToProvider']);
+
+
 
 
 
