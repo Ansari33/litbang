@@ -78,12 +78,16 @@ class KelitbanganController extends Controller
   public function attachment(Request $request){
 
       try {
-          return $request->all();
           $namaFile = [];
-          foreach ($request->filw as $fl =>$fil){
-              $namaFile[] = str_replace(' ','-',$fil->getClientOriginalName());
-              $fil->move(base_path('\public\attachment'),str_replace(' ','-',$fil->getClientOriginalName()));
+          foreach ($request->all() as $fls => $fl){
+              $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
+              $fl->move(base_path('\public\attachment'),str_replace(' ','-',$fl->getClientOriginalName()));
           }
+
+//          foreach ($request->filw as $fl =>$fil){
+//              $namaFile[] = str_replace(' ','-',$fil->getClientOriginalName());
+//              $fil->move(base_path('\public\attachment'),str_replace(' ','-',$fil->getClientOriginalName()));
+//          }
           return response()->json([
                   'files' => $namaFile,
                   'status' => true,
