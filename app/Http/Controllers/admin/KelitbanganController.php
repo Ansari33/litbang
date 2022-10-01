@@ -76,7 +76,9 @@ class KelitbanganController extends Controller
     }
 
   public function attachment(Request $request){
+
       try {
+          return $request->all();
           $namaFile = [];
           foreach ($request->filw as $fl =>$fil){
               $namaFile[] = str_replace(' ','-',$fil->getClientOriginalName());
