@@ -37,10 +37,10 @@ var menus = [
                 'nama' : 'SOP Kelitbangan',
                 'link' : '#'
             },
-            {
-                'nama' : 'Rinduk Kota',
-                'link' : '#'
-            },
+            // {
+            //     'nama' : 'Rinduk Kota',
+            //     'link' : '#'
+            // },
             {
                 'nama' : 'Agenda Kegiatan',
                 'link' : '/informasi-agenda-kegiatan'

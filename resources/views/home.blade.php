@@ -23,8 +23,8 @@
             </div>
 
             <div style="position: relative; margin-bottom: -60px;" data-height-xl="415" data-height-lg="342" data-height-md="262" data-height-sm="160" data-height-xs="102">
-                <img src="{{asset('images/services/chrome.png')}}" style="position: absolute; top: 0; left: 0;" data-animate="fadeInUp" alt="Chrome">
-                <img src="{{asset('images/services/ipad3.png')}}" style="position: absolute; top: 0; left: 0;" data-animate="fadeInUp" data-delay="300" alt="iPad">
+                <img src="{{asset('images/balaikota1.jpeg')}}" style="position: absolute; top: 0; left: 0;" data-animate="fadeInUp" alt="Chrome">
+{{--                <img src="{{asset('images/balaikota2.jpg')}}" style="position: absolute; top: 0; left: 0;" data-animate="fadeInUp" data-delay="300" alt="iPad">--}}
             </div>
 
         </div>

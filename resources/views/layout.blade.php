@@ -98,41 +98,7 @@
                         ============================================= -->
                         <div id="top-cart" class="header-misc-icon d-none d-sm-block">
                             <a href="/litbang-admin" ><i class="icon-line-lock"></i></a>
-{{--                            <div class="top-cart-content">--}}
-{{--                                <div class="top-cart-title">--}}
-{{--                                    <h4>Shopping Cart</h4>--}}
-{{--                                </div>--}}
-{{--                                <div class="top-cart-items">--}}
-{{--                                    <div class="top-cart-item">--}}
-{{--                                        <div class="top-cart-item-image">--}}
-{{--                                            <a href="#"><img src="{{asset('images/shop/small/1.jpg')}}" alt="Blue Round-Neck Tshirt" /></a>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="top-cart-item-desc">--}}
-{{--                                            <div class="top-cart-item-desc-title">--}}
-{{--                                                <a href="#">Blue Round-Neck Tshirt with a Button</a>--}}
-{{--                                                <span class="top-cart-item-price d-block">$19.99</span>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="top-cart-item-quantity">x 2</div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="top-cart-item">--}}
-{{--                                        <div class="top-cart-item-image">--}}
-{{--                                            <a href="#"><img src="{{asset('images/shop/small/6.jpg')}}" alt="Light Blue Denim Dress" /></a>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="top-cart-item-desc">--}}
-{{--                                            <div class="top-cart-item-desc-title">--}}
-{{--                                                <a href="#">Light Blue Denim Dress</a>--}}
-{{--                                                <span class="top-cart-item-price d-block">$24.99</span>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="top-cart-item-quantity">x 3</div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="top-cart-action">--}}
-{{--                                    <span class="top-checkout-price">$114.95</span>--}}
-{{--                                    <a href="#" class="button button-3d button-small m-0">View Cart</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+
                         </div><!-- #top-cart end -->
 
                     </div>
@@ -231,7 +197,7 @@
                                  data-endelementdelay="0.1"
                                  data-endspeed="1000"
                                  data-textAlign="center"
-                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;">The Best Multipurpose HTML5 Template</div>
+                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"></div>
 
                             <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text p-0 border-0"
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -251,7 +217,7 @@
                                  data-width="['800','800','560','400']"
                                  data-height="none"
                                  data-whitespace="['normal','nowrap','normal','normal']"
-                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: normal;">Welcome to the World of Canvas</div>
+                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: normal;"></div>
 
                             <div class="tp-caption ltl tp-resizeme revo-slider-desc-text"
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -268,7 +234,7 @@
                                  data-textAlign="center"
                                  data-width="['800','800','560','400']"
                                  data-height="none"
-                                 data-endeasing="Power4.easeIn" style="z-index: 3; width: 750px; max-width: 750px; white-space: normal;">Create a website that you are gonna be proud of. Be it Business, Portfolio, Agency, Photography, e-Commerce &amp; much more..</div>
+                                 data-endeasing="Power4.easeIn" style="z-index: 3; width: 750px; max-width: 750px; white-space: normal;"></div>
 
                             <div class="tp-caption ltl tp-resizeme"
                                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -282,12 +248,12 @@
                                  data-elementdelay="0.01"
                                  data-endelementdelay="0.1"
                                  data-endspeed="1000"
-                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"><a href="#" class="button button-border button-white button-light button-large button-rounded text-end m-0"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
+                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"></div>
 
                         </li>
                         <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('images/slider/rev/main/s2-thumb.jpg')}}"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('images/slider/rev/main/s2-bg.jpg')}}"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <img src="{{asset('images/balaikota2.jpg')}}"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                             <!-- LAYERS -->
                             <!-- LAYER NR. 2 -->
                             <div class="tp-caption ltl tp-resizeme rs-parallaxlevel-8"
@@ -402,100 +368,88 @@
                                  data-endspeed="1000"
                                  data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="{{asset('images/slider/rev/main/s2-8.png')}}" alt="Image"></div>
 
-                            <div class="tp-caption ltl tp-resizeme revo-slider-caps-text"
-                                 data-x="40"
-                                 data-y="120"
-                                 data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                                 data-speed="800"
-                                 data-start="1200"
-                                 data-easing="easeOutQuad"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="1000"
-                                 data-endeasing="Power4.easeIn" style="z-index: 11; white-space: nowrap;">Speaking of Customization?</div>
 
-                            <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text p-0 border-0 text-uppercase"
-                                 data-x="37"
-                                 data-y="140"
-                                 data-transform_in="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
-                                 data-speed="800"
-                                 data-start="1400"
-                                 data-easing="easeOutQuad"
-                                 data-splitin="chars"
-                                 data-splitout="none"
-                                 data-elementdelay="0.1"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="1000"
-                                 data-width="['800','800','560','380']"
-                                 data-height="none"
-                                 data-endeasing="Power4.easeIn" style="z-index: 11; font-size: 56px;white-space: nowrap;">30+ Homepages</div>
 
-                            <div class="tp-caption ltl tp-resizeme revo-slider-desc-text text-start"
-                                 data-x="40"
-                                 data-y="240"
-                                 data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
-                                 data-speed="800"
-                                 data-start="1600"
-                                 data-easing="easeOutQuad"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="1000"
-                                 data-width="['550','550','550','380']"
-                                 data-height="none"
-                                 data-endeasing="Power4.easeIn" style="z-index: 11; max-width: 550px; white-space: normal;">Amazing Homepages Custom Designed &amp; Ready to use at your Disposal. And we'll always add more..</div>
+{{--                            <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text p-0 border-0 text-uppercase"--}}
+{{--                                 data-x="37"--}}
+{{--                                 data-y="140"--}}
+{{--                                 data-transform_in="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"--}}
+{{--                                 data-speed="800"--}}
+{{--                                 data-start="1400"--}}
+{{--                                 data-easing="easeOutQuad"--}}
+{{--                                 data-splitin="chars"--}}
+{{--                                 data-splitout="none"--}}
+{{--                                 data-elementdelay="0.1"--}}
+{{--                                 data-endelementdelay="0.1"--}}
+{{--                                 data-endspeed="1000"--}}
+{{--                                 data-width="['800','800','560','380']"--}}
+{{--                                 data-height="none"--}}
+{{--                                 data-endeasing="Power4.easeIn" style="z-index: 11; font-size: 56px;white-space: nowrap;">30+ Homepages</div>--}}
 
-                            <div class="tp-caption ltl tp-resizeme"
-                                 data-x="40"
-                                 data-y="350"
-                                 data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                                 data-speed="800"
-                                 data-start="1800"
-                                 data-easing="easeOutQuad"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="1300"
-                                 data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded text-end m-0"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>
+{{--                            <div class="tp-caption ltl tp-resizeme revo-slider-desc-text text-start"--}}
+{{--                                 data-x="40"--}}
+{{--                                 data-y="240"--}}
+{{--                                 data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"--}}
+{{--                                 data-speed="800"--}}
+{{--                                 data-start="1600"--}}
+{{--                                 data-easing="easeOutQuad"--}}
+{{--                                 data-splitin="none"--}}
+{{--                                 data-splitout="none"--}}
+{{--                                 data-elementdelay="0.01"--}}
+{{--                                 data-endelementdelay="0.1"--}}
+{{--                                 data-endspeed="1000"--}}
+{{--                                 data-width="['550','550','550','380']"--}}
+{{--                                 data-height="none"--}}
+{{--                                 data-endeasing="Power4.easeIn" style="z-index: 11; max-width: 550px; white-space: normal;">Amazing Homepages Custom Designed &amp; Ready to use at your Disposal. And we'll always add more..</div>--}}
+
+{{--                            <div class="tp-caption ltl tp-resizeme"--}}
+{{--                                 data-x="40"--}}
+{{--                                 data-y="350"--}}
+{{--                                 data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"--}}
+{{--                                 data-speed="800"--}}
+{{--                                 data-start="1800"--}}
+{{--                                 data-easing="easeOutQuad"--}}
+{{--                                 data-splitin="none"--}}
+{{--                                 data-splitout="none"--}}
+{{--                                 data-elementdelay="0.01"--}}
+{{--                                 data-endelementdelay="0.1"--}}
+{{--                                 data-endspeed="1300"--}}
+{{--                                 data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded text-end m-0"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>--}}
 
                         </li>
                         <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="{{asset('images/slider/rev/main/s3-thumb.jpg')}}" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('images/slider/rev/main/s3.jpg')}}"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
+                            <img src="{{asset('images/balaikota1.jpeg')}}"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
                             <!-- LAYERS -->
 
                             <!-- LAYER NR. 2 -->
-                            <div class="tp-caption ltl tp-resizeme revo-slider-caps-text text-uppercase"
-                                 data-x="40"
-                                 data-y="150"
-                                 data-transform_in="x:-200;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                                 data-speed="800"
-                                 data-start="1500"
-                                 data-easing="easeOutQuad"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.01"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="1000"
-                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap; color: #222;">Bootstrap 3+ Compatible</div>
+{{--                            <div class="tp-caption ltl tp-resizeme revo-slider-caps-text text-uppercase"--}}
+{{--                                 data-x="40"--}}
+{{--                                 data-y="150"--}}
+{{--                                 data-transform_in="x:-200;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"--}}
+{{--                                 data-speed="800"--}}
+{{--                                 data-start="1500"--}}
+{{--                                 data-easing="easeOutQuad"--}}
+{{--                                 data-splitin="none"--}}
+{{--                                 data-splitout="none"--}}
+{{--                                 data-elementdelay="0.01"--}}
+{{--                                 data-endelementdelay="0.1"--}}
+{{--                                 data-endspeed="1000"--}}
+{{--                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap; color: #222;">Bootstrap 3+ Compatible</div>--}}
 
-                            <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text p-0 border-0"
-                                 data-x="37"
-                                 data-y="180"
-                                 data-transform_in="x:10;y:0;z:0;rotationY:120;rotationZ:0;scaleX:0.8;scaleY:0.8;skewX:0;s:600;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 50%;"
-                                 data-speed="600"
-                                 data-start="1700"
-                                 data-easing="easeOutCubic"
-                                 data-splitin="chars"
-                                 data-splitout="none"
-                                 data-elementdelay="0.1"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="1000"
-                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap; color: #222; line-height: 1.2; max-width: 450px; width: 450px; white-space: normal;">Responsive Retina Graphics</div>
+{{--                            <div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text p-0 border-0"--}}
+{{--                                 data-x="37"--}}
+{{--                                 data-y="180"--}}
+{{--                                 data-transform_in="x:10;y:0;z:0;rotationY:120;rotationZ:0;scaleX:0.8;scaleY:0.8;skewX:0;s:600;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 50%;"--}}
+{{--                                 data-speed="600"--}}
+{{--                                 data-start="1700"--}}
+{{--                                 data-easing="easeOutCubic"--}}
+{{--                                 data-splitin="chars"--}}
+{{--                                 data-splitout="none"--}}
+{{--                                 data-elementdelay="0.1"--}}
+{{--                                 data-endelementdelay="0.1"--}}
+{{--                                 data-endspeed="1000"--}}
+{{--                                 data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap; color: #222; line-height: 1.2; max-width: 450px; width: 450px; white-space: normal;">Responsive Retina Graphics</div>--}}
                         </li>
                     </ul>
                 </div>
@@ -533,11 +487,11 @@
                                     <div style="background: url({{asset('images/world-map.png')}}) no-repeat center center; background-size: 100%;">
                                         <address>
                                             <strong>Headquarters:</strong><br>
-                                            795 Folsom Ave, Suite 600<br>
-                                            San Francisco, CA 94107<br>
+                                            Jalan Jendral Ahmad Yani No 2, <br>
+                                            Kota Makassar, Sulawesi Selatan<br>
                                         </address>
-                                        <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
-                                        <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
+                                        <abbr title="Phone Number"><strong>Telepon:</strong></abbr> (0411) 3617007<br>
+{{--                                        <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>--}}
                                         <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
                                     </div>
 
@@ -545,80 +499,80 @@
 
                             </div>
 
-                            <div class="col-md-4">
+{{--                            <div class="col-md-4">--}}
 
-                                <div class="widget widget_links clearfix">
+{{--                                <div class="widget widget_links clearfix">--}}
 
-                                    <h4>Blogroll</h4>
+{{--                                    <h4>Blogroll</h4>--}}
 
-                                    <ul>
-                                        <li><a href="https://codex.wordpress.org/">Documentation</a></li>
-                                        <li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-                                        <li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
-                                        <li><a href="https://wordpress.org/support/">Support Forums</a></li>
-                                        <li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
-                                        <li><a href="https://wordpress.org/news/">Canvas Blog</a></li>
-                                        <li><a href="https://planet.wordpress.org/">Canvas Planet</a></li>
-                                    </ul>
+{{--                                    <ul>--}}
+{{--                                        <li><a href="https://codex.wordpress.org/">Documentation</a></li>--}}
+{{--                                        <li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>--}}
+{{--                                        <li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>--}}
+{{--                                        <li><a href="https://wordpress.org/support/">Support Forums</a></li>--}}
+{{--                                        <li><a href="https://wordpress.org/extend/themes/">Themes</a></li>--}}
+{{--                                        <li><a href="https://wordpress.org/news/">Canvas Blog</a></li>--}}
+{{--                                        <li><a href="https://planet.wordpress.org/">Canvas Planet</a></li>--}}
+{{--                                    </ul>--}}
 
-                                </div>
+{{--                                </div>--}}
 
-                            </div>
+{{--                            </div>--}}
 
-                            <div class="col-md-4">
+{{--                            <div class="col-md-4">--}}
 
-                                <div class="widget clearfix">
-                                    <h4>Recent Posts</h4>
+{{--                                <div class="widget clearfix">--}}
+{{--                                    <h4>Recent Posts</h4>--}}
 
-                                    <div class="posts-sm row col-mb-30" id="post-list-footer">
-                                        <div class="entry col-12">
-                                            <div class="grid-inner row">
-                                                <div class="col">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                                                    </div>
-                                                    <div class="entry-meta">
-                                                        <ul>
-                                                            <li>10th July 2021</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                    <div class="posts-sm row col-mb-30" id="post-list-footer">--}}
+{{--                                        <div class="entry col-12">--}}
+{{--                                            <div class="grid-inner row">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="entry-title">--}}
+{{--                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="entry-meta">--}}
+{{--                                                        <ul>--}}
+{{--                                                            <li>10th July 2021</li>--}}
+{{--                                                        </ul>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="entry col-12">
-                                            <div class="grid-inner row">
-                                                <div class="col">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                                                    </div>
-                                                    <div class="entry-meta">
-                                                        <ul>
-                                                            <li>10th July 2021</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                        <div class="entry col-12">--}}
+{{--                                            <div class="grid-inner row">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="entry-title">--}}
+{{--                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="entry-meta">--}}
+{{--                                                        <ul>--}}
+{{--                                                            <li>10th July 2021</li>--}}
+{{--                                                        </ul>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
 
-                                        <div class="entry col-12">
-                                            <div class="grid-inner row">
-                                                <div class="col">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                                                    </div>
-                                                    <div class="entry-meta">
-                                                        <ul>
-                                                            <li>10th July 2021</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                        <div class="entry col-12">--}}
+{{--                                            <div class="grid-inner row">--}}
+{{--                                                <div class="col">--}}
+{{--                                                    <div class="entry-title">--}}
+{{--                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="entry-meta">--}}
+{{--                                                        <ul>--}}
+{{--                                                            <li>10th July 2021</li>--}}
+{{--                                                        </ul>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                            </div>
+{{--                            </div>--}}
                         </div>
 
                     </div>
