@@ -51,6 +51,7 @@ class RegulasiController extends Controller
 
         return json_decode(HttpHelper::regulasi_add($body));
     }
+
     public function edit($id)
     {
         $data = HttpHelper::regulasi_get(['id' => $id])['data'];
@@ -83,11 +84,11 @@ class RegulasiController extends Controller
         //return $body;
         return json_decode(HttpHelper::regulasi_update($body));
     }
+
     public function delete($id)
     {
         return json_decode(HttpHelper::regulasi_delete(['id' => $id]));
     }
-
 
     public function downloadRegulasi($file)
     {
@@ -97,5 +98,30 @@ class RegulasiController extends Controller
         );
 
         return Response::download($regulasi, $file,$headers);
+    }
+
+    public function uploadFile(Request $request){
+
+        try {
+            $namaFile = [];
+            foreach ($request->all() as $fls => $fl){
+                $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
+                $fl->move(base_path('public/regulasi'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+            }
+
+            return response()->json([
+                'files' => $namaFile,
+                'status' => true,
+                'message' => 'Files Upload Success!'
+            ],200
+            );
+        }catch (\Exception $er){
+            return response()->json([
+                'message' => $er->getMessage(),
+                'status' => false,
+            ],500
+            );
+        }
+
     }
 }

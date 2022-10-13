@@ -69,6 +69,7 @@ Route::get('/forum-survey', [ClientController::class, 'forumSurvey']);
 Route::get('/forum-rekomendasi', [ClientController::class, 'forumRekomendasi']);
 
 Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegulasi']);
+Route::get('/upload-regulasi',[RegulasiController::class, 'uploadFile']);
 
 Route::get('/login', function () {
     if(Session::get('authenticated')){

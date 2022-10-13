@@ -84,10 +84,6 @@ class KelitbanganController extends Controller
               $fl->move(base_path('public/attachment'),str_replace(' ','-',$fl->getClientOriginalName()));
           }
 
-//          foreach ($request->filw as $fl =>$fil){
-//              $namaFile[] = str_replace(' ','-',$fil->getClientOriginalName());
-//              $fil->move(base_path('\public\attachment'),str_replace(' ','-',$fil->getClientOriginalName()));
-//          }
           return response()->json([
                   'files' => $namaFile,
                   'status' => true,
