@@ -52,7 +52,7 @@
                                     <div class="entry-image">
                                         <a href="javascript:;" class="entry-link" target="_blank" >
                                             @if($b['attachment'] != null)
-                                                <img src="{{ asset('/images/upload/').'/'.$b['attachment'][0]['nama'] }} " style="width: 100%; height: 100%; ">
+                                                <img src="{{ asset('/images/upload/').'/'.$b['attachment'][0]['nama'] }} " style="width: 400px; ">
                                             @else
                                                 <img src="{{ asset('/images/services/ipad.png') }} " style="width: 100%; ">
                                             @endif

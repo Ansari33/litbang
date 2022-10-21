@@ -62,20 +62,20 @@
      }
     $(function() {
         console.log('buat Datatable')
-        let tbl_data = $('#datatable1').dataTable();
-        $(`#datatable1 thead tr`).first().clone().appendTo(`#datatable1`);
-        $(`#datatable1 thead tr:eq(1) th`).each(function (i) {
-            console.log(i);
-            let title = $(this).text();
-            if (title == 'ID') {
-                $(this).html('');
-            } else {
-                $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
-            }
-            $('input', this).on('keyup', function (e) {
-                tbl_data.column(i).search(this.value).draw();
-            });
-        });
+        let tbl_data = $('#datatable1').DataTable();
+        // $(`#datatable1 thead tr`).first().clone().appendTo(`#datatable1`);
+        // $(`#datatable1 thead tr:eq(1) th`).each(function (i) {
+        //     console.log(i);
+        //     let title = $(this).text();
+        //     if (title == 'ID') {
+        //         $(this).html('');
+        //     } else {
+        //         $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
+        //     }
+        //     $('input', this).on('keyup', function (e) {
+        //         tbl_data.column(i).search(this.value).draw();
+        //     });
+        // });
     });
 
     </script>
