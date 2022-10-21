@@ -396,7 +396,7 @@ function loadInovasi(data){
         }else{
             src_img = "images/services/main-bg.jpg";
         }
-        listGallery +=`<div class="entry col-md-4">
+        listGallery +=`<div class="entry col-md-3">
                         <div class="grid-inner">
                             <div class="entry-image">
                                 <a href="javascript:;">
