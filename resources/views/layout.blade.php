@@ -600,7 +600,6 @@
 
                             <div class="col-md-5 col-lg-12">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
                                     <div class="widget-subscribe-form-result"></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
                                         <div class="input-group mx-auto">

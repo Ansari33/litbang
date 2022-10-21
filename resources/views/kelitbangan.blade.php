@@ -23,16 +23,6 @@
                     <th>Dokumen</th>
                 </tr>
                 </thead>
-{{--                <tfoot>--}}
-{{--                <tr>--}}
-{{--                    <th>Name</th>--}}
-{{--                    <th>Position</th>--}}
-{{--                    <th>Office</th>--}}
-{{--                    <th>Age</th>--}}
-{{--                    <th>Start date</th>--}}
-{{--                    <th>Salary</th>--}}
-{{--                </tr>--}}
-{{--                </tfoot>--}}
                 <tbody>
                 @foreach($data as $its => $k)
                 <tr >
@@ -51,7 +41,11 @@
                         @endforeach
                     </td>
                     <td>{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
-                    <td><a href="#"><i class="fa fa-file"></i> </a></td>
+                    <td>
+                        @foreach($k['attachment'] as $att => $at)
+                        <a href="{{ ($at['url']) }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
+                        @endforeach
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -68,7 +62,20 @@
      }
     $(function() {
         console.log('buat Datatable')
-        $('#datatable1').dataTable();
+        let tbl_data = $('#datatable1').dataTable();
+        $(`#datatable1 thead tr`).first().clone().appendTo(`#datatable1`);
+        $(`#datatable1 thead tr:eq(1) th`).each(function (i) {
+            console.log(i);
+            let title = $(this).text();
+            if (title == 'ID') {
+                $(this).html('');
+            } else {
+                $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
+            }
+            $('input', this).on('keyup', function (e) {
+                tbl_data.column(i).search(this.value).draw();
+            });
+        });
     });
 
     </script>

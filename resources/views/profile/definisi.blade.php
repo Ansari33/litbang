@@ -114,7 +114,7 @@
                     <div id="snav-content1">
                         <div class="heading-block">
                             <h3>Kelitbangan</h3>
-                            <span>We support multiple Devices &amp; Layouts.</span>
+{{--                            <span>We support multiple Devices &amp; Layouts.</span>--}}
                         </div>
 {{--                        <img src="images/others/mac-phone.png" alt="Image" class="alignleft" style="max-width: 320px;">--}}
                         <p>Kelitbangan adalah rangkaian kegiatan ilmiah yang bertujuan menghasilkan pemahaman baru dan mengembangkan penerapan praktis nilai dan konteks ilmu pengetahuan yang baru, atau cara baru dalam rangka penyelenggaraan pemerintahan dalam negeri di lingkungan Kementerian Dalam Negeri (Kemendagri) dan pemerintahan daerah. Didalam kegiatan kelitbangan terdapat beberapa tahapan pengkajian yang meliputi Penelitian daerah, Pengembangan daerah dan Inovasi daerah.</p>
@@ -124,7 +124,7 @@
                     <div id="snav-content2">
                         <div class="heading-block">
                             <h3>Penelitian Daerah</h3>
-                            <span>Crisp &amp; Clear Graphics across all your Retina &amp; Standard Devices.</span>
+{{--                            <span>Crisp &amp; Clear Graphics across all your Retina &amp; Standard Devices.</span>--}}
                         </div>
                         <p>Penelitian adalah kegiatan yang dilakukan menurut kaidah dan metode ilmiah secara sistematis untuk memperoleh informasi, data, dan keterangan yang berkaitan dengan pemahaman dan pembuktian kebenaran atau ketidakbenaran suatu asumsi dan/atau hipotesis di bidang ilmu pengetahuan dan teknologi terkait dengan penyelenggaraan pemerintahan dalam negeri dan menarik kesimpulan ilmiah bagi keperluan kemajuan kebijakan pemerintahan.</p>
 {{--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum consequuntur quaerat vero qui ipsum sunt velit vel, officia, nihil amet ullam. Omnis nam rerum, harum!</p>--}}
@@ -134,7 +134,7 @@
                     <div id="snav-content3">
                         <div class="heading-block">
                             <h3>Pengembangan Daerah</h3>
-                            <span>Smart Reusable code all throughout the Template for Infinite Customizations.</span>
+{{--                            <span>Smart Reusable code all throughout the Template for Infinite Customizations.</span>--}}
                         </div>
                         <p>Pengembangan adalah kegiatan ilmu pengetahuan dan teknologi yang bertujuan memanfaatkan kaidah dan teori ilmu pengetahuan yang terbukti kebenarannya untuk meningkatkan fungsi, manfaat, dan aplikasi ilmu pengetahuan yang telah ada, atau menghasilkan teknologi baru yang terkait dengan penyelenggaraan pemerintahan dalam negeri.</p>
 {{--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, optio animi adipisci distinctio fuga, nihil perferendis dignissimos. Aperiam odio voluptatem dignissimos aliquam? Ea, nihil animi, recusandae quos nulla, suscipit magni provident nesciunt incidunt quo dicta asperiores iste. Illo, qui culpa. Reprehenderit in asperiores blanditiis pariatur aliquid iusto. Quisquam voluptatibus nostrum architecto repudiandae voluptate, ipsum quae iure! Commodi recusandae, repellendus voluptas fugiat aspernatur culpa quod delectus quidem consequatur odio assumenda saepe inventore molestiae ea expedita hic dolorum distinctio ut! Maiores, error.</p>--}}
@@ -143,7 +143,7 @@
                     <div id="snav-content4">
                         <div class="heading-block">
                             <h3>Inovasi Daerah</h3>
-                            <span>Use the amazing features of the Bootstrap Framework.</span>
+{{--                            <span>Use the amazing features of the Bootstrap Framework.</span>--}}
                         </div>
                         <p>Inovasi Daerah adalah semua bentuk pembaharuan dalam penyelenggaraan Pemerintahan Daerah yang bertujuan untuk meningkatkan kinerja penyelenggaraan Pemerintahan Daerah dengan sasaran untuk mempercepat terwujudnya kesejahteraan masyarakat melalui: peningkatan Pelayanan Publik; pemberdayaan dan peran serta masyarakat; dan peningkatan daya saing Daerah.</p>
 {{--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum esse odio, voluptatem, fuga dolore labore. Voluptate, tenetur. Ab temporibus sed adipisci dolor ipsa cumque iusto maiores dolorum molestias magni expedita pariatur modi facere cupiditate eius quas, officiis eligendi cum veritatis dolore autem? Inventore vero doloremque sunt, et modi eos placeat.</p>--}}
