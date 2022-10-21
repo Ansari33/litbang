@@ -43,7 +43,7 @@
                     <td>{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
                     <td>
                         @foreach($k['attachment'] as $att => $at)
-                        <a href="{{ explode("//",$at['url'])[1] }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
+                        <a href="{{ explode("public",$at['url'])[1] }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
                         @endforeach
                     </td>
                 </tr>
