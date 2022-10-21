@@ -33,10 +33,10 @@ var menus = [
                 'nama' : 'Regulasi',
                 'link' : '/informasi-regulasi'
             },
-            {
-                'nama' : 'SOP Kelitbangan',
-                'link' : '#'
-            },
+            // {
+            //     'nama' : 'SOP Kelitbangan',
+            //     'link' : '#'
+            // },
             // {
             //     'nama' : 'Rinduk Kota',
             //     'link' : '#'

@@ -19,7 +19,7 @@
 
             <div class="heading-block center">
                 <h2>Bidang Penelitan dan Pengembangan</h2>
-                <span>Built with passion &amp; intuitiveness in mind. Canvas is a masterclass piece of work presented to you.</span>
+{{--                <span>Built with passion &amp; intuitiveness in mind. Canvas is a masterclass piece of work presented to you.</span>--}}
             </div>
 
             <div style="position: relative; margin-bottom: -60px;" data-height-xl="415" data-height-lg="342" data-height-md="262" data-height-sm="160" data-height-xs="102">
@@ -65,7 +65,9 @@
     ============================================= -->
     <div id="portfolio" class="portfolio row g-0 portfolio-reveal grid-container">
         @foreach($attachment as $key => $att)
+
             @if($att['tipe'] == 'video')
+                @if(file_exists(public_path('/videos/upload/'.$att['nama'])))
                 <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-graphics pf-uielements">
                     <div class="grid-inner">
                         <div class="portfolio-image">
@@ -84,12 +86,14 @@
                             </div>
                         </div>
                         <div class="portfolio-desc">
-                            <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
-                            <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+{{--                            <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>--}}
+{{--                            <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>--}}
                         </div>
                     </div>
                 </article>
+                @endif
             @else
+                @if(file_exists(public_path('/images/upload/'.$att['nama'])))
                 <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-media pf-icons">
                     <div class="grid-inner">
                         <div class="portfolio-image">
@@ -98,18 +102,19 @@
                             </a>
                             <div class="bg-overlay">
                                 <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                                    <a href="{{ asset('images/upload/').'/'.$att['nama'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-plus"></i></a>
-                                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
+                                    <a href="{{ asset('images/upload/').'/'.$att['nama'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-eye"></i></a>
+{{--                                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>--}}
                                 </div>
                                 <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
                             </div>
                         </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
-                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
-                        </div>
+{{--                        <div class="portfolio-desc">--}}
+{{--                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>--}}
+{{--                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>--}}
+{{--                        </div>--}}
                     </div>
                 </article>
+                @endif
             @endif
         @endforeach
 

@@ -140,17 +140,8 @@ class AuthController extends Controller {
         $client->setIncludeGrantedScopes(true);
         $auth_url = $client->createAuthUrl();
 
-        //return $client->authenticate($_GET['code']);
-
-       // return $response = Http::get($auth_url);
         return redirect()->to($auth_url)->send();
 
-//        return Socialite::driver('google')
-//            ->with(
-//                [
-//                    'redirect_uri' => 'http://localhost:7000/callback',
-//                ])
-//            ->redirect();
     }
 
 	public function handleProviderCallback(Request $request){

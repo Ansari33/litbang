@@ -161,7 +161,7 @@
                 <!-- START REVOLUTION SLIDER 5.1.4 fullscreen mode -->
                 <div id="rev_slider_579_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.1.4">
                     <ul>   <!-- SLIDE  -->
-                        <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('images/slider/rev/main/s1-thumb.jpg')}}"  data-saveperformance="off"  data-title="Welcome to Canvas">
+                        <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1000"   data-saveperformance="off"  >
                             <!-- MAIN IMAGE -->
                             <img src="{{asset('images/videos/explore-poster.jpg')}}"  alt="Image"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                             <!-- LAYERS -->
@@ -251,7 +251,7 @@
                                  data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"></div>
 
                         </li>
-                        <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('images/slider/rev/main/s2-thumb.jpg')}}"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
+                        <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000"   data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off" >
                             <!-- MAIN IMAGE -->
                             <img src="{{asset('images/balaikota2.jpg')}}"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                             <!-- LAYERS -->
@@ -417,9 +417,9 @@
 {{--                                 data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded text-end m-0"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>--}}
 
                         </li>
-                        <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="{{asset('images/slider/rev/main/s3-thumb.jpg')}}" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
+                        <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500"  data-delay="10000"  data-saveperformance="off" >
                             <!-- MAIN IMAGE -->
-                            <img src="{{asset('images/balaikota1.jpeg')}}"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
+                            <img src="{{asset('images/balaikota-makassar.jpg')}}"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
                             <!-- LAYERS -->
 
                             <!-- LAYER NR. 2 -->
@@ -585,8 +585,8 @@
 
                                     <div class="row">
                                         <div class="col-lg-6 bottommargin-sm">
-                                            <div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
-                                            <h5 class="mb-0">Total Downloads</h5>
+{{--                                            <div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>--}}
+{{--                                            <h5 class="mb-0">Total Downloads</h5>--}}
                                         </div>
 
                                         <div class="col-lg-6 bottommargin-sm">
@@ -701,7 +701,7 @@
 
                         <div class="clear"></div>
 
-                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+{{--                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype--}}
                     </div>
 
                 </div>

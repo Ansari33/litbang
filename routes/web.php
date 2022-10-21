@@ -187,7 +187,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     });
     Route::get('/admin-survey', [SurveyController::class, 'index']);
 
-    Route::get('/redirect', [AuthController::class, 'redirectToProvider']);
+    //Route::get('/redirect', [AuthController::class, 'redirectToProvider']);
     Route::get('/callback', [AuthController::class, 'handleProviderCallback']);
 
 
