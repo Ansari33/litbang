@@ -145,41 +145,41 @@
 
     </div>
 
-    <div class="section mb-0">
-        <div class="container clearfix">
+{{--    <div class="section mb-0">--}}
+{{--        <div class="container clearfix">--}}
 
-            <div class="heading-block center">
-                <h3>Hubungi Kami <span>Newsletter</span></h3>
-            </div>
+{{--            <div class="heading-block center">--}}
+{{--                <h3>Hubungi Kami <span>Newsletter</span></h3>--}}
+{{--            </div>--}}
 
-            <div class="subscribe-widget">
-                <div class="widget-subscribe-form-result"></div>
-                <form id="widget-subscribe-form2" action="include/subscribe.php" method="post" class="mb-0">
-                    <div class="input-group input-group-lg mx-auto" style="max-width:600px;">
-                        <div class="input-group-text"><i class="icon-email2"></i></div>
-                        <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                        <button class="btn btn-secondary" type="submit">Hubungi Sekarang</button>
-                    </div>
-                </form>
-            </div>
+{{--            <div class="subscribe-widget">--}}
+{{--                <div class="widget-subscribe-form-result"></div>--}}
+{{--                <form id="widget-subscribe-form2" action="include/subscribe.php" method="post" class="mb-0">--}}
+{{--                    <div class="input-group input-group-lg mx-auto" style="max-width:600px;">--}}
+{{--                        <div class="input-group-text"><i class="icon-email2"></i></div>--}}
+{{--                        <input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">--}}
+{{--                        <button class="btn btn-secondary" type="submit">Hubungi Sekarang</button>--}}
+{{--                    </div>--}}
+{{--                </form>--}}
+{{--            </div>--}}
 
-        </div>
-    </div>
+{{--        </div>--}}
+{{--    </div>--}}
 
-    <div id="oc-clients" class="section bg-transparent mt-0 owl-carousel owl-carousel-full image-carousel footer-stick carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
+{{--    <div id="oc-clients" class="section bg-transparent mt-0 owl-carousel owl-carousel-full image-carousel footer-stick carousel-widget" data-margin="80" data-loop="true" data-nav="false" data-autoplay="5000" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">--}}
 
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/1.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/2.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/3.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/4.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/5.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/6.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/7.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/8.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/9.png')}}" alt="Clients"></a></div>
-        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/10.png')}}" alt="Clients"></a></div>
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/1.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/2.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/3.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/4.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/5.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/6.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/7.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/8.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/9.png')}}" alt="Clients"></a></div>--}}
+{{--        <div class="oc-item"><a href="#"><img src="{{asset('images/clients/10.png')}}" alt="Clients"></a></div>--}}
 
-    </div>
+{{--    </div>--}}
 
 
 </div>

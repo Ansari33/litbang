@@ -492,7 +492,7 @@
                                         </address>
                                         <abbr title="Phone Number"><strong>Telepon:</strong></abbr> (0411) 3617007<br>
 {{--                                        <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>--}}
-                                        <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                                        <abbr title="Email Address"><strong>Email:</strong></abbr> info@litbangmakassar.go.id
                                     </div>
 
                                 </div>
@@ -628,6 +628,36 @@
                                                 <i class="icon-rss"></i>
                                             </a>
                                             <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-lg-12">
+                                <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                                    <div class="row">
+                                        <div class="col-4 col-md-12 col-lg-4 clearfix bottommargin-sm">
+                                            <a href="#" class="social-icon si-dark si-colored si-android mb-0" style="margin-right: 10px;">
+                                                <i class="icon-android"></i>
+                                                <i class="icon-facebook"></i>
+                                            </a>
+                                            <a href="{{ asset('/apk/app.apk') }}"><small style="display: block; margin-top: 3px;"><strong>App</strong><br>on Link</small></a>
+                                        </div>
+                                        <div class="col-4 col-md-12 col-lg-4 clearfix">
+                                            <a href="#" class="social-icon si-dark si-colored si-google mb-0" style="margin-right: 10px;">
+                                                <i class="icon-google-play"></i>
+                                                <i class="icon-rss"></i>
+                                            </a>
+                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>App</strong><br>Google</small></a>
+                                        </div>
+                                        <div class="col-4 col-md-12 col-lg-4 clearfix">
+                                            <a href="#" class="social-icon si-dark si-colored si-appstore mb-0" style="margin-right: 10px;">
+                                                <i class="icon-app-store"></i>
+                                                <i class="icon-facebook"></i>
+                                            </a>
+                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>App</strong><br>Apple</small></a>
                                         </div>
                                     </div>
 
