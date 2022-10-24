@@ -623,11 +623,11 @@
                                             <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
                                         </div>
                                         <div class="col-6 col-md-12 col-lg-6 clearfix">
-                                            <a href="#" class="social-icon si-dark si-colored si-rss mb-0" style="margin-right: 10px;">
-                                                <i class="icon-rss"></i>
-                                                <i class="icon-rss"></i>
+                                            <a href="#" class="social-icon si-dark si-colored si-twitter mb-0" style="margin-right: 10px;">
+                                                <i class="icon-twitter"></i>
+                                                <i class="icon-twitter"></i>
                                             </a>
-                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>on Twitter</small></a>
                                         </div>
                                     </div>
 
@@ -685,53 +685,53 @@
                         <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
                     </div>
 
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="d-flex justify-content-center justify-content-md-end">
-                            <a href="#" class="social-icon si-small si-borderless si-facebook">
-                                <i class="icon-facebook"></i>
-                                <i class="icon-facebook"></i>
-                            </a>
+{{--                    <div class="col-md-6 text-center text-md-end">--}}
+{{--                        <div class="d-flex justify-content-center justify-content-md-end">--}}
+{{--                            <a href="#" class="social-icon si-small si-borderless si-facebook">--}}
+{{--                                <i class="icon-facebook"></i>--}}
+{{--                                <i class="icon-facebook"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-twitter">
-                                <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
-                            </a>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-twitter">--}}
+{{--                                <i class="icon-twitter"></i>--}}
+{{--                                <i class="icon-twitter"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-gplus">
-                                <i class="icon-gplus"></i>
-                                <i class="icon-gplus"></i>
-                            </a>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-gplus">--}}
+{{--                                <i class="icon-gplus"></i>--}}
+{{--                                <i class="icon-gplus"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-pinterest">
-                                <i class="icon-pinterest"></i>
-                                <i class="icon-pinterest"></i>
-                            </a>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-pinterest">--}}
+{{--                                <i class="icon-pinterest"></i>--}}
+{{--                                <i class="icon-pinterest"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-vimeo">
-                                <i class="icon-vimeo"></i>
-                                <i class="icon-vimeo"></i>
-                            </a>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-vimeo">--}}
+{{--                                <i class="icon-vimeo"></i>--}}
+{{--                                <i class="icon-vimeo"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-github">
-                                <i class="icon-github"></i>
-                                <i class="icon-github"></i>
-                            </a>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-github">--}}
+{{--                                <i class="icon-github"></i>--}}
+{{--                                <i class="icon-github"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-yahoo">
-                                <i class="icon-yahoo"></i>
-                                <i class="icon-yahoo"></i>
-                            </a>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-yahoo">--}}
+{{--                                <i class="icon-yahoo"></i>--}}
+{{--                                <i class="icon-yahoo"></i>--}}
+{{--                            </a>--}}
 
-                            <a href="#" class="social-icon si-small si-borderless si-linkedin">
-                                <i class="icon-linkedin"></i>
-                                <i class="icon-linkedin"></i>
-                            </a>
-                        </div>
+{{--                            <a href="#" class="social-icon si-small si-borderless si-linkedin">--}}
+{{--                                <i class="icon-linkedin"></i>--}}
+{{--                                <i class="icon-linkedin"></i>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
 
-                        <div class="clear"></div>
+{{--                        <div class="clear"></div>--}}
 
 {{--                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype--}}
-                    </div>
+{{--                    </div>--}}
 
                 </div>
 

@@ -14,19 +14,27 @@
                         <h3>Selayang Pandang</h3>
                     </div>
 
-                    <p class="mb-0">Kota Bandung yang berkembang semakin pesat berdampak pada munculnya berbagai permasalahan kota yang memerlukan solusi pemecahan yang mampu mengakomodir kepentingan semua pihak, baik dari sisi pemerintah, swasta dan masyarakat.Bappelitbang Kota Bandung sebagai institusi pengampu unsur penunjang urusan pemerintahan perencanaan pembangunan dan penelitian dan pengembangan pada Pemerintah Kota Bandung, diamanatkan untuk dapat menyelesaikan berbagai permasalahan kota melalui rekomendasi hasil dari berbagai jenis kegiatan kelitbangan yang dilakukan sesuai Peraturan Menteri Dalam Negeri Nomor 17 Tahun 2016, yang mana keluaran hasil dalam bentuk rekomendasi sebagai dasar pengambilan kebijakan strategis di pemerintah daerah.
+                    <p class="mb-0">
 
-                        Dalam upaya mengoptimalkan peran Litbang dalam mendukung pembangunan di Kota Bandung serta mengakomodasi aspirasi masyarakat untuk memperoleh informasi hasil litbang maka telah dibangun  sistem aplikasi berbasis web yang berisi tentang informasi penelitian dan pengembangan (e litbang) sejak tahun 2015. E-litbang merupakan sistem aplikasi yang menghimpun dan mengelola produk litbang secara terintegrasi serta membuka peluang akses, pengelolaan dan pendayagunaan informasi secara mudah dan cepat sebagai sarana Dokumentasi dan Sosialisasi hasil kelitbangan dari jejaring kelitbangan yang diharapkan dapat mempermudah masyarakat/akademisi/ oraganisasi dalam mengakses hasil kajian, penelitian dan hasil kelitbangan sehingga pemanfaatan dokumen litbang menjadi lebih optimal dan meluas.
+                        Kota Makassar sebagai ibu kota Sulawesi selatan sangat pesat kemajuanya serta pembangunan di segala bidang.
 
-                        Merujuk pada amanat Peraturan Pemerintah Nomor 38 tahun 2017 tentang Inovasi Daerah, Inovasi Daerah pada hakikatnya ditujukan untuk mendukung peningkatan kinerja Pemerintah Daerah dan Pelayanan Publik, secara optimal dalam rangka mewujudkan kesejahteraan masyarakat. Sasaran Inovasi Daerah diarahkan untuk mempercepat terwujudnya kesejahteraan masyarakat melalui peningkatan Pelayanan Publik, pemberdayaan dan peran serta masyarakat, dan peningkatan daya saing Daerah.
+                        FBN – Luas wilayah Provinsi Sulawesi Selatan 46.717 km2, jumlah penduduk diperkirakan 9 juta jiwa, jumlah kabupaten 21 dan 3 kota sebagian wilayahnya di kelilingi laut. Kota Makassar sebagai ibu kota Sulawesi selatan sangat pesat kemajuanya serta pembangunan di segala bidang.
 
-                        Keberadaan e-Litbang diharapkan dapat mendukung pelaksanaan tugas bidang litbang berdasarkan Peraturan Walikota Bandung Nomor 1402 Tahun 2016 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi serta Tata Kerja Badan Perencanaan Pembangunan, Penelitian dan Pengembangan Kota Bandung, yang meliputi:
-                        pemantauan, evaluasi dan pelaporan lingkup penelitian dan pengembangan;
-                        fasilitasi dan pengembangan inovasi daerah;
-                        koordinasi, sinkronisasi dan kemitraan kelitbangan;
-                        pengelolaan data dan peraturan kelitbangan;
-                        kerjasama dan kemitraan lingkup penelitian dan pengembangan.
-                        Bappelitbang sebagai Perangkat Daerah yang membidangi penelitian dan pengembangan memiliki tugas fasilitasi dan pengembangan inovasi daerah yang meliputi proses perencanaan, pelaksanaan dan monev Inovasi Daerah. Proses kurasi inovasi daerah belum berjalan optimal dikarenakan keterbatasan data yang dimiliki. Belum adanya sistem yang dapat menghimpun dan mengelola data inovasi daerah secara terintegrasi, sehingga sering mengalami kesulitan pemenuhan data Penilaian Indeks Inovasi Daerah (Kemendagri), Indeks Daya Saing Daerah (Kemenristek/BRIN), Indeks Kepemimpinan Kepala Daerah (Kemendari) dan penilaian lainnya..</p>
+                        Kota Makassar baru-baru ini melaksanakan Event berskala Internasional(F8), kota Daeng ini terkenal dengan pantai losarinya serta ragam macam kuliner yang bisa di nikmati seperti Coto Makassar, Sop konro, Pallu basa, Ikan bakar dengan Cobe2(sambel) raca taipa ( mangga di caca) yang sangat dikenal penikmat ikan bakar.
+
+                        Berkunjung ke Kota Angingmammiri jangan lupa ke pantai losari singgah juga di Centre Point Of Indonesia(CPI) yang mana di lokasi tersebut terdapat mesjid 99 kubah atau Asmaul Husna yang di arsitekin oleh Kang Ridwan Kamil yang saat ini sebagai Gubernur Jawa Barat di mesjid ini kita bisa sholat berjamaah bagi ummat Islam,di CPI juga dimanfaatkan oleh masyarakat kota Makassar berolah raga di akhir pekan.
+
+                        Di pantai losari bisa juga kita menikmati matahari terbenam di sore hari dan sekaligus kita bisa sholat berjamaah di mesjid terapung mesjid tersebut menghadap langsung kelaut, mesjid ini juga di bangun diatas laut.
+
+                        Sepanjang pantai losari banyak menawarkan macam macam kuliner serta hotel bagi pelancong yang niat menginap di makassar, satu lagi kuliner makassar yang harus kita cicipi adalah pisang epe(pisang jepit) yang dimakan dengan gula merah yang di cairkan ber aromah durian,tidak jauh dari pantai losari ada juga benteng peninggalan Belanda bernama Roterdam bangunannya menghadap langsung dengan laut.
+
+                        Kota Makassar juga unik karena setiap jalan menjamur yang namanya warung kopi(warkop) warung kopi di Makassar tempatnya masyarakat yang suka nongkrong atau punya komunitas sala satu contoh warkop tempat tim Fokus Sering ngopi di warkop Mondai jln.Andi pangerang pettarani 2 kopinya sangat enak rasanya dan harganya terjangkau di tempat ini juga tempat berkumpulnya komunitas alumni SMA 1 (Smansa) dari semua angkatan.warkop di kota Makassar selain tempat kumpulnya orang yang suka nongkrong dan komunitas juga sebagai tempat permainan ketangkasan seperti Catur dan Domino bahkan permainan ketangkasan ini sering di pertandingkan dan berhadiah.
+
+                        Di Makassar bisa berkeliling kota dengan menggunakan trans Mamminasata dan tidak di pungut biaya. Berkunjung ke Makassar menggunakan pesawat udara mendarat di bandara bertaraf Internasional bernama Bandara Sultan Hasanuddin sementara kalau menggunakan kapal laut kapal akan berlabu di pelabuhan Soekarno Hatta.
+
+                        ( JJ-Edi.S )
+
+                    </p>
                 </div>
 
 {{--                <div class="col-lg-3">--}}
