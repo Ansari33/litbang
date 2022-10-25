@@ -641,21 +641,21 @@
                                         <div class="col-4 col-md-12 col-lg-4 clearfix bottommargin-sm">
                                             <a href="#" class="social-icon si-dark si-colored si-android mb-0" style="margin-right: 10px;">
                                                 <i class="icon-android"></i>
-                                                <i class="icon-facebook"></i>
+                                                <i class="icon-android1"></i>
                                             </a>
                                             <a href="{{ asset('/apk/app.apk') }}"><small style="display: block; margin-top: 3px;"><strong>App</strong><br>on Link</small></a>
                                         </div>
                                         <div class="col-4 col-md-12 col-lg-4 clearfix">
                                             <a href="#" class="social-icon si-dark si-colored si-google mb-0" style="margin-right: 10px;">
                                                 <i class="icon-google-play"></i>
-                                                <i class="icon-rss"></i>
+                                                <i class="icon-googleplay"></i>
                                             </a>
                                             <a href="#"><small style="display: block; margin-top: 3px;"><strong>App</strong><br>Google</small></a>
                                         </div>
                                         <div class="col-4 col-md-12 col-lg-4 clearfix">
                                             <a href="#" class="social-icon si-dark si-colored si-appstore mb-0" style="margin-right: 10px;">
                                                 <i class="icon-app-store"></i>
-                                                <i class="icon-facebook"></i>
+                                                <i class="icon-app-store-ios"></i>
                                             </a>
                                             <a href="#"><small style="display: block; margin-top: 3px;"><strong>App</strong><br>Apple</small></a>
                                         </div>
