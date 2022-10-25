@@ -394,7 +394,7 @@ function loadInovasi(data){
         if (value['attachment'].length > 0){
             src_img = `/images/upload/${value['attachment'][0]['nama']}`;
         }else{
-            src_img = "images/services/main-bg.jpg";
+            src_img = "images/extras/200x200.gif";
         }
         listGallery +=`<div class="entry col-md-3">
                         <div class="grid-inner">
