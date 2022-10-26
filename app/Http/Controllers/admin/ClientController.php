@@ -127,6 +127,17 @@ class ClientController extends Controller
         return view('view-data.berita',compact('data','usulan_lain'));
     }
 
+    public function buatKomentar(Request $request)
+    {
+        $body = [
+            'oleh' => $request->oleh,
+            'komentar' => $request->komentar,
+            'berita_id' => $request->berita_id,
+        ];
+
+        return HttpHelper::berita_buat_komentar($body);
+    }
+
     public function galeriFoto()
     {
         $tempData = HttpHelper::attachment_get_foto()['data'];

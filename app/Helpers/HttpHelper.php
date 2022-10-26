@@ -350,6 +350,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function berita_buat_komentar($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'berita/komentar', $request);
+        return $response;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Usulan Penelitian
