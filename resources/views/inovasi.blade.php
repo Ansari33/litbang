@@ -13,7 +13,7 @@
 
         <div class="container clearfix">
             <div class="row">
-                <div class="col-lg-10"><div class="table-responsive">
+                <div class="col-lg-12"><div class="table-responsive">
                         <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                             <tr>
@@ -27,9 +27,9 @@
                             <tbody>
                             @foreach($data as $item => $inv)
                                 <tr >
-                                    <td>{{ $item + 1 }}</td>
-                                    <td><a href="/view-inovasi/{{ $inv['id'] }}" style="color: black">{{ $inv['nama'] }}</a> </td>
-                                    <td>
+                                    <td style="width: 5%">{{ $item + 1 }}</td>
+                                    <td style="width: 40%"><a href="/view-inovasi/{{ $inv['id'] }}" style="color: black">{{ $inv['nama'] }}</a> </td>
+                                    <td style="width: 20%">
                                         @php
                                         $pelaksana = [];
                                         @endphp
@@ -41,14 +41,14 @@
                                         {{ implode(', ',$pelaksana) }}
                                     </td>
 
-                                    <td>{{ $inv['tanggal'] }}</td>
-                                    <td>{{ $inv['kelengkapan'] }}</td>
+                                    <td style="width: 10%">{{ $inv['tanggal'] }}</td>
+                                    <td style="width: 25%">{{ $inv['kelengkapan'] }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
                     </div></div>
-                <div class="col-lg-2"></div>
+
             </div>
 
 

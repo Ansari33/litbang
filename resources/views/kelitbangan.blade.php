@@ -26,10 +26,10 @@
                 <tbody>
                 @foreach($data as $its => $k)
                 <tr >
-                    <td>{{ $its + 1 }}</td>
-                    <td>{{ $k['lingkup_data']['nama'] }}</td>
-                    <td><a href="/view-kelitbangan/{{ $k['id'] }}" style="color: black;">{{ $k['judul'] }}</a></td>
-                    <td>
+                    <td style="width: 5%">{{ $its + 1 }}</td>
+                    <td style="width: 20%">{{ $k['lingkup_data']['nama'] }}</td>
+                    <td style="width: 30%"><a href="/view-kelitbangan/{{ $k['id'] }}" style="color: black;">{{ $k['judul'] }}</a></td>
+                    <td style="width: 20%">
                         @php
                          $pelaksana = [];
                         @endphp
@@ -40,8 +40,8 @@
                             {{ implode(', ',$pelaksana) }}
                         @endforeach
                     </td>
-                    <td>{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
-                    <td>
+                    <td style="width: 5%">{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
+                    <td style="width: 20%">
                         @foreach($k['attachment'] as $att => $at)
                         <a href="{{ asset(explode("public/",$at['url'])[1]) }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
                         @endforeach
