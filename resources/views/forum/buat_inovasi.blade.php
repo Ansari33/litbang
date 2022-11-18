@@ -33,7 +33,7 @@
                                         <label for="fitness-form-name">Nomor:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="nomor" id="fitness-form-name" class="form-control required" value="" placeholder="Enter your Full Name">
+                                        <input type="text" name="nomor" id="fitness-form-name" class="form-control required" value=" " >
                                     </div>
                                 </div>
                             </div>

@@ -9,14 +9,14 @@
 
                 <div class="row shadow bg-light border">
 
-                    <div class="col-lg-4 dark" style="background:  url('https://c1.wallpaperflare.com/preview/14/432/956/laptop-computer-dark-room.jpg') center center / cover; min-height: 400px;">
-{{--                        <h3 class="center mt-5">Fitness Quotes</h3>--}}
-{{--                        <div class="calories-wrap center w-100 px-2">--}}
-{{--                            <span class="text-uppercase mb-0 ls2">Loosing Fat</span>--}}
-{{--                            <h2 id="calories-count" class="calories display-3 mb-2 heading-block border-bottom-0 fw-semibold font-body py-2"></h2>--}}
-{{--                            <span class="text-uppercase h6 ls3">Estimated Calories</span>--}}
-{{--                        </div>--}}
-{{--                        <small class="center m-0 position-absolute" style="bottom: 12px;">Metric Units</small>--}}
+                    <div class="col-lg-4 dark" style="background:  url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80') center ; min-height: 400px;">
+                        <h3 class="center mt-5">Form Permintaan</h3>
+                        <div class="calories-wrap center w-100 px-2">
+                            <span class="text-uppercase mb-0 ls2">Surat Rekomendasi</span>
+                            <h2 id="calories-count" class="calories display-3 mb-2 heading-block border-bottom-0 fw-semibold font-body py-2"></h2>
+                            <span class="text-uppercase h6 ls3">Penelitian</span>
+                        </div>
+
                     </div>
                     <link href="https://releases.transloadit.com/uppy/v2.12.2/uppy.min.css" rel="stylesheet">
                     <div class="col-lg-8 p-5">
@@ -26,20 +26,11 @@
                                     <div class="css3-spinner-scaler"></div>
                                 </div>
                             </div>
+
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Nomor:</label>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="nomor" id="fitness-form-name" class="form-control required" value="{{ $nomor }}" placeholder="Enter your Full Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <div class="row">
-                                    <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Usulan:</label>
+                                        <label for="fitness-form-name">Judul penelitian:</label>
                                     </div>
                                     <div class="col-sm-10">
                                         <textarea class="form-control" name="usulan"></textarea>
@@ -49,7 +40,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Pengusul:</label>
+                                        <label for="fitness-form-name">Nama :</label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="pengusul" id="fitness-form-name" class="form-control required" value="" placeholder="Nama Pengusul">
@@ -59,58 +50,40 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Latar Belakang:</label>
+                                        <label for="fitness-form-name">Asal Institusi:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="latar_belakang"></textarea>
+                                        <textarea class="form-control" name="Asal Institusi"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Tujuan:</label>
+                                        <label for="fitness-form-name">Email:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="tujuan"></textarea>
+                                        <input type="email" name="pengusul" id="fitness-form-name" class="form-control required" value="" placeholder="Email">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 form-group">
+                                <div class="row">
+                                    <div class="col-sm-2 col-form-label">
+                                        <label for="fitness-form-email">No. HP:</label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="hp" id="fitness-form-email" class="form-control required" value="" placeholder="Nomor Kontak">
+
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Instansi:</label>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        {{ Form::select('instansi',$instansi,null, ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'inovasi_instansi_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <div class="row">
-                                    <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Lokasi:</label>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" name="lokasi"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <div class="row">
-                                    <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-email">Email:</label>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="email" id="fitness-form-email" class="form-control required" value="" placeholder="Email Pengusul">
-                                        <input type="hidden" name="status"  class=" required" value="usulan" >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <div class="row">
-                                    <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-email">File:</label>
+                                        <label for="fitness-form-email">File Pelengkap:</label>
                                     </div>
                                     <div class="col-sm-10">
                                         <div id="drag-drop-area"></div>
