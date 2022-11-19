@@ -61,9 +61,7 @@
 {{--                                            </div>--}}
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
-                                                    <div class="ml-2"><a href="/kelitbangan-tambah" class="btn btn-light-primary btn-sm"
-                                                                         onclick="" target="_blank"><i
-                                                                class="flaticon2-plus mr-n1"></i></a></div>
+
                                                     <div class="ml-2"><a href="javascript:;" class="btn btn-light-success btn-sm"
                                                                          onclick="" id="btn_reload_kelitbangan"><i
                                                                 class="flaticon2-reload mr-n1"></i></a></div>
@@ -136,7 +134,7 @@
 @endsection
 @push('js')
     <script>
-        var indexKelitbangan;
+        var indexUsulInovasi;
         $(function () {
 
             $('#menu_tab').scrollingTabs({
@@ -148,8 +146,29 @@
                 handleDelayedScrollbar: true,
                 scrollToActiveTab: true
             });
-            //add_page('dashboard','dashboard','Dashboard');
-            indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
+            var buttonCommon = {
+                exportOptions: {
+                    columns: getExportOptions(),
+                    modifier: {
+                        order: 'index',
+                        page : 'all',
+                        search: 'applied',
+                    },
+                    stripHtml:true,
+
+                }
+            };
+
+            function getExportOptions(){
+                return [function ( idx, data, node ) {
+                    if($(node).text() === 'Actions' || $(node).hasClass('col-dt-hidden'))
+                    { return false; }
+                    return true;
+                }
+                ];
+            }
+
+            indexUsulInovasi = $(`#tbl_kelitbangan`).DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
                 "deferRender": true,
@@ -162,40 +181,40 @@
                     {data : 'status'},
                     {data : 'action'},
                 ],
-                // buttons: [
-                //     $.extend( true, {}, buttonCommon, {
-                //             extend: 'excelHtml5',
-                //             SelectedOnly: true,
-                //             customize: function(xlsx){
-                //                 var table = xlsx.xl.worksheets['sheet1.xml'];
-                //                 var kolom=['A','B','C','D','E','F','G','H','I','J'];
-                //                 var j = 3;
-                //                 for (var i = 0; i < tabelIndex.columns().count(); i++){
-                //                     if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Jurnal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Pembayaran'){
-                //                         var test1 = $(tabelIndex.column(i).data()).toArray();
-                //                         test1.forEach(test);
-                //                         function test(item) {
-                //                             var sementara = item.substr(90,101);
-                //                             $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
-                //                             j++;
-                //
-                //                         }
-                //                     }
-                //                 }
-                //             }
-                //         }
-                //     ),
-                //
-                //     $.extend( true, {}, buttonCommon, {
-                //         extend: 'pdfHtml5',
-                //         orientation:'landscape',
-                //         pageSize: 'LEGAL',
-                //
-                //     } ),
-                //
-                //     // 'excelHtml5',
-                //     // 'pdfHtml5'
-                // ],
+                buttons: [
+                    $.extend( true, {}, buttonCommon, {
+                            extend: 'excelHtml5',
+                            SelectedOnly: true,
+                            customize: function(xlsx){
+                                var table = xlsx.xl.worksheets['sheet1.xml'];
+                                var kolom=['A','B','C','D','E','F','G','H','I','J'];
+                                var j = 3;
+                                for (var i = 0; i < indexUsulInovasi.columns().count(); i++){
+                                    if( $(indexUsulInovasi.column(i).header()).text() == 'Tanggal' || $(indexUsulInovasi.column(i).header()).text() == 'Tanggal Jurnal' || $(indexUsulInovasi.column(i).header()).text() == 'Tanggal Pembayaran'){
+                                        var test1 = $(indexUsulInovasi.column(i).data()).toArray();
+                                        test1.forEach(test);
+                                        function test(item) {
+                                            var sementara = item.substr(90,101);
+                                            $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
+                                            j++;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ),
+
+                    $.extend( true, {}, buttonCommon, {
+                        extend: 'pdfHtml5',
+                        orientation:'landscape',
+                        pageSize: 'LEGAL',
+
+                    } ),
+
+                    // 'excelHtml5',
+                    // 'pdfHtml5'
+                ],
 
                 rowId: 'id',
                 pageLength: 20,
@@ -269,7 +288,7 @@
                     console.log(res)
 
                     res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
-                    indexKelitbangan.ajax.reload();
+                    indexUsulInovasi.ajax.reload();
                 },
                 error: function (res, textstatus) {
                     if (textstatus === "timeout") {
@@ -281,7 +300,7 @@
             });
         }
         $('#btn_reload_kelitbangan').on('click',function (e) {
-            indexKelitbangan.ajax.reload();
+            indexUsulInovasi.ajax.reload();
         })
     </script>
 @endpush

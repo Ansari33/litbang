@@ -79,9 +79,9 @@
                                     <div class="col-lg-12">
                                         <button type="button" id="btn_kelitbangan_edit_data" class="btn btn-primary mr-2">Save</button>
                                         <button type="button" class="btn btn-secondary mr-2" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
-                                        <button type="button" id="btn_status_1" class="btn btn-info mr-2">Set Status</button>
-                                        <button type="button" id="btn_status_2" class="btn btn-success mr-2">Set Status</button>
-                                        <button type="button" id="btn_status_3" class="btn btn-warning mr-2">Set Status</button>
+                                        <button type="button" id="btn_status_1" class="btn btn-success mr-2">Konfirmasi</button>
+                                        <button type="button" id="btn_status_2" class="btn btn-danger mr-2">Tolak</button>
+                                        <button type="button" id="btn_status_3" class="btn btn-warning mr-2">Hapus</button>
                                     </div>
                                 </div>
                             </div>
