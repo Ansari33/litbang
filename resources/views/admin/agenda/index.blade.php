@@ -8,7 +8,7 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
 {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Regulasi - Index</span>
+                    <span class="nav-text bold ml-5">Agenda - Index</span>
                 </div>
             </div>
         </div>
@@ -22,46 +22,7 @@
                                      aria-labelledby="permintaan_pembelian_list">
                                     <div class="container-auto ml-7 mb-7">
                                         <div class="row">
-                                            <div class="row">
-                                                <div class="col-md-0 my-2 my-md-0">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonPermintaanPembelian"
-                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Pengaturan Kolom
-                                                        </button>
-                                                        <div class="dropdown-menu" id="columnSettingPermintaanPembelian" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Nomor" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_1" value="Nomor">
-                                                                    <span></span> &nbsp; Nomor </label> </a>
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Tanggal" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_2" value="Tanggal">
-                                                                    <span></span> &nbsp; Tanggal</label></a>
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Pemasok" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_3" value="Pemasok">
-                                                                    <span></span> &nbsp; Pemasok</label></a>
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Keterangan" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_4" value="Keterangan">
-                                                                    <span></span> &nbsp; Keterangan</label></a>
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-auto my-2 my-md-0">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAksiButtonPermintaanPembelian" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Aksi
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownAksiButtonPermintaanPembelian">
-                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Edit">Edit</a>
-                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Hapus">Hapus</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
                                                     <div class="ml-2"><a href="/agenda-tambah" class="btn btn-light-primary btn-sm"
@@ -118,7 +79,9 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Nama</th>
-                                                <th>File</th>
+                                                <th>Tanggal</th>
+                                                <th>Tempat</th>
+                                                <th>Waktu</th>
                                                 <th>Actions</th>
                                             </tr>
                                             </thead>
@@ -137,7 +100,7 @@
 @endsection
 @push('js')
     <script>
-        var indexKelitbangan;
+        var indexAgenda;
         $(function () {
 
             $('#menu_tab').scrollingTabs({
@@ -149,8 +112,29 @@
                 handleDelayedScrollbar: true,
                 scrollToActiveTab: true
             });
-            //add_page('dashboard','dashboard','Dashboard');
-            indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
+            var buttonCommon = {
+                exportOptions: {
+                    columns: getExportOptions(),
+                    modifier: {
+                        order: 'index',
+                        page : 'all',
+                        search: 'applied',
+                    },
+                    stripHtml:true,
+
+                }
+            };
+
+            function getExportOptions(){
+                return [function ( idx, data, node ) {
+                    if($(node).text() === 'Actions' || $(node).hasClass('col-dt-hidden'))
+                    { return false; }
+                    return true;
+                }
+                ];
+            }
+
+            indexAgenda = $(`#tbl_kelitbangan`).DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
                 "deferRender": true,
@@ -158,43 +142,45 @@
                 columns : [
                     {data : 'id'},
                     {data : 'nama'},
-                    {data : 'file'},
+                    {data : 'tanggal'},
+                    {data : 'tempat'},
+                    {data : 'waktu'},
                     {data : 'action'},
                 ],
-                // buttons: [
-                //     $.extend( true, {}, buttonCommon, {
-                //             extend: 'excelHtml5',
-                //             SelectedOnly: true,
-                //             customize: function(xlsx){
-                //                 var table = xlsx.xl.worksheets['sheet1.xml'];
-                //                 var kolom=['A','B','C','D','E','F','G','H','I','J'];
-                //                 var j = 3;
-                //                 for (var i = 0; i < tabelIndex.columns().count(); i++){
-                //                     if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Jurnal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Pembayaran'){
-                //                         var test1 = $(tabelIndex.column(i).data()).toArray();
-                //                         test1.forEach(test);
-                //                         function test(item) {
-                //                             var sementara = item.substr(90,101);
-                //                             $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
-                //                             j++;
-                //
-                //                         }
-                //                     }
-                //                 }
-                //             }
-                //         }
-                //     ),
-                //
-                //     $.extend( true, {}, buttonCommon, {
-                //         extend: 'pdfHtml5',
-                //         orientation:'landscape',
-                //         pageSize: 'LEGAL',
-                //
-                //     } ),
-                //
-                //     // 'excelHtml5',
-                //     // 'pdfHtml5'
-                // ],
+                buttons: [
+                    $.extend( true, {}, buttonCommon, {
+                            extend: 'excelHtml5',
+                            SelectedOnly: true,
+                            customize: function(xlsx){
+                                var table = xlsx.xl.worksheets['sheet1.xml'];
+                                var kolom=['A','B','C','D','E','F','G','H','I','J'];
+                                var j = 3;
+                                for (var i = 0; i < indexAgenda.columns().count(); i++){
+                                    if( $(indexAgenda.column(i).header()).text() == 'Tanggal' || $(indexAgenda.column(i).header()).text() == 'Tanggal Jurnal' || $(indexAgenda.column(i).header()).text() == 'Tanggal Pembayaran'){
+                                        var test1 = $(indexAgenda.column(i).data()).toArray();
+                                        test1.forEach(test);
+                                        function test(item) {
+                                            var sementara = item.substr(90,101);
+                                            $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
+                                            j++;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ),
+
+                    $.extend( true, {}, buttonCommon, {
+                        extend: 'pdfHtml5',
+                        orientation:'landscape',
+                        pageSize: 'LEGAL',
+
+                    } ),
+
+                    // 'excelHtml5',
+                    // 'pdfHtml5'
+                ],
 
                 rowId: 'id',
                 pageLength: 20,
@@ -276,7 +262,7 @@
                         success: function (res) {
                             console.log(res)
                             res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
-                            indexKelitbangan.ajax.reload();
+                            indexAgenda.ajax.reload();
                         },
                         error: function (res, textstatus) {
                             if (textstatus === "timeout") {
@@ -291,7 +277,7 @@
 
         }
         $('#btn_reload_kelitbangan').on('click',function (e) {
-            indexKelitbangan.ajax.reload();
+            indexAgenda.ajax.reload();
         })
     </script>
 @endpush

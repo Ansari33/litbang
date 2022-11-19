@@ -98,7 +98,7 @@
 @endsection
 @push('js')
     <script>
-        var indexKelitbangan;
+        var indexPenelitian;
         $(function () {
 
             $('#menu_tab').scrollingTabs({
@@ -110,8 +110,29 @@
                 handleDelayedScrollbar: true,
                 scrollToActiveTab: true
             });
-            //add_page('dashboard','dashboard','Dashboard');
-            indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
+            var buttonCommon = {
+                exportOptions: {
+                    columns: getExportOptions(),
+                    modifier: {
+                        order: 'index',
+                        page : 'all',
+                        search: 'applied',
+                    },
+                    stripHtml:true,
+
+                }
+            };
+
+            function getExportOptions(){
+                return [function ( idx, data, node ) {
+                    if($(node).text() === 'Actions' || $(node).hasClass('col-dt-hidden'))
+                    { return false; }
+                    return true;
+                }
+                ];
+            }
+
+            indexPenelitian = $(`#tbl_kelitbangan`).DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
                 "deferRender": true,
@@ -125,40 +146,40 @@
                     {data : 'status'},
                     {data : 'action'},
                 ],
-                // buttons: [
-                //     $.extend( true, {}, buttonCommon, {
-                //             extend: 'excelHtml5',
-                //             SelectedOnly: true,
-                //             customize: function(xlsx){
-                //                 var table = xlsx.xl.worksheets['sheet1.xml'];
-                //                 var kolom=['A','B','C','D','E','F','G','H','I','J'];
-                //                 var j = 3;
-                //                 for (var i = 0; i < tabelIndex.columns().count(); i++){
-                //                     if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Jurnal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Pembayaran'){
-                //                         var test1 = $(tabelIndex.column(i).data()).toArray();
-                //                         test1.forEach(test);
-                //                         function test(item) {
-                //                             var sementara = item.substr(90,101);
-                //                             $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
-                //                             j++;
-                //
-                //                         }
-                //                     }
-                //                 }
-                //             }
-                //         }
-                //     ),
-                //
-                //     $.extend( true, {}, buttonCommon, {
-                //         extend: 'pdfHtml5',
-                //         orientation:'landscape',
-                //         pageSize: 'LEGAL',
-                //
-                //     } ),
-                //
-                //     // 'excelHtml5',
-                //     // 'pdfHtml5'
-                // ],
+                buttons: [
+                    $.extend( true, {}, buttonCommon, {
+                            extend: 'excelHtml5',
+                            SelectedOnly: true,
+                            customize: function(xlsx){
+                                var table = xlsx.xl.worksheets['sheet1.xml'];
+                                var kolom=['A','B','C','D','E','F','G','H','I','J'];
+                                var j = 3;
+                                for (var i = 0; i < indexPenelitian.columns().count(); i++){
+                                    if( $(indexPenelitian.column(i).header()).text() == 'Tanggal' || $(indexPenelitian.column(i).header()).text() == 'Tanggal Jurnal' || $(indexPenelitian.column(i).header()).text() == 'Tanggal Pembayaran'){
+                                        var test1 = $(indexPenelitian.column(i).data()).toArray();
+                                        test1.forEach(test);
+                                        function test(item) {
+                                            var sementara = item.substr(90,101);
+                                            $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
+                                            j++;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ),
+
+                    $.extend( true, {}, buttonCommon, {
+                        extend: 'pdfHtml5',
+                        orientation:'landscape',
+                        pageSize: 'LEGAL',
+
+                    } ),
+
+                    // 'excelHtml5',
+                    // 'pdfHtml5'
+                ],
 
                 rowId: 'id',
                 pageLength: 20,
@@ -229,7 +250,7 @@
             $('input', this).on('keyup', function (e) {
 
                 // if (e.which == 13) {
-                indexKelitbangan.column(i).search(this.value).draw();
+                indexPenelitian.column(i).search(this.value).draw();
                 //   console.log(this.value);
                 // }
             });
@@ -258,7 +279,7 @@
                             console.log(res)
 
                             res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
-                            indexKelitbangan.ajax.reload();
+                            indexPenelitian.ajax.reload();
                         },
                         error: function (res, textstatus) {
                             if (textstatus === "timeout") {
@@ -273,7 +294,7 @@
 
         }
         $('#btn_reload_kelitbangan').on('click',function (e) {
-            indexKelitbangan.ajax.reload();
+            indexPenelitian.ajax.reload();
         })
     </script>
 @endpush

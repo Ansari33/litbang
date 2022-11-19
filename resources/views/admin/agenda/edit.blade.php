@@ -284,10 +284,10 @@
                 snapToStep: true
             });
 
-            $('#tanggal_agenda_edit').datetimepicker({
-                format: 'L',
-                //     s
-            });
+            // $('#tanggal_agenda_edit').datetimepicker({
+            //     format: 'L',
+            //     //     s
+            // });
 
             $('#menu_tab').scrollingTabs({
                 bootstrapVersion: 4,

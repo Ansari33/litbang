@@ -19,46 +19,46 @@
                                      aria-labelledby="permintaan_pembelian_list">
                                     <div class="container-auto ml-7 mb-7">
                                         <div class="row">
-                                            <div class="row">
-                                                <div class="col-md-0 my-2 my-md-0">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonPermintaanPembelian"
-                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Pengaturan Kolom
-                                                        </button>
-                                                        <div class="dropdown-menu" id="columnSettingPermintaanPembelian" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Nomor" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_1" value="Nomor">
-                                                                    <span></span> &nbsp; Nomor </label> </a>
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Tanggal" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_2" value="Tanggal">
-                                                                    <span></span> &nbsp; Tanggal</label></a>
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Pemasok" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_3" value="Pemasok">
-                                                                    <span></span> &nbsp; Pemasok</label></a>
-                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">
-                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Keterangan" class="menuPermintaanPembelian"
-                                                                           name="CheckboxesPermintaanPembelian_4" value="Keterangan">
-                                                                    <span></span> &nbsp; Keterangan</label></a>
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col-md-0 my-2 my-md-0">--}}
+{{--                                                    <div class="dropdown">--}}
+{{--                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonPermintaanPembelian"--}}
+{{--                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                                            Pengaturan Kolom--}}
+{{--                                                        </button>--}}
+{{--                                                        <div class="dropdown-menu" id="columnSettingPermintaanPembelian" aria-labelledby="dropdownMenuButton">--}}
+{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
+{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Nomor" class="menuPermintaanPembelian"--}}
+{{--                                                                           name="CheckboxesPermintaanPembelian_1" value="Nomor">--}}
+{{--                                                                    <span></span> &nbsp; Nomor </label> </a>--}}
+{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
+{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Tanggal" class="menuPermintaanPembelian"--}}
+{{--                                                                           name="CheckboxesPermintaanPembelian_2" value="Tanggal">--}}
+{{--                                                                    <span></span> &nbsp; Tanggal</label></a>--}}
+{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
+{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Pemasok" class="menuPermintaanPembelian"--}}
+{{--                                                                           name="CheckboxesPermintaanPembelian_3" value="Pemasok">--}}
+{{--                                                                    <span></span> &nbsp; Pemasok</label></a>--}}
+{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
+{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Keterangan" class="menuPermintaanPembelian"--}}
+{{--                                                                           name="CheckboxesPermintaanPembelian_4" value="Keterangan">--}}
+{{--                                                                    <span></span> &nbsp; Keterangan</label></a>--}}
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-auto my-2 my-md-0">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAksiButtonPermintaanPembelian" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Aksi
-                                                        </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownAksiButtonPermintaanPembelian">
-                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Edit">Edit</a>
-                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Hapus">Hapus</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-md-auto my-2 my-md-0">--}}
+{{--                                                    <div class="dropdown">--}}
+{{--                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAksiButtonPermintaanPembelian" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                                            Aksi--}}
+{{--                                                        </button>--}}
+{{--                                                        <div class="dropdown-menu" aria-labelledby="dropdownAksiButtonPermintaanPembelian">--}}
+{{--                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Edit">Edit</a>--}}
+{{--                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Hapus">Hapus</a>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
                                                     <div class="ml-2"><a href="/kelitbangan-tambah" class="btn btn-light-primary btn-sm"

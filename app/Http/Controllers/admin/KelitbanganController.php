@@ -100,4 +100,60 @@ class KelitbanganController extends Controller
 
   }
 
+  public function export($tanggal)
+    {
+        $arrTanggal = explode('_',$tanggal);
+
+        $data = HttpHelper::filterTanggalFakturPembelian(
+            [
+                'tgl_awal' => $arrTanggal[0],
+                'tgl_akhir' => $arrTanggal[1]
+            ])['data'];
+        $dataExcel = [];
+        $excepData = ['id','pemasok_id','jadwal_pengiriman_id','gudang_id'];
+        foreach ( $data as $index => $item) {
+            foreach ( $item as $id => $item2) {
+                $total_bayar = 0;
+                $total_harga = 0;
+                if (!in_array($id,$excepData)){
+                    if ($id == 'pemasok'){
+                        $dataExcel[$index][] = $item2['nama'];
+                    }
+                    elseif ($id == 'kena_pajak' || $id == 'termasuk_pajak' ){
+                        $dataExcel[$index][] = $item2 != 0 ? 'Ya' : 'Tidak';
+                    }
+                    elseif ($id == 'is_uang_muka' ){
+                        $dataExcel[$index][] = $item2 != 0 ? 'Uang Muka' : 'Faktur';
+                    }
+                    elseif ($id == 'gudang' ){
+
+                        $dataExcel[$index][] = $item2 !== null ? $item2['nama'] : '-';
+                    }
+                    elseif ($id == 'pembayaran_list' ){
+                        foreach ($item2 as $i2 => $i3) {
+                            $total_bayar += $i3['nominal_pembayaran'];
+                        }
+
+                        $dataExcel[$index][] = $total_bayar;
+                    }
+                    else{
+                        $dataExcel[$index][] = $item2;
+
+                    }
+
+
+                }
+
+            }
+            $dataExcel[$index][] = $total_bayar == $item['total_harga'] ? 'Lunas' : 'Belum Lunas';
+        }
+        array_unshift($dataExcel,['Nomor', 'Tanggal','Kena Pajak','Termasuk Pajak','Tipe','Keterangan','Total Harga','Pemasok','Gudang','Terbayar','status']);
+        //return $dataExcel;
+        $export = new DataToExcel([
+            $dataExcel
+        ]);
+
+        return Excel::download($export, 'invoices.xlsx');
+    }
+
 }
