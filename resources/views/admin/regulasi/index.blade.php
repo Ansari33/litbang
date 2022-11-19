@@ -193,7 +193,7 @@
                                 var kolom=['A','B','C','D','E','F','G','H','I','J'];
                                 var j = 3;
                                 for (var i = 0; i < indexRegulasi.columns().count(); i++){
-                                    if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(indexRegulasi.column(i).header()).text() == 'Tanggal Jurnal' || $(indexRegulasi.column(i).header()).text() == 'Tanggal Pembayaran'){
+                                    if( $(indexRegulasi.column(i).header()).text() == 'Tanggal' || $(indexRegulasi.column(i).header()).text() == 'Tanggal Jurnal' || $(indexRegulasi.column(i).header()).text() == 'Tanggal Pembayaran'){
                                         var test1 = $(indexRegulasi.column(i).data()).toArray();
                                         test1.forEach(test);
                                         function test(item) {
