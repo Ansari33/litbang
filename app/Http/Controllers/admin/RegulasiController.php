@@ -55,8 +55,8 @@ class RegulasiController extends Controller
     public function edit($id)
     {
         $data = HttpHelper::regulasi_get(['id' => $id])['data'];
-        $instansi = $this->getInstansi();
-        return view('admin.regulasi.edit',compact('data','instansi'));
+
+        return view('admin.regulasi.edit',compact('data',));
     }
 
     public function update(Request $request)
