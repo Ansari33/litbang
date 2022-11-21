@@ -24,9 +24,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
-                                        <div class="input-group date" id="inovasi_add_div" data-target-input="nearest">
-                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_inovasi_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_tanggal_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="tanggal_inovasi_add" data-target-input="nearest">
+                                            <input name="tanggal" id="tgl_inv_add" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_inovasi_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
+                                            <div class="input-group-append" data-target="#tanggal_inovasi_add" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -260,6 +260,10 @@
 
     <script>
         $(function () {
+            $('#tanggal_inovasi_add').datetimepicker({
+                format: 'L',
+                //     s
+            });
 
             tablePelaksana = $(`#tbl_pelaksana_inovasi_add`).DataTable({
                 columnDefs :[

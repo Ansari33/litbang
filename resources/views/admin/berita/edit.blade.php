@@ -26,7 +26,7 @@
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
                                         <div class="input-group date" id="tanggal_berita_edit" data-target-input="nearest">
-                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_berita_edit" value="{{ \Carbon\Carbon::parse($data['tanggal'])->format('d/m/Y') }}"/>
+                                            <input name="tanggal" id="tgl_br_edit" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_berita_edit"/>
                                             <div class="input-group-append" data-target="#tanggal_berita_edit" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
@@ -300,8 +300,10 @@
 
             $('#tanggal_berita_edit').datetimepicker({
                 format: 'L',
-                //     s
+
             });
+
+            $('#tgl_br_edit').val('{{ \Carbon\Carbon::parse($data['tanggal'])->format('d/m/Y') }}');
 
             $('#menu_tab').scrollingTabs({
                 bootstrapVersion: 4,

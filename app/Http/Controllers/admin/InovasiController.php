@@ -23,6 +23,7 @@ class InovasiController extends Controller
         $instansi = $this->getInsatnsi();
         return view('admin.inovasi.add',compact('instansi'));
     }
+
     public function store(Request $request)
     {
         $listFoto =  $request->filex !== null ? json_decode($request->filex,true) : [];
@@ -32,6 +33,7 @@ class InovasiController extends Controller
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
+        $body['pelaksana'] = $pelaksana;
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
@@ -51,12 +53,14 @@ class InovasiController extends Controller
 
         return json_decode(HttpHelper::inovasi_add($body));
     }
+
     public function edit($id)
     {
         $data = HttpHelper::inovasi_get(['id' => $id])['data'];
         $instansi = $this->getInsatnsi();
         return view('admin.inovasi.edit',compact('data','instansi'));
     }
+
     public function update(Request $request)
     {
         $listFoto = json_decode($request->filex,true);
@@ -88,6 +92,7 @@ class InovasiController extends Controller
 
         return json_decode(HttpHelper::inovasi_update($body));
     }
+
     public function delete($id)
     {
         return json_decode(HttpHelper::inovasi_delete(['id' => $id]));

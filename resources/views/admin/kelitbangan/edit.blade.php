@@ -25,9 +25,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
-                                        <div class="input-group date" id="tanggal_pengiriman_pesanan_add" data-target-input="nearest">
-                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_pengiriman_pesanan_add" value="{{ \Carbon\Carbon::parse( $data['tanggal'])->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_pengiriman_pesanan_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="kelitbangan_add" data-target-input="nearest">
+                                            <input name="tanggal" id="tgl_kel_edit" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#kelitbangan_add"/>
+                                            <div class="input-group-append" data-target="#kelitbangan_add" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -280,6 +280,13 @@
     <script>
 
         $(function () {
+
+            $('#kelitbangan_add').datetimepicker({
+                format: 'L',
+                //     s
+            });
+            $('#tgl_kel_edit').val('{{ \Carbon\Carbon::parse( $data['tanggal'] )->format('m/d/Y') }}');
+
             tablePelaksana = $(`#tbl_pelaksana_kelitbangan_add`).DataTable({
                 columnDefs :[
                     { 'width' : '5%', 'target' : 0 },

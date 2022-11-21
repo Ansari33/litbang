@@ -25,9 +25,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
-                                        <div class="input-group date" id="tanggal_pengiriman_pesanan_add" data-target-input="nearest">
-                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_pengiriman_pesanan_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_pengiriman_pesanan_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="usul_pen_add" data-target-input="nearest">
+                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#usul_pen_add" />
+                                            <div class="input-group-append" data-target="#usul_pen_add" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -157,6 +157,10 @@
 
         $(function () {
 
+            $('#usul_pen_add').datetimepicker({
+                format: 'L',
+                //     s
+            });
             $('#menu_tab').scrollingTabs({
                 bootstrapVersion: 4,
                 enableSwiping: true,

@@ -26,9 +26,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal Surat:</label>
-                                        <div class="input-group date" id="tanggal_pengiriman_pesanan_add" data-target-input="nearest">
-                                            <input name="tanggal_surat" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_pengiriman_pesanan_add" value="{{ \Carbon\Carbon::parse($data['tanggal_surat'])->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_pengiriman_pesanan_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="sur_mas_edit" data-target-input="nearest">
+                                            <input name="tanggal_surat" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#sur_mas_edit" value="{{ \Carbon\Carbon::parse($data['tanggal_surat'])->format('d-m-Y') }}"/>
+                                            <div class="input-group-append" data-target="#sur_mas_edit" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
