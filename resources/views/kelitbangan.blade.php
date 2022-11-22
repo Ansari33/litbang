@@ -27,7 +27,7 @@
                 @foreach($data as $its => $k)
                 <tr >
                     <td style="width: 5%">{{ $its + 1 }}</td>
-                    <td style="width: 10%">{{ $k['lingkup_data']['nama'] == null ? 'Tidak Ditemukan' : $k['lingkup_data']['nama'] }}</td>
+                    <td style="width: 10%">{{ $k['lingkup_data'] == null ? 'Tidak Ditemukan' : $k['lingkup_data']['nama'] }}</td>
                     <td style="width: 35%"><a href="/view-kelitbangan/{{ $k['id'] }}" style="color: black;">{{ $k['judul'] }}</a></td>
                     <td style="width: 25%">
                         @php
