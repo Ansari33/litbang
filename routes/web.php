@@ -71,6 +71,7 @@ Route::get('/forum-rekomendasi', [ClientController::class, 'forumRekomendasi']);
 
 Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegulasi']);
 Route::get('/upload-regulasi',[RegulasiController::class, 'uploadFile']);
+Route::get('/upload-laporan-penelitian',[ClientController::class, 'uploadLaporanPenelitian']);
 
 Route::get('/login', function () {
     if(Session::get('authenticated')){
@@ -93,6 +94,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     ## Kelitbangan
     Route::get('/admin-kelitbangan', [KelitbanganController::class, 'index']);
     Route::get('/kelitbangan-list', [KelitbanganController::class, 'list']);
+    Route::post('/kelitbangan-list-tanggal', [KelitbanganController::class, 'listByTanggal']);
     Route::get('/kelitbangan-tambah', [KelitbanganController::class, 'create']);
     Route::post('/kelitbangan-store', [KelitbanganController::class, 'store']);
     Route::get('/kelitbangan-edit/{id}', [KelitbanganController::class, 'edit']);
@@ -102,6 +104,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     ## Inovasi
     Route::get('/admin-inovasi', [InovasiController::class, 'index']);
     Route::get('/inovasi-list', [InovasiController::class, 'list']);
+    Route::post('/inovasi-list-tanggal', [InovasiController::class, 'listByTanggal']);
     Route::get('/inovasi-tambah', [InovasiController::class, 'create']);
     Route::post('/inovasi-store', [InovasiController::class, 'store']);
     Route::get('/inovasi-edit/{id}', [InovasiController::class, 'edit']);
@@ -111,6 +114,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     ## Agenda
     Route::get('/admin-agenda', [AgendaController::class, 'index']);
     Route::get('/agenda-list', [AgendaController::class, 'list']);
+    Route::post('/agenda-list-tanggal', [AgendaController::class, 'listByTanggal']);
     Route::get('/agenda-tambah', [AgendaController::class, 'create']);
     Route::post('/agenda-store', [AgendaController::class, 'store']);
     Route::get('/agenda-edit/{id}', [AgendaController::class, 'edit']);
@@ -120,6 +124,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     ## Berita
     Route::get('/admin-berita', [BeritaController::class, 'index']);
     Route::get('/berita-list', [BeritaController::class, 'list']);
+    Route::post('/berita-list-tanggal', [BeritaController::class, 'listByTanggal']);
     Route::get('/berita-tambah', [BeritaController::class, 'create']);
     Route::post('/berita-store', [BeritaController::class, 'store']);
     Route::get('/berita-edit/{id}', [BeritaController::class, 'edit']);
@@ -129,6 +134,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     ## Usulan Penelitian
     Route::get('/admin-usulan-penelitian', [UsulanPenelitianController::class, 'index']);
     Route::get('/usulan-penelitian-list', [UsulanPenelitianController::class, 'list']);
+    Route::post('/usulan-penelitian-list-tanggal', [UsulanPenelitianController::class, 'listByTanggal']);
     Route::get('/usulan-penelitian-tambah', [UsulanPenelitianController::class, 'create']);
 //    Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
     Route::get('/usulan-penelitian-edit/{id}', [UsulanPenelitianController::class, 'edit']);
@@ -138,6 +144,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     ## Usulan Inovasi
     Route::get('/admin-usulan-inovasi', [UsulanInovasiController::class, 'index']);
     Route::get('/usulan-inovasi-list', [UsulanInovasiController::class, 'list']);
+    Route::post('/usulan-inovasi-list-tanggal', [UsulanInovasiController::class, 'listByTanggal']);
     Route::get('/usulan-inovasi-tambah', [UsulanInovasiController::class, 'create']);
 //    Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
     Route::get('/usulan-inovasi-edit/{id}', [UsulanInovasiController::class, 'edit']);

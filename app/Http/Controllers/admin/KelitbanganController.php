@@ -23,6 +23,11 @@ class KelitbanganController extends Controller
     return HttpHelper::kelitbangan_datatable($request->all());
   }
 
+  public function listByTanggal(Request $request)
+  {
+    return HttpHelper::kelitbangan_datatable_by_tanggal($request->all());
+  }
+
   public function create()
     {
         $instansi = HelperController::getInstansi();

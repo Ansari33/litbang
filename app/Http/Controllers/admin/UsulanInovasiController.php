@@ -19,6 +19,13 @@ class UsulanInovasiController extends Controller
     return HttpHelper::usulan_inovasi_datatable($request->all());
     return view('admin.usulan-penelitian.index');
   }
+
+    public function listByTanggal(Request $request)
+    {
+        return HttpHelper::usulan_inovasi_datatable_by_tanggal($request->all());
+        return view('admin.usulan-penelitian.index');
+    }
+
     public function create()
     {
         $instansi = $this->getInstansi();

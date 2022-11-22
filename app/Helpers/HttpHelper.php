@@ -200,6 +200,11 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/list/datatable', $request);
         return $response;
     }
+
+    public static function kelitbangan_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/list/datatable-tanggal', $request);
+        return $response;
+    }
     public static function kelitbangan_add($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/create', $request);
         return $response;
@@ -234,6 +239,12 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'inovasi/list/datatable', $request);
         return $response;
     }
+
+    public static function inovasi_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'inovasi/list/datatable-tanggal', $request);
+        return $response;
+    }
+
     public static function inovasi_add($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'inovasi/create', $request);
         return $response;
@@ -298,6 +309,12 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'agenda/list/datatable', $request);
         return $response;
     }
+
+    public static function agenda_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'agenda/list/datatable-tanggal', $request);
+        return $response;
+    }
+
     public static function agenda_add($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'agenda/create', $request);
         return $response;
@@ -326,6 +343,10 @@ class HttpHelper {
     }
     public static function berita_datatable($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'berita/list/datatable', $request);
+        return $response;
+    }
+    public static function berita_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'berita/list/datatable-tanggal', $request);
         return $response;
     }
     public static function berita_add($request) {
@@ -374,6 +395,12 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/list/datatable', $request);
         return $response;
     }
+
+    public static function usulan_penelitian_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/list/datatable-tanggal', $request);
+        return $response;
+    }
+
     public static function usulan_penelitian_add($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/create', $request);
         return $response;
@@ -409,6 +436,12 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/list/datatable', $request);
         return $response;
     }
+
+    public static function usulan_inovasi_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-inovasi/list/datatable-tanggal', $request);
+        return $response;
+    }
+
     public static function usulan_inovasi_add($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-inovasi/create', $request);
         return $response;

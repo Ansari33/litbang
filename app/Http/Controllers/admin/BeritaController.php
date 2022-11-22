@@ -20,6 +20,11 @@ class BeritaController extends Controller
   {
     return HttpHelper::berita_datatable($request->all());
   }
+
+    public function listByTanggal(Request $request)
+    {
+        return HttpHelper::berita_datatable_by_tanggal($request->all());
+    }
     public function create()
     {
         $instansi = $this->getInstansi();

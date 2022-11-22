@@ -184,6 +184,31 @@ class ClientController extends Controller
 
     }
 
+    public function uploadLaporanPenelitian(Request $request){
+
+        try {
+            $namaFile = [];
+            foreach ($request->all() as $fls => $fl){
+                $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
+                $fl->move(base_path('public/laporan-penelitian'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+            }
+
+            return response()->json([
+                'files' => $namaFile,
+                'status' => true,
+                'message' => 'Files Upload Success!'
+            ],200
+            );
+        }catch (\Exception $er){
+            return response()->json([
+                'message' => $er->getMessage(),
+                'status' => false,
+            ],500
+            );
+        }
+
+    }
+
     /**
      * The attributes that are mass assignable.
      *

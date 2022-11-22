@@ -18,6 +18,12 @@ class InovasiController extends Controller
     {
         return HttpHelper::inovasi_datatable($request->all());
     }
+
+    public function listByTanggal(Request $request)
+    {
+        return HttpHelper::inovasi_datatable_by_tanggal($request->all());
+    }
+
     public function create()
     {
         $instansi = $this->getInsatnsi();

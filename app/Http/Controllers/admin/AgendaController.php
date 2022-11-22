@@ -20,6 +20,11 @@ class AgendaController extends Controller
     return HttpHelper::agenda_datatable($request->all());
     return view('admin.agenda.index');
   }
+
+   public function listByTanggal(Request $request)
+    {
+        return HttpHelper::agenda_datatable_by_tanggal($request->all());
+    }
     public function create()
     {
         $instansi = $this->getInstansi();
