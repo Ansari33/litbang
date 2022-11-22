@@ -14,7 +14,7 @@
                         <h3>Selayang Pandang</h3>
                     </div>
 
-                    <p class="mb-0">
+                    <p class="mb-0" style="text-align: justify">
 
                         Kota Makassar sebagai ibu kota Sulawesi selatan sangat pesat kemajuanya serta pembangunan di segala bidang.
 

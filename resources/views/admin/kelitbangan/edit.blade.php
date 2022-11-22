@@ -35,8 +35,8 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>Lingkup:</label>
-                                        {{ Form::select('lingkup',$instansi,$data['lingkup'], ['title' => 'Pilih Pelanggan','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        <label>Instansi / Bidang:</label>
+                                        {{ Form::select('lingkup',$instansi,$data['lingkup'], ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Judul:</label>
