@@ -495,6 +495,10 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/list/datatable', $request);
         return $response;
     }
+    public static function surat_keluar_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-keluar/list/datatable-tanggal', $request);
+        return $response;
+    }
     public static function surat_keluar_add($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-keluar/create', $request);
         return $response;
@@ -526,6 +530,10 @@ class HttpHelper {
     }
     public static function surat_masuk_datatable($request) {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-masuk/list/datatable', $request);
+        return $response;
+    }
+    public static function surat_masuk_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-masuk/list/datatable-tanggal', $request);
         return $response;
     }
     public static function surat_masuk_add($request) {

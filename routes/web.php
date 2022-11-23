@@ -155,6 +155,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/admin-surat',[SuratController::class, 'index']);
     Route::get('/surat-keluar-index',[SuratController::class, 'indexSuratKeluar']);
     Route::get('/surat-keluar-list',[SuratController::class, 'listSuratKeluar']);
+    Route::post('/surat-keluar-list-tanggal',[SuratController::class, 'listSuratKeluarByTanggal']);
     Route::get('/surat-keluar-tambah',[SuratController::class, 'createSuratKeluar']);
     Route::post('/surat-keluar-store',[SuratController::class, 'storeSuratKeluar']);
     Route::get('/surat-keluar-edit/{id}',[SuratController::class, 'editSuratKeluar']);
@@ -164,6 +165,7 @@ Route::group(['middleware' => 'checkauth'], function () {
 
     Route::get('/surat-masuk-index',[SuratController::class, 'indexSuratMasuk']);
     Route::get('/surat-masuk-list',[SuratController::class, 'listSuratMasuk']);
+    Route::post('/surat-masuk-list-tanggal',[SuratController::class, 'listSuratMasukByTanggal']);
     Route::get('/surat-masuk-tambah',[SuratController::class, 'createSuratMasuk']);
     Route::post('/surat-masuk-store',[SuratController::class, 'storeSuratMasuk']);
     Route::get('/surat-masuk-edit/{id}',[SuratController::class, 'editSuratMasuk']);

@@ -29,6 +29,11 @@ class SuratController extends Controller
       return HttpHelper::surat_keluar_datatable($request->all());
   }
 
+    public function listSuratKeluarByTanggal(Request  $request)
+    {
+        return HttpHelper::surat_keluar_datatable_by_tanggal($request->all());
+    }
+
     public function createSuratKeluar()
   {
       $nomor = Str::random(10);
@@ -44,6 +49,11 @@ class SuratController extends Controller
   {
       return HttpHelper::surat_masuk_datatable($request->all());
   }
+
+    public function listSuratMasukByTanggal(Request  $request)
+    {
+        return HttpHelper::surat_masuk_datatable_by_tanggal($request->all());
+    }
 
     public function createSuratMasuk()
   {
@@ -87,6 +97,7 @@ class SuratController extends Controller
     public function updateSuratMasuk(Request $request)
     {
         $data = json_decode($request->datas,true);
+
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
@@ -126,6 +137,8 @@ class SuratController extends Controller
     {
         $data = json_decode($request->datas,true);
         $body = [];
+
+        //return $request->all();
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
@@ -144,9 +157,9 @@ class SuratController extends Controller
             $body['surat_keluar'] = $strNama;
         }
         $data = $body['surat_keluar'];
-        $pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
-        $content = $pdf->download()->getOriginalContent();
-        File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
+        //$pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
+        //$content = $pdf->download()->getOriginalContent();
+        //File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
         //return Storage::put('/surat-keluar/'.$body['nomor_urut'].'.pdf',$content);
 
         return json_decode(HttpHelper::surat_keluar_add($body));
@@ -161,13 +174,13 @@ class SuratController extends Controller
 
     public function updateSuratKeluar(Request $request)
     {
+
         $data = json_decode($request->datas,true);
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
         $body['tanggal_surat'] = Carbon::parse($body['tanggal_surat'])->format('Y-m-d');
-
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
@@ -180,10 +193,10 @@ class SuratController extends Controller
             File::copy($ur['url'],$loc.$strNama);
             $body['surat_keluar'] = $strNama;
         }
-        $data = $body['surat_keluar'];
-        $pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
-        $content = $pdf->download()->getOriginalContent();
-        File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
+        //$data = $body['surat_keluar'];
+       // $pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
+       // $content = $pdf->download()->getOriginalContent();
+       // File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
 
         return json_decode(HttpHelper::surat_keluar_update($body));
     }

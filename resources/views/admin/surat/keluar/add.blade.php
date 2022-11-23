@@ -25,9 +25,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal Surat:</label>
-                                        <div class="input-group date" id="tanggal_pengiriman_pesanan_add" data-target-input="nearest">
-                                            <input name="tanggal_surat" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_pengiriman_pesanan_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_pengiriman_pesanan_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="tanggal_surat_keluar_add" data-target-input="nearest">
+                                            <input name="tanggal_surat" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_surat_keluar_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
+                                            <div class="input-group-append" data-target="#tanggal_surat_keluar_add" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Klasifikasi Surat:</label>
-                                        {{ Form::select('klasifikasi',[1 => 'Jenis 1', 2 => 'Jenis 2'],null, ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        {{ Form::select('klasifikasi',[1 => 'Jenis 1', 2 => 'Jenis 2'],null, ['title' => 'Pilih Jenis Surat','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
 
                                 </div>
@@ -54,65 +54,65 @@
                                         <textarea name="tujuan" class="form-control" cols="30" rows="4"></textarea>
                                     </div>
                                 </div>
-{{--                                <div class="form-group row">--}}
-{{--                                    <div class="col-lg-6">--}}
-{{--                                        <!--begin::Card-->--}}
-{{--                                        <div class="card card-custom card-stretch">--}}
-{{--                                            <div class="card-header">--}}
-{{--                                                <div class="card-title">--}}
-{{--                                                    <h3 class="card-label">Pilih File Surat</h3>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="card-body">--}}
-{{--                                                <div class="uppy" id="kt_uppy_1">--}}
-{{--                                                    <div class="uppy-Root" dir="ltr">--}}
-{{--                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">--}}
-{{--                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>--}}
-{{--                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">--}}
-{{--                                                                <div class="uppy-Dashboard-innerWrap">--}}
-{{--                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>--}}
-{{--                                                                    <div class="uppy-Dashboard-AddFiles">--}}
-{{--                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">--}}
-{{--                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">--}}
-{{--                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>--}}
-{{--                                                                        </div>--}}
-{{--                                                                        <div class="uppy-Dashboard-AddFiles-info">--}}
-{{--                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="uppy-Dashboard-progressindicators">--}}
-{{--                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">--}}
-{{--                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">--}}
-
-{{--                                                                            </div>--}}
-{{--                                                                            <div class="uppy-StatusBar-actions"></div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <!--end::Card-->--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <div class="form-group row">
-                                    <div class="col-lg-12">
-                                        <label>Detail Berita:</label>
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <textarea class="summernote" id="kt_summernote_1" name="surat_keluar"></textarea>
+                                    <div class="col-lg-6">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Pilih File Surat</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_1">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!--end::Card-->
                                     </div>
                                 </div>
+{{--                                <div class="form-group row">--}}
+{{--                                    <div class="col-lg-12">--}}
+{{--                                        <label>Detail Berita:</label>--}}
+{{--                                        <div class="col-lg-12 col-md-12 col-sm-12">--}}
+{{--                                            <textarea class="summernote" id="kt_summernote_1" name="surat_keluar"></textarea>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">Save</button>
-                                        <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">cetak</button>
+{{--                                        <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">cetak</button>--}}
                                         <button type="button" class="btn btn-secondary mr-2" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
                                     </div>
                                 </div>
@@ -231,6 +231,10 @@
     <script>
 
         $(function () {
+
+            $('#tanggal_surat_keluar_add').datetimepicker({
+                format: 'L',
+            });
 
             $('#menu_tab').scrollingTabs({
                 bootstrapVersion: 4,

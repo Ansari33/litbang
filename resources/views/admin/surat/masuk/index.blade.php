@@ -34,32 +34,26 @@
 
                                                     <div class="col-lg-3">
                                                         <a href="javascript:;" class="btn btn-icon btn-light-primary btn-sm"
-                                                           id="search_permintaan_pembelian_date"><i class="flaticon-search"></i></a>&nbsp;
+                                                           id="search_permintaan_pembelian_date" onclick="filterTanggal()"><i class="flaticon-search"></i></a>&nbsp;
                                                         <a href="javascript:;" class="btn btn-icon btn-light-primary btn-sm"
-                                                           id="reset_permintaan_pembelian_date"><i
+                                                           id="reset_permintaan_pembelian_date" onclick="resetData()"><i
                                                                 class="flaticon2-circular-arrow"></i></a>&nbsp;
                                                     </div>
 
                                                     <div class="col-lg-3">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control to_date_history_permintaan_pembelian"
-                                                                   id="kt_datepicker_2" readonly="readonly" placeholder="Tanggal Akhir">
-                                                            <div class="input-group-append">
-												<span class="input-group-text">
-													<i class="la la-calendar-check-o"></i>
-												</span>
+                                                        <div class="input-group date" id="kelitbangan_awal" data-target-input="nearest">
+                                                            <input name="tanggal" id="tgl_awal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#kelitbangan_awal" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
+                                                            <div class="input-group-append" data-target="#kelitbangan_awal" data-toggle="datetimepicker">
+                                                                <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-lg-3">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control from_date_history_permintaan_pembelian"
-                                                                   id="kt_datepicker_2" readonly="readonly" placeholder="Tanggal Awal">
-                                                            <div class="input-group-append">
-												<span class="input-group-text">
-													<i class="la la-calendar-check-o"></i>
-												</span>
+                                                        <div class="input-group date" id="kelitbangan_akhir" data-target-input="nearest">
+                                                            <input name="tanggal" id="tgl_akhir" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#kelitbangan_akhir" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
+                                                            <div class="input-group-append" data-target="#kelitbangan_akhir" data-toggle="datetimepicker">
+                                                                <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -101,7 +95,37 @@
 @push('js')
     <script>
         var indexKelitbangan;
+        var buttonCommon;
         $(function () {
+
+            $('#kelitbangan_awal').datetimepicker({
+                format: 'L',
+            });
+            $('#kelitbangan_akhir').datetimepicker({
+                format: 'L',
+            });
+
+            buttonCommon = {
+                exportOptions: {
+                    columns: getExportOptions(),
+                    modifier: {
+                        order: 'index',
+                        page : 'all',
+                        search: 'applied',
+                    },
+                    stripHtml:true,
+
+                }
+            };
+
+            function getExportOptions(){
+                return [function ( idx, data, node ) {
+                    if($(node).text() === 'Actions' || $(node).hasClass('col-dt-hidden'))
+                    { return false; }
+                    return true;
+                }
+                ];
+            }
 
             $('#menu_tab').scrollingTabs({
                 bootstrapVersion: 4,
@@ -113,11 +137,43 @@
                 scrollToActiveTab: true
             });
             //add_page('dashboard','dashboard','Dashboard');
+            resetData();
+
+        })
+
+        $(`#tbl_kelitbangan thead tr`).first().clone().appendTo(`#tbl_kelitbangan thead`);
+        $(`#tbl_kelitbangan thead tr:eq(1) th`).each(function (i) {
+            let title = $(this).text();
+            if (title == 'ID') {
+                $(this).html('');
+            } else {
+                $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
+            }
+            $('input', this).on('keyup', function (e) {
+
+                // if (e.which == 13) {
+                indexKelitbangan.column(i).search(this.value).draw();
+                //   console.log(this.value);
+                // }
+            });
+        });
+
+        function filterTanggal(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            let awal = $('#tgl_akhir').val().split('/')[2] + '-' + $('#tgl_akhir').val().split('/')[0] + '-' + $('#tgl_akhir').val().split('/')[1];
+            let akhir = $('#tgl_awal').val().split('/')[2] + '-' + $('#tgl_awal').val().split('/')[0] + '-' + $('#tgl_awal').val().split('/')[1];
+            console.log(awal, akhir);
             indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
                 "deferRender": true,
                 dom: "Btplir",
+                bDestroy:true,
                 columns : [
                     {data : 'id'},
                     {data : 'nomor_urut'},
@@ -129,40 +185,153 @@
                     {data : 'file_surat'},
                     {data : 'action'},
                 ],
-                // buttons: [
-                //     $.extend( true, {}, buttonCommon, {
-                //             extend: 'excelHtml5',
-                //             SelectedOnly: true,
-                //             customize: function(xlsx){
-                //                 var table = xlsx.xl.worksheets['sheet1.xml'];
-                //                 var kolom=['A','B','C','D','E','F','G','H','I','J'];
-                //                 var j = 3;
-                //                 for (var i = 0; i < tabelIndex.columns().count(); i++){
-                //                     if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Jurnal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Pembayaran'){
-                //                         var test1 = $(tabelIndex.column(i).data()).toArray();
-                //                         test1.forEach(test);
-                //                         function test(item) {
-                //                             var sementara = item.substr(90,101);
-                //                             $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
-                //                             j++;
-                //
-                //                         }
-                //                     }
-                //                 }
-                //             }
-                //         }
-                //     ),
-                //
-                //     $.extend( true, {}, buttonCommon, {
-                //         extend: 'pdfHtml5',
-                //         orientation:'landscape',
-                //         pageSize: 'LEGAL',
-                //
-                //     } ),
-                //
-                //     // 'excelHtml5',
-                //     // 'pdfHtml5'
-                // ],
+                buttons: [
+                    $.extend( true, {}, buttonCommon, {
+                            extend: 'excelHtml5',
+                            SelectedOnly: true,
+                            customize: function(xlsx){
+                                var table = xlsx.xl.worksheets['sheet1.xml'];
+                                var kolom=['A','B','C','D','E','F','G','H','I','J'];
+                                var j = 3;
+                                for (var i = 0; i < tabelIndex.columns().count(); i++){
+                                    if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Jurnal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Pembayaran'){
+                                        var test1 = $(tabelIndex.column(i).data()).toArray();
+                                        test1.forEach(test);
+                                        function test(item) {
+                                            var sementara = item.substr(90,101);
+                                            $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
+                                            j++;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ),
+
+                    $.extend( true, {}, buttonCommon, {
+                        extend: 'pdfHtml5',
+                        orientation:'landscape',
+                        pageSize: 'LEGAL',
+
+                    } ),
+
+                    // 'excelHtml5',
+                    // 'pdfHtml5'
+                ],
+
+                rowId: 'id',
+                pageLength: 20,
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    type:'POST',
+                    url: '/surat-masuk-list-tanggal',
+                    async: true,
+                    data:{'tanggal_awal':awal,'tanggal_akhir':akhir},
+                    error: function (res) {
+                        $('.dataTables_processing').hide();
+                        notice(res.responseJSON.message, 'error');
+                    }
+                },
+                deferRender: true,
+                select: !1,
+                colReorder: !0,
+                sorting: [
+                    [1, "asc"]
+                ],
+                pagingType: "full_numbers",
+                stateSave: !1,
+                language: {
+                    "zeroRecords": "Data tidak ditemukan...",
+                    "processing": '<span class="text-danger">Mengambil Data....</span>'
+                },
+                lengthMenu: [
+                    [20, 50, 100, 200,-1],
+                    [20, 50, 100, 200,'All']
+                ],
+                //columns: params.content.columns,
+                headerCallback: function (thead, data, start, end, display) {
+                    thead.getElementsByTagName('th')[0].innerHTML = `
+                            <label class="checkbox checkbox-single">
+                                    <input type="checkbox" value="" class="group-checkable"/>
+                                    <span></span>
+                            </label>`;
+                },
+                columnDefs: [
+                    {
+                        "defaultContent": "-",
+                        "targets": "_all"
+                    },
+                    {
+                        targets: 0,
+                        width: '30px',
+                        className: 'dt-left',
+                        orderable: false,
+                        searchable: false,
+                        render: function () {
+                            return `<label class="checkbox checkbox-single">
+                                <input type="checkbox" value="" class="checkable" />
+                                <span></span>
+                              </label>`;
+                        },
+                    },
+                ],
+            });
+        }
+
+        function resetData(){
+            indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
+                orderCellsTop: true,
+                fixedHeader: true,
+                "deferRender": true,
+                dom: "Btplir",
+                bDestroy:true,
+                columns : [
+                    {data : 'id'},
+                    {data : 'nomor_urut'},
+                    {data : 'klasifikasi_surat_id'},
+                    {data : 'nomor_surat'},
+                    {data : 'tanggal_surat'},
+                    {data : 'tanggal_penerimaan'},
+                    {data : 'pengirim'},
+                    {data : 'file_surat'},
+                    {data : 'action'},
+                ],
+                buttons: [
+                    $.extend( true, {}, buttonCommon, {
+                            extend: 'excelHtml5',
+                            SelectedOnly: true,
+                            customize: function(xlsx){
+                                var table = xlsx.xl.worksheets['sheet1.xml'];
+                                var kolom=['A','B','C','D','E','F','G','H','I','J'];
+                                var j = 3;
+                                for (var i = 0; i < tabelIndex.columns().count(); i++){
+                                    if( $(tabelIndex.column(i).header()).text() == 'Tanggal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Jurnal' || $(tabelIndex.column(i).header()).text() == 'Tanggal Pembayaran'){
+                                        var test1 = $(tabelIndex.column(i).data()).toArray();
+                                        test1.forEach(test);
+                                        function test(item) {
+                                            var sementara = item.substr(90,101);
+                                            $(`c[r^= ${kolom[i]}${j}] t`, table).text(sementara);
+                                            j++;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ),
+
+                    $.extend( true, {}, buttonCommon, {
+                        extend: 'pdfHtml5',
+                        orientation:'landscape',
+                        pageSize: 'LEGAL',
+
+                    } ),
+
+                    // 'excelHtml5',
+                    // 'pdfHtml5'
+                ],
 
                 rowId: 'id',
                 pageLength: 20,
@@ -202,8 +371,8 @@
                 },
                 columnDefs: [
                     {
-                    "defaultContent": "-",
-                    "targets": "_all"
+                        "defaultContent": "-",
+                        "targets": "_all"
                     },
                     {
                         targets: 0,
@@ -220,24 +389,7 @@
                     },
                 ],
             });
-        })
-
-        $(`#tbl_kelitbangan thead tr`).first().clone().appendTo(`#tbl_kelitbangan thead`);
-        $(`#tbl_kelitbangan thead tr:eq(1) th`).each(function (i) {
-            let title = $(this).text();
-            if (title == 'ID') {
-                $(this).html('');
-            } else {
-                $(this).html('<input type="text" class="form-control" placeholder="' + title + '" />');
-            }
-            $('input', this).on('keyup', function (e) {
-
-                // if (e.which == 13) {
-                indexKelitbangan.column(i).search(this.value).draw();
-                //   console.log(this.value);
-                // }
-            });
-        });
+        }
 
         function deleteSuratMasuk(id) {
             Swal.fire({
