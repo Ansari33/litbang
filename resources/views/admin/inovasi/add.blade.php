@@ -20,7 +20,7 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Nomor:</label>
-                                        <input name="nomor" type="text" class="form-control" placeholder="Nomor" value="" />
+                                        <input name="nomor" type="text" class="form-control" placeholder="Nomor" value="{{ $nomor }}" />
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>

@@ -37,7 +37,7 @@ class SuratController extends Controller
     public function createSuratKeluar()
   {
       $jenis_surat = $this->getJenisSurat();
-      $nomor = Str::random(10);
+      $nomor = HttpHelper::surat_keluar_nomor();
       return view('admin.surat.keluar.add',compact('nomor','jenis_surat'));
   }
 
@@ -59,7 +59,7 @@ class SuratController extends Controller
     public function createSuratMasuk()
   {
       $jenis_surat = $this->getJenisSurat();
-        $nomor = Str::random(10);
+        $nomor = HttpHelper::surat_masuk_nomor();
         return view('admin.surat.masuk.add',compact('nomor','jenis_surat'));
   }
 

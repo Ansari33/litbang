@@ -27,7 +27,8 @@ class InovasiController extends Controller
     public function create()
     {
         $instansi = $this->getInsatnsi();
-        return view('admin.inovasi.add',compact('instansi'));
+        $nomor = HttpHelper::inovasi_nomor();
+        return view('admin.inovasi.add',compact('instansi','nomor'));
     }
 
     public function store(Request $request)

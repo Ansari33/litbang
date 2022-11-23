@@ -31,7 +31,8 @@ class KelitbanganController extends Controller
   public function create()
     {
         $instansi = HelperController::getInstansi();
-        return view('admin.kelitbangan.add',compact('instansi'));
+        $nomor = HttpHelper::kelitbangan_nomor();
+        return view('admin.kelitbangan.add',compact('instansi','nomor'));
     }
 
   public function store(Request $request)

@@ -27,7 +27,7 @@ class UsulanPenelitianController extends Controller
     public function create()
     {
         $instansi = $this->getInstansi();
-        $nomor = HttpHelper::usulan_penelitian_numbering()['data'];
+        $nomor = HttpHelper::usulan_penelitian_nomor();
         return view('admin.usulan-penelitian.add',compact('instansi','nomor'));
     }
     public function store(Request $request)

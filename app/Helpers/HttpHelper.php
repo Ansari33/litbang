@@ -226,6 +226,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function kelitbangan_nomor() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/nomor');
+        return $response;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | inovasi
@@ -263,6 +268,11 @@ class HttpHelper {
     }
     public static function inovasi_terkini() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'inovasi/terkini');
+        return $response;
+    }
+
+    public static function inovasi_nomor() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'inovasi/nomor');
         return $response;
     }
 
@@ -423,6 +433,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function usulan_penelitian_nomor() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-penelitian/nomor');
+        return $response;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Usulan Penelitian
@@ -466,6 +481,12 @@ class HttpHelper {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/terkini');
         return $response;
     }
+
+    public static function usulan_inovasi_nomor() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/nomor');
+        return $response;
+    }
+
 
     public static function attachment_terkini() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'attachment/terkini');
@@ -524,6 +545,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function surat_keluar_nomor() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/nomor');
+        return $response;
+    }
+
     public static function surat_masuk_list() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'usulan-inovasi/list');
         return $response;
@@ -559,6 +585,11 @@ class HttpHelper {
 
     public static function surat_masuk_numbering() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-keluar/terkini');
+        return $response;
+    }
+
+    public static function surat_masuk_nomor() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-masuk/nomor');
         return $response;
     }
 

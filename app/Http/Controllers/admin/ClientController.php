@@ -44,7 +44,7 @@ class ClientController extends Controller
     {
         $data =(HttpHelper::instansi_list())['data'];
         $instansi = collect($data)->pluck('nama','id')->toArray();
-        $nomor = HttpHelper::usulan_penelitian_numbering()['data'];
+        $nomor = HttpHelper::usulan_penelitian_nomor();
         return view('forum.buat_penelitian',compact('instansi','nomor'));
     }
 
@@ -74,7 +74,8 @@ class ClientController extends Controller
     {
         $data =(HttpHelper::instansi_list())['data'];
         $instansi = collect($data)->pluck('nama','id')->toArray();
-        return view('forum.buat_inovasi',compact('instansi'));
+        $nomor = HttpHelper::usulan_inovasi_nomor();
+        return view('forum.buat_inovasi',compact('instansi','nomor'));
     }
 
     public function agenda()
