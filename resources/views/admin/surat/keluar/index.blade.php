@@ -174,7 +174,7 @@
                 columns : [
                     {data : 'id'},
                     {data : 'nomor_urut'},
-                    {data : 'klasifikasi_surat_id'},
+                    {data : 'klasifikasi'},
                     {data : 'nomor_surat'},
                     {data : 'tanggal_surat'},
                     {data : 'file_surat'},
@@ -284,7 +284,7 @@
                 columns : [
                     {data : 'id'},
                     {data : 'nomor_urut'},
-                    {data : 'klasifikasi_surat_id'},
+                    {data : 'klasifikasi'},
                     {data : 'nomor_surat'},
                     {data : 'tanggal_surat'},
                     {data : 'file_surat'},

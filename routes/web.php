@@ -173,6 +173,14 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/surat-masuk-delete/{id}',[SuratController::class, 'deleteSuratMasuk']);
     Route::get('/download-surat-masuk/{id}',[SuratController::class, 'downloadSuratMasuk']);
 
+    Route::get('/jenis-surat-index',[SuratController::class, 'indexJenisSurat']);
+    Route::get('/jenis-surat-list',[SuratController::class, 'listJenisSurat']);
+    Route::get('/jenis-surat-tambah',[SuratController::class, 'createJenisSurat']);
+    Route::post('/jenis-surat-store',[SuratController::class, 'storeJenisSurat']);
+    Route::get('/jenis-surat-edit/{id}',[SuratController::class, 'editJenisSurat']);
+    Route::post('/jenis-surat-update',[SuratController::class, 'updateJenisSurat']);
+    Route::get('/jenis-surat-delete/{id}',[SuratController::class, 'deleteJenisSurat']);
+
     ## Regulasi
     Route::get('/admin-regulasi',[RegulasiController::class, 'index']);
     Route::get('/regulasi-list',[RegulasiController::class, 'list']);

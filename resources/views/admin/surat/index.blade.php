@@ -58,7 +58,8 @@
                                         </div>
                                         <div class="col-lg-4">
                                             <!--begin::Card-->
-                                            <div class="card card-custom card-stretch">
+                                            <a href="/jenis-surat-index" style="text-decoration: none !important;  color: inherit;">
+                                                <div class="card card-custom card-stretch">
                                                 <div class="card-header">
                                                     <div class="card-title">
                                                         <h3 class="card-label">Jenis Surat</h3>
@@ -68,6 +69,7 @@
                                                     ...
                                                 </div>
                                             </div>
+                                            </a>
                                             <!--end::Card-->
                                         </div>
                                     </div>

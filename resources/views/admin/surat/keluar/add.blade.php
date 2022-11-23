@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Klasifikasi Surat:</label>
-                                        {{ Form::select('klasifikasi',[1 => 'Jenis 1', 2 => 'Jenis 2'],null, ['title' => 'Pilih Jenis Surat','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        {{ Form::select('klasifikasi',$jenis_surat,null, ['title' => 'Pilih Jenis Surat','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
 
                                 </div>

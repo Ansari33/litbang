@@ -562,6 +562,37 @@ class HttpHelper {
         return $response;
     }
 
+    public static function jenis_surat_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'jenis-surat/list');
+        return $response;
+    }
+
+    public static function jenis_surat_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'jenis-surat/list/datatable', $request);
+        return $response;
+    }
+
+    public static function jenis_surat_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-surat/create', $request);
+        return $response;
+    }
+
+    public static function jenis_surat_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-surat/get/id', $request);
+        return $response;
+    }
+
+    public static function jenis_surat_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-surat/update', $request);
+        return $response;
+    }
+
+    public static function jenis_surat_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-surat/delete', $request);
+        return $response;
+    }
+
+
     public static function form_get($request) {
         $response = Http::withToken(Session::get('GToken'))->timeout(env('API_TIMEOUT', '10000'))->get('https://forms.googleapis.com/v1/forms/'.$request);
         return $response;

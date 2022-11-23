@@ -36,8 +36,9 @@ class SuratController extends Controller
 
     public function createSuratKeluar()
   {
+      $jenis_surat = $this->getJenisSurat();
       $nomor = Str::random(10);
-      return view('admin.surat.keluar.add',compact('nomor'));
+      return view('admin.surat.keluar.add',compact('nomor','jenis_surat'));
   }
 
     public function indexSuratMasuk()
@@ -57,8 +58,9 @@ class SuratController extends Controller
 
     public function createSuratMasuk()
   {
+      $jenis_surat = $this->getJenisSurat();
         $nomor = Str::random(10);
-        return view('admin.surat.masuk.add',compact('nomor'));
+        return view('admin.surat.masuk.add',compact('nomor','jenis_surat'));
   }
 
     public function storeSuratMasuk(Request $request)
@@ -91,7 +93,8 @@ class SuratController extends Controller
     {
         $data = HttpHelper::surat_masuk_get(['id' => $id])['data'];
         $instansi = $this->getInstansi();
-        return view('admin.surat.masuk.edit',compact('data','instansi'));
+        $jenis_surat = $this->getJenisSurat();
+        return view('admin.surat.masuk.edit',compact('data','instansi','jenis_surat'));
     }
 
     public function updateSuratMasuk(Request $request)
@@ -169,7 +172,8 @@ class SuratController extends Controller
     {
         $data = HttpHelper::surat_keluar_get(['id' => $id])['data'];
         $instansi = $this->getInstansi();
-        return view('admin.surat.keluar.edit',compact('data','instansi'));
+        $jenis_surat = $this->getJenisSurat();
+        return view('admin.surat.keluar.edit',compact('data','instansi','jenis_surat'));
     }
 
     public function updateSuratKeluar(Request $request)
@@ -222,6 +226,12 @@ class SuratController extends Controller
         return collect($data)->pluck('nama','id')->toArray();
     }
 
+    public function getJenisSurat()
+    {
+        $data = HttpHelper::jenis_surat_list()['data'];
+        return collect($data)->pluck('jenis','id')->toArray();
+    }
+
     public function openFile($request)
     {
         $file = public_path(). "/surat-keluar/".$request;
@@ -242,6 +252,57 @@ class SuratController extends Controller
         );
 
         return Response::download($file, $request,$headers);
+    }
+
+    public function indexJenisSurat()
+    {
+        return view('admin.surat.jenis.index');
+    }
+
+    public function listJenisSurat(Request  $request)
+    {
+        return HttpHelper::jenis_surat_datatable($request->all());
+    }
+
+    public function createJenisSurat()
+    {
+        return view('admin.surat.jenis.add');
+    }
+
+    public function storeJenisSurat(Request $request)
+    {
+        $data = json_decode($request->datas,true);
+        $body = [];
+
+        foreach ($data as $index => $value){
+            $body[$value['name']] = $value['value'];
+        }
+
+        return json_decode(HttpHelper::jenis_surat_add($body));
+    }
+
+    public function editJenisSurat($id)
+    {
+        $data = HttpHelper::jenis_surat_get(['id' => $id])['data'];
+
+        return view('admin.surat.jenis.edit',compact('data',));
+    }
+
+    public function updateJenisSurat(Request $request)
+    {
+        $data = json_decode($request->datas,true);
+        $body = [];
+
+        foreach ($data as $index => $value){
+            $body[$value['name']] = $value['value'];
+        }
+
+        return json_decode(HttpHelper::jenis_surat_update($body));
+    }
+
+    public function deleteJenisSurat($id)
+    {
+        return json_decode(HttpHelper::jenis_surat_delete(['id' => $id]));
     }
 
 
