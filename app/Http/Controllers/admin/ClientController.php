@@ -191,7 +191,7 @@ class ClientController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/laporan-penelitian'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(base_path('public/laporan-penelitian'),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([

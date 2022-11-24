@@ -34,6 +34,7 @@ Route::get('/tesupload', function(){
     return view('tes-upload');
 });
 Route::post('/upload-attachment', [KelitbanganController::class, 'attachment']);
+Route::post('/upload-laporan-penelitian', [ClientController::class, 'uploadLaporanPenelitian']);
 
 Route::get('/', [ClientController::class, 'index']);
 Route::get('/view-kelitbangan/{id}', [ClientController::class, 'viewKelitbangan']);
