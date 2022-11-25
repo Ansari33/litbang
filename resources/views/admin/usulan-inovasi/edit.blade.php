@@ -25,9 +25,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
-                                        <div class="input-group date" id="tanggal_pengiriman_pesanan_add" data-target-input="nearest">
-                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_pengiriman_pesanan_add" value="{{ \Carbon\Carbon::parse( $data['tanggal'])->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_pengiriman_pesanan_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="tanggal_uinov_edit" data-target-input="nearest">
+                                            <input name="tanggal" id="tgl_uinov_edit" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_uinov_edit" />
+                                            <div class="input-group-append" data-target="#tanggal_uinov_edit" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -40,17 +40,17 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Usulan:</label>
-                                        <textarea name="judul" class="form-control" cols="30" rows="2">{{ $data['usulan'] }}</textarea>
+                                        <textarea name="usulan" class="form-control" cols="30" rows="2">{{ $data['usulan'] }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Latar Belakang:</label>
-                                        <textarea name="abstrak" class="form-control" cols="30" rows="4">{{ $data['latar_belakang'] }}</textarea>
+                                        <textarea name="latar_belakang" class="form-control" cols="30" rows="4">{{ $data['latar_belakang'] }}</textarea>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tujuan:</label>
-                                        <textarea name="tindak_lanjut" class="form-control" cols="30" rows="4">{{ $data['tujuan'] }}</textarea>
+                                        <textarea name="tujuan" class="form-control" cols="30" rows="4">{{ $data['tujuan'] }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -95,6 +95,13 @@
 @push('js')
     <script>
         $(function () {
+
+            $('#tanggal_uinov_edit').datetimepicker({
+                format: 'L',
+            });
+
+            $('#tgl_uinov_edit').val('{{ \Carbon\Carbon::parse( $data['tanggal'] )->format('m/d/Y') }}');
+
             tablePelaksana = $(`#tbl_pelaksana_kelitbangan_add`).DataTable({
                 columnDefs :[
                     { 'width' : '5%', 'target' : 0 },
@@ -138,7 +145,7 @@
                         console.log(res)
                         console.log(res)
                         if (res.status === true){
-                            Swal.fire('Berhasil!', res.message, 'success').then(
+                            Swal.fire('Berhasil!', 'Usulan Berhasil Diupdate!', 'success').then(
                                 function (e) {
                                     window.close();
                                 }

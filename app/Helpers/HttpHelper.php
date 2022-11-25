@@ -466,11 +466,11 @@ class HttpHelper {
         return $response;
     }
     public static function usulan_inovasi_update($request) {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/update', $request);
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-inovasi/update', $request);
         return $response;
     }
     public static function usulan_inovasi_delete($request) {
-        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-penelitian/delete', $request);
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-inovasi/delete', $request);
         return $response;
     }
     public static function usulan_inovasi_terkini() {
