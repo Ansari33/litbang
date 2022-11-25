@@ -108,6 +108,11 @@ class UsulanInovasiController extends Controller
         return json_decode(HttpHelper::usulan_inovasi_delete(['id' => $id]));
     }
 
+    public function updateStatus(Request  $request)
+    {
+        return json_decode(HttpHelper::usulan_inovasi_update_status(['status' => $request->status,'id' => $request->id]));
+    }
+
     public function getInstansi()
     {
         $data = HttpHelper::instansi_list()['data'];

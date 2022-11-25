@@ -487,6 +487,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function usulan_inovasi_update_status($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'usulan-inovasi/update-status',$request);
+        return $response;
+    }
+
 
     public static function attachment_terkini() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'attachment/terkini');

@@ -151,6 +151,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/usulan-inovasi-edit/{id}', [UsulanInovasiController::class, 'edit']);
     Route::post('/usulan-inovasi-update', [UsulanInovasiController::class, 'update']);
     Route::get('/usulan-inovasi-delete/{id}', [UsulanInovasiController::class, 'delete']);
+    Route::post('/usulan-inovasi-update-status', [UsulanInovasiController::class, 'updateStatus']);
 
     ## Surat
     Route::get('/admin-surat',[SuratController::class, 'index']);

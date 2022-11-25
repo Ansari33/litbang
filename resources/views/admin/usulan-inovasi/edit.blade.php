@@ -56,21 +56,21 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Pengusul:</label>
-                                        <input name="nomor" type="text" class="form-control" placeholder="Pengusul" value="{{ $data['pengusul'] }}" />
+                                        <input name="pengusul" type="text" class="form-control" placeholder="Pengusul" value="{{ $data['pengusul'] }}" />
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Nomor Kontak:</label>
-                                        <input name="nomor" type="text" class="form-control" placeholder="Nomor Kontak" value="{{ $data['nomor_kontak'] }}" />
+                                        <input name="nomor_kontak" type="text" class="form-control" placeholder="Nomor Kontak" value="{{ $data['nomor_kontak'] }}" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Email:</label>
-                                        <input name="nomor" type="text" class="form-control" placeholder="Pengusul" value="{{ $data['email'] }}" />
+                                        <input name="email" type="text" class="form-control" placeholder="Email" value="{{ $data['email'] }}" />
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Status:</label>
-                                        <input name="nomor" type="text" readonly class="form-control" placeholder="Nomor Kontak" value="{{ $data['status'] }}" />
+                                        <input name="status"  id="status" type="text" readonly class="form-control" placeholder="Status" value="{{ $data['status'] }}" />
                                     </div>
                                 </div>
                             </div>
@@ -78,10 +78,9 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <button type="button" id="btn_kelitbangan_edit_data" class="btn btn-primary mr-2">Save</button>
-                                        <button type="button" class="btn btn-secondary mr-2" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
-                                        <button type="button" id="btn_status_1" class="btn btn-success mr-2">Konfirmasi</button>
-                                        <button type="button" id="btn_status_2" class="btn btn-danger mr-2">Tolak</button>
-                                        <button type="button" id="btn_status_3" class="btn btn-warning mr-2">Hapus</button>
+                                        <button type="button" class="btn btn-secondary mr-2" onclick="window.close()">Cancel</button>
+                                        <button type="button" id="btn_status_1" class="btn btn-success mr-2" onclick="updateStatus('Terkonfirmasi')">Konfirmasi</button>
+                                        <button type="button" id="btn_status_2" class="btn btn-danger mr-2" onclick="updateStatus('Ditolak')">Tolak</button>
                                     </div>
                                 </div>
                             </div>
@@ -170,5 +169,32 @@
             });
             //add_page('dashboard','dashboard','Dashboard');
         })
+
+        function updateStatus(status){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: "POST",
+                timeout: 50000,
+                url: '/usulan-inovasi-update-status/',
+                data:{'status' : status,'id' : '{{ $data['id'] }}'},
+                async: true,
+                success: function (res) {
+                    console.log(res)
+                    res.status === true ? Swal.fire('Berhasil!', res.message, 'success') : Swal.fire('Gagal!', res.message, 'danger');
+                    $('#status').val(status)
+                },
+                error: function (res, textstatus) {
+                    if (textstatus === "timeout") {
+                        notice('Response Time Out', 'error');
+                    } else {
+                        notice(res.responseJSON.message, 'error');
+                    }
+                }
+            });
+        }
     </script>
 @endpush
