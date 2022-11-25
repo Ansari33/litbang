@@ -11,57 +11,57 @@
 	<div class="d-flex flex-column-fluid">
 		<div class="container-fluid">
 			<div class="tab-content" id="page_content">
-               <div class="row">
-                   <div class="col-4">
-                       <!--begin::Card-->
-                       <div class="card card-bordered">
-                           <div class="card-header ribbon ribbon-top ribbon-vertical">
-                               <div class="ribbon-label bg-danger">
-                                   OK!
-                               </div>
-                               <div class="card-title">Ribbon Example</div>
-                           </div>
-                           <div class="card-body">
-                               ...
-                           </div>
-                       </div>
-                       <!--end::Card-->
-                   </div>
-                   <div class="col-4">
-                       <!--begin::Card-->
-                       <div class="card borcard-borderedder">
-                           <div class="card-header ribbon ribbon-top ribbon-vertical">
-                               <div class="ribbon-label bg-success">
-                                   <i class="bi bi-heart-fill fs-2 text-white"></i>
-                               </div>
-                               <div class="card-title">Ribbon Example</div>
-                           </div>
-                           <div class="card-body">
-                               ...
-                           </div>
-                       </div>
-                       <!--end::Card-->
-                   </div>
-                   <div class="col-4">
-                       <div class="card card-bordered">
-                           <div class="card-header">
-                               <h3 class="card-title">Title</h3>
-                               <div class="card-toolbar">
-                                   <button type="button" class="btn btn-sm btn-light">
-                                       Action
-                                   </button>
-                               </div>
-                           </div>
-                           <div class="card-body">
-                               Lorem Ipsum is simply dummy text...
-                           </div>
-                           <div class="card-footer">
-                               Footer
-                           </div>
-                       </div>
-                   </div>
+{{--               <div class="row">--}}
+{{--                   <div class="col-4">--}}
+{{--                       <!--begin::Card-->--}}
+{{--                       <div class="card card-bordered">--}}
+{{--                           <div class="card-header ribbon ribbon-top ribbon-vertical">--}}
+{{--                               <div class="ribbon-label bg-danger">--}}
+{{--                                   OK!--}}
+{{--                               </div>--}}
+{{--                               <div class="card-title">Ribbon Example</div>--}}
+{{--                           </div>--}}
+{{--                           <div class="card-body">--}}
+{{--                               ...--}}
+{{--                           </div>--}}
+{{--                       </div>--}}
+{{--                       <!--end::Card-->--}}
+{{--                   </div>--}}
+{{--                   <div class="col-4">--}}
+{{--                       <!--begin::Card-->--}}
+{{--                       <div class="card borcard-borderedder">--}}
+{{--                           <div class="card-header ribbon ribbon-top ribbon-vertical">--}}
+{{--                               <div class="ribbon-label bg-success">--}}
+{{--                                   <i class="bi bi-heart-fill fs-2 text-white"></i>--}}
+{{--                               </div>--}}
+{{--                               <div class="card-title">Ribbon Example</div>--}}
+{{--                           </div>--}}
+{{--                           <div class="card-body">--}}
+{{--                               ...--}}
+{{--                           </div>--}}
+{{--                       </div>--}}
+{{--                       <!--end::Card-->--}}
+{{--                   </div>--}}
+{{--                   <div class="col-4">--}}
+{{--                       <div class="card card-bordered">--}}
+{{--                           <div class="card-header">--}}
+{{--                               <h3 class="card-title">Title</h3>--}}
+{{--                               <div class="card-toolbar">--}}
+{{--                                   <button type="button" class="btn btn-sm btn-light">--}}
+{{--                                       Action--}}
+{{--                                   </button>--}}
+{{--                               </div>--}}
+{{--                           </div>--}}
+{{--                           <div class="card-body">--}}
+{{--                               Lorem Ipsum is simply dummy text...--}}
+{{--                           </div>--}}
+{{--                           <div class="card-footer">--}}
+{{--                               Footer--}}
+{{--                           </div>--}}
+{{--                       </div>--}}
+{{--                   </div>--}}
 
-               </div>
+{{--               </div>--}}
 
             </div>
 		</div>
