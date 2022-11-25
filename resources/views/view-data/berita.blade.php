@@ -268,7 +268,7 @@
 
                                     <div class="col-12 form-group">
                                         <label for="comment">Komentar</label>
-                                        <textarea name="comment" id="comments" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
+                                        <textarea name="comment" id="komennya" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
                                     </div>
 
                                     <div class="col-12 form-group">
@@ -362,7 +362,7 @@
         $('#submit_comment').click(function(){
             let data = $('#commentform').serializeArray();
             let author = $('#author').val();
-            let komen = $('#comments').val();
+            let komen = $('#komennya').val();
             $('#info').text('...');
 
             $.ajaxSetup({
