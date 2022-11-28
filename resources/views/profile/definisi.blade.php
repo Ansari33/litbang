@@ -104,8 +104,8 @@
                     <ul class="sidenav">
                         <li class="ui-tabs-active"><a href="#snav-content1"><i class="icon-screen"></i>Kelitbangan<i class="icon-chevron-right"></i></a></li>
                         <li><a href="#snav-content2"><i class="icon-magic"></i>Penelitian Daerah<i class="icon-chevron-right"></i></a></li>
-                        <li><a href="#snav-content3"><i class="icon-star3"></i>Pengembangan Daerah<i class="icon-chevron-right"></i></a></li>
-                        <li><a href="#snav-content4"><i class="icon-gift"></i>Inovasi Daerah<i class="icon-chevron-right"></i></a></li>
+                        <li><a href="#snav-content3"><i class="icon-double-angle-up"></i>Pengembangan Daerah<i class="icon-chevron-right"></i></a></li>
+                        <li><a href="#snav-content4"><i class="icon-lightbulb"></i>Inovasi Daerah<i class="icon-chevron-right"></i></a></li>
 {{--                        <li><a href="#snav-content5"><i class="icon-adjust"></i>Light &amp; Dark Scheme<i class="icon-chevron-right"></i></a></li>--}}
                     </ul>
                 </div>

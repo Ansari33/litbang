@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title')
-    List Agenda
+    List Surat Rekomendasi
 @endsection
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
