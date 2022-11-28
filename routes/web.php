@@ -75,6 +75,8 @@ Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegula
 Route::get('/upload-regulasi',[RegulasiController::class, 'uploadFile']);
 Route::get('/upload-laporan-penelitian',[ClientController::class, 'uploadLaporanPenelitian']);
 
+Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
+
 Route::get('/login', function () {
     if(Session::get('authenticated')){
         $cek = HttpHelper::check_token();
@@ -208,7 +210,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/surat-rekomendasi-list', [SuratRekomendasiController::class, 'list']);
     Route::post('/surat-rekomendasi-list-tanggal', [SuratRekomendasiController::class, 'listByTanggal']);
     Route::get('/surat-rekomendasi-tambah', [SuratRekomendasiController::class, 'create']);
-    Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
+    #Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
     Route::get('/surat-rekomendasi-edit/{id}', [SuratRekomendasiController::class, 'edit']);
     Route::post('/surat-rekomendasi-update', [SuratRekomendasiController::class, 'update']);
     Route::get('/surat-rekomendasi-delete/{id}', [SuratRekomendasiController::class, 'delete']);
