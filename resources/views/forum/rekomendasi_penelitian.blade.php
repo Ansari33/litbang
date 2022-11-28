@@ -33,7 +33,7 @@
                                         <label for="fitness-form-name">Judul penelitian:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="usulan"></textarea>
+                                        <textarea class="form-control" name="judul"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                         <label for="fitness-form-name">Asal Institusi:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="Asal Institusi"></textarea>
+                                        <textarea class="form-control" name="institusi"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                         <label for="fitness-form-name">Email:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="email" name="pengusul" id="fitness-form-name" class="form-control required" value="" placeholder="Email">
+                                        <input type="email" name="email" id="fitness-form-name" class="form-control required" value="" placeholder="Email">
 
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                         <label for="fitness-form-email">No. HP:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="hp" id="fitness-form-email" class="form-control required" value="" placeholder="Nomor Kontak">
+                                        <input type="text" name="no_hp" id="fitness-form-email" class="form-control required" value="" placeholder="Nomor Kontak">
 
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                             <div class="col-12 d-flex justify-content-end align-items-center">
                                 <div id="alert-info" ></div>
 {{--                                <button type="button" id="calories-trigger" class="btn btn-secondary">Calculate</button>--}}
-                                <button type="button" id="btn_submit_usulan" class="btn btn-success ms-2 ml-5">Submit Usulan</button>
+                                <button type="button" id="btn_submit_usulan" class="btn btn-success ms-2 ml-5">Kirim Permintaan</button>
                             </div>
                         </form>
                     </div>
@@ -140,7 +140,7 @@
             $.ajax({
                 type: "POST",
                 timeout: 50000,
-                url: '/usulan-penelitian-store',
+                url: '/surat-rekomendasi-store',
                 async: true,
                 data: {
                     datas : JSON.stringify(data), filex:JSON.stringify(file_list)

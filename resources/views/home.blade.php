@@ -18,7 +18,7 @@
         <div class="container clearfix">
 
             <div class="heading-block center">
-                <h2>Bidang Penelitan dan Pengembangan</h2>
+                <h3>BADAN PENELITIAN DAN PENGEMBANGAN DAERAH KOTA MAKASSAR</h3>
 {{--                <span>Built with passion &amp; intuitiveness in mind. Canvas is a masterclass piece of work presented to you.</span>--}}
             </div>
 

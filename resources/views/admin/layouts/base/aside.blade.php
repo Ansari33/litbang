@@ -63,6 +63,13 @@ $menu = [
       'link'    => '/admin-regulasi',
       'children' => [],
     ],
+    [
+      'name_id' => 10,
+      'icon'    => 'fa fa-edit',
+      'label'   => 'Surat Rekomendasi',
+      'link'    => '/admin-surat-rekomendasi',
+      'children' => [],
+    ],
 ];
 @endphp
 <div class="aside aside-left  aside-fixed  d-flex flex-column flex-row-auto"  id="kt_aside">

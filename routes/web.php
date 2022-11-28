@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\SuratController;
 use App\Http\Controllers\admin\SurveyController;
 use App\Http\Controllers\admin\RegulasiController;
+use App\Http\Controllers\admin\SuratRekomendasiController;
 
 
 
@@ -201,6 +202,16 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/survey-update',[SurveyController::class, 'update']);
     Route::get('/survey-delete/{id}',[SurveyController::class, 'delete']);
     Route::get('/survey-hasil/{id}',[SurveyController::class, 'hasil']);
+
+    ## Surat Rekomendasi
+    Route::get('/admin-surat-rekomendasi', [SuratRekomendasiController::class, 'index']);
+    Route::get('/surat-rekomendasi-list', [SuratRekomendasiController::class, 'list']);
+    Route::post('/surat-rekomendasi-list-tanggal', [SuratRekomendasiController::class, 'listByTanggal']);
+    Route::get('/surat-rekomendasi-tambah', [SuratRekomendasiController::class, 'create']);
+    Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
+    Route::get('/surat-rekomendasi-edit/{id}', [SuratRekomendasiController::class, 'edit']);
+    Route::post('/surat-rekomendasi-update', [SuratRekomendasiController::class, 'update']);
+    Route::get('/surat-rekomendasi-delete/{id}', [SuratRekomendasiController::class, 'delete']);
 
     Route::get('/litbang-admin', function () {
         return view('admin.home');

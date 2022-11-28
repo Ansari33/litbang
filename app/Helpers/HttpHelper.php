@@ -689,6 +689,42 @@ class HttpHelper {
         return $response;
     }
 
+    /*
+   |--------------------------------------------------------------------------
+   | Surat Rekomendasi
+   |--------------------------------------------------------------------------
+   */
+    public static function surat_rekomendasi_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-rekomendasi/list');
+        return $response;
+    }
+    public static function surat_rekomendasi_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'surat-rekomendasi/list/datatable', $request);
+        return $response;
+    }
+
+    public static function surat_rekomendasi_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-rekomendasi/list/datatable-tanggal', $request);
+        return $response;
+    }
+
+    public static function surat_rekomendasi_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-rekomendasi/create', $request);
+        return $response;
+    }
+    public static function surat_rekomendasi_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-rekomendasi/get/id', $request);
+        return $response;
+    }
+    public static function surat_rekomendasi_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-rekomendasi/update', $request);
+        return $response;
+    }
+    public static function surat_rekomendasi_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'surat-rekomendasi/delete', $request);
+        return $response;
+    }
+
 
 
 }
