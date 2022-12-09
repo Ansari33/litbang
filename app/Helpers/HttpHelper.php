@@ -725,6 +725,9 @@ class HttpHelper {
         return $response;
     }
 
-
+    public static function dashboard() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'dashboard/');
+        return $response;
+    }
 
 }

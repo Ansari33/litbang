@@ -48,6 +48,26 @@
                                         <label>No. Hp:</label>
                                         <input type="text" class="form-control" value="{{ $data['no_hp'] }}">
                                     </div>
+                                    <div class="col-lg-6">
+                                        <label>File Pelengkap:</label>
+                                        @foreach($data['attachment'] as $at => $att)
+                                        <div class="d-flex align-items-center mb-6">
+
+                                            <!--begin::Text-->
+                                            <div class="d-flex flex-column flex-grow-1 py-2">
+                                                <span class="">{{ $att['nama'] }}</span>
+                                            </div>
+                                            <!--end::Text-->
+                                            <!--begin::Dropdown-->
+                                           <a href="/surat-rekomendasi/{{ $att['nama'] }}" target="_blank" class="btn btn-clean btn-hover-success btn-sm btn-icon" >
+                                                <i class="ki ki-bold-more-hor"></i>
+                                            </a>
+
+                                            <!--end::Dropdown-->
+                                        </div>
+                                        @endforeach
+
+                                    </div>
 
                                 </div>
 

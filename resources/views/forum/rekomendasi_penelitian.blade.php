@@ -20,7 +20,7 @@
                     </div>
                     <link href="https://releases.transloadit.com/uppy/v2.12.2/uppy.min.css" rel="stylesheet">
                     <div class="col-lg-8 p-5">
-                        <form class="row mb-0" id="form_usulan_penelitian"   enctype="multipart/form-data">
+                        <form class="row mb-0" id="form_surat_rekomendasi"   enctype="multipart/form-data">
                             <div class="form-process">
                                 <div class="css3-spinner">
                                     <div class="css3-spinner-scaler"></div>
@@ -33,7 +33,7 @@
                                         <label for="fitness-form-name">Judul penelitian:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="judul"></textarea>
+                                        <textarea class="form-control" name="judul" id="judul"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                                         <label for="fitness-form-name">Nama :</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="pengusul" id="fitness-form-name" class="form-control required" value="" placeholder="Nama Pengusul">
+                                        <input type="text" required name="pengusul" id="pengusul" class="form-control required" value="" placeholder="Nama Pengusul">
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                         <label for="fitness-form-name">Asal Institusi:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="institusi"></textarea>
+                                        <textarea class="form-control"  required name="institusi" id="institusi"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                         <label for="fitness-form-name">Email:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="email" name="email" id="fitness-form-name" class="form-control required" value="" placeholder="Email">
+                                        <input type="email" required name="email" id="email" class="form-control required" value="" placeholder="Email">
 
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                         <label for="fitness-form-email">No. HP:</label>
                                     </div>
                                     <div class="col-sm-10">
-                                        <input type="text" name="no_hp" id="fitness-form-email" class="form-control required" value="" placeholder="Nomor Kontak">
+                                        <input type="text" required name="no_hp" id="no_hp" class="form-control required" value="" placeholder="Nomor Kontak">
 
                                     </div>
                                 </div>
@@ -129,42 +129,54 @@
 
     <script>
         $('#btn_submit_usulan').click(function(){
+            let judul = $('#judul').val();
+            let pengusul = $('#pengusul').val();
+            let institusi = $('#institusi').val();
+            let email = $('#email').val();
+            let no_hp = $('#no_hp').val();
             $('#alert-info').html('Memproses...  '+'<div class="class="spinner-grow"></div>');
-            let data = $('#form_usulan_penelitian').serializeArray();
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: "POST",
-                timeout: 50000,
-                url: '/surat-rekomendasi-store',
-                async: true,
-                data: {
-                    datas : JSON.stringify(data), filex:JSON.stringify(file_list)
-                },
-                success: function (res) {
-                    if (res.status === true){
-                        $('#alert-info').html('<div class="alert alert-success"><p>'+res.message+'</p></div>');
+            if (judul == '' || pengusul == '' || institusi == '' || email == '' || no_hp == ''){
+                $('#alert-info').html('<div class="alert alert-danger"><p> Form Tidak Lengkap</p></div>');
+            }else{
 
-                        $('#form_usulan_penelitian').trigger('reset')
-                    }else{
-                        $('#alert-info').html('<div class="alert alert-success"><p>'+res.message+'</p></div>');
+                let data = $('#form_surat_rekomendasi').serializeArray();
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
-                    //res.status === true ? Swal.fire('Berhasil!', res.message, 'success');  : Swal.fire('Gagal!', res.message, 'danger');
-                },
-                error: function (res, textstatus) {
-                    if (textstatus === "timeout") {
-                        $('#alert-info').html('<div class="alert alert-danger"><p>'+res.message+'</p></div>');
-                        // notice('Response Time Out', 'error');
-                    } else {
-                        $('#alert-info').html('<div class="alert alert-danger"><p>'+res.message+'</p></div>');
-                       // notice(res.responseJSON.message, 'error');
+                });
+                $.ajax({
+                    type: "POST",
+                    timeout: 50000,
+                    url: '/surat-rekomendasi-store',
+                    async: true,
+                    data: {
+                        datas : JSON.stringify(data), filex:JSON.stringify(file_list)
+                    },
+                    success: function (res) {
+                        if (res.status === true){
+                            $('#alert-info').html('<div class="alert alert-success"><p>'+res.message+'</p></div>');
+
+                            $('#form_usulan_penelitian').trigger('reset')
+                        }else{
+                            $('#alert-info').html('<div class="alert alert-success"><p>'+res.message+'</p></div>');
+                        }
+                        //res.status === true ? Swal.fire('Berhasil!', res.message, 'success');  : Swal.fire('Gagal!', res.message, 'danger');
+                    },
+                    error: function (res, textstatus) {
+                        if (textstatus === "timeout") {
+                            $('#alert-info').html('<div class="alert alert-danger"><p>'+res.message+'</p></div>');
+                            // notice('Response Time Out', 'error');
+                        } else {
+                            $('#alert-info').html('<div class="alert alert-danger"><p>'+res.message+'</p></div>');
+                            // notice(res.responseJSON.message, 'error');
+                        }
                     }
-                }
-            });
+                });
+            }
+
         });
     </script>
 @endpush

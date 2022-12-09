@@ -43,14 +43,14 @@ class SuratRekomendasiController extends Controller
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/images/upload/";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
+            $loc = public_path('/')."/surat-rekomendasi/";
+            $lama_ft = $loc.str_replace(' ','-',$ur['nama']);
+            if(file_exists($loc.str_replace(' ','-',$ur['nama']))){
                 File::delete( $lama_ft );
             }
-            File::copy($ur['url'],$loc.$ur['nama']);
+            File::copy($ur['url'],$loc.str_replace(' ','-',$ur['nama']));
             $body['attachment'][] = [
-                'nama' => $ur['nama'],
+                'nama' => str_replace(' ','-',$ur['nama']),
                 'url'  => $lama_ft
             ];
         }

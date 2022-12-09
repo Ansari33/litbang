@@ -162,4 +162,9 @@ class KelitbanganController extends Controller
         return Excel::download($export, 'invoices.xlsx');
     }
 
+  public function dashboard(){
+      $data = HttpHelper::dashboard_data()['data'];
+      return view('admin.home',compact('data'));
+  }
+
 }

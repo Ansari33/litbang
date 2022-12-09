@@ -215,9 +215,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/surat-rekomendasi-update', [SuratRekomendasiController::class, 'update']);
     Route::get('/surat-rekomendasi-delete/{id}', [SuratRekomendasiController::class, 'delete']);
 
-    Route::get('/litbang-admin', function () {
-        return view('admin.home');
-    });
+    Route::get('/litbang-admin', [KelitbanganController::class,'dashboard']);
     Route::get('/admin-survey', [SurveyController::class, 'index']);
 
     //Route::get('/redirect', [AuthController::class, 'redirectToProvider']);

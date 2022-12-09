@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>Nama:</label>
+                                        <label>Nama Agenda:</label>
                                         <textarea name="nama" class="form-control" cols="30" rows="2"></textarea>
                                     </div>
                                     <div class="col-lg-6">
