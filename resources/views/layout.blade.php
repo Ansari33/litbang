@@ -82,8 +82,8 @@
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
-                        <a href="index.html" class="standard-logo" data-dark-logo="{{ asset('images/litbang-min.png') }}"><img src="{{asset('images/litbang-min.png')}}" alt="Canvas Logo"></a>
-                        <a href="index.html" class="retina-logo" data-dark-logo=" {{ asset('images/litbang-min.png') }}"><img src="{{asset('images/litbang-min.png')}}" alt="Canvas Logo"></a>
+                        <a href="#" class="standard-logo" data-dark-logo="{{ asset('images/litbang-min.png') }}"><img src="{{asset('images/litbang-min.png')}}" alt="Canvas Logo"></a>
+                        <a href="#" class="retina-logo" data-dark-logo=" {{ asset('images/litbang-min.png') }}"><img src="{{asset('images/litbang-min.png')}}" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
 
                     <div class="header-misc">

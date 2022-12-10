@@ -1,13 +1,6 @@
 @extends('layout')
 @section('content')
     <div class="content-wrap">
-
-        {{--    <a href="#" class="button button-full button-purple center text-end header-stick bottommargin-lg">--}}
-        {{--        <div class="container clearfix">--}}
-        {{--            Canvas comes with Unlimited Customizations &amp; Options. <strong>Check Out</strong> <i class="icon-caret-right" style="top:4px;"></i>--}}
-        {{--        </div>--}}
-        {{--    </a>--}}
-
         <div class="container clearfix">
 
             <div class="heading-block center border-bottom-0 bottommargin-lg">
