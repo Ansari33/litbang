@@ -226,16 +226,16 @@ https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js -->
 		});
 	</script>
     <script>
-        var pusher = new Pusher("40ab74c9addd0e520f33", {
-            cluster: "ap1",
-        });
-        var channel = pusher.subscribe('test-channel');
-        channel.bind('test-event', function(data) {
-            alert(JSON.stringify(data));
-            console.log(JSON.stringify(data));
-            $('#spen').val(data);
-            // this is called when the event notification is received...
-        });
+        // var pusher = new Pusher("40ab74c9addd0e520f33", {
+        //     cluster: "ap1",
+        // });
+        // var channel = pusher.subscribe('test-channel');
+        // channel.bind('test-event', function(data) {
+        //     alert(JSON.stringify(data));
+        //     console.log(JSON.stringify(data));
+        //     $('#spen').val(data);
+        //     // this is called when the event notification is received...
+        // });
     </script>
 </body>
 </html>
