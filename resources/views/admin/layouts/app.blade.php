@@ -170,6 +170,8 @@ https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js -->
 	<script src="{{ asset('admin/js/notices.js') }}"></script>
 	<script src="https://unpkg.com/@develoka/angka-terbilang-js@1.4.1/index.min.js"></script>
 
+    <script src="https://js.pusher.com/7.2.0/pusher.min.js"></script>
+
 	@stack('js')
 	<script type="text/javascript">
 
@@ -223,5 +225,17 @@ https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js -->
 	    });
 		});
 	</script>
+    <script>
+        var pusher = new Pusher("40ab74c9addd0e520f33", {
+            cluster: "ap1",
+        });
+        var channel = pusher.subscribe('test-channel');
+        channel.bind('test-event', function(data) {
+            alert(JSON.stringify(data));
+            console.log(JSON.stringify(data));
+            $('#spen').val(data);
+            // this is called when the event notification is received...
+        });
+    </script>
 </body>
 </html>

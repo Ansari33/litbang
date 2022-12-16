@@ -33,7 +33,7 @@
 										</span>
 									</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Search..."/>
+								<input type="text" id="spen" class="form-control" placeholder="Search..."/>
 								<div class="input-group-append">
 									<span class="input-group-text">
 									<i class="quick-search-close ki ki-close icon-sm text-muted"></i>
@@ -125,3 +125,5 @@
 		</div>
 	</div>
 </div>
+
+

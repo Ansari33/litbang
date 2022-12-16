@@ -43,7 +43,9 @@
                     <td style="width: 5%">{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
                     <td style="width: 20%">
                         @foreach($k['attachment'] as $att => $at)
-                        <a href="{{ asset(explode("public/",$at['url'])[1]) }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
+                            @if($at['url'] !== null)
+                        <a href="{{ asset(explode("public/",$at['url'])[0]) }}"><i class="fa fa-file"></i>{{ $at['nama'].'-'.count(explode("public/",$at['url'])) }}</a>
+                            @endif
                         @endforeach
                     </td>
                 </tr>
