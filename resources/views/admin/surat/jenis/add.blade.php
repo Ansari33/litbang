@@ -24,13 +24,16 @@
                                         <input name="jenis" type="text" class="form-control" placeholder="" value="" />
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Keterangan:</label>
-                                        <textarea name="keterangan" class="form-control" cols="30" rows="5"></textarea>
+                                        <label>Kode Surat:</label>
+                                        <input name="kode" type="text" class="form-control" placeholder="" value="" />
                                     </div>
 
                                 </div>
                                 <div class="form-group row">
-
+                                    <div class="col-lg-6">
+                                        <label>Keterangan:</label>
+                                        <textarea name="keterangan" class="form-control" cols="30" rows="5"></textarea>
+                                    </div>
 
                                 </div>
 

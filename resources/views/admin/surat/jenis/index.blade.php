@@ -39,7 +39,9 @@
                                             <thead>
                                             <tr>
                                                 <th>ID</th>
+
                                                 <th>Jenis </th>
+                                                <th>Kode </th>
                                                 <th>Keterangan </th>
                                                 <th>Actions</th>
                                             </tr>
@@ -127,6 +129,7 @@
                 columns : [
                     {data : 'id'},
                     {data : 'jenis'},
+                    {data : 'kode'},
                     {data : 'keterangan'},
                     {data : 'action'},
                 ],

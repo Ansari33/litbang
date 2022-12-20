@@ -30,6 +30,13 @@
                                         <textarea name="keterangan" class="form-control" cols="30" rows="5">{{ $data['keterangan'] }}</textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Kode Surat:</label>
+                                        <input name="kode" type="text" class="form-control" placeholder="Kode" value="{{ $data['kode']}}" />
+                                    </div>
+
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <div class="row">
