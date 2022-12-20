@@ -311,7 +311,7 @@ class SuratController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/surat-keluar'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(public_path('/surat-keluar/'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([
@@ -336,7 +336,7 @@ class SuratController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/surat-masuk'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(public_path('/surat-masuk'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([
