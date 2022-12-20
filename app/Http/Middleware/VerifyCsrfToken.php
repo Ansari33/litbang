@@ -14,6 +14,8 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'upload-attachment',
         'upload-laporan-penelitian',
+        'upload-surat-keluar',
+        'upload-surat-masuk',
         //
     ];
 }

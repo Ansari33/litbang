@@ -305,5 +305,55 @@ class SuratController extends Controller
         return json_decode(HttpHelper::jenis_surat_delete(['id' => $id]));
     }
 
+    public function uploadSuratKeluar(Request $request){
+
+        try {
+            $namaFile = [];
+            foreach ($request->all() as $fls => $fl){
+                $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
+                $fl->move(base_path('public/surat-keluar'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+            }
+
+            return response()->json([
+                'files' => $namaFile,
+                'status' => true,
+                'message' => 'Files Upload Success!'
+            ],200
+            );
+        }catch (\Exception $er){
+            return response()->json([
+                'message' => $er->getMessage(),
+                'status' => false,
+            ],500
+            );
+        }
+
+    }
+
+    public function uploadSuratMasuk(Request $request){
+
+        try {
+            $namaFile = [];
+            foreach ($request->all() as $fls => $fl){
+                $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
+                $fl->move(base_path('public/surat-masuk'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+            }
+
+            return response()->json([
+                'files' => $namaFile,
+                'status' => true,
+                'message' => 'Files Upload Success!'
+            ],200
+            );
+        }catch (\Exception $er){
+            return response()->json([
+                'message' => $er->getMessage(),
+                'status' => false,
+            ],500
+            );
+        }
+
+    }
+
 
 }

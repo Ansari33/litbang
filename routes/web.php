@@ -74,6 +74,8 @@ Route::get('/forum-rekomendasi', [ClientController::class, 'forumRekomendasi']);
 Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegulasi']);
 Route::get('/upload-regulasi',[RegulasiController::class, 'uploadFile']);
 Route::get('/upload-laporan-penelitian',[ClientController::class, 'uploadLaporanPenelitian']);
+Route::get('/upload-surat-masuk',[SuratController::class, 'uploadSuratMasuk']);
+Route::get('/upload-surat-keluar',[SuratController::class, 'uploadSuratKeluar']);
 
 Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
 
@@ -177,6 +179,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/surat-masuk-update',[SuratController::class, 'updateSuratMasuk']);
     Route::get('/surat-masuk-delete/{id}',[SuratController::class, 'deleteSuratMasuk']);
     Route::get('/download-surat-masuk/{id}',[SuratController::class, 'downloadSuratMasuk']);
+
 
     Route::get('/jenis-surat-index',[SuratController::class, 'indexJenisSurat']);
     Route::get('/jenis-surat-list',[SuratController::class, 'listJenisSurat']);
