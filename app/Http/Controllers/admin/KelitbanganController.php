@@ -99,7 +99,6 @@ class KelitbanganController extends Controller
             $body[$value['name']] = $value['value'];
         }
         $body['pelaksana']  = $pelaksana;
-        $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
 
         return json_decode(HttpHelper::kelitbangan_bidang_add($body));
     }
