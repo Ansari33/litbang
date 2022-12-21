@@ -15,12 +15,33 @@ class KelitbanganController extends Controller
 {
   public function index()
   {
-      return view('admin.kelitbangan.index');
+      $bidang = HttpHelper::kelitbangan_bidang_list()['data'];
+      return view('admin.kelitbangan.indexv2',compact('bidang'));
   }
+
+  public function indexBidang()
+    {
+        return view('admin.kelitbangan.bidang.index');
+    }
+
+  public function indexByBidang($bidang)
+{
+    return view('admin.kelitbangan.index',compact('bidang'));
+}
 
   public function list(Request $request)
   {
     return HttpHelper::kelitbangan_datatable($request->all());
+  }
+
+  public function listBidang(Request $request)
+    {
+        return HttpHelper::kelitbangan_bidang_list_datatable($request->all());
+    }
+
+  public function listByBidang(Request $request)
+  {
+    return HttpHelper::kelitbangan_by_bidang_datatable($request->all());
   }
 
   public function listByTanggal(Request $request)
@@ -28,14 +49,45 @@ class KelitbanganController extends Controller
     return HttpHelper::kelitbangan_datatable_by_tanggal($request->all());
   }
 
-  public function create()
+  public function create($bidang)
+    {
+        $bidang2 = $this->getBidang();
+        $nomor = HttpHelper::kelitbangan_nomor();
+
+        return view('admin.kelitbangan.add',compact('bidang2','nomor','bidang'));
+    }
+
+  public function createBidang()
     {
         $instansi = HelperController::getInstansi();
         $nomor = HttpHelper::kelitbangan_nomor();
-        return view('admin.kelitbangan.add',compact('instansi','nomor'));
+        return view('admin.kelitbangan.bidang.add',compact('instansi','nomor'));
     }
 
   public function store(Request $request)
+    {
+
+        $attachment = json_decode($request->filex,true);
+        $data       = json_decode($request->datas,true);
+        $pelaksana  = json_decode($request->pelaksana,true);
+
+        $rangkuman = json_decode($request->rangkuman,true);
+
+        $body = [];
+        foreach ($data as $index => $value){
+            $body[$value['name']] = $value['value'];
+        }
+        $body['tanggal']    = Carbon::parse($body['tanggal'])->format('Y-m-d');
+        #return $rangkuman['nama'];
+        $body['pelaksana']  = $pelaksana;
+        $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
+        HelperController::saveRangkumanKelitbangan($rangkuman);
+        $body['rangkuman']  = $rangkuman['nama'];
+
+        return json_decode(HttpHelper::kelitbangan_add($body));
+    }
+
+  public function storeBidang(Request $request)
     {
 
         $attachment = json_decode($request->filex,true);
@@ -46,18 +98,24 @@ class KelitbanganController extends Controller
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
-        $body['tanggal']    = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['pelaksana']  = $pelaksana;
         $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
-        //return $body;
-        return json_decode(HttpHelper::kelitbangan_add($body));
+
+        return json_decode(HttpHelper::kelitbangan_bidang_add($body));
     }
 
   public function edit($id)
     {
         $data = HttpHelper::kelitbangan_get(['id' => $id])['data'];
-        $instansi = HelperController::getInstansi();
-        return view('admin.kelitbangan.edit',compact('data','instansi'));
+        $bidang2 = $this->getBidang();
+        return view('admin.kelitbangan.edit',compact('data','bidang2'));
+    }
+
+  public function editBidang($id)
+    {
+        $data = HttpHelper::kelitbangan_bidang_get(['id' => $id])['data'];
+        $bidang2 = $this->getBidang();
+        return view('admin.kelitbangan.bidang.edit',compact('data','bidang2'));
     }
 
   public function update(Request $request)
@@ -74,6 +132,18 @@ class KelitbanganController extends Controller
         $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
 
         return json_decode(HttpHelper::kelitbangan_update($body));
+    }
+
+  public function updateBidang(Request $request)
+    {
+
+        $data       = json_decode($request->datas,true);
+
+        $body = [];
+        foreach ($data as $index => $value){
+            $body[$value['name']] = $value['value'];
+        }
+        return json_decode(HttpHelper::kelitbangan_bidang_update($body));
     }
 
   public function delete($id)
@@ -165,6 +235,12 @@ class KelitbanganController extends Controller
   public function dashboard(){
       $data = HttpHelper::dashboard_data()['data'];
       return view('admin.home',compact('data'));
+  }
+
+  public function getBidang(){
+      $data =  HttpHelper::kelitbangan_bidang_list();
+      return $data['status'] == true ? collect($data['data'])->pluck('nama','id')->toArray() : [];
+
   }
 
 }

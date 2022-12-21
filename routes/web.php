@@ -101,11 +101,20 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/admin-kelitbangan', [KelitbanganController::class, 'index']);
     Route::get('/kelitbangan-list', [KelitbanganController::class, 'list']);
     Route::post('/kelitbangan-list-tanggal', [KelitbanganController::class, 'listByTanggal']);
-    Route::get('/kelitbangan-tambah', [KelitbanganController::class, 'create']);
+    Route::get('/kelitbangan-tambah/{b}', [KelitbanganController::class, 'create']);
     Route::post('/kelitbangan-store', [KelitbanganController::class, 'store']);
     Route::get('/kelitbangan-edit/{id}', [KelitbanganController::class, 'edit']);
     Route::post('/kelitbangan-update', [KelitbanganController::class, 'update']);
     Route::get('/kelitbangan-delete/{id}', [KelitbanganController::class, 'delete']);
+
+    Route::get('/kelitbangan-bidang-index', [KelitbanganController::class, 'indexBidang']);
+    Route::get('/kelitbangan-bidang-list', [KelitbanganController::class, 'listBidang']);
+    Route::get('/kelitbangan-bidang/{id}', [KelitbanganController::class, 'indexByBidang']);
+    Route::post('/kelitbangan-list-by-bidang', [KelitbanganController::class, 'listByBidang']);
+    Route::get('/kelitbangan-tambah-bidang', [KelitbanganController::class, 'createBidang']);
+    Route::post('/kelitbangan-store-bidang', [KelitbanganController::class, 'storeBidang']);
+    Route::get('/kelitbangan-edit-bidang/{id}', [KelitbanganController::class, 'editBidang']);
+    Route::post('/kelitbangan-update-bidang', [KelitbanganController::class, 'updateBidang']);
 
     ## Inovasi
     Route::get('/admin-inovasi', [InovasiController::class, 'index']);

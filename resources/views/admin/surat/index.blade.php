@@ -60,13 +60,16 @@
                                             <!--begin::Card-->
                                             <a href="/jenis-surat-index" style="text-decoration: none !important;  color: inherit;">
                                                 <div class="card card-custom card-stretch">
-                                                <div class="card-header">
+                                                <div class="card-header ribbon ribbon-top ribbon-ver">
+                                                    <div class="ribbon-target bg-success" style="top: -2px; right: 20px;">
+                                                        <i class="fas fa-envelope-o text-white"></i>
+                                                    </div>
                                                     <div class="card-title">
                                                         <h3 class="card-label">Jenis Surat</h3>
                                                     </div>
                                                 </div>
                                                 <div class="card-body">
-                                                    ...
+                                                    Pengelolaan Jenis Surat
                                                 </div>
                                             </div>
                                             </a>

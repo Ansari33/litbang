@@ -19,106 +19,43 @@
                                      aria-labelledby="permintaan_pembelian_list">
                                     <div class="container-auto ml-0 mb-7">
                                         <div class="row">
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col-md-0 my-2 my-md-0">--}}
-{{--                                                    <div class="dropdown">--}}
-{{--                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonPermintaanPembelian"--}}
-{{--                                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                                            Pengaturan Kolom--}}
-{{--                                                        </button>--}}
-{{--                                                        <div class="dropdown-menu" id="columnSettingPermintaanPembelian" aria-labelledby="dropdownMenuButton">--}}
-{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
-{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Nomor" class="menuPermintaanPembelian"--}}
-{{--                                                                           name="CheckboxesPermintaanPembelian_1" value="Nomor">--}}
-{{--                                                                    <span></span> &nbsp; Nomor </label> </a>--}}
-{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
-{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Tanggal" class="menuPermintaanPembelian"--}}
-{{--                                                                           name="CheckboxesPermintaanPembelian_2" value="Tanggal">--}}
-{{--                                                                    <span></span> &nbsp; Tanggal</label></a>--}}
-{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
-{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Pemasok" class="menuPermintaanPembelian"--}}
-{{--                                                                           name="CheckboxesPermintaanPembelian_3" value="Pemasok">--}}
-{{--                                                                    <span></span> &nbsp; Pemasok</label></a>--}}
-{{--                                                            <a class="dropdown-item" href="javascript:void(0)"><label class="checkbox">--}}
-{{--                                                                    <input type="checkbox" id="CheckboxesPermintaanPembelian_Keterangan" class="menuPermintaanPembelian"--}}
-{{--                                                                           name="CheckboxesPermintaanPembelian_4" value="Keterangan">--}}
-{{--                                                                    <span></span> &nbsp; Keterangan</label></a>--}}
-
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col-md-auto my-2 my-md-0">--}}
-{{--                                                    <div class="dropdown">--}}
-{{--                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAksiButtonPermintaanPembelian" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                                                            Aksi--}}
-{{--                                                        </button>--}}
-{{--                                                        <div class="dropdown-menu" aria-labelledby="dropdownAksiButtonPermintaanPembelian">--}}
-{{--                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Edit">Edit</a>--}}
-{{--                                                            <a class="dropdown-item" href="#" id="AksiButtonPermintaanPembelian_Hapus">Hapus</a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
                                             <div class="col-md-8 ml-auto my-md-0">
                                                 <div class="d-flex flex-row-reverse">
-                                                    <div class="ml-2"><a href="/kelitbangan-tambah/{{ $bidang }}" class="btn btn-light-primary btn-sm"
+                                                    <div class="ml-2"><a href="/kelitbangan-bidang-index" class="btn btn-light-primary btn-sm"
                                                                          onclick="" target="_blank"><i
-                                                                class="flaticon2-plus mr-n1"></i></a></div>
-                                                    <div class="ml-2"><a href="javascript:;" class="btn btn-light-success btn-sm"
-                                                                         onclick="" id="btn_reload_kelitbangan"><i
-                                                                class="flaticon2-reload mr-n1"></i></a></div>
-
-
-                                                    <!-- Filter Tanggal -->
-
-                                                    <div class="col-lg-3">
-                                                        <a href="javascript:;" class="btn btn-icon btn-light-primary btn-sm"
-                                                           id="search_permintaan_pembelian_date" onclick="filterTanggal()"><i class="flaticon-search"></i></a>&nbsp;
-                                                        <a href="javascript:;" class="btn btn-icon btn-light-primary btn-sm"
-                                                           id="reset_permintaan_pembelian_date" onclick="resetData()"><i
-                                                                class="flaticon2-circular-arrow"></i></a>&nbsp;
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <div class="input-group date" id="kelitbangan_awal" data-target-input="nearest">
-                                                            <input name="tanggal" id="tgl_awal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#kelitbangan_awal" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
-                                                            <div class="input-group-append" data-target="#kelitbangan_awal" data-toggle="datetimepicker">
-                                                                <span class="input-group-text"><i class="ki ki-calendar"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <div class="input-group date" id="kelitbangan_akhir" data-target-input="nearest">
-                                                            <input name="tanggal" id="tgl_akhir" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#kelitbangan_akhir" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
-                                                            <div class="input-group-append" data-target="#kelitbangan_akhir" data-toggle="datetimepicker">
-                                                                <span class="input-group-text"><i class="ki ki-calendar"></i></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Filter End -->
+                                                                class="flaticon2-list-2 mr-n1"></i></a></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-separate table-head-custom table-checkable"
-                                               id="tbl_kelitbangan">
-                                            <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Nomor</th>
-                                                <th>Tanggal</th>
-                                                <th>Judul</th>
-                                                <th>Bidang</th>
-                                                <th>Dokumen</th>
-                                                <th>Rangkuman</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                            </thead>
+                                    <div class="row">
+                                        @foreach($bidang as $item => $bd)
+                                            <div class="col-xl-4">
+                                                <!--begin::Stats Widget 14-->
+                                                <a href="/kelitbangan-bidang/{{ $bd['id'] }}" class="card card-custom bg-primary bg-hover-state-primary card-stretch gutter-b">
+                                                    <!--begin::Body-->
+                                                    <div class="card-body">
+												<span class="svg-icon svg-icon-white svg-icon-3x ml-n1">
+													<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24"></rect>
+															<rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5"></rect>
+															<path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z" fill="#000000" opacity="0.3"></path>
+														</g>
+													</svg>
+                                                    <!--end::Svg Icon-->
+												</span>
+                                                        <div class="text-inverse-primary font-weight-bolder font-size-h5 mb-2 mt-5"></div>
+                                                        <div class="font-weight-bold text-inverse-primary font-size-sm">
+                                                            {{ $bd['nama'] }}</div>
+                                                    </div>
+                                                    <!--end::Body-->
+                                                </a>
+                                                <!--end::Stats Widget 14-->
+                                            </div>
+                                        @endforeach
 
-                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -179,11 +116,6 @@
         });
 
         function resetData(){
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
             indexKelitbangan = $(`#tbl_kelitbangan`).DataTable({
                 orderCellsTop: true,
                 fixedHeader: true,
@@ -197,7 +129,6 @@
                     {data : 'judul'},
                     {data : 'lingkup'},
                     {data : 'dokumen'},
-                    {data : 'rangkuman'},
                     {data : 'action'},
                 ],
                 buttons: [
@@ -240,10 +171,8 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    type:"POST",
-                    url: '/kelitbangan-list-by-bidang',
+
                     async: true,
-                    data:{'bidang':'{{ $bidang }}'},
                     error: function (res) {
                         $('.dataTables_processing').hide();
                         notice(res.responseJSON.message, 'error');

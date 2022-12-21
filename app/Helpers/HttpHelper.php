@@ -231,6 +231,36 @@ class HttpHelper {
         return $response;
     }
 
+    public static function kelitbangan_bidang_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/list/bidang' );
+        return $response;
+    }
+
+    public static function kelitbangan_bidang_list_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kelitbangan/list/bidang-datatable',$request );
+        return $response;
+    }
+
+    public static function kelitbangan_by_bidang_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/list/by-bidang', $request );
+        return $response;
+    }
+
+    public static function kelitbangan_bidang_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/create-bidang', $request);
+        return $response;
+    }
+
+    public static function kelitbangan_bidang_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/get/bidang', $request);
+        return $response;
+    }
+
+    public static function kelitbangan_bidang_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/update-bidang', $request);
+        return $response;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | inovasi

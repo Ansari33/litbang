@@ -34,8 +34,15 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>Instansi / Bidang:</label>
-                                        {{ Form::select('lingkup',$instansi,null, ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        <label>Tipe:</label>
+                                        {{ Form::select('tipe',['Fisik' => 'Fisik', 'Non Fisik' => 'Non Fisik'],null, ['title' => 'Pilih Tipe','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Bidang:</label>
+                                        {{ Form::select('lingkup',$bidang2,$bidang, ['title' => 'Pilih Bidang','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Judul:</label>
@@ -87,7 +94,7 @@
                                         <div class="card card-custom card-stretch">
                                             <div class="card-header">
                                                 <div class="card-title">
-                                                    <h3 class="card-label">Upload File Attchment</h3>
+                                                    <h3 class="card-label">Upload File Laporan</h3>
                                                 </div>
                                             </div>
                                             <div class="card-body">
@@ -125,14 +132,49 @@
                                         </div>
                                         <!--end::Card-->
                                     </div>
-{{--                                    <div class="col-lg-6">--}}
-{{--                                        <div class="dropzone dropzone-default dropzone-primary dz-clickable" id="kt_dropzone_2">--}}
-{{--                                            <div class="dropzone-msg dz-message needsclick">--}}
-{{--                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>--}}
-{{--                                                <span class="dropzone-msg-desc">Upload up to 10 files</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
+                                    <div class="col-lg-6">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Upload File Rangkuman</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_2">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 470px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
+                                    </div>
                                 </div>
                                 <input type="" src="" style="display: none" id="filex" name="filex">
                             </div>
@@ -159,6 +201,10 @@
     <script>
         "use strict";
         var file_list = [];
+        var file_rangkuman = {
+            'nama' : '',
+            'url' : '',
+        };
         // Class definition
         var KTUppy = function () {
             const Tus = Uppy.Tus;
@@ -198,7 +244,7 @@
                 var uppyDashboard = Uppy.Core({
                     //autoProceed: true,
                     restrictions: {
-                        maxFileSize: 1000000, // 1mb
+                        maxFileSize: 10000000, // 1mb
                         maxNumberOfFiles: 5,
                         minNumberOfFiles: 1
                     }
@@ -227,10 +273,58 @@
                 // uppyDashboard.use(Webcam, { target: Dashboard });
             }
 
+            var initUppy2 = function(){
+                var id = '#kt_uppy_2';
+
+                var options = {
+                    proudlyDisplayPoweredByUppy: false,
+                    target: id,
+                    inline: true,
+                    replaceTargetContent: true,
+                    showProgressDetails: true,
+                    note: 'No filetype restrictions.',
+                    height: 470,
+                    remove : true,
+                    metaFields: [
+                        { id: 'name', name: 'Name', placeholder: 'file name' },
+                        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
+                    ],
+                    browserBackButtonClose: true
+                }
+
+                var uppyDashboard = Uppy.Core({
+                    //autoProceed: true,
+                    restrictions: {
+                        maxFileSize: 10000000, // 1mb
+                        maxNumberOfFiles: 1,
+                        minNumberOfFiles: 1
+                    }
+                });
+
+                uppyDashboard.use(Dashboard, options);
+                uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
+                uppyDashboard.on('complete',function (f) {
+                    console.log(f);
+                    $.each(f.successful,function(i,e){
+                        file_rangkuman = {url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0]};
+                    })
+                    //file_list.push( f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0]}  }) );
+
+                });
+                uppyDashboard.on('file-added', (file) => {
+                    console.log('Added file', file)
+                });
+                uppyDashboard.on('file-removed', (file, reason) => {
+                    console.log('Removed file', file)
+                })
+
+            }
+
             return {
                 // public functions
                 init: function() {
                     initUppy1();
+                    initUppy2();
                 }
             };
         }();
@@ -329,7 +423,10 @@
                 url: '/kelitbangan-store',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana), filex : JSON.stringify(file_list),
+                    datas : JSON.stringify(data),
+                    pelaksana : JSON.stringify(pelaksana),
+                    filex : JSON.stringify(file_list),
+                    rangkuman : JSON.stringify(file_rangkuman),
                 },
                 success: function (res) {
                     console.log(res)

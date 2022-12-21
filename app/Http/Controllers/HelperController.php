@@ -45,6 +45,21 @@ class HelperController extends BaseController
 
     }
 
+    public function saveRangkumanKelitbangan($attachment){
+        $attachmentData = [];
+
+            $defPath = "/rangkuman-kelitbangan/";
+            $loc = public_path('/').$defPath;
+            $fileIni = $loc.str_replace(' ','-',$attachment['nama']);
+            if(file_exists($fileIni)){
+                File::delete( $fileIni );
+            }
+            copy($attachment['url'],$fileIni);
+
+        return $attachmentData;
+
+    }
+
     public function getInstansi()
     {
         $data = HttpHelper::instansi_list()['data'];

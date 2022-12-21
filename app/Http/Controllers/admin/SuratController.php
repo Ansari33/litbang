@@ -60,7 +60,8 @@ class SuratController extends Controller
   {
       $jenis_surat = $this->getJenisSurat();
         $nomor = HttpHelper::surat_masuk_nomor();
-        return view('admin.surat.masuk.add',compact('nomor','jenis_surat'));
+        $instansi = $this->getInstansi();
+        return view('admin.surat.masuk.add',compact('nomor','jenis_surat','instansi'));
   }
 
     public function storeSuratMasuk(Request $request)
