@@ -37,8 +37,8 @@
                             @php
                                 $pelaksana [] = $p['nama'];
                             @endphp
-                            {{ implode(', ',$pelaksana) }}
                         @endforeach
+                        {{ implode(', ',$pelaksana) }}
                     </td>
                     <td style="width: 5%">{{ \Carbon\Carbon::parse($k['tanggal'])->format('Y') }}</td>
                     <td style="width: 20%">
