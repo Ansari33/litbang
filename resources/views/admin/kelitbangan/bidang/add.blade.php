@@ -94,7 +94,7 @@
                 url: '/kelitbangan-store-bidang',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana), filex : JSON.stringify(file_list),
+                    datas : JSON.stringify(data),
                 },
                 success: function (res) {
                     console.log(res)
