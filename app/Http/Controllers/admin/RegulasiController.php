@@ -39,7 +39,7 @@ class RegulasiController extends Controller
         //$body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/regulasi/";
+            $loc = public_path('/files-attachment/regulasi/');
             $namaFile = str_replace(' ','_',$ur['nama']);
             $tersimpan = $loc.$namaFile;
             if(file_exists($tersimpan)){
@@ -72,7 +72,7 @@ class RegulasiController extends Controller
         //$body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/regulasi/";
+            $loc = public_path('/files-attachment/regulasi/');
             $namaFile = str_replace(' ','_',$ur['nama']);
             $tersimpan = $loc.$namaFile;
             if(file_exists($tersimpan)){
