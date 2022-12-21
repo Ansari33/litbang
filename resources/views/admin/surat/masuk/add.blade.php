@@ -136,7 +136,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">Save</button>
-                                        <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">cetak</button>
+{{--                                        <button type="button" id="btn_usulan_penelitian_edit_data" class="btn btn-primary mr-2">cetak</button>--}}
                                         <button type="button" class="btn btn-secondary mr-2" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
                                     </div>
                                 </div>
