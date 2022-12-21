@@ -80,7 +80,7 @@ class KelitbanganController extends Controller
         $body['tanggal']    = Carbon::parse($body['tanggal'])->format('Y-m-d');
         #return $rangkuman['nama'];
         $body['pelaksana']  = $pelaksana;
-        $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
+        $body['attachment'] = HelperController::saveAttachment('laporan-kelitbangan/',$attachment);
         HelperController::saveRangkumanKelitbangan($rangkuman);
         $body['rangkuman']  = $rangkuman['nama'];
 

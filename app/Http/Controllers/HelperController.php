@@ -16,27 +16,18 @@ class HelperController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function saveAttachment($module,$attachment){
+    public function saveAttachment($dir,$attachment){
         $attachmentData = [];
         foreach ($attachment as $lt => $ur){
-            $defPath = "/attachment/images/";
-            if ($ur['tipe'] == 'image'){
-                $defPath = $defPath;
-            }elseif ($ur['tipe'] == 'video'){
-                $defPath = "/attachment/videos/";
-            }
-            else{
-                $defPath = "/attachment/documents/";
-            }
 
-            $loc = public_path('/').$defPath;
-            $fileIni = $loc.$module.'-'.$ur['nama'];
+            $loc = public_path('/files-attachment').$dir;
+            $fileIni = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($fileIni)){
                 File::delete( $fileIni );
             }
             copy($ur['url'],$fileIni);
             $attachmentData[] = [
-                'nama' => $ur['nama'],
+                'nama' => str_replace(' ','-',$ur['nama']),
                 'url'  => $fileIni,
                 'tipe' => $ur['tipe']
             ];
@@ -48,7 +39,7 @@ class HelperController extends BaseController
     public function saveRangkumanKelitbangan($attachment){
         $attachmentData = [];
 
-            $defPath = "/rangkuman-kelitbangan/";
+            $defPath = "files-attachment/rangkuman-kelitbangan/";
             $loc = public_path('/').$defPath;
             $fileIni = $loc.str_replace(' ','-',$attachment['nama']);
             if(file_exists($fileIni)){
