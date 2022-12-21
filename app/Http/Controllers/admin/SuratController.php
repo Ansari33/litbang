@@ -76,7 +76,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/file-attachment/surat-masuk/');
+            $loc = public_path('/files-attachment/surat-masuk/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
