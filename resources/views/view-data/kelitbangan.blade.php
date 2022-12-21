@@ -74,7 +74,7 @@
 
                                             <div class="team">
                                                 <div class="team-image">
-                                                    <img src="{{asset('images/upload/'.$at['nama'])}}" alt="John Doe">
+                                                    <img src="/files-attachment/{{ $at['nama'] }}" alt="John Doe">
                                                 </div>
 {{--                                                <div class="team-desc">--}}
 {{--                                                    <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>--}}
