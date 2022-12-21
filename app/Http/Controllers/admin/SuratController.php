@@ -76,7 +76,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/')."surat-masuk/";
+            $loc = public_path('/file-attachment/surat-masuk/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -111,7 +111,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/')."surat-masuk/";
+            $loc = public_path('/file-attachment/surat-masuk/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -151,7 +151,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/')."surat-keluar/";
+            $loc = public_path('/file-attachment/surat-keluar/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -161,10 +161,6 @@ class SuratController extends Controller
             $body['surat_keluar'] = $strNama;
         }
         $data = $body['surat_keluar'];
-        //$pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
-        //$content = $pdf->download()->getOriginalContent();
-        //File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
-        //return Storage::put('/surat-keluar/'.$body['nomor_urut'].'.pdf',$content);
 
         return json_decode(HttpHelper::surat_keluar_add($body));
     }
@@ -189,7 +185,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/')."surat-keluar/";
+            $loc = public_path('/file-attachment/surat-masuk/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -197,11 +193,7 @@ class SuratController extends Controller
             }
             File::copy($ur['url'],$loc.$strNama);
             $body['surat_keluar'] = $strNama;
-        }
-        //$data = $body['surat_keluar'];
-       // $pdf = PDF::loadView('admin.surat.print', compact('data',))->setPaper('letter', 'potrait')->setWarnings(false);
-       // $content = $pdf->download()->getOriginalContent();
-       // File::put(public_path('/surat-keluar/').$body['nomor_urut'].'.pdf',$content);
+        };
 
         return json_decode(HttpHelper::surat_keluar_update($body));
     }
