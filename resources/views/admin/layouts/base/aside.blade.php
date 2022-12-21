@@ -31,7 +31,7 @@ $menu = [
     [
       'name_id' => 5,
       'icon'    => 'fa fa-search-plus',
-      'label'   => 'Penelitian',
+      'label'   => 'Usulan Penelitian',
       'link'    => '/admin-usulan-penelitian',
       'children' => [],
     ],

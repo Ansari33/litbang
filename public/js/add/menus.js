@@ -17,10 +17,10 @@ var menus = [
                 'nama' : 'Selayang Pandang',
                 'link' : '/profile-selayang-pandang'
             },
-            {
-                'nama' : 'Struktur Organisasi',
-                'link' : '#'
-            },
+            // {
+            //     'nama' : 'Struktur Organisasi',
+            //     'link' : '#'
+            // },
 
         ]
 
