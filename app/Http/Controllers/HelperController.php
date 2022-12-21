@@ -20,7 +20,7 @@ class HelperController extends BaseController
         $attachmentData = [];
         foreach ($attachment as $lt => $ur){
 
-            $loc = public_path('/files-attachment').$dir;
+            $loc = public_path('/files-attachment/').$dir;
             $fileIni = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($fileIni)){
                 File::delete( $fileIni );
