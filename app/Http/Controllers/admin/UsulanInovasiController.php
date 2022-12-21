@@ -47,7 +47,7 @@ class UsulanInovasiController extends Controller
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/files-attachment/usulan-penelitian/');
+            $loc = public_path('/files-attachment/usulan-inovasi/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -86,7 +86,7 @@ class UsulanInovasiController extends Controller
 
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/usulan-penelitian/');
+            $loc = public_path('/files-attachment/usulan-inovasi/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
