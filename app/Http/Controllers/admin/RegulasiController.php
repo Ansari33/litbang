@@ -106,7 +106,7 @@ class RegulasiController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/regulasi'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(base_path('public/files-attachment/regulasi'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([

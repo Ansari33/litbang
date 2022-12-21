@@ -156,7 +156,7 @@ class KelitbanganController extends Controller
           $namaFile = [];
           foreach ($request->all() as $fls => $fl){
               $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-              $fl->move(base_path('public/attachment'),str_replace(' ','-',$fl->getClientOriginalName()));
+              $fl->move(base_path('public/files-attachment/laporan-kelitbangan'),str_replace(' ','-',$fl->getClientOriginalName()));
           }
 
           return response()->json([

@@ -52,7 +52,7 @@ $menu = [
     [
       'name_id' => 8,
       'icon'    => 'far fa-envelope',
-      'label'   => 'Surat',
+      'label'   => 'Arsip Surat',
       'link'    => '/admin-surat',
       'children' => [],
     ],
