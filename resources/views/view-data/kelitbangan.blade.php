@@ -74,7 +74,10 @@
 
                                             <div class="team">
                                                 <div class="team-image">
-                                                    <img src="/files-attachment/{{ $at['nama'] }}" alt="John Doe">
+                                                <a href="/files-attachment/laporan-kelitbangan/{{ $at['nama'] }}" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                                                    <i class="fa fa-download "></i><span>{{ $at['nama'] }}</span>
+                                                </a>
+
                                                 </div>
 {{--                                                <div class="team-desc">--}}
 {{--                                                    <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>--}}

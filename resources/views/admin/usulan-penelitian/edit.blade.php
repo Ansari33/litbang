@@ -92,7 +92,7 @@
                                     <div class="col-lg-6">
                                         <label>File Pelengkap :</label>
                                         @foreach($data['attachment'] as $att => $at)
-                                            <a href="/files-attachment/usulan-penelitian/{{ $at['nama'] }}"><i class="fa fa-download"></i><span>{{ $at['nama'] }}</span></a>
+                                            <a href="/files-attachment/usulan-penelitian/{{ $at['nama'] }}"> <i class="fa fa-download"></i><span>{{ $at['nama'] }}</span></a>
                                         @endforeach
                                     </div>
                                 </div>
