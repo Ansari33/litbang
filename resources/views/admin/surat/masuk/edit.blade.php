@@ -242,7 +242,7 @@
                 })
 
 
-                var file_img = "{!! asset('surat-masuk') !!}/" + '{{ $data['surat_masuk'] }}';
+                var file_img = "{!! asset('files-attachment/surat-masuk') !!}/" + '{{ $data['surat_masuk'] }}';
                 //var file_blob = file_img.blob();
                 // var tag_img = `<img src="${file_img}" style="display: none;" id="${val.nama}">`;
                 // $('#form_edit_kelitbangan').append(tag_img);
@@ -261,13 +261,13 @@
                             console.log('dua')
                             uppyDashboard.addFile({
                                 name: '{{ $data['surat_masuk'] }}', // file name
-                                type: 'document.docx', // file type
+                                type: '{!! $data['surat_masuk'] !!}'.toString().split('.')[-1], // file type
                                 data: file_blob, // file blob
                                 meta: {
                                     // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
                                     relativePath: "",
                                 },
-                                source: "{!! asset('surat-masuk') !!}/" + '{{ $data['surat_masuk'] }}', // optional, determines the source of the file, for example, Instagram.
+                                source: "{!! asset('files-attachment/surat-masuk') !!}/" + '{{ $data['surat_masuk'] }}', // optional, determines the source of the file, for example, Instagram.
                                 isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
                                 // when using companion in combination with Instagram.
                             })

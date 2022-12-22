@@ -219,7 +219,7 @@
                 console.log(file_list);
 
 
-                var file_img = "{!! asset('surat-keluar') !!}/" + '{{ $data['surat_keluar'] }}';
+                var file_img = "{!! asset('files-attachment/surat-keluar') !!}/" + '{{ $data['surat_keluar'] }}';
 
                 var file_blob ;
                 fetch(file_img)
@@ -235,13 +235,13 @@
                             console.log('dua')
                             uppyDashboard.addFile({
                                 name: '{{ $data['surat_keluar'] }}', // file name
-                                type: 'document.docx', // file type
+                                type: '{!! $data['surat_keluar'] !!}'.toString().split('.')[-1], // file type
                                 data: file_blob, // file blob
                                 meta: {
                                     // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
                                     relativePath: "",
                                 },
-                                source: "{!! asset('surat-keluar') !!}/" + '{{ $data['surat_keluar'] }}', // optional, determines the source of the file, for example, Instagram.
+                                source: "{!! asset('files-attachment/surat-keluar') !!}/" + '{{ $data['surat_keluar'] }}', // optional, determines the source of the file, for example, Instagram.
                                 isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
                                 // when using companion in combination with Instagram.
                             })
