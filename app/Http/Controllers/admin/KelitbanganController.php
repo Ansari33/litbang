@@ -180,6 +180,31 @@ class KelitbanganController extends Controller
 
   }
 
+  public function rangkuman(Request $request){
+
+        try {
+            $namaFile = [];
+            foreach ($request->all() as $fls => $fl){
+                $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
+                $fl->move(base_path('public/files-attachment/rangkuman-kelitbangan'),str_replace(' ','-',$fl->getClientOriginalName()));
+            }
+
+            return response()->json([
+                'files' => $namaFile,
+                'status' => true,
+                'message' => 'Files Upload Success!'
+            ],200
+            );
+        }catch (\Exception $er){
+            return response()->json([
+                'message' => $er->getMessage(),
+                'status' => false,
+            ],500
+            );
+        }
+
+    }
+
   public function export($tanggal)
     {
         $arrTanggal = explode('_',$tanggal);
