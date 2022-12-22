@@ -274,7 +274,7 @@
                 attch = {!! json_encode($data['attachment']) !!};
                 $.each(attch, function (idx, val) {
                     console.log(val)
-                    var file_img = "{!! asset('images/upload/') !!}/" + val.nama;
+                    var file_img = "{!! asset('files-attachment/laporan-kelitbangan/') !!}/" + val.nama;
                     //var file_blob = file_img.blob();
                     var tag_img = `<img src="${file_img}" style="display: none;" id="${val.nama}">`;
                     $('#form_edit_kelitbangan').append(tag_img);
@@ -293,13 +293,13 @@
                                 console.log('dua')
                                 uppyDashboard.addFile({
                                     name: val.nama, // file name
-                                    type: 'image/jpeg', // file type
+                                    type: val.tipe, // file type
                                     data: file_blob, // file blob
                                     meta: {
                                         // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
                                         relativePath: "",
                                     },
-                                    source: val.url, // optional, determines the source of the file, for example, Instagram.
+                                    source: "{!! asset('files-attachment/laporan-kelitbangan/') !!}"+val.nama, // optional, determines the source of the file, for example, Instagram.
                                     isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
                                     // when using companion in combination with Instagram.
                                 })
@@ -379,13 +379,13 @@
                             console.log('dua')
                             uppyDashboard.addFile({
                                 name: '{{ $data['rangkuman'] }}', // file name
-                                type: 'doc', // file type
+                                type: '{!! $data['rangkuman'] !!}'.toString().split('.')[-1], // file type
                                 data: file_blob, // file blob
                                 meta: {
                                     // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
                                     relativePath: "",
                                 },
-                                source: '', // optional, determines the source of the file, for example, Instagram.
+                                source: "{!! asset('rangkuman-kelitbangan') !!}/" + '{!! $data['rangkuman'] !!} ', // optional, determines the source of the file, for example, Instagram.
                                 isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
                                 // when using companion in combination with Instagram.
                             })
