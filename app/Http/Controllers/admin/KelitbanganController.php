@@ -122,13 +122,18 @@ class KelitbanganController extends Controller
         $attachment = json_decode($request->filex,true);
         $data = json_decode($request->datas,true);
         $pelaksana = json_decode($request->pelaksana,true);
+
+        $rangkuman = json_decode($request->rangkuman,true);
+
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
         $body['tanggal'] = Carbon::parse($body['tanggal'])->format('Y-m-d');
         $body['pelaksana'] = $pelaksana;
-        $body['attachment'] = HelperController::saveAttachment('kelitbangan',$attachment);
+        $body['attachment'] = HelperController::saveAttachment('laporan-kelitbangan/',$attachment);
+        HelperController::saveRangkumanKelitbangan($rangkuman);
+        $body['rangkuman']  = $rangkuman['nama'];
 
         return json_decode(HttpHelper::kelitbangan_update($body));
     }
