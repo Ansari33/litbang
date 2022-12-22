@@ -71,31 +71,9 @@
                                     <div class="row topmargin-sm">
                                         @foreach($data['attachment'] as $att => $at)
                                         <div class="col-lg-3 col-md-6 bottommargin">
-
-                                            <div class="team">
-                                                <div class="team-image">
                                                 <a href="/files-attachment/laporan-kelitbangan/{{ $at['nama'] }}" class="social-icon inline-block si-small si-light si-rounded si-gplus">
                                                     <i class="fa fa-download "></i><span>{{ $at['nama'] }}</span>
                                                 </a>
-
-                                                </div>
-{{--                                                <div class="team-desc">--}}
-{{--                                                    <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>--}}
-{{--                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">--}}
-{{--                                                        <i class="icon-facebook"></i>--}}
-{{--                                                        <i class="icon-facebook"></i>--}}
-{{--                                                    </a>--}}
-{{--                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">--}}
-{{--                                                        <i class="icon-twitter"></i>--}}
-{{--                                                        <i class="icon-twitter"></i>--}}
-{{--                                                    </a>--}}
-{{--                                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">--}}
-{{--                                                        <i class="icon-gplus"></i>--}}
-{{--                                                        <i class="icon-gplus"></i>--}}
-{{--                                                    </a>--}}
-{{--                                                </div>--}}
-                                            </div>
-
                                         </div>
                                         @endforeach
                                     </div>

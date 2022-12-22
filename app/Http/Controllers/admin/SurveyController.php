@@ -69,7 +69,7 @@ class SurveyController extends Controller
     }
     public function delete($id)
     {
-        return json_decode(HttpHelper::agenda_delete(['id' => $id]));
+        return json_decode(HttpHelper::survey_delete(['id' => $id]));
         return view('admin.agenda.index');
     }
 
@@ -121,7 +121,7 @@ class SurveyController extends Controller
                        ];
                    }
                 }
-                
+
                 foreach ( $respon['responses'] as $item2 => $res) {
                     //return $res;
                     if(array_key_exists($idQuestion,$res['answers'])){
