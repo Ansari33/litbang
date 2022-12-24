@@ -37,11 +37,24 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Nomor Surat</label>
-                                        <input name="nomor_surat" type="text" class="form-control" placeholder="Nomor" value="{{ $data['nomor_surat'] }}" />
+{{--                                        <input name="nomor_surat" type="text" class="form-control" placeholder="Nomor" value="{{ $data['nomor_surat'] }}" />--}}
+                                        <div class="input-group mb-5">
+                                            <span class="input-group-text" id="pre_nomor">{{ substr($data['nomor_surat'],0,3)  }}-</span>
+                                            <input name="nomor_surat" value="{{ substr($data['nomor_surat'],4)  }}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Klasifikasi Surat:</label>
-                                        {{ Form::select('klasifikasi',$jenis_surat,$data['klasifikasi_surat_id'], ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        <select name="klasifikasi" class="form-control selectpicker" id ="pelanggan_pengiriman_penjualan_add" title="Pilih Jenis Surat" data-size = "7" data-live-search = "true" data-toggle="ajax" onchange="setNomor(this)">
+                                            @foreach($jenis_surat as $jst => $js)
+                                                @if($js['id'] == $data['klasifikasi_surat_id'])
+                                                    <option value="{{ $js['id'] }}" data-kode="{{ $js['kode'] }}"  selected  > {{ $js['jenis'] }}</option>
+                                                @else
+                                                    <option value="{{ $js['id'] }}" data-kode="{{ $js['kode'] }}"> {{ $js['jenis'] }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+{{--                                        {{ Form::select('klasifikasi',$jenis_surat,$data['klasifikasi_surat_id'], ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}--}}
                                     </div>
 
                                 </div>
@@ -272,7 +285,7 @@
 
     </script>
     <script>
-
+        var kode_surat = {name: 'kode', value: ''};
         $(function () {
             $('#tanggal_surat_keluar_edit').datetimepicker({
                 format: 'L',
@@ -293,6 +306,7 @@
             $('#btn_usulan_penelitian_edit_data').click(function(){
                 let data = $('#form_edit_usulan_penelitian').serializeArray();
                 //let file_list = [];
+                data.push(kode_surat);
                 console.log(data);
                 $.ajaxSetup({
                     headers: {
@@ -331,42 +345,11 @@
             });
         })
 
-        function setStatus(status){
-            $('#status').val(status);
-            let data = $('#form_edit_usulan_penelitian').serializeArray();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: "POST",
-                timeout: 50000,
-                url: '/usulan-penelitian-update',
-                async: true,
-                data: {
-                    datas : JSON.stringify(data)
-                },
-                success: function (res) {
-                    if (res.status === true){
-                        Swal.fire('Berhasil!', 'Status Berhasil Diupdate!', 'success').then(
-                            function (e) {
-                                window.close();
-                            }
-                        );
-                    }else{
-                        Swal.fire('Gagal!', res.message, 'danger');
-                    }
-                },
-                error: function (res, textstatus) {
-                    if (textstatus === "timeout") {
-                        notice('Response Time Out', 'error');
-                    } else {
-                        notice(res.responseJSON.message, 'error');
-                    }
-                }
-            });
+        function setNomor(v){
+            console.log($('option:selected', v).attr('data-kode'));
+            let kode = $('option:selected', v).attr('data-kode');
+            $('#pre_nomor').html(kode+'-');
+            kode_surat.value = kode+'-';
         }
     </script>
 @endpush

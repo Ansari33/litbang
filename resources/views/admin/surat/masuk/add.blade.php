@@ -55,7 +55,12 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Klasifikasi Surat:</label>
-                                        {{ Form::select('klasifikasi',$jenis_surat,null, ['title' => 'Pilih Jenis','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        <select name="klasifikasi" class="form-control selectpicker" id ="pelanggan_pengiriman_penjualan_add" title="Pilih Jenis Surat" data-size = "7" data-live-search = "true" data-toggle="ajax" >
+                                            @foreach($jenis_surat as $jst => $js)
+                                              <option value="{{ $js['id'] }}" data-kode="{{ $js['kode'] }}"> {{ $js['jenis'] }}</option>
+                                            @endforeach
+                                        </select>
+{{--                                        {{ Form::select('klasifikasi',$jenis_surat,null, ['title' => 'Pilih Jenis','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}--}}
                                     </div>
                                 </div>
                                 <div class="form-group row">

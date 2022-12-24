@@ -148,7 +148,6 @@ class SuratController extends Controller
         }
         $body['tanggal_surat'] = Carbon::parse($body['tanggal_surat'])->format('Y-m-d');
 
-
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
             $loc = public_path('/files-attachment/surat-keluar/');
@@ -160,7 +159,7 @@ class SuratController extends Controller
             File::copy($ur['url'],$loc.$strNama);
             $body['surat_keluar'] = $strNama;
         }
-        $data = $body['surat_keluar'];
+        #$data = $body['surat_keluar'];
 
         return json_decode(HttpHelper::surat_keluar_add($body));
     }
@@ -185,7 +184,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/surat-masuk/');
+            $loc = public_path('/files-attachment/surat-keluar/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -221,7 +220,7 @@ class SuratController extends Controller
 
     public function getJenisSurat()
     {
-        $data = HttpHelper::jenis_surat_list()['data'];
+        return $data = HttpHelper::jenis_surat_list()['data'];
         return collect($data)->pluck('jenis','id')->toArray();
     }
 

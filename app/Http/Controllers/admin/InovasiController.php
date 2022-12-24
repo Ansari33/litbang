@@ -54,7 +54,9 @@ class InovasiController extends Controller
             copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
                 'nama' => str_replace(' ','-',$ur['nama']),
-                'url'  => $lama_ft
+                'url'  => $lama_ft,
+                #'tipe' => $ur['tipe'],
+
             ];
         }
 
@@ -92,8 +94,9 @@ class InovasiController extends Controller
             }
             File::copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
-                'nama' => $ur['nama'],
-                'url'  => $lama_ft
+                'nama' => str_replace(' ','-',$ur['nama']),
+                'tipe' => $ur['tipe'],
+                #'url'  => $lama_ft
             ];
         }
 

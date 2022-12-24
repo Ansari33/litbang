@@ -57,7 +57,7 @@ class UsulanInovasiController extends Controller
             $body['attachment'][] = [
                 'nama' => $strNama,
                 'url'  => $lama_ft,
-                'type' => $ur['tipe'],
+                //'type' => $ur['tipe'],
             ];
         }
 
@@ -96,7 +96,7 @@ class UsulanInovasiController extends Controller
             $body['attachment'][] = [
                 'nama' => $strNama,
                 'url'  => $lama_ft,
-                'type' => $ur['tipe'],
+               // 'type' => $ur['tipe'],
             ];
         }
 

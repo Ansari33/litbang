@@ -36,11 +36,20 @@
                                 <div class="form-group row">
                                     <div class="col-lg-6">
                                         <label>Nomor Surat</label>
-                                        <input name="nomor_surat" type="text" class="form-control" placeholder="Nomor" value="{{ $nomor }}" />
+{{--                                        <input name="nomor_surat" type="text" id class="form-control" placeholder="Nomor" value="{{ $nomor }}" />--}}
+                                        <div class="input-group mb-5">
+                                            <span class="input-group-text" id="pre_nomor">000-</span>
+                                            <input name="nomor_surat" value="" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Klasifikasi Surat:</label>
-                                        {{ Form::select('klasifikasi',$jenis_surat,null, ['title' => 'Pilih Jenis Surat','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        <select name="klasifikasi" class="form-control selectpicker" id ="pelanggan_pengiriman_penjualan_add" title="Pilih Jenis Surat" data-size = "7" data-live-search = "true" data-toggle="ajax" onchange="setNomor(this)">
+                                            @foreach($jenis_surat as $jst => $js)
+                                                <option value="{{ $js['id'] }}" data-kode="{{ $js['kode'] }}"> {{ $js['jenis'] }}</option>
+                                            @endforeach
+                                        </select>
+{{--                                        {{ Form::select('klasifikasi',$jenis_surat,null, ['title' => 'Pilih Jenis Surat','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}--}}
                                     </div>
 
                                 </div>
@@ -229,7 +238,7 @@
 
     </script>
     <script>
-
+        var kode_surat = {name: 'kode', value: ''};
         $(function () {
 
             $('#tanggal_surat_keluar_add').datetimepicker({
@@ -248,6 +257,7 @@
 
             $('#btn_usulan_penelitian_edit_data').click(function(){
                 let data = $('#form_edit_usulan_penelitian').serializeArray();
+                data.push(kode_surat);
                 console.log(data);
                 $.ajaxSetup({
                     headers: {
@@ -286,42 +296,12 @@
             });
         })
 
-        function setStatus(status){
-            $('#status').val(status);
-            let data = $('#form_edit_usulan_penelitian').serializeArray();
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                type: "POST",
-                timeout: 50000,
-                url: '/usulan-penelitian-update',
-                async: true,
-                data: {
-                    datas : JSON.stringify(data)
-                },
-                success: function (res) {
-                    if (res.status === true){
-                        Swal.fire('Berhasil!', 'Status Berhasil Diupdate!', 'success').then(
-                            function (e) {
-                                // window.close();
-                            }
-                        );
-                    }else{
-                        Swal.fire('Gagal!', res.message, 'danger');
-                    }
-                },
-                error: function (res, textstatus) {
-                    if (textstatus === "timeout") {
-                        notice('Response Time Out', 'error');
-                    } else {
-                        notice(res.responseJSON.message, 'error');
-                    }
-                }
-            });
+        function setNomor(v){
+            console.log($('option:selected', v).attr('data-kode'));
+            let kode = $('option:selected', v).attr('data-kode');
+            $('#pre_nomor').html(kode+'-');
+            kode_surat.value = kode+'-';
         }
+
     </script>
 @endpush

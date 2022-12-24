@@ -56,7 +56,16 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Klasifikasi Surat:</label>
-                                        {{ Form::select('klasifikasi',$jenis_surat,$data['klasifikasi_surat_id'], ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
+                                        <select name="klasifikasi" class="form-control selectpicker" id ="pelanggan_pengiriman_penjualan_add" title="Pilih Jenis Surat" data-size = "7" data-live-search = "true" data-toggle="ajax" onchange="setNomor(this)">
+                                            @foreach($jenis_surat as $jst => $js)
+                                                @if($js['id'] == $data['klasifikasi_surat_id'])
+                                                    <option value="{{ $js['id'] }}" data-kode="{{ $js['kode'] }}"  selected  > {{ $js['jenis'] }}</option>
+                                                @else
+                                                    <option value="{{ $js['id'] }}" data-kode="{{ $js['kode'] }}"> {{ $js['jenis'] }}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+{{--                                        {{ Form::select('klasifikasi',$jenis_surat,$data['klasifikasi_surat_id'], ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'pelanggan_pengiriman_penjualan_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}--}}
                                     </div>
 
                                 </div>

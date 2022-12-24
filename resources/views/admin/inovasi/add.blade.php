@@ -232,10 +232,6 @@
                     console.log('Added file', file)
                 })
 
-                // uppyDashboard.use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
-                // uppyDashboard.use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
-                // uppyDashboard.use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' });
-                // uppyDashboard.use(Webcam, { target: Dashboard });
             }
 
             return {
