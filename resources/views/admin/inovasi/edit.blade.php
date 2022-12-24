@@ -222,7 +222,7 @@
                 var uppyDashboard = Uppy.Core({
                     //autoProceed: true,
                     restrictions: {
-                        maxFileSize: 1000000, // 1mb
+                       // maxFileSize: 1000000, // 1mb
                         maxNumberOfFiles: 5,
                         minNumberOfFiles: 1
                     }
