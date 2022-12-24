@@ -242,7 +242,7 @@
                 attch = {!! json_encode($data['attachment']) !!};
                 $.each(attch, function (idx, val) {
                     console.log(val)
-                    var file_img = "{!! asset('images/upload/') !!}/" + val.nama;
+                    var file_img = "{!! asset('files-attachment/laporan-inovasi') !!}/" + val.nama;
                     //var file_blob = file_img.blob();
                     var tag_img = `<img src="${file_img}" style="display: none;" id="${val.nama}">`;
                     $('#form_edit_kelitbangan').append(tag_img);
@@ -267,7 +267,7 @@
                                         // optional, store the directory path of a file so Uppy can tell identical files in different directories apart.
                                         relativePath: "",
                                     },
-                                    source: val.url, // optional, determines the source of the file, for example, Instagram.
+                                    source: "{!! asset('files-attachment/laporan-inovasi') !!}/" + val.nama, // optional, determines the source of the file, for example, Instagram.
                                     isRemote: false, // optional, set to true if actual file is not in the browser, but on some remote server, for example,
                                     // when using companion in combination with Instagram.
                                 })
