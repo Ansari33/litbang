@@ -45,7 +45,7 @@ class InovasiController extends Controller
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/files-attachment/laporan-inovasi";
+            $loc = public_path('/')."/files-attachment/laporan-inovasi/";
             $lama_ft = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($lama_ft)){
                 //File::delete($image_path);
@@ -84,7 +84,7 @@ class InovasiController extends Controller
         //return $listFoto;
         foreach ($listFoto as $lt => $ur){
             //return $ur['nama'];
-            $loc = public_path('/')."files-attachment/laporan-inovasi";
+            $loc = public_path('/')."files-attachment/laporan-inovasi/";
             $lama_ft = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($lama_ft)){
                 //File::delete($image_path);
