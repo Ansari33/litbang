@@ -45,15 +45,15 @@ class InovasiController extends Controller
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/images/upload/";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
+            $loc = public_path('/')."/files-attachment/laporan-inovasi";
+            $lama_ft = $loc.str_replace(' ','-',$ur['nama']);
+            if(file_exists($lama_ft)){
                 //File::delete($image_path);
                 File::delete( $lama_ft );
             }
-            copy($ur['url'],$loc.$ur['nama']);
+            copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
-                'nama' => $ur['nama'],
+                'nama' => str_replace(' ','-',$ur['nama']),
                 'url'  => $lama_ft
             ];
         }
@@ -84,13 +84,13 @@ class InovasiController extends Controller
         //return $listFoto;
         foreach ($listFoto as $lt => $ur){
             //return $ur['nama'];
-            $loc = public_path('/')."/images/upload/";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
+            $loc = public_path('/')."files-attachment/laporan-inovasi";
+            $lama_ft = $loc.str_replace(' ','-',$ur['nama']);
+            if(file_exists($lama_ft)){
                 //File::delete($image_path);
                 File::delete( $lama_ft );
             }
-            File::copy($ur['url'],$loc.$ur['nama']);
+            File::copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
                 'nama' => $ur['nama'],
                 'url'  => $lama_ft
