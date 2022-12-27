@@ -47,10 +47,14 @@ class BeritaController extends Controller
         $html = new \DOMDocument();
         $html->loadHTML($body['deskripsi']);
         $listFoto = $html->getElementsByTagName('img');
+        #return (collect($listFoto)->toArray());
+        #return response()->json($listFoto);
 
         foreach ($listFoto as $ii => $vv){
+            //return (collect($vv)->toArray());
             $src = $vv->getAttribute('src') ;
-            $extension = explode('/', explode(':', substr($src, 0, strpos($src, ';')))[1])[1];
+            $arr_ext = explode('.',$src);
+            $extension = \Arr::last($arr_ext);
             $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
             $data = substr($src, strpos($src, ',') + 1);
             $data = base64_decode($data);
@@ -58,8 +62,11 @@ class BeritaController extends Controller
 
             file_put_contents(public_path('/files-attachment/berita/').$namaFile, $data);
             $urlFile = public_path('/files-attachment/berita/').$namaFile;
-            $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile];
+            $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile,'tipe' => 'image'];
         }
+
+        #return response()->json(['data' => 'data']);
+
         return json_decode(HttpHelper::berita_add($body));
     }
     public function edit($id)
@@ -84,18 +91,19 @@ class BeritaController extends Controller
         $html = new \DOMDocument();
         $html->loadHTML($body['deskripsi']);
         $listFoto = $html->getElementsByTagName('img');
+        return $listFoto;
 
         foreach ($listFoto as $ii => $vv){
             $src = $vv->getAttribute('src') ;
-            $extension = explode('/', explode(':', substr($src, 0, strpos($src, ';')))[1])[1];
-            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
+            #$extension = explode('/', explode(':', substr($src, 0, strpos($src, ';')))[1])[1];
+            #$namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
             $data = substr($src, strpos($src, ',') + 1);
             $data = base64_decode($data);
 
 
-            file_put_contents(public_path('/files-attachment/berita/').$namaFile, $data);
-            $urlFile = public_path('/files-attachment/berita/').$namaFile;
-            $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile];
+           # file_put_contents(public_path('/files-attachment/berita/').$namaFile, $data);
+           # $urlFile = public_path('/files-attachment/berita/').$namaFile;
+            #$body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile];
         }
 
         return json_decode(HttpHelper::berita_update($body));
