@@ -220,7 +220,7 @@
             $.ajax({
                 //type: "POST",
                 timeout: 50000,
-                url: '/kelitbangan-bidang-delete/'+id,
+                url: '/kelitbangan-delete-bidang/'+id,
                 async: true,
                 success: function (res) {
                     console.log(res)
