@@ -261,6 +261,11 @@ class HttpHelper {
         return $response;
     }
 
+    public static function kelitbangan_bidang_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kelitbangan/delete-bidang', $request);
+        return $response;
+    }
+
     /*
     |--------------------------------------------------------------------------
     | inovasi

@@ -155,6 +155,11 @@ class KelitbanganController extends Controller
         return json_decode(HttpHelper::kelitbangan_delete(['id' => $id]));
     }
 
+    public function deleteBidang($id)
+    {
+        return json_decode(HttpHelper::kelitbangan_bidang_delete(['id' => $id]));
+    }
+
   public function attachment(Request $request){
 
       try {
