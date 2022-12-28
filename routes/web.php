@@ -116,6 +116,7 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::post('/kelitbangan-store-bidang', [KelitbanganController::class, 'storeBidang']);
     Route::get('/kelitbangan-edit-bidang/{id}', [KelitbanganController::class, 'editBidang']);
     Route::post('/kelitbangan-update-bidang', [KelitbanganController::class, 'updateBidang']);
+    Route::post('/kelitbangan-delete-bidang', [KelitbanganController::class, 'deleteBidang']);
 
     ## Inovasi
     Route::get('/admin-inovasi', [InovasiController::class, 'index']);
