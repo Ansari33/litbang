@@ -20,7 +20,7 @@ class HelperController extends BaseController
         $attachmentData = [];
         foreach ($attachment as $lt => $ur){
 
-            $loc = ('/files-attachment/').$dir;
+            $loc = public_path('/files-attachment/').$dir;
             $fileIni = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($fileIni)){
                 File::delete( $fileIni );
@@ -28,7 +28,7 @@ class HelperController extends BaseController
             copy($ur['url'],$fileIni);
             $attachmentData[] = [
                 'nama' => str_replace(' ','-',$ur['nama']),
-                'url'  => $fileIni,
+                'url'  => '/files-attachment/'.$dir.str_replace(' ','-',$ur['nama']),
                 'tipe' => $ur['tipe']
             ];
         }
@@ -40,12 +40,12 @@ class HelperController extends BaseController
         $attachmentData = [];
 
             $defPath = "files-attachment/rangkuman-kelitbangan/";
-            $loc = ('/').$defPath;
+            $loc = public_path('/').$defPath;
             $fileIni = $loc.str_replace(' ','-',$attachment['nama']);
             if(file_exists($fileIni)){
                 File::delete( $fileIni );
             }
-            copy($attachment['url'],$fileIni);
+            copy($attachment['url'],"files-attachment/rangkuman-kelitbangan/".$defPath.str_replace(' ','-',$attachment['nama']));
 
         return $attachmentData;
 
