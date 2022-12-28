@@ -45,7 +45,7 @@ class HelperController extends BaseController
             if(file_exists($fileIni)){
                 File::delete( $fileIni );
             }
-            copy($attachment['url'],"files-attachment/rangkuman-kelitbangan/".$defPath.str_replace(' ','-',$attachment['nama']));
+            copy($attachment['url'],$fileIni);
 
         return $attachmentData;
 
