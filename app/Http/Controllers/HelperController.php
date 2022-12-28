@@ -20,7 +20,7 @@ class HelperController extends BaseController
         $attachmentData = [];
         foreach ($attachment as $lt => $ur){
 
-            $loc = public_path('/files-attachment/').$dir;
+            $loc = ('/files-attachment/').$dir;
             $fileIni = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($fileIni)){
                 File::delete( $fileIni );
@@ -40,7 +40,7 @@ class HelperController extends BaseController
         $attachmentData = [];
 
             $defPath = "files-attachment/rangkuman-kelitbangan/";
-            $loc = public_path('/').$defPath;
+            $loc = ('/').$defPath;
             $fileIni = $loc.str_replace(' ','-',$attachment['nama']);
             if(file_exists($fileIni)){
                 File::delete( $fileIni );

@@ -54,7 +54,7 @@ class InovasiController extends Controller
             copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
                 'nama' => str_replace(' ','-',$ur['nama']),
-                'url'  => $lama_ft,
+                'url'  => "files-attachment/laporan-inovasi/".str_replace(' ','-',$ur['nama']),
                 #'tipe' => $ur['tipe'],
 
             ];
@@ -96,7 +96,7 @@ class InovasiController extends Controller
             $body['attachment'][] = [
                 'nama' => str_replace(' ','-',$ur['nama']),
                 'tipe' => $ur['tipe'],
-                #'url'  => $lama_ft
+                'url'  => "files-attachment/laporan-inovasi/".str_replace(' ','-',$ur['nama']),
             ];
         }
 
