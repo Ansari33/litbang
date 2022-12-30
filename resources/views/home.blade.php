@@ -67,19 +67,19 @@
         @foreach($attachment as $key => $att)
 
             @if($att['tipe'] == 'video')
-                @if(file_exists(public_path('/videos/upload/'.$att['nama'])))
+                @if(file_exists(base_path($att['url'])))
                 <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-graphics pf-uielements">
                     <div class="grid-inner">
                         <div class="portfolio-image">
                             <a href="#">
-                                <video src="{{asset('videos/upload/').'/'.$att['nama']}} " style="height: 200px; width: 100%;">
+                                <video src="{{asset($att['url'])}} " style="height: 200px; width: 100%;">
 
                                 </video>
 {{--                                <img src="{{asset('videos/upload/').'/'.$att['nama']}}" alt="Mac Sunglasses" style="height: 200px; width: 100%;">--}}
                             </a>
                             <div class="bg-overlay">
                                 <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                                    <a href="{{asset('videos/upload/').'/'.$att['nama']}}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                                    <a href="{{ $att['url']}}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="iframe"><i class="icon-line-play"></i></a>
                                     <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
                                 </div>
                                 <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
@@ -93,16 +93,16 @@
                 </article>
                 @endif
             @else
-                @if(file_exists(public_path('/images/upload/'.$att['nama'])))
+                @if(file_exists(base_path('/'.$att['url'])))
                 <article class="portfolio-item col-6 col-md-4 col-lg-3 pf-media pf-icons">
                     <div class="grid-inner">
                         <div class="portfolio-image">
                             <a href="portfolio-single.html">
-                                <img src="{{ asset('images/upload/').'/'.$att['nama'] }}" alt="Open Imagination" style="height: 200px; width: 100%;">
+                                <img src="{{ $att['url'] }}" alt="Open Imagination" style="height: 200px; width: 100%;">
                             </a>
                             <div class="bg-overlay">
                                 <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                                    <a href="{{ asset('images/upload/').'/'.$att['nama'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-eye"></i></a>
+                                    <a href="{{ $att['url'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-eye"></i></a>
 {{--                                    <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>--}}
                                 </div>
                                 <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
