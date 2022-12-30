@@ -20,7 +20,7 @@
 {{--                            <a href="#"><i class="icon-star"></i></a>--}}
 {{--                        </div>--}}
                         <div class="fbox-content">
-                            <a href="/download-regulasi/{{ $reg['file'] }}"><h5>{{ $reg['nama'] }}</h5></a>
+                            <a href="/files-attachment/regulasi/{{ $reg['file'] }}"><h4>{{ $reg['nama'] }}</h4></a>
 {{--                            <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>--}}
                         </div>
                     </div>
