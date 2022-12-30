@@ -122,17 +122,17 @@
                                   $title = '';
                                 @endphp
                                 @if($ft['kelitbangan_data'] != null)
-                                    <h3><a href="/view-kelitbangan/{{ $ft['kelitbangan_id'] }}">{{ $ft['kelitbangan_data']['judul'] }}</a></h3>
+                                    <h6><a href="/view-kelitbangan/{{ $ft['kelitbangan_id'] }}">{{ $ft['kelitbangan_data']['judul'] }}</a></h6>
                                 @elseif($ft['inovasi_data'] != null)
-                                    <h3><a href="/view-inovasi/{{ $ft['inovasi_id'] }}">{{ $ft['inovasi_data']['nama'] }}</a></h3>
+                                    <h6><a href="/view-inovasi/{{ $ft['inovasi_id'] }}">{{ $ft['inovasi_data']['nama'] }}</a></h6>
                                 @elseif($ft['agenda_data'] != null)
-                                    <h3><a href="javascript:;">{{ $ft['agenda_data']['nama'] }}</a></h3>
+                                    <h6><a href="javascript:;">{{ $ft['agenda_data']['nama'] }}</a></h6>
                                 @elseif($ft['berita_data'] != null)
-                                    <h3><a href="/view-berita/{{ $ft['berita_id'] }}">{{ $ft['berita_data']['judul'] }}</a></h3>
+                                    <h6><a href="/view-berita/{{ $ft['berita_id'] }}">{{ $ft['berita_data']['judul'] }}</a></h6>
                                 @elseif($ft['usulan_penelitian_data'] != null)
-                                    <h3><a href="/view-usulan-penelitian/{{ $ft['usulan_penelitian_id'] }}">{{ $ft['usulan_penelitian_data']['usulan'] }}</a></h3>
+                                    <h6><a href="/view-usulan-penelitian/{{ $ft['usulan_penelitian_id'] }}">{{ $ft['usulan_penelitian_data']['usulan'] }}</a></h6>
                                 @elseif($ft['usulan_inovasi_data'] != null)
-                                    <h3><a href="/view-usulan-inovasi/{{ $ft['usulan_inovasi_id'] }}">{{ $ft['usulan_inovasi_data']['usulan'] }}</a></h3>
+                                    <h6><a href="/view-usulan-inovasi/{{ $ft['usulan_inovasi_id'] }}">{{ $ft['usulan_inovasi_data']['usulan'] }}</a></h6>
                                 @endif
 
 {{--                                <span><a href="#">Media</a>, <a href="#">Icons</a></span>--}}
