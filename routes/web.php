@@ -75,7 +75,7 @@ Route::get('/forum-rekomendasi', [ClientController::class, 'forumRekomendasi']);
 Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegulasi']);
 Route::post('/upload-regulasi',[RegulasiController::class, 'uploadFile']);
 Route::post('/upload-laporan-penelitian',[ClientController::class, 'uploadLaporanPenelitian']);
-Route::get('/upload-surat-masuk',[SuratController::class, 'uploadSuratMasuk']);
+Route::post('/upload-surat-masuk',[SuratController::class, 'uploadSuratMasuk']);
 Route::post('/upload-surat-keluar',[SuratController::class, 'uploadSuratKeluar']);
 
 Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
