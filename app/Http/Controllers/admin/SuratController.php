@@ -58,7 +58,7 @@ class SuratController extends Controller
 
     public function createSuratMasuk()
   {
-      $jenis_surat = $this->getJenisSurat();
+      return $jenis_surat = $this->getJenisSurat();
         $nomor = HttpHelper::surat_masuk_nomor();
         $instansi = $this->getInstansi();
         return view('admin.surat.masuk.add',compact('nomor','jenis_surat','instansi'));
@@ -76,7 +76,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/surat-masuk/');
+            $loc = ('../public_html/files-attachment/surat-masuk/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -111,7 +111,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/surat-masuk/');
+            $loc = ('../public_html/files-attachment/surat-masuk/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -150,7 +150,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/surat-keluar/');
+            $loc = ('../public_html/files-attachment/surat-keluar/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -184,7 +184,7 @@ class SuratController extends Controller
 
         $listFoto = isset($request->file_surat) ? json_decode($request->file_surat,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/surat-keluar/');
+            $loc = ('../public_html/files-attachment/surat-keluar/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -220,8 +220,15 @@ class SuratController extends Controller
 
     public function getJenisSurat()
     {
-        return $data = HttpHelper::jenis_surat_list()['data'];
-        return collect($data)->pluck('jenis','id')->toArray();
+        $data = HttpHelper::jenis_surat_list()['data'];
+        return collect($data)->every(function ($item, $key) {
+            $item['kode-jenis'] = $item['kode']. '-'. $item['jenis'];
+        });
+
+        return collect($data)->map(function ($post) {
+                $post['kode_jenis'] = $post['kode'].'-'.$post['jenis'];
+                return $post;
+            })->pluck('kode_jenis','id')->toArray();
     }
 
     public function openFile($request)
@@ -303,7 +310,7 @@ class SuratController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('/public/files-attachment/surat-keluar/'),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(('../public_html/files-attachment/surat-keluar/'),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([
@@ -328,7 +335,7 @@ class SuratController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/files-attachment/surat-masuk/'),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(('../public_html/files-attachment/surat-masuk/'),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([

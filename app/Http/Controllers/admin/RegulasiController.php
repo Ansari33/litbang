@@ -39,7 +39,7 @@ class RegulasiController extends Controller
         //$body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/files-attachment/regulasi/');
+            $loc = ('../public_html/files-attachment/regulasi/');
             $namaFile = str_replace(' ','_',$ur['nama']);
             $tersimpan = $loc.$namaFile;
             if(file_exists($tersimpan)){
@@ -72,7 +72,7 @@ class RegulasiController extends Controller
         //$body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/files-attachment/regulasi/');
+            $loc = ('../public_html/files-attachment/regulasi/');
             $namaFile = str_replace(' ','_',$ur['nama']);
             $tersimpan = $loc.$namaFile;
             if(file_exists($tersimpan)){
@@ -106,7 +106,7 @@ class RegulasiController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/files-attachment/regulasi'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(('../public_html/files-attachment/regulasi'.$fl),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([

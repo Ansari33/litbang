@@ -42,7 +42,7 @@ class UsulanPenelitianController extends Controller
         $body['attachment'] = [];
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/usulan-penelitian/');
+            $loc = ('../public_html/files-attachment/laporan-usulan-penelitian/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -51,7 +51,7 @@ class UsulanPenelitianController extends Controller
             File::copy($ur['url'],$loc.$strNama);
             $body['attachment'][] = [
                 'nama' => $strNama,
-                'url'  => $lama_ft,
+                'url'  => '/files-attachment/laporan-usulan-penelitian/'.$strNama,
                 'type' => $ur['tipe'],
             ];
         }
@@ -74,7 +74,7 @@ class UsulanPenelitianController extends Controller
         $body['attachment'] = [];
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/usulan-penelitian/');
+            $loc = ('../public_html/files-attachment/laporan-usulan-penelitian/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -83,7 +83,7 @@ class UsulanPenelitianController extends Controller
             File::copy($ur['url'],$loc.$strNama);
             $body['attachment'][] = [
                 'nama' => $strNama,
-                'url'  => $lama_ft,
+                'url'  => '/files-attachment/laporan-usulan-penelitian/'.$strNama,
                 'type' => $ur['tipe'],
             ];
         }

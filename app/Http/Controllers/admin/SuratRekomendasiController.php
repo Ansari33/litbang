@@ -43,7 +43,7 @@ class SuratRekomendasiController extends Controller
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/surat-rekomendasi/";
+            $loc = "../public_html/files-attachment/surat-rekomendasi/";
             $lama_ft = $loc.str_replace(' ','-',$ur['nama']);
             if(file_exists($loc.str_replace(' ','-',$ur['nama']))){
                 File::delete( $lama_ft );
@@ -51,7 +51,7 @@ class SuratRekomendasiController extends Controller
             File::copy($ur['url'],$loc.str_replace(' ','-',$ur['nama']));
             $body['attachment'][] = [
                 'nama' => str_replace(' ','-',$ur['nama']),
-                'url'  => $lama_ft
+                'url'  => 'files-attachment/surat-rekomendasi/'.str_replace(' ','-',$ur['nama']),
             ];
         }
 
@@ -77,15 +77,16 @@ class SuratRekomendasiController extends Controller
         $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/')."/images/upload/";
-            $lama_ft = $loc.$ur['nama'];
-            if(file_exists($loc.$ur['nama'])){
+            $loc = "../public_html/files-attachment/surat-rekomendasi/";
+            $fixNama = str_replace(' ','-',$ur['nama']);
+            $lama_ft = $loc.$fixNama;
+            if(file_exists($lama_ft)){
                 File::delete( $lama_ft );
             }
-            File::copy($ur['url'],$loc.$ur['nama']);
+            File::copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
                 'nama' => $ur['nama'],
-                'url'  => $lama_ft
+                'url'  => "files-attachment/surat-rekomendasi/".$fixNama,
             ];
         }
 

@@ -166,7 +166,7 @@ class KelitbanganController extends Controller
           $namaFile = [];
           foreach ($request->all() as $fls => $fl){
               $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-              $fl->move(base_path('public/files-attachment/laporan-kelitbangan'),str_replace(' ','-',$fl->getClientOriginalName()));
+              $fl->move(('../public_html/files-attachment/laporan-kelitbangan'),str_replace(' ','-',$fl->getClientOriginalName()));
           }
 
           return response()->json([
@@ -191,7 +191,7 @@ class KelitbanganController extends Controller
             $namaFile = [];
             foreach ($request->all() as $fls => $fl){
                 $namaFile[] = str_replace(' ','-',$fl->getClientOriginalName());
-                $fl->move(base_path('public/files-attachment/rangkuman-kelitbangan'),str_replace(' ','-',$fl->getClientOriginalName()));
+                $fl->move(('../public_html/files-attachment/rangkuman-kelitbangan'),str_replace(' ','-',$fl->getClientOriginalName()));
             }
 
             return response()->json([

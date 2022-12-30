@@ -47,16 +47,16 @@ class UsulanInovasiController extends Controller
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path('/files-attachment/usulan-inovasi/');
+            $loc = ('../public_html/files-attachment/laporan-usulan-inovasi/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
-            if(file_exists($loc.$strNama)){
+            if(file_exists($lama_ft)){
                 File::delete( $lama_ft );
             }
-            File::copy($ur['url'],$loc.$strNama);
+            File::copy($ur['url'],$lama_ft);
             $body['attachment'][] = [
                 'nama' => $strNama,
-                'url'  => $lama_ft,
+                'url'  => '/files-attachment/laporan-usulan-inovasi/'.$strNama,
                 //'type' => $ur['tipe'],
             ];
         }
@@ -86,7 +86,7 @@ class UsulanInovasiController extends Controller
 
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         foreach ($listFoto as $lt => $ur){
-            $loc = public_path('/files-attachment/usulan-inovasi/');
+            $loc = ('../public_html/files-attachment/laporan-usulan-inovasi/');
             $strNama = str_replace(' ','-',$ur['nama']);
             $lama_ft = $loc.$strNama;
             if(file_exists($loc.$strNama)){
@@ -95,7 +95,7 @@ class UsulanInovasiController extends Controller
             File::copy($ur['url'],$loc.$strNama);
             $body['attachment'][] = [
                 'nama' => $strNama,
-                'url'  => $lama_ft,
+                'url'  => 'files-attachment/laporan-usulan-inovasi/'.$strNama,
                // 'type' => $ur['tipe'],
             ];
         }
