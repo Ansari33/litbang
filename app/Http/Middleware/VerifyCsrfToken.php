@@ -17,6 +17,7 @@ class VerifyCsrfToken extends Middleware
         'upload-laporan-penelitian',
         'upload-surat-keluar',
         'upload-surat-masuk',
+        'upload-regulasi',
         //
     ];
 }
