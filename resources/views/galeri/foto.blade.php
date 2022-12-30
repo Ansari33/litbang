@@ -107,11 +107,11 @@
                         <div class="grid-inner">
                             <div class="portfolio-image">
                                 <a href="portfolio-single.html">
-                                    <img src="{{ asset('images/upload/').'/'.$ft['nama'] }}" alt="Open Imagination" style="height: 200px; width: 100%;">
+                                    <img src="{{ asset($ft['url']) }}" alt="Open Imagination" style="height: 200px; width: 100%;">
                                 </a>
                                 <div class="bg-overlay">
                                     <div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item">
-                                        <a href="{{ asset('images/upload/').'/'.$ft['nama'] }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-plus"></i></a>
+                                        <a href="{{ asset($ft['url']) }}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item" data-lightbox="image" title="Image"><i class="icon-line-plus"></i></a>
                                         <a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-hover-parent=".portfolio-item"><i class="icon-line-ellipsis"></i></a>
                                     </div>
                                     <div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-parent=".portfolio-item"></div>
