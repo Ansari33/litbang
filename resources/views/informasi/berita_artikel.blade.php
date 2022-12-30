@@ -60,7 +60,7 @@
                                         </a>
                                     </div>
                                     <div class="entry-title title-sm">
-                                        <h3><a href="/view-berita/{{ $b['id'] }}">{{ $b['judul'] }}</a></h3>
+                                        <h5><a href="/view-berita/{{ $b['id'] }}">{{ $b['judul'] }}</a></h5>
                                     </div>
                                     <div class="entry-meta">
                                         <ul>
