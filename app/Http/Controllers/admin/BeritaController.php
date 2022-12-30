@@ -111,6 +111,7 @@ class BeritaController extends Controller
             $extension = \Arr::last($arr_ext);
             $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii;
             $gambar = null;
+            $url = '';
 
             $image = substr($src, strpos($src, ',') + 1);
             if (base64_decode($image,true)){
@@ -119,6 +120,7 @@ class BeritaController extends Controller
                 $image = str_replace(' ', '+', $image);
                 $ss[] = $src;
                 \File::put(public_path(). '/files-attachment/berita/' .$namaFile.'.jpg', base64_decode($image));
+                $url = '/files-attachment/berita/' .$namaFile.'.jpg';
 
             }else{
                 $gambar = $src;
@@ -128,11 +130,12 @@ class BeritaController extends Controller
 
                 $namaFile += '.'.$extension;
                 file_put_contents(public_path('/files-attachment/berita/').$namaFile, $gambar);
+                $url = '/files-attachment/berita/' .$namaFile.'.'.$extension;
 
             }
 
-            $urlFile = ('/files-attachment/berita/').$namaFile;
-            $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile,'tipe' => 'image'];
+            //$urlFile = ('/files-attachment/berita/').$namaFile;
+            $body['attachment'][] = ['nama' => $namaFile, 'url' => $url,'tipe' => 'image'];
         }
 
         return json_decode(HttpHelper::berita_update($body));
