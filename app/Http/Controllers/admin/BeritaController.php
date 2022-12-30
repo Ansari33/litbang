@@ -47,25 +47,37 @@ class BeritaController extends Controller
         $html = new \DOMDocument();
         $html->loadHTML($body['deskripsi']);
         $listFoto = $html->getElementsByTagName('img');
-        #return (collect($listFoto)->toArray());
-        #return response()->json($listFoto);
 
+        $ss = [];
         foreach ($listFoto as $ii => $vv){
-            //return (collect($vv)->toArray());
             $src = $vv->getAttribute('src') ;
             $arr_ext = explode('.',$src);
             $extension = \Arr::last($arr_ext);
-            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
-            $data = substr($src, strpos($src, ',') + 1);
-            $data = base64_decode($data);
+            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii;
+            $gambar = null;
 
+            $image = substr($src, strpos($src, ',') + 1);
+            if (base64_decode($image,true)){
 
-            file_put_contents(public_path('/files-attachment/berita/').$namaFile, $data);
-            $urlFile = public_path('/files-attachment/berita/').$namaFile;
+                $image = str_replace('data:image/'.$extension.';base64,', '', $image);
+                $image = str_replace(' ', '+', $image);
+                $ss[] = $src;
+                \File::put(public_path(). '/files-attachment/berita/' .$namaFile.'.jpg', base64_decode($image));
+
+            }else{
+                $gambar = $src;
+                $ss[] = $src;
+                $arr_ext = explode('.',$src);
+                $extension = \Arr::last($arr_ext);
+
+                $namaFile += '.'.$extension;
+                file_put_contents(public_path('/files-attachment/berita/').$namaFile, $gambar);
+
+            }
+            $urlFile = '/files-attachment/berita/'.$namaFile;
             $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile,'tipe' => 'image'];
         }
-
-        #return response()->json(['data' => 'data']);
+        #return implode(',',$ss);
 
         return json_decode(HttpHelper::berita_add($body));
     }
@@ -97,13 +109,29 @@ class BeritaController extends Controller
             $src = $vv->getAttribute('src') ;
             $arr_ext = explode('.',$src);
             $extension = \Arr::last($arr_ext);
-            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii.'.'.strval($extension);
-            $data = substr($src, strpos($src, ',') + 1);
-            $data = base64_decode($data);
+            $namaFile = str_replace(' ','-',$body['judul']).'-'.$ii;
+            $gambar = null;
 
+            $image = substr($src, strpos($src, ',') + 1);
+            if (base64_decode($image,true)){
 
-            file_put_contents(public_path('/files-attachment/berita/').$namaFile, $data);
-            $urlFile = public_path('/files-attachment/berita/').$namaFile;
+                $image = str_replace('data:image/'.$extension.';base64,', '', $image);
+                $image = str_replace(' ', '+', $image);
+                $ss[] = $src;
+                \File::put(public_path(). '/files-attachment/berita/' .$namaFile.'.jpg', base64_decode($image));
+
+            }else{
+                $gambar = $src;
+                $ss[] = $src;
+                $arr_ext = explode('.',$src);
+                $extension = \Arr::last($arr_ext);
+
+                $namaFile += '.'.$extension;
+                file_put_contents(public_path('/files-attachment/berita/').$namaFile, $gambar);
+
+            }
+
+            $urlFile = ('/files-attachment/berita/').$namaFile;
             $body['attachment'][] = ['nama' => $namaFile, 'url' => $urlFile,'tipe' => 'image'];
         }
 
