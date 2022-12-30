@@ -121,7 +121,7 @@ class BeritaController extends Controller
                 $image = str_replace('data:image/'.$extension.';base64,', '', $image);
                 $image = str_replace(' ', '+', $image);
                 $ss[] = $src;
-                \File::put(base_path().'/files-attachment/berita/' .$namaFile.'.jpg', base64_decode($image));
+                \File::put('../public_html/files-attachment/berita/' .$namaFile.'.jpg', base64_decode($image));
                 $url = '/files-attachment/berita/' .$namaFile.'.jpg';
 
             }else{
@@ -131,7 +131,7 @@ class BeritaController extends Controller
                 $extension = \Arr::last($arr_ext);
 
                 $namaFile += '.'.$extension;
-                file_put_contents((base_path().'/files-attachment/berita/').$namaFile, $gambar);
+                file_put_contents(('../public_html/files-attachment/berita/').$namaFile, $gambar);
                 $url = '/files-attachment/berita/' .$namaFile.'.'.$extension;
 
             }
