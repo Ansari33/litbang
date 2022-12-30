@@ -320,7 +320,7 @@
                                                 <div class="grid-inner row g-0">
                                                     <div class="col-auto">
                                                         <div class="entry-image">
-                                                            <a href="/view-berita/{{ $ul['id'] }}"><img class="rounded-circle" src="{{asset('images/magazine/small/1.jpg')}}" alt="Image"></a>
+                                                            <a href="/view-berita/{{ $ul['id'] }}"><img class="rounded-circle" src="{{asset('images/services/ipad.png')}}" alt="Image"></a>
                                                         </div>
                                                     </div>
                                                     <div class="col ps-3">
