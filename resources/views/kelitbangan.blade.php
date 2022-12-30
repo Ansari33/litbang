@@ -44,7 +44,7 @@
                     <td style="width: 20%">
                         @foreach($k['attachment'] as $att => $at)
                             @if($at['url'] !== null)
-                        <a href="/files-attachment/laporan-kelitbangan/{{ $at['nama'] }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
+                        <a href="{{ url('/files-attachment/laporan-kelitbangan/'.$at['nama']) }}"><i class="fa fa-file"></i>{{ $at['nama'] }}</a>
                             @endif
                         @endforeach
                     </td>
