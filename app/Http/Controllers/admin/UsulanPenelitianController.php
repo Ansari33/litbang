@@ -24,12 +24,14 @@ class UsulanPenelitianController extends Controller
     {
         return HttpHelper::usulan_penelitian_datatable_by_tanggal($request->all());
     }
+
     public function create()
     {
         $instansi = $this->getInstansi();
         $nomor = HttpHelper::usulan_penelitian_nomor();
         return view('admin.usulan-penelitian.add',compact('instansi','nomor'));
     }
+
     public function store(Request $request)
     {
         $data = json_decode($request->datas,true);
@@ -57,12 +59,14 @@ class UsulanPenelitianController extends Controller
         }
         return json_decode(HttpHelper::usulan_penelitian_add($body));
     }
+
     public function edit($id)
     {
         $data = HttpHelper::usulan_penelitian_get(['id' => $id])['data'];
         $instansi = $this->getInstansi();
         return view('admin.usulan-penelitian.edit',compact('data','instansi'));
     }
+
     public function update(Request $request)
     {
         $data = json_decode($request->datas,true);
@@ -90,6 +94,15 @@ class UsulanPenelitianController extends Controller
         //return  $body;
         return json_decode(HttpHelper::usulan_penelitian_update($body));
     }
+
+    public function updateStatus(Request $request)
+    {
+        $body = ['id' => $request->id, 'status' => $request->status];
+
+        //return  $body;
+        return json_decode(HttpHelper::usulan_penelitian_update_status($body));
+    }
+
     public function delete($id)
     {
         return json_decode(HttpHelper::usulan_penelitian_delete(['id' => $id]));

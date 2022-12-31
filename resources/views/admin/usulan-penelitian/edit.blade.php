@@ -179,10 +179,10 @@
             $.ajax({
                 type: "POST",
                 timeout: 50000,
-                url: '/usulan-penelitian-update',
+                url: '/usulan-penelitian-set-status',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data)
+                    datas : { id : '{{ $data['id'] }}', status : status }
                 },
                 success: function (res) {
                     if (res.status === true){

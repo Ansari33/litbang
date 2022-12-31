@@ -156,6 +156,7 @@ Route::group(['middleware' => 'checkauth'], function () {
 //    Route::post('/usulan-penelitian-store', [UsulanPenelitianController::class, 'store']);
     Route::get('/usulan-penelitian-edit/{id}', [UsulanPenelitianController::class, 'edit']);
     Route::post('/usulan-penelitian-update', [UsulanPenelitianController::class, 'update']);
+    Route::post('/usulan-penelitian-update-status', [UsulanPenelitianController::class, 'updateStatus']);
     Route::get('/usulan-penelitian-delete/{id}', [UsulanPenelitianController::class, 'delete']);
 
     ## Usulan Inovasi
