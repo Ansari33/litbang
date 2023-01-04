@@ -44,8 +44,9 @@ class ClientController extends Controller
     {
         $data =(HttpHelper::instansi_list())['data'];
         $instansi = collect($data)->pluck('nama','id')->toArray();
+        $bidang = (HttpHelper::kelitbangan_bidang_list())['data'];
         $nomor = HttpHelper::usulan_penelitian_nomor();
-        return view('forum.buat_penelitian',compact('instansi','nomor'));
+        return view('forum.buat_penelitian',compact('instansi','nomor', 'bidang'));
     }
 
     public function forumInovasi()
