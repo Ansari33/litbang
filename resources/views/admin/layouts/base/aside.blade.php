@@ -29,6 +29,20 @@ $menu = [
       'children' => [],
     ],
     [
+      'name_id' => 4,
+      'icon'    => 'fa fa-filter',
+      'label'   => 'Kategori Informasi Publik',
+      'link'    => '/admin-kategori-informasi-publik',
+      'children' => [],
+    ],
+    [
+      'name_id' => 4,
+      'icon'    => 'fa fa-file-alt',
+      'label'   => 'Informasi Publik',
+      'link'    => '/admin-informasi-publik',
+      'children' => [],
+    ],
+    [
       'name_id' => 5,
       'icon'    => 'fa fa-search-plus',
       'label'   => 'Usulan Penelitian',
@@ -44,14 +58,14 @@ $menu = [
     ],
     [
       'name_id' => 6,
-      'icon'    => 'fa fa-lightbulb',
+      'icon'    => 'fa fa-th-large',
       'label'   => 'Jenis Layanan Incubator',
       'link'    => '/admin-jenis-layanan-incubator',
       'children' => [],
     ],
     [
       'name_id' => 6,
-      'icon'    => 'fa fa-lightbulb',
+      'icon'    => 'fa fa-list-alt',
       'label'   => 'Layanan Incubator',
       'link'    => '/admin-layanan-incubator',
       'children' => [],

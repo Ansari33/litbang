@@ -843,4 +843,87 @@ class HttpHelper {
         return $response;
     }
 
+    /*
+  |--------------------------------------------------------------------------
+  | Layanan Incubator
+  |--------------------------------------------------------------------------
+  */
+    public static function informasi_publik_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'informasi-publik/list');
+        return $response;
+    }
+    public static function informasi_publik_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'informasi-publik/list/datatable', $request);
+        return $response;
+    }
+
+    public static function informasi_publik_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'informasi-publikr/list/datatable-tanggal', $request);
+        return $response;
+    }
+
+    public static function informasi_publik_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'informasi-publik/create', $request);
+        return $response;
+    }
+    public static function informasi_publik_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'informasi-publik/get/id', $request);
+        return $response;
+    }
+    public static function informasi_publik_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'informasi-publik/update', $request);
+        return $response;
+    }
+    public static function informasi_publik_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'informasi-publik/delete', $request);
+        return $response;
+    }
+
+    public static function informasi_publik_by_kategori($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'informasi-publik/get/kategori', $request);
+        return $response;
+    }
+
+    /*
+  |--------------------------------------------------------------------------
+  | Kategori Informasi Publik
+  |--------------------------------------------------------------------------
+  */
+    public static function kategori_informasi_publik_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kategori-informasi-publik/list');
+        return $response;
+    }
+    public static function kategori_informasi_publik_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'kategori-informasi-publik/list/datatable', $request);
+        return $response;
+    }
+
+    public static function kategori_informasi_publik_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kategori-informasi-publik/list/datatable-tanggal', $request);
+        return $response;
+    }
+
+    public static function kategori_informasi_publik_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kategori-informasi-publik/create', $request);
+        return $response;
+    }
+    public static function kategori_informasi_publik_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kategori-informasi-publik/get/id', $request);
+        return $response;
+    }
+    public static function kategori_informasi_publik_by_jenis($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kategori-informasi-publik/get/jenis', $request);
+        return $response;
+    }
+    public static function kategori_informasi_publik_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kategori-informasi-publik/update', $request);
+        return $response;
+    }
+    public static function kategori_informasi_publik_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'kategori-informasi-publik/delete', $request);
+        return $response;
+    }
+
+
+
 }

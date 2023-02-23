@@ -179,6 +179,20 @@ class ClientController extends Controller
         return view('informasi.regulasi',compact('data'));
     }
 
+    public function informasiPerJenis($jenis)
+    {
+        $data = HttpHelper::kategori_informasi_publik_by_jenis(['jenis' => $jenis])['data'];
+
+        return view('informasi.informasi_publik',compact('data','jenis'));
+    }
+
+    public function informasiPerKategori($jenis)
+    {
+        $data = HttpHelper::informasi_publik_by_kategori(['kategori' => $jenis])['data'];
+
+        return view('informasi.informasi_per_kategori',compact('data','jenis'));
+    }
+
     public function uploadFile(Request $request){
 
         try {

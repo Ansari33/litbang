@@ -18,6 +18,8 @@ use App\Http\Controllers\admin\RegulasiController;
 use App\Http\Controllers\admin\SuratRekomendasiController;
 use App\Http\Controllers\admin\LayananIncubatorController;
 use App\Http\Controllers\admin\JenisLayananIncubatorController;
+use App\Http\Controllers\admin\InformasiPublikController;
+use App\Http\Controllers\admin\KategoriInformasiPublikController;
 
 
 
@@ -57,6 +59,10 @@ Route::get('/profile-selayang-pandang', function () {
 Route::get('/informasi-regulasi', [ClientController::class, 'regulasi']);
 Route::get('/informasi-agenda-kegiatan',[ClientController::class, 'agenda']);
 Route::get('/informasi-berita-artikel', [ClientController::class, 'berita']);
+
+Route::get('/informasi/{j}', [ClientController::class, 'informasiPerJenis']);
+Route::get('/informasi-by-kategori/{j}', [ClientController::class, 'informasiPerKategori']);
+
 Route::get('/kelitbangan', [ClientController::class, 'kelitbangan']);
 Route::get('/inovasi', [ClientController::class, 'inovasi']);
 
@@ -255,6 +261,30 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/jenis-layanan-incubator-edit/{id}', [JenisLayananIncubatorController::class, 'edit']);
     Route::post('/jenis-layanan-incubator-update', [JenisLayananIncubatorController::class, 'update']);
     Route::get('/jenis-layanan-incubator-delete/{id}', [JenisLayananIncubatorController::class, 'delete']);
+
+    ## Informasi Publik
+    Route::get('/admin-informasi-publik', [InformasiPublikController::class, 'index']);
+    Route::get('/informasi-publik-list', [InformasiPublikController::class, 'list']);
+    Route::post('/informasi-publik-list-tanggal', [InformasiPublikController::class, 'listByTanggal']);
+    Route::get('/informasi-publik-tambah', [InformasiPublikController::class, 'create']);
+    Route::post('/informasi-publik-store', [InformasiPublikController::class, 'store']);
+    Route::get('/informasi-publik-edit/{id}', [InformasiPublikController::class, 'edit']);
+    Route::post('/informasi-publik-update', [InformasiPublikController::class, 'update']);
+    Route::get('/informasi-publik-delete/{id}', [InformasiPublikController::class, 'delete']);
+
+
+    ## Kategori Informasi Publik
+    Route::get('/admin-kategori-informasi-publik', [KategoriInformasiPublikController::class, 'index']);
+    Route::get('/kategori-informasi-publik-list', [KategoriInformasiPublikController::class, 'list']);
+    Route::post('/kategori-informasi-publik-list-tanggal', [KategoriInformasiPublikController::class, 'listByTanggal']);
+    Route::get('/kategori-informasi-publik-tambah', [KategoriInformasiPublikController::class, 'create']);
+    Route::post('/kategori-informasi-publik-store', [KategoriInformasiPublikController::class, 'store']);
+    Route::get('/kategori-informasi-publik-edit/{id}', [KategoriInformasiPublikController::class, 'edit']);
+    Route::post('/kategori-informasi-publik-update', [KategoriInformasiPublikController::class, 'update']);
+    Route::get('/kategori-informasi-publik-delete/{id}', [KategoriInformasiPublikController::class, 'delete']);
+    Route::get('/kategori-informasi-publik-by-jenis/{id}', [KategoriInformasiPublikController::class, 'getByJenis']);
+
+
 
     Route::get('/litbang-admin', [KelitbanganController::class,'dashboard']);
     Route::get('/admin-survey', [SurveyController::class, 'index']);
