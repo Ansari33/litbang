@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/settings.cs')}}s" media="screen" />
     <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/layers.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('include/rs-plugin/css/navigation.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <link rel="icon" href="{{ url('images/litbang-min.png') }}">
 
@@ -770,6 +771,7 @@
 
 <script src="{{asset('js/add/menus.js')}}"></script>
 <script src="{{asset('js/components/bs-datatable.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @stack('custom-scripts')
 
 <script>
@@ -780,6 +782,7 @@
     var $ = jQuery.noConflict();
 
     $(function () {
+
         loadMenu();
     })
 

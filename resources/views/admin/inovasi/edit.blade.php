@@ -40,6 +40,13 @@
                                         {{--                                        {{ Form::select('lingkup',[ 1 => 'Agama',2 => 'Lingkungan' ],null, ['title' => 'Pilih Pelanggan','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}--}}
                                     </div>
                                     <div class="col-lg-6">
+                                        <label>Rancang Bangun:</label>
+                                        <textarea name="rancang_bangun" class="form-control" cols="30" rows="3">{{ $data['rancang_bangun'] }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+
+                                    <div class="col-lg-6">
                                         <label>Tujuan:</label>
                                         <textarea name="tujuan" class="form-control" cols="30" rows="2">{{ $data['tujuan'] }}</textarea>
                                     </div>
@@ -60,8 +67,8 @@
                                         <textarea name="deskripsi" class="form-control" cols="30" rows="4">{{ $data['deskripsi'] }}</textarea>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Kelengkapan:</label>
-                                        <textarea name="kelengkapan" class="form-control" cols="30" rows="4">{{ $data['kelengkapan'] }}</textarea>
+                                        <label>Pedoman Teknis:</label>
+                                        <textarea name="kelengkapan" class="form-control" cols="30" rows="2">{{ $data['kelengkapan'] }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -232,7 +239,7 @@
                 uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
                 uppyDashboard.on('complete',function (f) {
                     console.log(f);
-                    file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.meta.name}  }));
+                    file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.meta.name, tipe : 'doc'}  }));
                     console.log(file_list)
 
                 });

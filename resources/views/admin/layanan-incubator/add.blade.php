@@ -5,14 +5,14 @@
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap pl-0">
                 <div class="col-md-12 pr-5 mr-2">
                     {{--                    <ul class="nav nav-light-primary nav-pills tabs-unlimited" id="menu_tab" role="tablist"></ul>--}}
-                    <span class="nav-text bold ml-5">Inovasi - Tambah Data</span>
+                    <span class="nav-text bold ml-5">Usulan Inovasi - Tambah Data</span>
                 </div>
             </div>
         </div>
         <div class="d-flex flex-column-fluid">
             <div class="container-fluid">
                 <div class="tab-content" id="page_content">
-                    <form id="form_add_inovasi">
+                    <form id="form_add_kelitbangan">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row mb-5">
@@ -24,9 +24,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Tanggal:</label>
-                                        <div class="input-group date" id="tanggal_inovasi_add" data-target-input="nearest">
-                                            <input name="tanggal" id="tgl_inv_add" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_inovasi_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
-                                            <div class="input-group-append" data-target="#tanggal_inovasi_add" data-toggle="datetimepicker">
+                                        <div class="input-group date" id="kelitbangan_add_div" data-target-input="nearest">
+                                            <input name="tanggal" onkeydown="return false" type="text" class="form-control datetimepicker-input" placeholder="Pilih Tanggal" data-target="#tanggal_kelitbangan_add" value="{{ \Carbon\Carbon::now()->format('d-m-Y') }}"/>
+                                            <div class="input-group-append" data-target="#tanggal_kelitbangan_add" data-toggle="datetimepicker">
                                                 <span class="input-group-text"><i class="ki ki-calendar"></i></span>
                                             </div>
                                         </div>
@@ -34,54 +34,24 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>Nama:</label>
-                                        <input name="nama" type="text" class="form-control" placeholder="Nama" value="" />
-{{--                                        {{ Form::select('lingkup',[ 1 => 'Agama',2 => 'Lingkungan' ],null, ['title' => 'Pilih Pelanggan','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}--}}
+                                        <label>Lingkup:</label>
+                                        {{ Form::select('lingkup',$instansi,null, ['title' => 'Pilih Pelanggan','class' => 'form-control selectpicker', 'id' => 'kelitngan_lingkup_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Rancang Bangun:</label>
-                                        <textarea name="rancang_bangun" class="form-control" cols="30" rows="3"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-
-                                    <div class="col-lg-6">
-                                        <label>Tujuan:</label>
-                                        <textarea name="tujuan" class="form-control" cols="30" rows="2"></textarea>
+                                        <label>Judul:</label>
+                                        <textarea name="judul" class="form-control" cols="30" rows="2"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg-6">
-                                        <label>Manfaat:</label>
-                                        <textarea name="manfaat" class="form-control" cols="30" rows="4"></textarea>
+                                        <label>Abstrak:</label>
+                                        <textarea name="abstrak" class="form-control" cols="30" rows="4"></textarea>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label>Hasil:</label>
-                                        <textarea name="hasil" class="form-control" cols="30" rows="4"></textarea>
+                                        <label>Tindak Lanjut:</label>
+                                        <textarea name="tindak_lanjut" class="form-control" cols="30" rows="4"></textarea>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-6">
-                                        <label>Deskripsi:</label>
-                                        <textarea name="deskripsi" class="form-control" cols="30" rows="4"></textarea>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label>Pedoman Teknis:</label>
-                                        <textarea name="kelengkapan" class="form-control" cols="30" rows="2"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-lg-6">
-                                        <label>Instansi:</label>
-                                        {{ Form::select('instansi',$instansi,null, ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'inovasi_instansi_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
-                                    </div>
-{{--                                    <div class="col-lg-6">--}}
-{{--                                        <label>Judul:</label>--}}
-{{--                                        <textarea name="judul" class="form-control" cols="30" rows="2"></textarea>--}}
-{{--                                    </div>--}}
-                                </div>
-
-{{--                                --}}
 
 {{--                                <div class="form-group row">--}}
 {{--                                    <label class="col-lg-3 col-form-label text-lg-right">Upload Files:</label>--}}
@@ -102,7 +72,7 @@
                                             </div>
                                         </div>
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="tbl_pelaksana_inovasi_add">
+                                            <table class="table table-bordered" id="tbl_pelaksana_kelitbangan_add">
                                                 <thead>
                                                 <tr>
                                                     <th>No.</th>
@@ -120,7 +90,7 @@
                                         <div class="card card-custom card-stretch">
                                             <div class="card-header">
                                                 <div class="card-title">
-                                                    <h3 class="card-label">Upload File Laporan:</h3>
+                                                    <h3 class="card-label">Manual Upload Without External Sources &amp; File Limitations</h3>
                                                 </div>
                                             </div>
                                             <div class="card-body">
@@ -158,13 +128,23 @@
                                         </div>
                                         <!--end::Card-->
                                     </div>
+                                    {{--                                    <div class="col-lg-6">--}}
+                                    {{--                                        <div class="dropzone dropzone-default dropzone-primary dz-clickable" id="kt_dropzone_2">--}}
+                                    {{--                                            <div class="dropzone-msg dz-message needsclick">--}}
+                                    {{--                                                <h3 class="dropzone-msg-title">Drop files here or click to upload.</h3>--}}
+                                    {{--                                                <span class="dropzone-msg-desc">Upload up to 10 files</span>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
+
+
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <button type="button" id="btn_inovasi_add_data" class="btn btn-primary mr-2">Save</button>
-                                        <button type="button" class="btn btn-secondary" onclick="window.close()">Cancel</button>
+                                        <button type="button" id="btn_kelitbangan_add_data" class="btn btn-primary mr-2">Save</button>
+                                        <button type="button" class="btn btn-secondary" onclick="close_content_tab('pembelian_permintaan_pembelian','tambah_data')">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -174,101 +154,18 @@
             </div>
         </div>
     </div>
-
 @endsection
 @push('js')
     <script src="{{ asset('admin/plugins/custom/uppy/uppy.bundle.js') }}"></script>
     <script>
-        "use strict";
-        var file_list = [];
-        var tablePelaksana;
-        // Class definition
-        var KTUppy = function () {
-            const Tus = Uppy.Tus;
-            const ProgressBar = Uppy.ProgressBar;
-            const StatusBar = Uppy.StatusBar;
-            const FileInput = Uppy.FileInput;
-            const Informer = Uppy.Informer;
-
-            // to get uppy companions working, please refer to the official documentation here: https://uppy.io/docs/companion/
-            const Dashboard = Uppy.Dashboard;
-            const Dropbox = Uppy.Dropbox;
-            const GoogleDrive = Uppy.GoogleDrive;
-            const Instagram = Uppy.Instagram;
-            const Webcam = Uppy.Webcam;
-
-
-            // Private functions
-            var initUppy1 = function(){
-                var id = '#kt_uppy_1';
-
-                var options = {
-                    proudlyDisplayPoweredByUppy: false,
-                    target: id,
-                    inline: true,
-                    replaceTargetContent: true,
-                    showProgressDetails: true,
-                    note: 'No filetype restrictions.',
-                    height: 470,
-                    remove : true,
-                    metaFields: [
-                        { id: 'name', name: 'Name', placeholder: 'file name' },
-                        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
-                    ],
-                    browserBackButtonClose: true
-                }
-
-                var uppyDashboard = Uppy.Core({
-                    //autoProceed: true,
-                    restrictions: {
-                        //maxFileSize: 1000000, // 1mb
-                        maxNumberOfFiles: 5,
-                        minNumberOfFiles: 1
-                    }
-                });
-
-                uppyDashboard.use(Dashboard, options);
-                uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
-                uppyDashboard.on('complete',function (f) {
-                    console.log(f);
-                    file_list = (f.successful.map((e, index) => { return {url :e.response.uploadURL,nama :e.name}  }));
-
-
-                });
-                uppyDashboard.on('file-added', (file) => {
-                    console.log('Added file', file)
-                })
-
-            }
-
-            return {
-                // public functions
-                init: function() {
-                    initUppy1();
-                }
-            };
-        }();
-
-        KTUtil.ready(function() {
-            KTUppy.init();
-        });
-
-        // uppy.on('upload-success', (file, response) => {
-        //     console.log(file)
-        //     console.log(response)
-        // })
-
-
+        var uppy = new Uppy.Core()
+        uppy.use(Uppy.DragDrop, { target: '#drag-drop-area' })
+        uppy.use(Uppy.Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
     </script>
 
     <script>
         $(function () {
-            $('#tanggal_inovasi_add').datetimepicker({
-                format: 'L',
-                //     s
-            });
-
-            tablePelaksana = $(`#tbl_pelaksana_inovasi_add`).DataTable({
+            tablePelaksana = $(`#tbl_pelaksana_kelitbangan_add`).DataTable({
                 columnDefs :[
                     { 'width' : '5%', 'target' : 0 },
                     { 'width' : '85%', 'target' : 1 },
@@ -287,15 +184,13 @@
             });
             $('.selectpicker').selectpicker();
         })
-        $('#btn_inovasi_add_data').click(function(){
-            let data = $('#form_add_inovasi').serializeArray();
-            let pelaksana = [];
+        $('#btn_kelitbangan_add_data').click(function(){
+            let data = $('#form_add_kelitbangan').serializeArray();let pelaksana = [];
             let detail = tablePelaksana.rows().data().toArray();
             for (let index = 0; index < detail.length; index++) {
                 console.log(tablePelaksana.cell(index, 1).nodes().to$().find('input').val());
                 pelaksana[index] = tablePelaksana.cell(index, 1).nodes().to$().find('input').val();
-           }
-            console.log(pelaksana);
+            }
             console.log(data);
             $.ajaxSetup({
                 headers: {
@@ -305,16 +200,16 @@
             $.ajax({
                 type: "POST",
                 timeout: 50000,
-                url: '/inovasi-store',
+                url: '/kelitbangan-store',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana), filex: JSON.stringify(file_list),
+                    datas : JSON.stringify(data), pelaksana : JSON.stringify(pelaksana)
                 },
                 success: function (res) {
                     console.log(res)
                     if (res.status === true){
                         Swal.fire('Berhasil!', res.message, 'success');
-                        $('#form_add_inovasi').trigger('reset');
+                        $('#form_add_kelitbangan').trigger('reset')
                     }else{
                         Swal.fire('Gagal!', res.message, 'danger');
                     }
@@ -336,8 +231,8 @@
                 '<a href="javascript:;" id="delete"> <i class="fa fa-trash"></i></a>'
             ]).draw(true);
         });
-        $(`#tbl_pelaksana_inovasi_add`).on("click", "#delete", function () {
-            $(`#tbl_pelaksana_inovasi_add`).DataTable().row($(this).parents('tr')).remove().draw(false);
+        $(`#tbl_pelaksana_kelitbangan_add`).on("click", "#delete", function () {
+            $(`#tbl_pelaksana_kelitbangan_add`).DataTable().row($(this).parents('tr')).remove().draw(false);
         });
     </script>
 @endpush

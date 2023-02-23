@@ -21,7 +21,7 @@
                                 <th>Nama</th>
                                 <th>Pelaksana</th>
                                 <th>Tanggal</th>
-                                <th>Kelengkapan</th>
+                                <th style="text-align: center">Pedoman Teknis</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -42,7 +42,12 @@
                                     </td>
 
                                     <td style="width: 10%">{{ $inv['tanggal'] }}</td>
-                                    <td style="width: 25%">{{ $inv['kelengkapan'] }}</td>
+                                    <td style="width: 15%; text-align: center">
+                                        <a href="{{ $inv['kelengkapan'] }}" target="_blank" class="btn btn-primary btn-sm">
+                                            <i class="icon-external-link"></i>
+
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

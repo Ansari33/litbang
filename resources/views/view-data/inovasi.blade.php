@@ -48,6 +48,14 @@
                     <div class="divider divider-sm"></div>
 
                     <div class="fancy-title title-bottom-border">
+                        <h3>Rancang Bangun</h3>
+                    </div>
+
+                    <p>{{ $data['rancang_bangun'] }}</p>
+
+                    <div class="divider divider-sm"></div>
+
+                    <div class="fancy-title title-bottom-border">
                         <h3>Tujuan</h3>
                     </div>
 
@@ -78,10 +86,10 @@
                     <div class="divider divider-sm"></div>
 
                     <div class="fancy-title title-bottom-border">
-                        <h3>Kelengkapan</h3>
+                        <h3>Pedoman Teknis</h3>
                     </div>
 
-                    <p> {{ $data['kelengkapan'] }}</p>
+                    <p> <a href="{{ $data['kelengkapan'] }}" target="_blank">{{ $data['kelengkapan'] }}</a></p>
                     <div class="divider divider-sm"></div>
 
                 </div>

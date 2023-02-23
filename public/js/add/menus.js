@@ -88,7 +88,7 @@ var menus = [
             },
             {
                 'nama' : 'Inovasi',
-                'link' : '/forum-inovasi'
+                'link' : '/forum-incubator'
             },
             {
                 'nama' : 'Survey',

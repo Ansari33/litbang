@@ -71,12 +71,30 @@ class ClientController extends Controller
         return view('forum.rekomendasi_penelitian',compact('data','nomor','instansi'));
     }
 
+    public function forumIncubator()
+    {
+        $data = HttpHelper::layanan_incubator_list()['data'];
+
+        $instansi = [];
+        return view('forum.incubator',compact('data',));
+    }
+
     public function buatInovasi()
     {
         $data =(HttpHelper::instansi_list())['data'];
         $instansi = collect($data)->pluck('nama','id')->toArray();
         $nomor = HttpHelper::usulan_inovasi_nomor();
         return view('forum.buat_inovasi',compact('instansi','nomor'));
+    }
+
+    public function pengajuanIncubator()
+    {
+        $data =(HttpHelper::jenis_layanan_incubator_list())['data'];
+        $data2 =(HttpHelper::instansi_list())['data'];
+        $layanan = collect($data)->pluck('nama','nama')->toArray();
+        $instansi = collect($data2)->pluck('nama','id')->toArray();
+        $nomor = '';
+        return view('forum.pengajuan_incubator',compact('instansi','nomor','layanan'));
     }
 
     public function agenda()

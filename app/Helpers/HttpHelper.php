@@ -766,6 +766,78 @@ class HttpHelper {
         return $response;
     }
 
+    /*
+  |--------------------------------------------------------------------------
+  | Layanan Incubator
+  |--------------------------------------------------------------------------
+  */
+    public static function layanan_incubator_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'layanan-incubator/list');
+        return $response;
+    }
+    public static function layanan_incubator_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'layanan-incubator/list/datatable', $request);
+        return $response;
+    }
+
+    public static function layanan_incubator_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'layanan-incubator/list/datatable-tanggal', $request);
+        return $response;
+    }
+
+    public static function layanan_incubator_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'layanan-incubator/create', $request);
+        return $response;
+    }
+    public static function layanan_incubator_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'layanan-incubator/get/id', $request);
+        return $response;
+    }
+    public static function layanan_incubator_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'layanan-incubator/update', $request);
+        return $response;
+    }
+    public static function layanan_incubator_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'layanan-incubator/delete', $request);
+        return $response;
+    }
+
+    /*
+  |--------------------------------------------------------------------------
+  | Jenis Layanan Incubator
+  |--------------------------------------------------------------------------
+  */
+    public static function jenis_layanan_incubator_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'jenis-layanan-incubator/list');
+        return $response;
+    }
+    public static function jenis_layanan_incubator_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'jenis-layanan-incubator/list/datatable', $request);
+        return $response;
+    }
+
+    public static function jenis_layanan_incubator_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-layanan-incubator/list/datatable-tanggal', $request);
+        return $response;
+    }
+
+    public static function jenis_layanan_incubator_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-layanan-incubator/create', $request);
+        return $response;
+    }
+    public static function jenis_layanan_incubator_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-layanan-incubator/get/id', $request);
+        return $response;
+    }
+    public static function jenis_layanan_incubator_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-layanan-incubator/update', $request);
+        return $response;
+    }
+    public static function jenis_layanan_incubator_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'jenis-layanan-incubator/delete', $request);
+        return $response;
+    }
+
     public static function dashboard() {
         $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'dashboard/');
         return $response;

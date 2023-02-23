@@ -43,6 +43,20 @@ $menu = [
       'children' => [],
     ],
     [
+      'name_id' => 6,
+      'icon'    => 'fa fa-lightbulb',
+      'label'   => 'Jenis Layanan Incubator',
+      'link'    => '/admin-jenis-layanan-incubator',
+      'children' => [],
+    ],
+    [
+      'name_id' => 6,
+      'icon'    => 'fa fa-lightbulb',
+      'label'   => 'Layanan Incubator',
+      'link'    => '/admin-layanan-incubator',
+      'children' => [],
+    ],
+    [
       'name_id' => 7,
       'icon'    => 'fa fa-newspaper',
       'label'   => 'Survey',

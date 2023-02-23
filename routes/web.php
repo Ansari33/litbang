@@ -16,6 +16,8 @@ use App\Http\Controllers\admin\SuratController;
 use App\Http\Controllers\admin\SurveyController;
 use App\Http\Controllers\admin\RegulasiController;
 use App\Http\Controllers\admin\SuratRekomendasiController;
+use App\Http\Controllers\admin\LayananIncubatorController;
+use App\Http\Controllers\admin\JenisLayananIncubatorController;
 
 
 
@@ -71,6 +73,9 @@ Route::post('/usulan-inovasi-store', [UsulanInovasiController::class, 'store']);
 
 Route::get('/forum-survey', [ClientController::class, 'forumSurvey']);
 Route::get('/forum-rekomendasi', [ClientController::class, 'forumRekomendasi']);
+Route::get('/forum-incubator', [ClientController::class, 'forumIncubator']);
+Route::get('/pengajuan-incubator', [ClientController::class, 'pengajuanIncubator']);
+Route::post('/layanan-incubator-store', [LayananIncubatorController::class, 'store']);
 
 Route::get('/download-regulasi/{id}',[RegulasiController::class, 'downloadRegulasi']);
 Route::post('/upload-regulasi',[RegulasiController::class, 'uploadFile']);
@@ -229,6 +234,27 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/surat-rekomendasi-edit/{id}', [SuratRekomendasiController::class, 'edit']);
     Route::post('/surat-rekomendasi-update', [SuratRekomendasiController::class, 'update']);
     Route::get('/surat-rekomendasi-delete/{id}', [SuratRekomendasiController::class, 'delete']);
+
+    ## Layanan Icubator
+    Route::get('/admin-layanan-incubator', [LayananIncubatorController::class, 'index']);
+    Route::get('/layanan-incubator-list', [LayananIncubatorController::class, 'list']);
+    Route::post('/layanan-incubatori-list-tanggal', [LayananIncubatorController::class, 'listByTanggal']);
+    Route::get('/layanan-incubator-tambah', [LayananIncubatorController::class, 'create']);
+    #Route::post('/surat-rekomendasi-store', [SuratRekomendasiController::class, 'store']);
+    Route::get('/layanan-incubator-edit/{id}', [LayananIncubatorController::class, 'edit']);
+    Route::post('/layanan-incubator-update', [LayananIncubatorController::class, 'update']);
+    Route::get('/layanan-incubator-delete/{id}', [LayananIncubatorController::class, 'delete']);
+
+
+    ## Jenis Layanan Icubator
+    Route::get('/admin-jenis-layanan-incubator', [JenisLayananIncubatorController::class, 'index']);
+    Route::get('/jenis-layanan-incubator-list', [JenisLayananIncubatorController::class, 'list']);
+    Route::post('/jenis-layanan-incubatori-list-tanggal', [JenisLayananIncubatorController::class, 'listByTanggal']);
+    Route::get('/jenis-layanan-incubator-tambah', [JenisLayananIncubatorController::class, 'create']);
+    Route::post('/jenis-layanan-incubator-store', [JenisLayananIncubatorController::class, 'store']);
+    Route::get('/jenis-layanan-incubator-edit/{id}', [JenisLayananIncubatorController::class, 'edit']);
+    Route::post('/jenis-layanan-incubator-update', [JenisLayananIncubatorController::class, 'update']);
+    Route::get('/jenis-layanan-incubator-delete/{id}', [JenisLayananIncubatorController::class, 'delete']);
 
     Route::get('/litbang-admin', [KelitbanganController::class,'dashboard']);
     Route::get('/admin-survey', [SurveyController::class, 'index']);
