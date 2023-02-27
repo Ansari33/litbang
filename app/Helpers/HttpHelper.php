@@ -925,5 +925,46 @@ class HttpHelper {
     }
 
 
+    /*
+|--------------------------------------------------------------------------
+| Profil
+|--------------------------------------------------------------------------
+*/
+    public static function profil_list() {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'profil/list');
+        return $response;
+    }
+    public static function profil_datatable($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->get(env('API_ADDRESS').'profil/list/datatable', $request);
+        return $response;
+    }
+
+    public static function profil_datatable_by_tanggal($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'profil/list/datatable-tanggal', $request);
+        return $response;
+    }
+
+    public static function profil_add($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'profilcreate', $request);
+        return $response;
+    }
+    public static function profil_get($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'profil/get/id', $request);
+        return $response;
+    }
+    public static function profil_by_jenis($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'profil/get/jenis', $request);
+        return $response;
+    }
+    public static function profil_update($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'profil/update', $request);
+        return $response;
+    }
+    public static function profil_delete($request) {
+        $response = Http::withToken(Session::get('token'))->timeout(env('API_TIMEOUT', '10000'))->post(env('API_ADDRESS').'profil/delete', $request);
+        return $response;
+    }
+
+
 
 }

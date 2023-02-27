@@ -243,6 +243,11 @@ class ClientController extends Controller
 
     }
 
+    public function getProfile($id){
+        $data = HttpHelper::profil_get(['id' => $id]);
+        return json_decode($data);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

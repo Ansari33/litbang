@@ -98,6 +98,13 @@ $menu = [
       'link'    => '/admin-surat-rekomendasi',
       'children' => [],
     ],
+    [
+      'name_id' => 10,
+      'icon'    => 'fa fas fa-id-badge',
+      'label'   => 'Profil',
+      'link'    => '/admin-profil',
+      'children' => [],
+    ],
 ];
 @endphp
 <div class="aside aside-left  aside-fixed  d-flex flex-column flex-row-auto"  id="kt_aside">

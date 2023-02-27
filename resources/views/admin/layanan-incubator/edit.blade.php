@@ -74,6 +74,72 @@
                                         <input name="status"  id="status" type="text"  class="form-control" placeholder="Status" value="{{ $data['status'] }}" />
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-12">
+                                        <label>Ide Gagasan:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['ide_gagasan'] }} </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Dasar Hukum:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['dasar_hukum'] }} </textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Permasalahan:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['permasalahan'] }} </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Isu Strategis:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['isu_strategis'] }} </textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Metode Pembaharuan:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['metode'] }} </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Keunggulan:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['keunggulan'] }} </textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Cara Kerja:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['cara_kerja'] }} </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Tujuan:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['tujuan'] }} </textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Manfaat:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['manfaat'] }} </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Kaitan Dengan SDGS:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['kaitan_dengan_sdgs'] }} </textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Proses:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['proses'] }} </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>Kecepatan:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['kecepatan'] }} </textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Hasil:</label>
+                                        <textarea class="form-control" rows="5"> {{ $data['hasil'] }} </textarea>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <div class="row">

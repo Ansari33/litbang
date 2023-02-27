@@ -6,122 +6,233 @@
 
             <div class="form-widget">
 
-                <div class="form-result"></div>
+                <div class="form-result" style="text-align: center">
+                    <h3> <u>Form Pengajuan Layanan INKUBATOR </u></h3>
+                </div>
 
                 <div class="row shadow bg-light border">
 
-                    <div class="col-lg-4 dark" style="background:  url('{{ asset("/images/services/main-bg.jpg") }}') center center / cover; min-height: 400px;">
-{{--                        <h3 class="center mt-5">Fitness Quotes</h3>--}}
-{{--                        <div class="calories-wrap center w-100 px-2">--}}
-{{--                            <span class="text-uppercase mb-0 ls2">Loosing Fat</span>--}}
-{{--                            <h2 id="calories-count" class="calories display-3 mb-2 heading-block border-bottom-0 fw-semibold font-body py-2"></h2>--}}
-{{--                            <span class="text-uppercase h6 ls3">Estimated Calories</span>--}}
-{{--                        </div>--}}
-{{--                        <small class="center m-0 position-absolute" style="bottom: 12px;">Metric Units</small>--}}
-                    </div>
                     <link href="https://releases.transloadit.com/uppy/v2.12.2/uppy.min.css" rel="stylesheet">
-                    <div class="col-lg-8 p-5">
+                    <div class="col-lg-12 p-5">
                         <form class="row mb-0" id="form_usulan_penelitian"   enctype="multipart/form-data">
                             <div class="form-process">
                                 <div class="css3-spinner">
                                     <div class="css3-spinner-scaler"></div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-name">Nomor:</label>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="nomor" id="fitness-form-name" class="form-control required" value="{{ $nomor }}" >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 form-group">
-                                <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-name">Nomor Surat:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         <input type="text" name="nomor_surat" id="fitness-form-name" class="form-control required"  >
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-name">File Surat:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         <div id="drag-drop-area"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-name">Layanan:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         {{ Form::select('layanan[]',$layanan,null, ['title' => 'Pilih Layanan','class' => 'form-control multi-select2', 'id' => 'jenis_layanan', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax','multiple' => 'multiple']) }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-name">Nama Pengaju:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         <input type="text" name="pengguna_layanan" id="fitness-form-name" class="form-control required" value="" placeholder="Nama Pengusul">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-email">Nomor Kontak:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         <input type="text" name="nomor_pengaju" id="fitness-form-email" class="form-control required" value="" placeholder="No Kontak Pengusul">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-email">Email:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         <input type="text" name="email_pengaju" id="fitness-form-email" class="form-control required" value="" placeholder="Email Pengusul">
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
+                                    <div class="col-sm-3 col-form-label">
                                         <label for="fitness-form-name">Instansi:</label>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         {{ Form::select('instansi',$instansi,null, ['title' => 'Pilih Instansi','class' => 'form-control selectpicker', 'id' => 'inovasi_instansi_add', 'data-size' => '7', 'data-live-search' => 'true', 'data-toggle'=>'ajax']) }}
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-12 form-group">
+                            <div class="col-6 form-group" id="ide-gagasan" style="display: none">
                                 <div class="row">
-                                    <div class="col-sm-2 col-form-label">
-                                        <label for="fitness-form-email">Rancang Bangun:</label>
+                                    <div class="col-sm-3 col-form-label">
+                                        <label for="fitness-form-name">Ide Gagasan:</label>
                                     </div>
-                                    <div class="col-sm-10">
-                                        <textarea class="form-control" rows="2" name="rancang_bangun"></textarea>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" name="ide_gagasan"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="profil" class="col-lg-12 row" style="display:none;">
+                                <label for="fitness-form-name"><strong>Profil</strong>:</label>
+                                <label for="fitness-form-name">Rancang Bangun:</label>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Dasar Hukum:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="dasar_hukum"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Permasalahan:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="permasalahan"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Isu Strategi:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="isu_strategis"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Metode Pembaharuan:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="metode"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Keunggulan:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="keunggulan"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Cara Kerja:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="cara_kerja"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div style="height: 35px;">
+
+                                 </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Tujuan:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="tujuan"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Manfaat:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="manfaat"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Kaitan Dengan SDGS:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="kaitan_dengan_sdgs"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Proses:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="proses"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Kecepatan:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="kecepatan"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 form-group" >
+                                    <div class="row">
+                                        <div class="col-sm-3 col-form-label">
+                                            <label for="fitness-form-name">Hasil:</label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="hasil"></textarea>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
+
                             <div class="col-12 d-flex justify-content-end align-items-center">
                                 <div id="alert-info" ></div>
-{{--                                <button type="button" id="calories-trigger" class="btn btn-secondary">Calculate</button>--}}
                                 <button type="button" id="btn_submit_usulan" class="btn btn-success ms-2 ml-5">Submit Usulan</button>
                             </div>
                         </form>
@@ -145,7 +256,7 @@
             .use(Uppy.Dashboard, {
                 inline: true,
                 target: '#drag-drop-area',
-                height: 180,
+                height: 150,
                 maxNumberOfFiles: 1,
                 minNumberOfFiles: 1,
                 restrictions: {
@@ -201,6 +312,33 @@
                     }
                 }
             });
+        });
+
+        $('#jenis_layanan').change(function(){
+            let jenisLayanan = ($('#jenis_layanan').val());
+            let ide = 0;
+            let rancang = 0;
+            console.log(jenisLayanan);
+            if(jenisLayanan.length == 0){
+                $('#ide-gagasan').css('display','none') ;
+                $('#profil').css('display','none') ;
+            }
+
+            $.each(jenisLayanan, function (i,v) {
+
+                if (v.toString().toLowerCase().includes('ide gagasan')){
+                    ide = 1;
+
+                }
+                if (v.toString().toLowerCase().includes('rancang bangun')){
+                    rancang = 1;
+
+                }
+            });
+            ide == 1 ? $('#ide-gagasan').css('display','block') : $('#ide-gagasan').css('display','none');
+            rancang == 1 ? $('#profil').css('display','inherit') : $('#profil').css('display','none');
+            ide = rancang = 0;
+
         });
     </script>
 @endpush

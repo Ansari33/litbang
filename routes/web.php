@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\LayananIncubatorController;
 use App\Http\Controllers\admin\JenisLayananIncubatorController;
 use App\Http\Controllers\admin\InformasiPublikController;
 use App\Http\Controllers\admin\KategoriInformasiPublikController;
+use App\Http\Controllers\admin\ProfilController;
 
 
 
@@ -34,7 +35,7 @@ use App\Http\Controllers\admin\KategoriInformasiPublikController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/profile/{id}', [ClientController::class,'getProfile']);
 Route::get('/tesupload', function(){
     return view('tes-upload');
 });
@@ -284,6 +285,16 @@ Route::group(['middleware' => 'checkauth'], function () {
     Route::get('/kategori-informasi-publik-delete/{id}', [KategoriInformasiPublikController::class, 'delete']);
     Route::get('/kategori-informasi-publik-by-jenis/{id}', [KategoriInformasiPublikController::class, 'getByJenis']);
 
+    ## Profil
+    Route::get('/admin-profil', [ProfilController::class, 'index']);
+    Route::get('/profil-list', [ProfilController::class, 'list']);
+    Route::post('/profil-list-tanggal', [ProfilController::class, 'listByTanggal']);
+    Route::get('/profil-tambah', [ProfilController::class, 'create']);
+    Route::post('/profil-store', [ProfilController::class, 'store']);
+    Route::get('/profil-edit/{id}', [ProfilController::class, 'edit']);
+    Route::post('/profil-update', [ProfilController::class, 'update']);
+    Route::get('/profil-delete/{id}', [ProfilController::class, 'delete']);
+    Route::get('/profil-by-jenis/{id}', [ProfilController::class, 'getByJenis']);
 
 
     Route::get('/litbang-admin', [KelitbanganController::class,'dashboard']);

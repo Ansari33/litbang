@@ -9,15 +9,16 @@ use Illuminate\Http\Request;
 use function Composer\Autoload\includeFile;
 use File;
 
-class LayananIncubatorController extends Controller
+class ProfilController extends Controller
 {
   public function index()
   {
-      return view('admin.layanan-incubator.index');
+      $data = HttpHelper::profil_get(['id' => 1])['data'];
+      return view('admin.profil.index',compact('data'));
   }
   public function list(Request $request)
   {
-    return HttpHelper::layanan_incubator_datatable($request->all());
+    return HttpHelper::agenda_datatable($request->all());
     return view('admin.agenda.index');
   }
 
@@ -38,61 +39,56 @@ class LayananIncubatorController extends Controller
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
-        $body['tanggal'] = date('Y-m-d');#Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
+        $body['tanggal'] = Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
+        $body['waktu'] = Carbon::parse($body['waktu'])->format('h:i:s');
+        //$body['pelaksana'] = $pelaksana;
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
-        $jenisLayanan = implode(',',json_decode($request->jenisLayanan,true));
-        $body['layanan'] = $jenisLayanan;
+        $body['attachment'] = [];
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path()."/files-attachment/surat-pengajuan/";
-            #$loc = "../public_html/files-attachment/surat-pengajuan/";
+            $loc = public_path('/')."/images/upload/";
             $lama_ft = $loc.$ur['nama'];
             if(file_exists($loc.$ur['nama'])){
                 File::delete( $lama_ft );
             }
             File::copy($ur['url'],$loc.$ur['nama']);
-            $body['file_surat']=  str_replace(' ','_',$ur['nama']);
-
+            $body['attachment'][] = [
+                'nama' => $ur['nama'],
+                'url'  => $lama_ft
+            ];
         }
 
         //return $body;
-        return json_decode(HttpHelper::layanan_incubator_add($body));
+        return json_decode(HttpHelper::agenda_add($body));
     }
-
     public function edit($id)
     {
-        $data = HttpHelper::layanan_incubator_get(['id' => $id])['data'];
-        $datal =(HttpHelper::jenis_layanan_incubator_list())['data'];
-        $layanan = collect($datal)->pluck('nama','nama')->toArray();
+        $data = HttpHelper::agenda_get(['id' => $id])['data'];
         $instansi = $this->getInstansi();
-        return view('admin.layanan-incubator.edit',compact('data','instansi','layanan'));
+        return view('admin.agenda.edit',compact('data','instansi'));
     }
     public function update(Request $request)
     {
+        //return $request->all();
         $data = json_decode($request->datas,true);
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
-        $body['tanggal'] = Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
-        //$body['waktu'] = Carbon::parse($body['waktu'])->format('h:i:s');
-        $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
-        $body['attachment'] = [];
-//        foreach ($listFoto as $lt => $ur){
-//
-//            $loc = public_path('/')."/images/upload/";
-//            $lama_ft = $loc.$ur['nama'];
-//            if(file_exists($loc.$ur['nama'])){
-//                File::delete( $lama_ft );
-//            }
-//            File::copy($ur['url'],$loc.$ur['nama']);
-//            $body['attachment'][] = [
-//                'nama' => $ur['nama'],
-//                'url'  => $lama_ft
-//            ];
-//        }
 
-        return json_decode(HttpHelper::layanan_incubator_update($body));
+        $logo = isset($request->logo) ? json_decode($request->logo,true) : [];
+        if(isset($logo['nama'])){
+            #$loc = public_path('/files-attachment/logos/');
+            $loc = ('../public_html/files-attachment/logos');
+            $lama_ft = $loc.str_replace(' ','_',$logo['nama']);
+            if(file_exists($lama_ft)){
+                File::delete( $lama_ft );
+            }
+            File::copy($logo['url'],$lama_ft);
+            $body['logo']= str_replace(' ','_',$logo['nama']);
+        }
+
+        return json_decode(HttpHelper::profil_update($body));
     }
     public function delete($id)
     {

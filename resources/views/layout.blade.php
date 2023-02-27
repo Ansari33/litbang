@@ -482,19 +482,20 @@
 
                                 <div class="widget clearfix">
 
-                                    <img src="{{asset('images/litbang-min.png')}}" alt="Image" class="footer-logo" style="width: 120px;">
+                                    <img id="logos" src="{{asset('images/litbang-min.png')}}" alt="Image" class="footer-logo" style="width: 120px;">
 
 {{--                                    <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>--}}
 
                                     <div style="background: url({{asset('images/world-map.png')}}) no-repeat center center; background-size: 100%;">
                                         <address>
-                                            <strong>Headquarters:</strong><br>
-                                            Jalan Jendral Ahmad Yani No 2, <br>
-                                            Kota Makassar, Sulawesi Selatan<br>
+                                            <strong>Alamat:</strong><br>
+                                            <span id="alamat">
+{{--                                            Jalan Jendral Ahmad Yani No 2, <br>--}}
+{{--                                            Kota Makassar, Sulawesi Selatan<br>--}}
                                         </address>
-                                        <abbr title="Phone Number"><strong>Telepon:</strong></abbr> (0411) 3617007<br>
+                                        <abbr title="Phone Number"><strong>Telepon:</strong></abbr> <span id="telepon"></span><br>
 {{--                                        <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>--}}
-                                        <abbr title="Email Address"><strong>Email:</strong></abbr> info@litbangmakassar.go.id
+                                        <abbr title="Email Address"><strong>Email:</strong></abbr> <span id="email"></span>
                                     </div>
 
                                 </div>
@@ -622,14 +623,14 @@
                                                 <i class="icon-facebook"></i>
                                                 <i class="icon-facebook"></i>
                                             </a>
-                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                                            <a href="" id="mfacebook" onclick="openFb()"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
                                         </div>
                                         <div class="col-6 col-md-12 col-lg-6 clearfix">
                                             <a href="#" class="social-icon si-dark si-colored si-twitter mb-0" style="margin-right: 10px;">
                                                 <i class="icon-twitter"></i>
                                                 <i class="icon-twitter"></i>
                                             </a>
-                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>on Twitter</small></a>
+                                            <a href="" id="mtwitter" onclick="openTw()"><small style="display: block; margin-top: 3px;"><strong>Follow us</strong><br>on Twitter</small></a>
                                         </div>
                                     </div>
 
@@ -780,9 +781,11 @@
     var tpj = jQuery;
     var revapi202;
     var $ = jQuery.noConflict();
+    var alfb = '';
+    var altw = '';
 
     $(function () {
-
+        loadProfile();
         loadMenu();
     })
 
@@ -870,6 +873,42 @@
             });
         }
     }); /*ready*/
+
+    function loadProfile(){
+        $.ajax({
+
+            timeout: 50000,
+            url: '/profile/1',
+            async: true,
+
+            success: function (res) {
+                console.log(res)
+                if (res.status === true){
+                    $('#logos').attr('src','/files-attachment/logos/'+res.data.logo);
+                    $('#alamat').text(res.data.alamat);
+                    $('#telepon').text(res.data.telepon);
+                    $('#email').text(res.data.email);
+                    alfb = '//'+res.data.facebook;
+                    altw = '//'+res.data.twitter;
+                }else{
+                    Swal.fire('Gagal!', res.message, 'danger');
+                }
+            },
+            error: function (res, textstatus) {
+                if (textstatus === "timeout") {
+                    notice('Response Time Out', 'error');
+                } else {
+                    notice(res.responseJSON.message, 'error');
+                }
+            }
+        });
+    }
+    function openFb(){
+        window.open(alfb);
+    }
+    function openTw(){
+        window.open(altw);
+    }
 
 </script>
 

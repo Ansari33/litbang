@@ -3,17 +3,17 @@
     <div class="content-wrap">
         <div class="container clearfix">
 
-{{--            <div class="heading-block center border-bottom-0 bottommargin-lg">--}}
-{{--                <h1>Daftar Usulan Penelitian</h1>--}}
-{{--                <span>Daftar Usulan Penelitian</span>--}}
-{{--            </div>--}}
+            <div class="heading-block center border-bottom-0 bottommargin-lg">
+                <h1>INKUBATOR</h1>
+                <span>Kepanjangan INKUBATOR</span>
+            </div>
             <div class="row align-items-center">
                 <div class="col-12 col-lg">
                     <h3>Daftar  <span>Pengajuan Layanan</span> yang Telah Kami Terima!</h3>
 {{--                    <span>Berikan <em>Usulan Inovasi </em> Anda, Ayo Kembangkan Kota Dengan Inovasi Anda!</span>--}}
                 </div>
                 <div class="col-12 col-lg-auto mt-4 mt-lg-0">
-                    <a href="/pengajuan-incubator" target="_blank" class="button button-large button-circle m-0">Ke Layanan Incubator</a>
+                    <a href="/pengajuan-incubator" target="_blank" class="button button-large button-circle m-0">Ke Layanan Inkubator</a>
                 </div>
             </div>
 
@@ -26,7 +26,7 @@
                     <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th style="width: 5%;">No.</th>
+                            <th style="width: 5%; text-align: center">No.</th>
                             <th style="width: 20%;">Layanan</th>
                             <th style="width: 20%;">Pengaju</th>
                             <th style="width: 15%; text-align: center">Tanggal</th>
@@ -41,10 +41,10 @@
                         </style>
                         @foreach($data as $dt => $d)
                         <tr class="link-detail"  >
-                            <td>{{$dt+1}}</td>
+                            <td style="text-align: center; width: 5%;"> {{$dt+1}}</td>
                             <td>{{ $d['layanan'] }}</td>
                             <td>{{ $d['pengguna_layanan'] }}</td>
-                            <td style="text-align: center">{{ $d['tanggal'] }}</td>
+                            <td style="text-align: center; width: 10%;">{{ $d['tanggal'] }}</td>
                             <td style="text-align: center">{{ $d['status'] }}</td>
                         </tr>
                         @endforeach
