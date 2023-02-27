@@ -79,7 +79,7 @@ class ProfilController extends Controller
         $logo = isset($request->logo) ? json_decode($request->logo,true) : [];
         if(isset($logo['nama'])){
             #$loc = public_path('/files-attachment/logos/');
-            $loc = ('../public_html/files-attachment/logos');
+            $loc = ('../public_html/files-attachment/logos/');
             $lama_ft = $loc.str_replace(' ','_',$logo['nama']);
             if(file_exists($lama_ft)){
                 File::delete( $lama_ft );
