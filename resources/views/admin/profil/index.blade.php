@@ -23,6 +23,10 @@
                                 <div class="form-group row">
                                     <input type="hidden" value="{{ $data['id'] }}" name="id">
                                     <input type="hidden" value="{{ $data['logo'] }}" name="logo">
+                                    <input type="hidden" value="{{ $data['main_video'] }}" name="main_video">
+                                    <input type="hidden" value="{{ $data['slider_2'] }}" name="slider_2">
+                                    <input type="hidden" value="{{ $data['slider_3'] }}" name="slider_3">
+
                                     <div class="col-lg-6">
                                         <label>Alamat:</label>
                                         <textarea name="alamat" class="form-control" cols="30" rows="3"> {{ $data['alamat'] }}</textarea>
@@ -94,6 +98,138 @@
 
                                 </div>
 
+                                <div class="form-group row">
+                                    <div class="col-lg-4">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Main Video</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_3">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 150px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Slide 2</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_4">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 150px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <!--begin::Card-->
+                                        <div class="card card-custom card-stretch">
+                                            <div class="card-header">
+                                                <div class="card-title">
+                                                    <h3 class="card-label">Slide 3</h3>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="uppy" id="kt_uppy_5">
+                                                    <div class="uppy-Root" dir="ltr">
+                                                        <div class="uppy-Dashboard DashboardContainer uppy-Dashboard--animateOpenClose uppy-size--height-md uppy-Dashboard--isInnerWrapVisible" data-uppy-theme="light" data-uppy-num-acquirers="0" data-uppy-drag-drop-supported="true" aria-hidden="false" aria-label="File Uploader">
+                                                            <div class="uppy-Dashboard-overlay" tabindex="-1"></div>
+                                                            <div class="uppy-Dashboard-inner" style="width: 750px; height: 150px;">
+                                                                <div class="uppy-Dashboard-innerWrap">
+                                                                    <div class="uppy-Dashboard-dropFilesHereHint">Drop your files here</div>
+                                                                    <div class="uppy-Dashboard-AddFiles">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <input class="uppy-Dashboard-input" hidden="" aria-hidden="true" tabindex="-1" webkitdirectory="" type="file" name="files[]" multiple="" accept="image/*,video/*">
+                                                                        <div class="uppy-Dashboard-AddFiles-title">Drop files here or <button type="button" class="uppy-u-reset uppy-Dashboard-browse UppyModalOpenerBtn" data-uppy-super-focusable="true">browse files</button>
+                                                                        </div>
+                                                                        <div class="uppy-Dashboard-AddFiles-info">
+                                                                            <div class="uppy-Dashboard-note">Images and video only, 2–3 files, up to 1 MB</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="uppy-Dashboard-progressindicators">
+                                                                        <div class="uppy-StatusBar is-waiting" aria-hidden="true">
+                                                                            <div class="uppy-StatusBar-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;">
+
+                                                                            </div>
+                                                                            <div class="uppy-StatusBar-actions"></div>
+                                                                        </div>
+                                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end::Card-->
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="card-footer">
@@ -117,6 +253,18 @@
         "use strict";
         var file_list = [];
         var logos = {
+            'nama' : '',
+            'url' : '',
+        };
+        var mainVideo = {
+            'nama' : '',
+            'url' : '',
+        };
+        var slider_2 = {
+            'nama' : '',
+            'url' : '',
+        };
+        var slider_3 = {
             'nama' : '',
             'url' : '',
         };
@@ -162,7 +310,8 @@
                     restrictions: {
                         maxFileSize: 10000000, // 1mb
                         maxNumberOfFiles: 1,
-                        minNumberOfFiles: 1
+                        minNumberOfFiles: 1,
+                        allowedFileTypes: ['image/*']
                     }
                 });
 
@@ -178,10 +327,135 @@
                 })
             }
 
+            var initUppy3 = function(){
+                var id = '#kt_uppy_3';
+
+                var options = {
+                    proudlyDisplayPoweredByUppy: false,
+                    target: id,
+                    inline: true,
+                    replaceTargetContent: true,
+                    showProgressDetails: true,
+                    note: 'No filetype restrictions.',
+                    height: 150,
+                    remove : true,
+                    metaFields: [
+                        { id: 'name', name: 'Name', placeholder: 'file name' },
+                        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
+                    ],
+                    browserBackButtonClose: true
+                }
+
+                var uppyDashboard = Uppy.Core({
+                    //autoProceed: true,
+                    restrictions: {
+                        maxFileSize: 10000000, // 1mb
+                        maxNumberOfFiles: 1,
+                        minNumberOfFiles: 1,
+                        allowedFileTypes: ['video/*']
+                    }
+                });
+
+                uppyDashboard.use(Dashboard, options);
+                uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
+                uppyDashboard.on('complete',function (f) {
+                    $.each(f.successful,function(i,e){
+                        mainVideo = { url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0] };
+                    })
+                });
+                uppyDashboard.on('file-added', (file) => {
+                    console.log('Added file', file)
+                })
+            }
+            var initUppy4 = function(){
+                var id = '#kt_uppy_4';
+
+                var options = {
+                    proudlyDisplayPoweredByUppy: false,
+                    target: id,
+                    inline: true,
+                    replaceTargetContent: true,
+                    showProgressDetails: true,
+                    note: 'No filetype restrictions.',
+                    height: 150,
+                    remove : true,
+                    metaFields: [
+                        { id: 'name', name: 'Name', placeholder: 'file name' },
+                        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
+                    ],
+                    browserBackButtonClose: true
+                }
+
+                var uppyDashboard = Uppy.Core({
+                    //autoProceed: true,
+                    restrictions: {
+                        maxFileSize: 10000000, // 1mb
+                        maxNumberOfFiles: 1,
+                        minNumberOfFiles: 1,
+                        allowedFileTypes: ['image/*']
+                    }
+                });
+
+                uppyDashboard.use(Dashboard, options);
+                uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
+                uppyDashboard.on('complete',function (f) {
+                    $.each(f.successful,function(i,e){
+                        slider_2 = { url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0] };
+                    })
+                });
+                uppyDashboard.on('file-added', (file) => {
+                    console.log('Added file', file)
+                })
+            }
+            var initUppy5 = function(){
+                var id = '#kt_uppy_5';
+
+                var options = {
+                    proudlyDisplayPoweredByUppy: false,
+                    target: id,
+                    inline: true,
+                    replaceTargetContent: true,
+                    showProgressDetails: true,
+                    note: 'No filetype restrictions.',
+                    height: 150,
+                    remove : true,
+                    metaFields: [
+                        { id: 'name', name: 'Name', placeholder: 'file name' },
+                        { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
+                    ],
+                    browserBackButtonClose: true
+                }
+
+                var uppyDashboard = Uppy.Core({
+                    //autoProceed: true,
+                    restrictions: {
+                        maxFileSize: 10000000, // 1mb
+                        maxNumberOfFiles: 1,
+                        minNumberOfFiles: 1,
+                        allowedFileTypes: ['image/*']
+                    }
+                });
+
+                uppyDashboard.use(Dashboard, options);
+                uppyDashboard.use(Tus, { endpoint: 'https://master.tus.io/files/' });
+                uppyDashboard.on('complete',function (f) {
+                    $.each(f.successful,function(i,e){
+                        slider_3 = { url :e.response.uploadURL,nama :e.name, tipe: e.data.type.split('/')[0] };
+                    })
+                });
+                uppyDashboard.on('file-added', (file) => {
+                    console.log('Added file', file)
+                })
+            }
+
             return {
                 // public functions
                 init: function() {
                     initUppy2();
+
+                    initUppy3();
+                    initUppy4();
+                    initUppy5();
 
                 }
             };
@@ -231,7 +505,11 @@
                 url: '/profil-update',
                 async: true,
                 data: {
-                    datas : JSON.stringify(data),logo :JSON.stringify(logos),
+                    datas : JSON.stringify(data),
+                    logo :JSON.stringify(logos),
+                    mainVideo :JSON.stringify(mainVideo),
+                    slider_2 :JSON.stringify(slider_2),
+                    slider_3 :JSON.stringify(slider_3),
                 },
                 success: function (res) {
                     console.log(res)

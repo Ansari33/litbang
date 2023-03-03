@@ -69,7 +69,7 @@ class ProfilController extends Controller
     }
     public function update(Request $request)
     {
-        //return $request->all();
+        #return $request->all();
         $data = json_decode($request->datas,true);
         $body = [];
         foreach ($data as $index => $value){
@@ -77,9 +77,12 @@ class ProfilController extends Controller
         }
 
         $logo = isset($request->logo) ? json_decode($request->logo,true) : [];
-        if(isset($logo['nama'])){
-            #$loc = public_path('/files-attachment/logos/');
-            $loc = ('../public_html/files-attachment/logos/');
+        $mainVideo = isset($request->mainVideo) ? json_decode($request->mainVideo,true) : [];
+        $slider2 = isset($request->slider_2) ? json_decode($request->slider_2,true) : [];
+        $slider3 = isset($request->slider_3) ? json_decode($request->slider_3,true) : [];
+        if(isset($logo['nama']) and $logo['nama'] == "\n"){
+            $loc = public_path('/files-attachment/logos/');
+            #$loc = ('../public_html/files-attachment/logos/');
             $lama_ft = $loc.str_replace(' ','_',$logo['nama']);
             if(file_exists($lama_ft)){
                 File::delete( $lama_ft );
@@ -87,6 +90,36 @@ class ProfilController extends Controller
             File::copy($logo['url'],$lama_ft);
             $body['logo']= str_replace(' ','_',$logo['nama']);
         }
+        if(isset($mainVideo['nama']) and $mainVideo['nama'] == "\n"){
+            $loc = public_path('/files-attachment/main-video/');
+            #$loc = ('../public_html/files-attachment/main-video/');
+            $lama_ft = $loc.str_replace(' ','_',$mainVideo['nama']);
+            if(file_exists($lama_ft)){
+                File::delete( $lama_ft );
+            }
+            File::copy($mainVideo['url'],$lama_ft);
+            $body['main_video']= str_replace(' ','_',$mainVideo['nama']);
+        }
+        if(isset($slider2['nama']) and $slider2['nama'] == "\n"){
+            $loc = public_path('/files-attachment/slider2/');
+            #$loc = ('../public_html/files-attachment/slider2/');
+            $lama_ft = $loc.str_replace(' ','_',$slider2['nama']);
+            if(file_exists($lama_ft)){
+                File::delete( $lama_ft );
+            }
+            File::copy($slider2['url'],$lama_ft);
+            $body['slider_2']= str_replace(' ','_',$slider2['nama']);
+        }
+        if(isset($slider3['nama'])){
+        $loc = public_path('/files-attachment/slider3/');
+        #$loc = ('../public_html/files-attachment/slider3/');
+        $lama_ft = $loc.str_replace(' ','_',$slider3['nama']);
+        if(file_exists($lama_ft)){
+            File::delete( $lama_ft );
+        }
+        File::copy($slider3['url'],$lama_ft);
+        $body['slider_3']= str_replace(' ','_',$slider3['nama']);
+    }
 
         return json_decode(HttpHelper::profil_update($body));
     }

@@ -5,7 +5,7 @@
 
             <div class="heading-block center border-bottom-0 bottommargin-lg">
                 <h1>INKUBATOR</h1>
-                <span> (INKUBATOR)</span>
+                <span> (INspirasi Kreatif Untuk BerbAgi Treatmen inOvasi makassaR)</span>
             </div>
             <div class="row align-items-center">
                 <div class="col-12 col-lg">

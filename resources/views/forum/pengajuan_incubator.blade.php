@@ -7,7 +7,7 @@
             <div class="form-widget">
 
                 <div class="form-result" style="text-align: center">
-                    <h3> <u>Form Pengajuan Layanan INKUBATOR </u></h3>
+                    <h3> <u>Form Layanan INKUBATOR </u></h3>
                 </div>
 
                 <div class="row shadow bg-light border">
