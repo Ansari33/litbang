@@ -33,19 +33,40 @@ class LayananIncubatorController extends Controller
     public function store(Request $request)
     {
         $data = json_decode($request->datas,true);
-
+         $indikator = json_decode($request->indikator,true);
         $body = [];
         foreach ($data as $index => $value){
             $body[$value['name']] = $value['value'];
         }
+        $body['indikator'] = [];
+        if($request->nIndikator == 1){
+            foreach ($indikator as $index => $value){
+                if($value !== null){
+                    $body['indikator'][$index] = str_replace(' ','_',$value[0]['nama']) ;
+                    #$loc = public_path()."/files-attachment/indikator/";
+                    $loc = "../public_html/files-attachment/indikator/";
+                    $lama_ft = $loc.str_replace(' ','_',$value[0]['nama']);
+                    if(file_exists($lama_ft)){
+                        File::delete( $lama_ft );
+                    }
+                    File::copy($value[0]['url'],$lama_ft);
+                    }
+               
+            }
+        }
+        
         $body['tanggal'] = date('Y-m-d');#Carbon::createFromFormat('d/m/Y',$body['tanggal'])->format('Y-m-d');
         $listFoto = isset($request->filex) ? json_decode($request->filex,true) : [];
         $jenisLayanan = implode(',',json_decode($request->jenisLayanan,true));
         $body['layanan'] = $jenisLayanan;
+        $body['nindikator'] = $request->nIndikator;
+        
+    
+       # return $body;
         foreach ($listFoto as $lt => $ur){
 
-            $loc = public_path()."/files-attachment/surat-pengajuan/";
-            #$loc = "../public_html/files-attachment/surat-pengajuan/";
+            #$loc = public_path()."/files-attachment/surat-pengajuan/";
+            $loc = "../public_html/files-attachment/surat-pengajuan/";
             $lama_ft = $loc.$ur['nama'];
             if(file_exists($loc.$ur['nama'])){
                 File::delete( $lama_ft );
@@ -55,7 +76,7 @@ class LayananIncubatorController extends Controller
 
         }
 
-        //return $body;
+        #return $body;
         return json_decode(HttpHelper::layanan_incubator_add($body));
     }
 

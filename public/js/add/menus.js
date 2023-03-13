@@ -146,7 +146,7 @@ function loadMenu() {
                 </a>`;
             listMenus += `<ul class="sub-menu-container"> `;
             $.each(value.subs, function (id2, subs) {
-                console.log(subs)
+                //console.log(subs)
                 if(subs.child.length > 0){
                     listMenus += `<li class="menu-item">
                     <a class="menu-link" href="${subs.link}">
